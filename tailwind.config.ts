@@ -10,9 +10,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
-        code: ['monospace'],
+        anton: ['Anton', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        body: ['Inter', 'sans-serif'], // Default body font
+        headline: ['Montserrat', 'sans-serif'], // Default headline font (H2-H6)
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -48,6 +50,12 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        // Custom colors from palette
+        'primary-dark': 'hsl(var(--primary-dark))', // Navy
+        'primary-light': 'hsl(var(--primary-light))', // Cream
+        'accent-1-red': 'hsl(var(--accent-1-red))', // Red
+        'accent-2-maroon': 'hsl(var(--accent-2-maroon))', // Maroon
+        'accent-3-light-blue': 'hsl(var(--accent-3-light-blue))', // Light Blue
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',

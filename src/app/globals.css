@@ -8,31 +8,55 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
+    --primary-dark: 207 100% 14.3%;
+    --primary-light: 39 87.5% 91.4%;
+    --accent-1-red: 356 82.9% 41.4%;
+    --accent-2-maroon: 0 100% 23.5%;
+    --accent-3-light-blue: 207 38.4% 59.6%;
+    
+    --background: var(--primary-light); /* Cream */
+    --foreground: var(--primary-dark); /* Navy */
+
+    --card: 39 80% 95%; /* Slightly desaturated Cream */
+    --card-foreground: var(--primary-dark); /* Navy */
+
+    --popover: var(--primary-light); /* Cream */
+    --popover-foreground: var(--primary-dark); /* Navy */
+
+    --primary: var(--accent-1-red); /* Red */
+    --primary-foreground: var(--primary-light); /* Cream */
+
+    --secondary: 207 100% 19%; /* Darker Navy */
+    --secondary-foreground: var(--primary-light); /* Cream */
+
+    --muted: 207 29% 40%; /* Grey from Navy */
+    --muted-foreground: 207 24% 56%; /* Lighter Grey from Navy */
+
+    --accent: var(--accent-3-light-blue); /* Light Blue */
+    --accent-foreground: var(--primary-dark); /* Navy */
+
+    --destructive: 0 84.2% 60.2%; /* Default shadcn red */
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+
+    --border: 207 38.4% 80%; /* Lighter Blue for borders */
+    --input: 207 38.4% 80%; /* Lighter Blue for inputs */
+    --ring: var(--accent-1-red); /* Red for focus rings */
+    
+    --radius: 0.5rem;
+
+    /* Specific colors for direct use if needed */
+    --color-navy: hsl(var(--primary-dark));
+    --color-cream: hsl(var(--primary-light));
+    --color-red: hsl(var(--accent-1-red));
+    --color-maroon: hsl(var(--accent-2-maroon));
+    --color-light-blue: hsl(var(--accent-3-light-blue));
+
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -42,31 +66,55 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    /* TODO: Define dark theme if required. For now, keeping it consistent with light but inverted for basic structure */
+    --primary-dark: 39 87.5% 91.4%; 
+    --primary-light: 207 100% 14.3%; 
+    --accent-1-red: 356 82.9% 55%; /* Lighter Red for dark mode */
+    --accent-2-maroon: 0 100% 35%; /* Lighter Maroon */
+    --accent-3-light-blue: 207 38.4% 70%; /* Lighter Light Blue */
+
+    --background: 207 100% 9%; /* Darker Navy for dark background */
+    --foreground: 39 87.5% 85%; /* Lighter Cream for dark text */
+
+    --card: 207 100% 12%; 
+    --card-foreground: 39 87.5% 85%;
+
+    --popover: 207 100% 12%;
+    --popover-foreground: 39 87.5% 85%;
+
+    --primary: var(--accent-1-red);
+    --primary-foreground: 207 100% 14.3%;
+
+    --secondary: 207 100% 25%;
+    --secondary-foreground: 39 87.5% 85%;
+
+    --muted: 207 29% 30%;
+    --muted-foreground: 207 24% 65%;
+
+    --accent: var(--accent-3-light-blue);
+    --accent-foreground: 39 87.5% 85%;
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+
+    --border: 207 38.4% 25%;
+    --input: 207 38.4% 25%;
+    --ring: var(--accent-1-red);
+
+    --color-navy: hsl(var(--primary-dark));
+    --color-cream: hsl(var(--primary-light));
+    --color-red: hsl(var(--accent-1-red));
+    --color-maroon: hsl(var(--accent-2-maroon));
+    --color-light-blue: hsl(var(--accent-3-light-blue));
+    
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -83,6 +131,25 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+    line-height: 1.7;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline text-foreground;
+  }
+  h1 {
+    @apply font-anton text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl font-bold; /* Montserrat Bold will be applied via className */
+  }
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold; /* Montserrat SemiBold */
+  }
+  p {
+    @apply mb-4;
+  }
+  a {
+    @apply text-accent-1-red hover:underline;
   }
 }
