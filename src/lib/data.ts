@@ -7,7 +7,7 @@ import type { HotelCategory, NicheSubCategory } from '@/types';
 export const destinationsData: { [key: string]: Destination } = {
   malaga: {
     id: 'malaga',
-    name: 'Málaga City',
+    name: 'Málaga',
     slug: 'malaga',
     heroImage: PLACEHOLDER_IMAGE_URL(1200, 400),
     imageHint: 'Malaga skyline port',

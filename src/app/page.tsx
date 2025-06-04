@@ -9,7 +9,7 @@ import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 import MarbellaHero from '@/components/custom/MarbellaHero'; // Import the new hero component
 
 const featuredDestinations = [
-  { title: 'Málaga City', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Malaga City skyline', description: 'Vibrant culture, historic sites, and stunning beaches.', linkHref: '/destinations/malaga', imageHint: 'Malaga skyline' },
+  { title: 'Málaga', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Malaga City skyline', description: 'Vibrant culture, historic sites, and stunning beaches.', linkHref: '/destinations/malaga', imageHint: 'Malaga skyline' },
   { title: 'Marbella', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Marbella luxury port', description: 'Luxury boutiques, glamorous nightlife, and beautiful marinas.', linkHref: '/destinations/marbella', imageHint: 'Marbella port' },
   { title: 'Mijas Pueblo', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Mijas Pueblo white village', description: 'Charming white-washed village with breathtaking views.', linkHref: '/destinations/mijas', imageHint: 'Mijas village' },
   { title: 'Nerja', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Nerja Balcon de Europa', description: 'Famous caves, stunning coastline, and the Balcón de Europa.', linkHref: '/destinations/nerja', imageHint: 'Nerja coast' },
