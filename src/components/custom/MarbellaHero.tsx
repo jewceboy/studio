@@ -10,12 +10,12 @@ export default function MarbellaHero() {
   return (
     <div className="relative h-[calc(100vh-80px)] min-h-[500px] md:min-h-[600px] flex items-center justify-center text-center text-primary-light -mt-8 -mx-4 sm:-mx-container-padding">
       <Image
-        src="https://placehold.co/1920x1080.png" // Placeholder for the user's image
+        src="https://placehold.co/1920x1080.png" 
         alt="Envision the stunning beauty of Marbella: sun-drenched coasts and luxurious lifestyle"
         fill={true}
         priority
         className="absolute inset-0 z-0 opacity-90 object-cover"
-        data-ai-hint="Marbella luxury lifestyle sea view woman sunglasses" // Hint for image replacement, reflecting your provided image and request
+        data-ai-hint="Marbella luxury lifestyle sea view woman sunglasses" 
       />
       <div className="absolute inset-0 bg-black/40 z-10"></div> {/* Overlay for text readability */}
       <div className="relative z-20 container mx-auto px-4">
@@ -27,8 +27,8 @@ export default function MarbellaHero() {
         </p>
         <Button
           asChild
-          size="lg"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-7 font-montserrat font-semibold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          size="lg" // Uses h-11 (44px height) and px-8 (32px horizontal padding)
+          className="bg-accent-1-red text-primary-light hover:bg-accent-1-red-hover text-lg px-10 py-7 font-montserrat font-semibold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
         >
           <Link href="/destinations/marbella">
             Explore Marbella <ArrowRight className="ml-2 h-5 w-5" />
@@ -38,10 +38,10 @@ export default function MarbellaHero() {
       {/* Styled-jsx for consistent text shadow styling */}
       <style jsx>{`
         .shadow-text {
-          text-shadow: 2px 2px 5px rgba(0,0,0,0.75); /* Enhanced shadow for wow factor */
+          text-shadow: 2px 2px 5px rgba(0,0,0,0.75); 
         }
         .shadow-text-sm {
-          text-shadow: 1px 1px 4px rgba(0,0,0,0.65); /* Enhanced shadow for wow factor */
+          text-shadow: 1px 1px 4px rgba(0,0,0,0.65); 
         }
       `}</style>
     </div>

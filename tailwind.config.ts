@@ -51,11 +51,12 @@ export default {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         // Custom colors from palette
-        'primary-dark': 'hsl(var(--primary-dark))', // Navy
-        'primary-light': 'hsl(var(--primary-light))', // Cream
-        'accent-1-red': 'hsl(var(--accent-1-red))', // Red
-        'accent-2-maroon': 'hsl(var(--accent-2-maroon))', // Maroon
-        'accent-3-light-blue': 'hsl(var(--accent-3-light-blue))', // Light Blue
+        'primary-dark': 'hsl(var(--primary-dark))', 
+        'primary-light': 'hsl(var(--primary-light))', 
+        'accent-1-red': 'hsl(var(--accent-1-red))', 
+        'accent-1-red-hover': 'hsl(var(--accent-1-red-hover))', // Added for darker red on hover
+        'accent-2-maroon': 'hsl(var(--accent-2-maroon))', 
+        'accent-3-light-blue': 'hsl(var(--accent-3-light-blue))', 
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',

@@ -8,50 +8,62 @@ body {
 
 @layer base {
   :root {
-    /* Palette inspired by malagatravelguide.net */
-    --color-background-beige: 47 50% 95%; /* Light Beige/Off-white */
-    --color-text-dark-grey: 210 10% 23%; /* Dark Grey */
-    --color-accent-teal: 175 60% 40%; /* Vibrant Teal */
+    /* Palette inspired by malagatravelguide.net, with PRD accent red corrected */
+    --color-background-beige: 47 50% 95%; /* Light Beige/Off-white #FDF0D5 (PRD Cream) */
+    --color-text-dark-grey: 210 10% 23%; /* Dark Grey #353B41 (from malagatravelguide) */
+    --color-accent-teal: 175 60% 40%; /* Vibrant Teal #29A38E (from malagatravelguide) */
     --color-accent-light-teal: 175 45% 65%; /* Lighter, desaturated Teal */
     --color-accent-very-light-teal: 175 50% 88%; /* Very light teal for info boxes */
+    
+    /* PRD Specific Colors */
+    --prd-accent-red: 355 83% 41%;   /* Red #C1121F for primary CTA (PRD Accent) */
+    --prd-accent-red-hover: 355 80% 33%; /* Darker Red #A00F1A for hover (PRD Accent) */
+    --prd-navy: 207 100% 15%; /* Navy #003049 (PRD Primary) */
+
+
     --color-white: 0 0% 100%;
     --color-black: 0 0% 0%;
 
-    /* ShadCN Semantic Variables */
-    --background: var(--color-background-beige); /* Main background */
-    --foreground: var(--color-text-dark-grey); /* Main text color */
+    /* ShadCN Semantic Variables (primarily malagatravelguide theme) */
+    --background: var(--color-background-beige); /* Main background (Cream) */
+    --foreground: var(--color-text-dark-grey); /* Main text color (Dark Grey) */
 
-    --card: var(--color-white); /* Cards slightly lighter or white */
+    --card: var(--color-white); 
     --card-foreground: var(--color-text-dark-grey);
 
     --popover: var(--color-white);
     --popover-foreground: var(--color-text-dark-grey);
 
-    --primary: var(--color-accent-teal); /* Primary accent for buttons, interactive elements */
-    --primary-foreground: var(--color-white); /* Text on primary elements */
+    --primary: var(--color-accent-teal); /* Primary accent for most buttons (Teal) */
+    --primary-foreground: var(--color-white); /* Text on primary (Teal) elements */
 
-    --secondary: var(--color-accent-light-teal); /* Secondary accent */
-    --secondary-foreground: var(--color-text-dark-grey); /* Text on secondary elements */
+    --secondary: var(--color-accent-light-teal); /* Secondary accent (Light Teal) */
+    --secondary-foreground: var(--color-text-dark-grey); 
 
-    --muted: 210 10% 50%; /* Muted grey, derived from text color */
-    --muted-foreground: 210 10% 40%; /* Text on muted elements */
+    --muted: 210 10% 50%; 
+    --muted-foreground: 210 10% 40%; 
 
-    --accent: var(--color-accent-teal); /* General accent, can be same as primary */
+    --accent: var(--color-accent-teal); /* General accent, defaults to Teal */
     --accent-foreground: var(--color-white);
 
-    --destructive: 0 72% 51%; /* Default ShadCN destructive red */
+    --destructive: 0 72% 51%; 
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 10% 85%; /* Light grey border */
-    --input: 210 10% 90%; /* Input background/border */
-    --ring: var(--color-accent-teal); /* Focus ring color */
+    --border: 210 10% 85%; 
+    --input: 210 10% 90%; 
+    --ring: var(--color-accent-teal); /* Focus ring color (Teal) */
     
     --radius: 0.5rem;
 
-    /* Custom specific colors for direct use if needed - now aliased from above */
+    /* Custom specific colors for direct use if needed */
+    /* --primary-dark is now mapped to the malagatravelguide Dark Grey */
     --primary-dark: var(--color-text-dark-grey); 
-    --primary-light: var(--color-background-beige); 
-    --accent-1-red: var(--color-accent-teal); /* Re-mapping red to teal for consistency */
+     /* --primary-light is mapped to malagatravelguide Cream/Beige */
+    --primary-light: var(--color-background-beige);
+    /* --accent-1-red now correctly maps to PRD Red #C1121F */
+    --accent-1-red: var(--prd-accent-red); 
+    --accent-1-red-hover: var(--prd-accent-red-hover);
+    /* These were based on teal, keeping for potential use or if other elements expect them */
     --accent-2-maroon: 175 50% 30%; /* Darker Teal if maroon is remapped */
     --accent-3-light-blue: var(--color-accent-light-teal); /* Re-mapping light blue to light teal */
 
@@ -59,11 +71,11 @@ body {
     --chart-1: 175 70% 45%;
     --chart-2: 195 60% 50%;
     --chart-3: 210 50% 55%;
-    --chart-4: 43 74% 66%; /* Keeping some for variety if needed */
+    --chart-4: 43 74% 66%; 
     --chart-5: 27 87% 67%;
 
-    /* Sidebar - using new palette */
-    --sidebar-background: 210 10% 97%; /* Very light grey, almost white */
+    /* Sidebar - using malagatravelguide palette */
+    --sidebar-background: 210 10% 97%; 
     --sidebar-foreground: var(--color-text-dark-grey);
     --sidebar-primary: var(--color-accent-teal);
     --sidebar-primary-foreground: var(--color-white);
@@ -75,13 +87,19 @@ body {
 
   .dark {
     /* Dark Theme - Inverted and adjusted from light theme */
-    --color-background-beige: 210 10% 15%; /* Dark Grey for background */
-    --color-text-dark-grey: 47 50% 90%; /* Light Beige/Off-white for text */
-    --color-accent-teal: 175 60% 55%; /* Brighter Teal for dark mode */
+    --color-background-beige: 210 10% 15%; 
+    --color-text-dark-grey: 47 50% 90%; 
+    --color-accent-teal: 175 60% 55%; 
     --color-accent-light-teal: 175 45% 45%; 
     --color-accent-very-light-teal: 175 50% 25%; 
-    --color-white: 0 0% 10%; /* Darker than black for cards if needed */
-    --color-black: 0 0% 100%; /* White for some highlights */
+
+    /* PRD Specific Colors for Dark Mode - adjust if needed */
+    --prd-accent-red: 355 83% 50%; /* Brighter Red for dark mode */
+    --prd-accent-red-hover: 355 80% 42%; /* Slightly darker red for hover */
+    --prd-navy: 207 100% 80%; /* Lighter Navy for dark mode text */
+
+    --color-white: 0 0% 10%; 
+    --color-black: 0 0% 100%; 
 
     --background: var(--color-background-beige); 
     --foreground: var(--color-text-dark-grey);
@@ -101,7 +119,7 @@ body {
     --muted: 210 10% 35%;
     --muted-foreground: 210 10% 60%; 
 
-    --accent: var(--color-accent-teal);
+    --accent: var(--color-accent-teal); /* General accent Teal */
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 60% 45%; 
@@ -111,10 +129,10 @@ body {
     --input: 210 10% 25%; 
     --ring: var(--color-accent-teal);
     
-    /* Custom specific colors for direct use if needed - now aliased from above */
     --primary-dark: var(--color-text-dark-grey); 
     --primary-light: var(--color-background-beige); 
-    --accent-1-red: var(--color-accent-teal); 
+    --accent-1-red: var(--prd-accent-red); 
+    --accent-1-red-hover: var(--prd-accent-red-hover);
     --accent-2-maroon: 175 50% 35%;
     --accent-3-light-blue: var(--color-accent-light-teal);
     
@@ -143,25 +161,25 @@ body {
     line-height: 1.7;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline text-foreground; /* Ensure foreground (dark grey) is used */
+    @apply font-headline text-foreground; 
   }
   h1 {
     @apply font-anton text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
   }
   h2 {
-    @apply text-3xl md:text-4xl font-bold; /* Montserrat Bold will be applied via className */
+    @apply text-3xl md:text-4xl font-bold; 
   }
   h3 {
-    @apply text-2xl md:text-3xl font-semibold; /* Montserrat SemiBold */
+    @apply text-2xl md:text-3xl font-semibold; 
   }
   p {
     @apply mb-4;
   }
   a {
-    @apply text-accent hover:text-primary/80 transition-colors duration-200; /* Updated to use teal */
+    @apply text-accent hover:text-primary/80 transition-colors duration-200; /* Uses Teal by default */
   }
 }
-/* Ensure prose styles also align with the new palette */
+
 .prose {
   --tw-prose-body: hsl(var(--foreground));
   --tw-prose-headings: hsl(var(--foreground));
@@ -172,15 +190,13 @@ body {
   --tw-prose-bullets: hsl(var(--muted));
   --tw-prose-hr: hsl(var(--border));
   --tw-prose-quotes: hsl(var(--foreground));
-  --tw-prose-quote-borders: hsl(var(--accent-light-teal)); /* Light teal for quote borders */
+  --tw-prose-quote-borders: hsl(var(--accent-light-teal)); 
   --tw-prose-captions: hsl(var(--muted-foreground));
   --tw-prose-code: hsl(var(--primary));
   --tw-prose-pre-code: hsl(var(--primary-foreground));
-  --tw-prose-pre-bg: hsl(var(--color-text-dark-grey)); /* Dark grey for code blocks */
+  --tw-prose-pre-bg: hsl(var(--color-text-dark-grey)); 
   --tw-prose-th-borders: hsl(var(--border));
   --tw-prose-td-borders: hsl(var(--border));
-
-  /* Dark mode prose if you have one, not specified in current globals */
 }
 
 .dark .prose {
@@ -197,12 +213,11 @@ body {
   --tw-prose-captions: hsl(var(--muted-foreground));
   --tw-prose-code: hsl(var(--primary));
   --tw-prose-pre-code: hsl(var(--primary-foreground));
-  --tw-prose-pre-bg: hsl(var(--color-background-beige)); /* Light beige for code blocks in dark mode */
+  --tw-prose-pre-bg: hsl(var(--color-background-beige)); 
   --tw-prose-th-borders: hsl(var(--border));
   --tw-prose-td-borders: hsl(var(--border));
 }
 
-/* Custom class for info boxes with very light teal background */
 .info-box-custom-bg {
   background-color: hsl(var(--color-accent-very-light-teal));
   border-left-color: hsl(var(--color-accent-teal));
@@ -210,7 +225,7 @@ body {
 }
 
 .dark .info-box-custom-bg {
-  background-color: hsl(var(--color-accent-very-light-teal)); /* Use the dark mode var */
-  border-left-color: hsl(var(--color-accent-teal)); /* Use the dark mode var */
-  color: hsl(var(--color-text-dark-grey)); /* Use the dark mode var */
+  background-color: hsl(var(--color-accent-very-light-teal)); 
+  border-left-color: hsl(var(--color-accent-teal)); 
+  color: hsl(var(--color-text-dark-grey)); 
 }
