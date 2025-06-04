@@ -1,3 +1,4 @@
+'use client';
 
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -34,7 +35,7 @@ export default function TestimonialCard({
         </div>
       </CardHeader>
       <CardContent className="flex-grow">
-        <Star className="h-8 w-8 text-accent-3-light-blue/50 mb-3 transform -scale-x-100" fill="currentColor" /> {/* Quote mark style */}
+        <Star className="h-8 w-8 text-accent-3-light-blue/50 mb-3 transform -scale-x-100" fill="hsl(var(--accent))" /> {/* Quote mark style, updated fill */}
         <blockquote className="text-muted-foreground italic leading-relaxed">
           "{quote}"
         </blockquote>

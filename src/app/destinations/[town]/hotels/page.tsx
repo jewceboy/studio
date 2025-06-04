@@ -1,3 +1,4 @@
+'use client'; // Mark as client component if it uses client-side only features, or its children do
 
 import { notFound } from 'next/navigation';
 import PageHeader from '@/components/shared/PageHeader';
@@ -30,11 +31,13 @@ const townHotelsData: { [key: string]: Hotel[] } = {
   ]
 };
 
-export async function generateStaticParams() {
-  return Object.keys(townHotelsData).map((town) => ({
-    town,
-  }));
-}
+// generateStaticParams should be in a Server Component or a separate file.
+// If this page is 'use client', this needs to be moved or re-thought.
+// export async function generateStaticParams() {
+//   return Object.keys(townHotelsData).map((town) => ({
+//     town,
+//   }));
+// }
 
 export default function DestinationHotelsPage({ params }: { params: { town: string } }) {
   const hotels = townHotelsData[params.town];
@@ -57,8 +60,8 @@ export default function DestinationHotelsPage({ params }: { params: { town: stri
         title={`Best Hotels in ${townName}`}
         subtitle={`Discover top-rated accommodations in ${townName}, from luxury resorts to charming boutique hotels. Find the perfect place for your stay.`}
       />
-      <div className="mb-8 p-6 bg-accent-3-light-blue/10 rounded-lg border border-accent-3-light-blue/30">
-        <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-2">Why Book Through Us?</h3>
+      <div className="mb-8 p-6 info-box-custom-bg border-l-4 rounded-lg"> {/* Updated class for info box */}
+        <h3 className="font-montserrat text-lg font-semibold text-foreground mb-2">Why Book Through Us?</h3>
         <p className="text-sm text-muted-foreground">
           We partner with Booking.com to bring you the best deals and a wide selection of hotels. Booking through our links helps support our travel guide at no extra cost to you. Enjoy a seamless booking experience with verified reviews and flexible cancellation options on most properties.
         </p>
@@ -75,7 +78,7 @@ export default function DestinationHotelsPage({ params }: { params: { town: stri
       )}
 
       <div className="mt-12 text-center">
-        <Button asChild variant="outline" size="lg" className="border-accent-1-red text-accent-1-red hover:bg-accent-1-red hover:text-primary-light font-montserrat font-medium">
+        <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-montserrat font-medium">
           <Link href={`https://booking.com/${params.town}-hotels?aid=YOUR_AID`} target="_blank" rel="noopener noreferrer">
             See All Hotels in {townName} on Booking.com
           </Link>

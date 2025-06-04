@@ -1,3 +1,4 @@
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Star, Tag, CheckCircle, ExternalLink } from 'lucide-react';
 import type { Hotel } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import { Badge } from '@/components/ui/badge';
 
 interface HotelCardProps {
   hotel: Hotel;
@@ -26,14 +28,14 @@ export default function HotelCard({ hotel, className }: HotelCardProps) {
         {(hotel.userScore || hotel.priceGuide) && (
           <div className="absolute top-2 right-2 flex items-center space-x-2">
             {hotel.userScore && (
-              <span className="bg-accent-1-red text-primary-light text-xs font-semibold px-2 py-1 rounded-full flex items-center">
+              <Badge variant="default" className="bg-primary text-primary-foreground text-xs font-semibold px-2 py-1 rounded-full flex items-center">
                 <Star className="w-3 h-3 mr-1 fill-current" /> {hotel.userScore.toFixed(1)}
-              </span>
+              </Badge>
             )}
             {hotel.priceGuide && (
-              <span className="bg-primary-dark text-primary-light text-xs font-semibold px-2 py-1 rounded-full flex items-center">
+              <Badge variant="secondary" className="bg-secondary text-secondary-foreground text-xs font-semibold px-2 py-1 rounded-full flex items-center">
                 <Tag className="w-3 h-3 mr-1" /> {hotel.priceGuide}
-              </span>
+              </Badge>
             )}
           </div>
         )}
@@ -45,7 +47,7 @@ export default function HotelCard({ hotel, className }: HotelCardProps) {
           <ul className="space-y-1 text-sm mb-3">
             {hotel.features.slice(0, 3).map((feature, index) => ( // Show max 3 features
               <li key={index} className="flex items-center text-muted-foreground">
-                <CheckCircle className="w-4 h-4 mr-2 text-accent-3-light-blue shrink-0" />
+                <CheckCircle className="w-4 h-4 mr-2 text-accent shrink-0" />
                 {feature}
               </li>
             ))}
@@ -53,7 +55,7 @@ export default function HotelCard({ hotel, className }: HotelCardProps) {
         )}
       </CardContent>
       <CardFooter className="p-6 pt-0">
-        <Button asChild variant="default" className="w-full bg-accent-1-red text-primary-light hover:bg-accent-1-red/90 font-montserrat font-medium">
+        <Button asChild variant="default" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-medium">
           <Link href={hotel.affiliateLink} target="_blank" rel="noopener noreferrer">
             Check Prices & Availability <ExternalLink className="ml-2 h-4 w-4" />
           </Link>

@@ -1,9 +1,10 @@
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GolfIcon, Link2, MapPin } from 'lucide-react'; // Using GolfIcon
+import { Golf, Link2, MapPin } from 'lucide-react'; // Corrected import, GolfIcon might not exist
 import type { GolfCourse } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 
@@ -26,7 +27,7 @@ export default function GolfCourseCard({ course, className }: GolfCourseCardProp
       </CardHeader>
       <CardContent className="p-6 flex-grow">
         <CardTitle className="font-montserrat text-xl font-semibold text-primary-dark mb-2 line-clamp-2 flex items-center">
-          <GolfIcon className="w-5 h-5 mr-2 text-accent-1-red shrink-0" />
+          <Golf className="w-5 h-5 mr-2 text-accent shrink-0" /> {/* Using Golf icon */}
           {course.name}
         </CardTitle>
         <p className="text-sm text-muted-foreground mb-3 line-clamp-3">{course.description}</p>
@@ -42,14 +43,14 @@ export default function GolfCourseCard({ course, className }: GolfCourseCardProp
       </CardContent>
       <CardFooter className="p-6 pt-0 grid grid-cols-1 gap-2 sm:grid-cols-2">
         {course.websiteUrl && (
-          <Button asChild variant="outline" className="w-full border-accent-3-light-blue text-accent-3-light-blue hover:bg-accent-3-light-blue hover:text-primary-light">
+          <Button asChild variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground">
             <Link href={course.websiteUrl} target="_blank" rel="noopener noreferrer">
               Visit Website <Link2 className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         )}
         {course.nearbyHotelsAffiliateLink && (
-          <Button asChild variant="default" className="w-full bg-accent-1-red text-primary-light hover:bg-accent-1-red/90">
+          <Button asChild variant="default" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
             <Link href={course.nearbyHotelsAffiliateLink} target="_blank" rel="noopener noreferrer">
               Nearby Hotels <MapPin className="ml-2 h-4 w-4" />
             </Link>

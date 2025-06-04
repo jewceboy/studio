@@ -3,126 +3,134 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif; /* Ensure Inter is primary */
 }
 
 @layer base {
   :root {
-    --primary-dark: 207 100% 14.3%;
-    --primary-light: 0 0% 100%; /* White */
-    --accent-1-red: 356 82.9% 41.4%;
-    --accent-2-maroon: 0 100% 23.5%;
-    --accent-3-light-blue: 207 38.4% 59.6%;
-    
-    --background: var(--primary-light); /* White */
-    --foreground: var(--primary-dark); /* Navy */
+    /* Palette inspired by malagatravelguide.net */
+    --color-background-beige: 47 50% 95%; /* Light Beige/Off-white */
+    --color-text-dark-grey: 210 10% 23%; /* Dark Grey */
+    --color-accent-teal: 175 60% 40%; /* Vibrant Teal */
+    --color-accent-light-teal: 175 45% 65%; /* Lighter, desaturated Teal */
+    --color-accent-very-light-teal: 175 50% 88%; /* Very light teal for info boxes */
+    --color-white: 0 0% 100%;
+    --color-black: 0 0% 0%;
 
-    --card: 0 0% 97%; /* Slightly off-white for cards to contrast with pure white background */
-    --card-foreground: var(--primary-dark); /* Navy */
+    /* ShadCN Semantic Variables */
+    --background: var(--color-background-beige); /* Main background */
+    --foreground: var(--color-text-dark-grey); /* Main text color */
 
-    --popover: var(--primary-light); /* White */
-    --popover-foreground: var(--primary-dark); /* Navy */
+    --card: var(--color-white); /* Cards slightly lighter or white */
+    --card-foreground: var(--color-text-dark-grey);
 
-    --primary: var(--accent-1-red); /* Red */
-    --primary-foreground: var(--primary-light); /* White */
+    --popover: var(--color-white);
+    --popover-foreground: var(--color-text-dark-grey);
 
-    --secondary: 207 100% 19%; /* Darker Navy */
-    --secondary-foreground: var(--primary-light); /* White */
+    --primary: var(--color-accent-teal); /* Primary accent for buttons, interactive elements */
+    --primary-foreground: var(--color-white); /* Text on primary elements */
 
-    --muted: 207 29% 40%; /* Grey from Navy */
-    --muted-foreground: 207 24% 56%; /* Lighter Grey from Navy */
+    --secondary: var(--color-accent-light-teal); /* Secondary accent */
+    --secondary-foreground: var(--color-text-dark-grey); /* Text on secondary elements */
 
-    --accent: var(--accent-3-light-blue); /* Light Blue */
-    --accent-foreground: var(--primary-dark); /* Navy */
+    --muted: 210 10% 50%; /* Muted grey, derived from text color */
+    --muted-foreground: 210 10% 40%; /* Text on muted elements */
 
-    --destructive: 0 84.2% 60.2%; /* Default shadcn red */
+    --accent: var(--color-accent-teal); /* General accent, can be same as primary */
+    --accent-foreground: var(--color-white);
+
+    --destructive: 0 72% 51%; /* Default ShadCN destructive red */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 207 38.4% 80%; /* Lighter Blue for borders */
-    --input: 207 38.4% 80%; /* Lighter Blue for inputs */
-    --ring: var(--accent-1-red); /* Red for focus rings */
+    --border: 210 10% 85%; /* Light grey border */
+    --input: 210 10% 90%; /* Input background/border */
+    --ring: var(--color-accent-teal); /* Focus ring color */
     
     --radius: 0.5rem;
 
-    /* Specific colors for direct use if needed */
-    --color-navy: hsl(var(--primary-dark));
-    --color-cream: hsl(var(--primary-light)); /* This is now White */
-    --color-red: hsl(var(--accent-1-red));
-    --color-maroon: hsl(var(--accent-2-maroon));
-    --color-light-blue: hsl(var(--accent-3-light-blue));
+    /* Custom specific colors for direct use if needed - now aliased from above */
+    --primary-dark: var(--color-text-dark-grey); 
+    --primary-light: var(--color-background-beige); 
+    --accent-1-red: var(--color-accent-teal); /* Re-mapping red to teal for consistency */
+    --accent-2-maroon: 175 50% 30%; /* Darker Teal if maroon is remapped */
+    --accent-3-light-blue: var(--color-accent-light-teal); /* Re-mapping light blue to light teal */
 
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
+
+    --chart-1: 175 70% 45%;
+    --chart-2: 195 60% 50%;
+    --chart-3: 210 50% 55%;
+    --chart-4: 43 74% 66%; /* Keeping some for variety if needed */
     --chart-5: 27 87% 67%;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar - using new palette */
+    --sidebar-background: 210 10% 97%; /* Very light grey, almost white */
+    --sidebar-foreground: var(--color-text-dark-grey);
+    --sidebar-primary: var(--color-accent-teal);
+    --sidebar-primary-foreground: var(--color-white);
+    --sidebar-accent: var(--color-accent-very-light-teal);
+    --sidebar-accent-foreground: var(--color-text-dark-grey);
+    --sidebar-border: 210 10% 88%;
+    --sidebar-ring: var(--color-accent-teal);
   }
 
   .dark {
-    /* TODO: Define dark theme if required. For now, keeping it consistent with light but inverted for basic structure */
-    --primary-dark: 0 0% 100%; /* Was light theme's --primary-light (now white) */
-    --primary-light: 207 100% 14.3%; /* Was light theme's --primary-dark (navy) */
-    --accent-1-red: 356 82.9% 55%; /* Lighter Red for dark mode */
-    --accent-2-maroon: 0 100% 35%; /* Lighter Maroon */
-    --accent-3-light-blue: 207 38.4% 70%; /* Lighter Light Blue */
+    /* Dark Theme - Inverted and adjusted from light theme */
+    --color-background-beige: 210 10% 15%; /* Dark Grey for background */
+    --color-text-dark-grey: 47 50% 90%; /* Light Beige/Off-white for text */
+    --color-accent-teal: 175 60% 55%; /* Brighter Teal for dark mode */
+    --color-accent-light-teal: 175 45% 45%; 
+    --color-accent-very-light-teal: 175 50% 25%; 
+    --color-white: 0 0% 10%; /* Darker than black for cards if needed */
+    --color-black: 0 0% 100%; /* White for some highlights */
 
-    --background: 207 100% 9%; /* Darker Navy for dark background */
-    --foreground: 0 0% 90%; /* Lighter version of white/off-white for dark text */
+    --background: var(--color-background-beige); 
+    --foreground: var(--color-text-dark-grey);
 
-    --card: 207 100% 12%; 
-    --card-foreground: 0 0% 90%;
+    --card: 210 10% 20%; 
+    --card-foreground: var(--color-text-dark-grey);
 
-    --popover: 207 100% 12%;
-    --popover-foreground: 0 0% 90%;
+    --popover: 210 10% 20%;
+    --popover-foreground: var(--color-text-dark-grey);
 
-    --primary: var(--accent-1-red);
-    --primary-foreground: 207 100% 14.3%;
+    --primary: var(--color-accent-teal); 
+    --primary-foreground: 0 0% 98%; 
 
-    --secondary: 207 100% 25%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: var(--color-accent-light-teal); 
+    --secondary-foreground: var(--color-text-dark-grey);
 
-    --muted: 207 29% 30%;
-    --muted-foreground: 207 24% 65%;
+    --muted: 210 10% 35%;
+    --muted-foreground: 210 10% 60%; 
 
-    --accent: var(--accent-3-light-blue);
-    --accent-foreground: 0 0% 90%;
+    --accent: var(--color-accent-teal);
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 60% 45%; 
     --destructive-foreground: 0 0% 98%;
 
-    --border: 207 38.4% 25%;
-    --input: 207 38.4% 25%;
-    --ring: var(--accent-1-red);
-
-    --color-navy: hsl(var(--primary-dark)); /* This is now White in dark mode context */
-    --color-cream: hsl(var(--primary-light)); /* This is now Navy in dark mode context */
-    --color-red: hsl(var(--accent-1-red));
-    --color-maroon: hsl(var(--accent-2-maroon));
-    --color-light-blue: hsl(var(--accent-3-light-blue));
+    --border: 210 10% 30%; 
+    --input: 210 10% 25%; 
+    --ring: var(--color-accent-teal);
     
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom specific colors for direct use if needed - now aliased from above */
+    --primary-dark: var(--color-text-dark-grey); 
+    --primary-light: var(--color-background-beige); 
+    --accent-1-red: var(--color-accent-teal); 
+    --accent-2-maroon: 175 50% 35%;
+    --accent-3-light-blue: var(--color-accent-light-teal);
+    
+    --chart-1: 175 70% 60%;
+    --chart-2: 195 60% 65%;
+    --chart-3: 210 50% 70%;
+    
+    /* Sidebar - dark */
+    --sidebar-background: 210 10% 12%; 
+    --sidebar-foreground: var(--color-text-dark-grey);
+    --sidebar-primary: var(--color-accent-teal);
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: var(--color-accent-very-light-teal);
+    --sidebar-accent-foreground: var(--color-text-dark-grey);
+    --sidebar-border: 210 10% 25%;
+    --sidebar-ring: var(--color-accent-teal);
   }
 }
 
@@ -135,7 +143,7 @@ body {
     line-height: 1.7;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline text-foreground;
+    @apply font-headline text-foreground; /* Ensure foreground (dark grey) is used */
   }
   h1 {
     @apply font-anton text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
@@ -150,6 +158,59 @@ body {
     @apply mb-4;
   }
   a {
-    @apply text-accent-1-red hover:underline;
+    @apply text-accent hover:text-primary/80 transition-colors duration-200; /* Updated to use teal */
   }
+}
+/* Ensure prose styles also align with the new palette */
+.prose {
+  --tw-prose-body: hsl(var(--foreground));
+  --tw-prose-headings: hsl(var(--foreground));
+  --tw-prose-lead: hsl(var(--muted-foreground));
+  --tw-prose-links: hsl(var(--primary)); /* Teal for links */
+  --tw-prose-bold: hsl(var(--foreground));
+  --tw-prose-counters: hsl(var(--muted-foreground));
+  --tw-prose-bullets: hsl(var(--muted));
+  --tw-prose-hr: hsl(var(--border));
+  --tw-prose-quotes: hsl(var(--foreground));
+  --tw-prose-quote-borders: hsl(var(--accent-light-teal)); /* Light teal for quote borders */
+  --tw-prose-captions: hsl(var(--muted-foreground));
+  --tw-prose-code: hsl(var(--primary));
+  --tw-prose-pre-code: hsl(var(--primary-foreground));
+  --tw-prose-pre-bg: hsl(var(--color-text-dark-grey)); /* Dark grey for code blocks */
+  --tw-prose-th-borders: hsl(var(--border));
+  --tw-prose-td-borders: hsl(var(--border));
+
+  /* Dark mode prose if you have one, not specified in current globals */
+}
+
+.dark .prose {
+  --tw-prose-body: hsl(var(--foreground));
+  --tw-prose-headings: hsl(var(--foreground));
+  --tw-prose-lead: hsl(var(--muted-foreground));
+  --tw-prose-links: hsl(var(--primary));
+  --tw-prose-bold: hsl(var(--foreground));
+  --tw-prose-counters: hsl(var(--muted-foreground));
+  --tw-prose-bullets: hsl(var(--muted));
+  --tw-prose-hr: hsl(var(--border));
+  --tw-prose-quotes: hsl(var(--foreground));
+  --tw-prose-quote-borders: hsl(var(--accent-light-teal));
+  --tw-prose-captions: hsl(var(--muted-foreground));
+  --tw-prose-code: hsl(var(--primary));
+  --tw-prose-pre-code: hsl(var(--primary-foreground));
+  --tw-prose-pre-bg: hsl(var(--color-background-beige)); /* Light beige for code blocks in dark mode */
+  --tw-prose-th-borders: hsl(var(--border));
+  --tw-prose-td-borders: hsl(var(--border));
+}
+
+/* Custom class for info boxes with very light teal background */
+.info-box-custom-bg {
+  background-color: hsl(var(--color-accent-very-light-teal));
+  border-left-color: hsl(var(--color-accent-teal));
+  color: hsl(var(--color-text-dark-grey));
+}
+
+.dark .info-box-custom-bg {
+  background-color: hsl(var(--color-accent-very-light-teal)); /* Use the dark mode var */
+  border-left-color: hsl(var(--color-accent-teal)); /* Use the dark mode var */
+  color: hsl(var(--color-text-dark-grey)); /* Use the dark mode var */
 }

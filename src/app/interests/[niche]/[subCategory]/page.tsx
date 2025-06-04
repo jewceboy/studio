@@ -1,3 +1,4 @@
+'use client'; // Mark as client component
 
 import { notFound } from 'next/navigation';
 import PageHeader from '@/components/shared/PageHeader';
@@ -36,15 +37,17 @@ const subCategoryData: { [key: string]: { [key: string]: { name: string; items: 
   // Add other niches' subcategories here
 };
 
-export async function generateStaticParams() {
-  const params = [];
-  for (const niche in subCategoryData) {
-    for (const subCategory in subCategoryData[niche]) {
-      params.push({ niche, subCategory });
-    }
-  }
-  return params;
-}
+// generateStaticParams needs to be in a Server Component or separate file.
+// Commented out as this page is now 'use client'.
+// export async function generateStaticParams() {
+//   const params = [];
+//   for (const niche in subCategoryData) {
+//     for (const subCategory in subCategoryData[niche]) {
+//       params.push({ niche, subCategory });
+//     }
+//   }
+//   return params;
+// }
 
 export default function NicheInterestSubCategoryPage({ params }: { params: { niche: string; subCategory: string } }) {
   const nicheName = params.niche.charAt(0).toUpperCase() + params.niche.slice(1);
@@ -84,4 +87,3 @@ export default function NicheInterestSubCategoryPage({ params }: { params: { nic
     </div>
   );
 }
-

@@ -1,3 +1,4 @@
+'use client'; // Mark as client component
 
 import { notFound } from 'next/navigation';
 import PageHeader from '@/components/shared/PageHeader';
@@ -39,16 +40,17 @@ const categoryHotelsData: { [key: string]: { [key: string]: Hotel[] } } = {
   }
 };
 
-
-export async function generateStaticParams() {
-  const params = [];
-  for (const region in categoryHotelsData) {
-    for (const category in categoryHotelsData[region]) {
-      params.push({ region, category });
-    }
-  }
-  return params;
-}
+// generateStaticParams needs to be in a Server Component or separate file.
+// Commented out as this page is now 'use client'.
+// export async function generateStaticParams() {
+//   const params = [];
+//   for (const region in categoryHotelsData) {
+//     for (const category in categoryHotelsData[region]) {
+//       params.push({ region, category });
+//     }
+//   }
+//   return params;
+// }
 
 export default function HotelSiloChildPage({ params }: { params: { region: string; category: string } }) {
   const hotels = categoryHotelsData[params.region]?.[params.category];
@@ -73,8 +75,8 @@ export default function HotelSiloChildPage({ params }: { params: { region: strin
         title={`${categoryName} in ${regionName}`}
         subtitle={`Browse our top picks for ${categoryName.toLowerCase()} in ${regionName}. Each hotel is selected for its quality, guest reviews, and unique offerings.`}
       />
-      <div className="mb-8 p-6 bg-accent-3-light-blue/10 rounded-lg border border-accent-3-light-blue/30">
-        <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-2">Book with Confidence</h3>
+      <div className="mb-8 p-6 info-box-custom-bg border-l-4 rounded-lg"> {/* Updated class for info box */}
+        <h3 className="font-montserrat text-lg font-semibold text-foreground mb-2">Book with Confidence</h3>
         <p className="text-sm text-muted-foreground">
           All hotel links direct you to Booking.com, our trusted partner, ensuring secure transactions and access to the latest deals. Your bookings help support our work in bringing you the best of Costa del Sol.
         </p>
@@ -91,7 +93,7 @@ export default function HotelSiloChildPage({ params }: { params: { region: strin
       )}
 
       <div className="mt-12 text-center">
-        <Button asChild variant="outline" size="lg" className="border-accent-1-red text-accent-1-red hover:bg-accent-1-red hover:text-primary-light font-montserrat font-medium">
+        <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-montserrat font-medium">
           <Link href={`https://booking.com/${params.region}-hotels?aid=YOUR_AID&features=${params.category}`} target="_blank" rel="noopener noreferrer">
             More {categoryName} in {regionName} on Booking.com
           </Link>

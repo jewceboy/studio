@@ -1,3 +1,4 @@
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { CalendarDays, UserCircle, ArrowRight } from 'lucide-react';
 import type { Article } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import { Badge } from '@/components/ui/badge';
 
 interface ArticleCardProps {
   article: Pick<Article, 'title' | 'slug' | 'imageUrl' | 'imageHint' | 'excerpt' | 'date' | 'author' | 'categories'>;
@@ -27,13 +29,13 @@ export default function ArticleCard({ article, className }: ArticleCardProps) {
           />
         </Link>
         {article.categories && article.categories.length > 0 && (
-          <span className="absolute top-3 left-3 bg-accent-1-red text-primary-light text-xs font-montserrat font-medium px-2 py-1 rounded">
+          <Badge variant="default" className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs font-montserrat font-medium px-2 py-1 rounded">
             {article.categories[0]}
-          </span>
+          </Badge>
         )}
       </CardHeader>
       <CardContent className="p-6 flex-grow">
-        <CardTitle className="font-montserrat text-xl font-semibold text-primary-dark mb-2 line-clamp-2 group-hover:text-accent-1-red transition-colors">
+        <CardTitle className="font-montserrat text-xl font-semibold text-primary-dark mb-2 line-clamp-2 group-hover:text-accent transition-colors">
           <Link href={`/blog/${article.slug}`}>{article.title}</Link>
         </CardTitle>
         <div className="flex items-center space-x-4 text-xs text-muted-foreground mb-3">
@@ -51,7 +53,7 @@ export default function ArticleCard({ article, className }: ArticleCardProps) {
         <p className="text-sm text-muted-foreground line-clamp-3">{article.excerpt}</p>
       </CardContent>
       <CardFooter className="p-6 pt-0">
-        <Button asChild variant="link" className="px-0 text-accent-1-red font-montserrat font-medium group-hover:underline">
+        <Button asChild variant="link" className="px-0 text-accent font-montserrat font-medium group-hover:underline">
           <Link href={`/blog/${article.slug}`}>
             Read More <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>

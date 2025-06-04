@@ -1,6 +1,4 @@
 
-'use client';
-
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import PageHeader from '@/components/shared/PageHeader';
@@ -45,31 +43,26 @@ export default function DestinationPage({ params }: { params: { town: string } }
           data-ai-hint={destination.imageHint || destination.name.toLowerCase()}
         />
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className="font-anton text-5xl md:text-7xl text-white text-center shadow-text">{destination.name}</h1>
+          <h1 className="font-anton text-5xl md:text-7xl text-white text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.7)]">{destination.name}</h1>
         </div>
       </div>
-       <style jsx>{`
-        .shadow-text {
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        }
-      `}</style>
 
       <Section title="Overview" className="pt-0">
         <p className="text-lg text-foreground leading-relaxed">{destination.overview}</p>
       </Section>
 
-      <Section title="Things to Do" className="bg-secondary/10">
+      <Section title="Things to Do" className="bg-background/80">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {destination.thingsToDo.map((activity, index) => (
             <div key={index} className="flex items-start p-4 bg-card rounded-lg shadow">
-              <Camera className="h-6 w-6 text-accent-1-red mr-4 mt-1 shrink-0" />
+              <Camera className="h-6 w-6 text-primary mr-4 mt-1 shrink-0" />
               <p className="text-foreground">{activity}</p>
             </div>
           ))}
         </div>
         {/* Placeholder for GetYourGuide CTAs */}
         <div className="mt-8 text-center">
-          <Button variant="default" className="bg-accent-1-red text-primary-light">
+          <Button variant="default" className="bg-primary text-primary-foreground">
             <Link href={`https://getyourguide.com/${destination.slug}-activities?partner_id=YOUR_PARTNER_ID`} target="_blank" rel="noopener noreferrer">
               Find Tours in {destination.name}
             </Link>
@@ -82,7 +75,7 @@ export default function DestinationPage({ params }: { params: { town: string } }
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {destination.beaches.map((beach, index) => (
               <div key={index} className="flex items-center p-3 bg-card rounded-md shadow-sm">
-                <Umbrella className="h-5 w-5 text-accent-3-light-blue mr-3 shrink-0" />
+                <Umbrella className="h-5 w-5 text-accent mr-3 shrink-0" />
                 <span className="text-foreground">{beach}</span>
               </div>
             ))}
@@ -90,11 +83,11 @@ export default function DestinationPage({ params }: { params: { town: string } }
         </Section>
       )}
 
-      <Section title="Hotels" className="bg-secondary/10">
+      <Section title="Hotels" className="bg-background/80">
          <div className="text-center">
-          <BedDouble className="h-12 w-12 text-accent-1-red mx-auto mb-4" />
+          <BedDouble className="h-12 w-12 text-primary mx-auto mb-4" />
           <p className="text-lg text-foreground mb-6 leading-relaxed max-w-2xl mx-auto">{destination.hotelsIntro}</p>
-          <Button asChild variant="default" size="lg" className="bg-accent-1-red text-primary-light">
+          <Button asChild variant="default" size="lg" className="bg-primary text-primary-foreground">
             <Link href={`/destinations/${destination.slug}/hotels`}>
               Find Hotels in {destination.name}
             </Link>
@@ -105,7 +98,7 @@ export default function DestinationPage({ params }: { params: { town: string } }
       <Section title="Food & Drink">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="md:w-1/3 flex justify-center">
-             <Utensils className="h-24 w-24 text-accent-1-red" />
+             <Utensils className="h-24 w-24 text-primary" />
           </div>
           <div className="md:w-2/3">
             <p className="text-lg text-foreground leading-relaxed">{destination.foodAndDrink}</p>
@@ -113,9 +106,9 @@ export default function DestinationPage({ params }: { params: { town: string } }
         </div>
       </Section>
 
-      <Section title="Practical Information" className="bg-secondary/10">
+      <Section title="Practical Information" className="bg-background/80">
          <div className="flex items-start p-6 bg-card rounded-lg shadow">
-            <Info className="h-8 w-8 text-accent-3-light-blue mr-4 mt-1 shrink-0" />
+            <Info className="h-8 w-8 text-accent mr-4 mt-1 shrink-0" />
             <p className="text-foreground leading-relaxed">{destination.practicalInfo}</p>
           </div>
       </Section>
