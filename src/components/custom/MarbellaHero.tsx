@@ -18,7 +18,7 @@ export default function MarbellaHero() {
         data-ai-hint="Marbella luxury lifestyle sea view woman sunglasses"
       />
       <div className="relative z-20 container mx-auto px-4">
-        <h1 className="font-anton text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-primary-dark mb-6 leading-tight">
+        <h1 className="font-anton text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-primary-dark mb-8 leading-tight">
           Experience Marbella's Splendor
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl text-primary-dark mb-10 max-w-3xl mx-auto font-inter leading-relaxed">
