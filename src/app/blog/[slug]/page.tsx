@@ -99,9 +99,9 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
           <Image
             src={article.imageUrl}
             alt={`Featured image for ${article.title}`}
-            layout="fill"
-            objectFit="cover"
+            fill={true}
             priority
+            className="object-cover"
             data-ai-hint={article.imageHint || "article feature"}
           />
         </div>

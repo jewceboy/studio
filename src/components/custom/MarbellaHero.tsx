@@ -12,10 +12,9 @@ export default function MarbellaHero() {
       <Image
         src="https://placehold.co/1920x1080.png" // Placeholder for the user's image
         alt="Envision the stunning beauty of Marbella: sun-drenched coasts and luxurious lifestyle"
-        layout="fill"
-        objectFit="cover"
+        fill={true}
         priority
-        className="absolute inset-0 z-0 opacity-90"
+        className="absolute inset-0 z-0 opacity-90 object-cover"
         data-ai-hint="Marbella luxury lifestyle sea view woman sunglasses" // Hint for image replacement, reflecting your provided image and request
       />
       <div className="absolute inset-0 bg-black/40 z-10"></div> {/* Overlay for text readability */}
@@ -29,7 +28,7 @@ export default function MarbellaHero() {
         <Button
           asChild
           size="lg"
-          className="bg-accent-1-red text-primary-light hover:bg-accent-1-red/90 text-lg px-10 py-7 font-montserrat font-semibold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-7 font-montserrat font-semibold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
         >
           <Link href="/destinations/marbella">
             Explore Marbella <ArrowRight className="ml-2 h-5 w-5" />

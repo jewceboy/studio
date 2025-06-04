@@ -37,13 +37,18 @@ export default function DestinationPage({ params }: { params: { town: string } }
         <Image
           src={destination.heroImage}
           alt={`Hero image for ${destination.name}`}
-          layout="fill"
-          objectFit="cover"
+          fill={true}
           priority
+          className="object-cover"
           data-ai-hint={destination.imageHint || destination.name.toLowerCase()}
         />
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className="font-anton text-5xl md:text-7xl text-white text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.7)]">{destination.name}</h1>
+          <h1 
+           className="font-anton text-5xl md:text-7xl text-white text-center"
+           style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}
+          >
+            {destination.name}
+          </h1>
         </div>
       </div>
 

@@ -20,8 +20,8 @@ export default function GolfCourseCard({ course, className }: GolfCourseCardProp
         <Image
           src={course.imageUrl}
           alt={`Image of ${course.name}`}
-          layout="fill"
-          objectFit="cover"
+          fill={true}
+          className="object-cover"
           data-ai-hint={course.imageHint || "golf course"}
         />
       </CardHeader>

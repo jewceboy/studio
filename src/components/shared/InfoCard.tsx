@@ -34,9 +34,8 @@ export default function InfoCard({
         <Image
           src={imageUrl}
           alt={imageAlt}
-          layout="fill"
-          objectFit="cover"
-          className="transition-transform duration-300 group-hover:scale-105"
+          fill={true}
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
           data-ai-hint={imageHint}
         />
       </CardHeader>

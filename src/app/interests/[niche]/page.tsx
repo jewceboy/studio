@@ -42,13 +42,18 @@ export default function NicheInterestParentPage({ params }: { params: { niche: s
         <Image
           src={nicheData.heroImage}
           alt={`Hero image for ${nicheData.name}`}
-          layout="fill"
-          objectFit="cover"
+          fill={true}
           priority
+          className="object-cover"
           data-ai-hint={nicheData.imageHint || params.niche}
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h1 className="font-anton text-5xl md:text-6xl text-white text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.7)]">{nicheData.name}</h1>
+          <h1 
+            className="font-anton text-5xl md:text-6xl text-white text-center"
+            style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}
+          >
+            {nicheData.name}
+          </h1>
         </div>
       </div>
 

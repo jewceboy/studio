@@ -21,8 +21,8 @@ export default function HotelCard({ hotel, className }: HotelCardProps) {
         <Image
           src={hotel.imageUrl}
           alt={`Image of ${hotel.name}`}
-          layout="fill"
-          objectFit="cover"
+          fill={true}
+          className="object-cover"
           data-ai-hint={hotel.imageHint || "hotel exterior"}
         />
         {(hotel.userScore || hotel.priceGuide) && (
