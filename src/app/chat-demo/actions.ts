@@ -1,3 +1,4 @@
+
 // src/app/chat-demo/actions.ts
 'use server';
 
@@ -39,12 +40,9 @@ export async function sendMessageToN8N(message: string): Promise<{ id: number; c
         } else if (errorJson && typeof errorJson.error === 'string') {
           displayMessage = `n8n Error (${response.status}): ${errorJson.error}`;
         } else if (errorBodyText.length > 0 && errorBodyText.length < 250 && !errorBodyText.toLowerCase().includes('<html')) {
-          // If it's not JSON but short and not HTML, it might be a plain text error
           displayMessage = `n8n Error (${response.status}): ${errorBodyText.substring(0,180)}${errorBodyText.length > 180 ? '...' : ''}. Check n8n logs.`;
         }
       } catch (e) {
-        // Parsing failed, or no specific message found.
-        // If errorBodyText is short and not HTML, include a snippet.
         if (errorBodyText.length > 0 && errorBodyText.length < 250 && !errorBodyText.toLowerCase().includes('<html')) {
             displayMessage = `Error: Received status ${response.status} from n8n. Response: ${errorBodyText.substring(0,180)}${errorBodyText.length > 180 ? '...' : ''}. Please check n8n logs.`;
         }
@@ -57,7 +55,22 @@ export async function sendMessageToN8N(message: string): Promise<{ id: number; c
       };
     }
 
-    const data: N8NResponse = await response.json();
+    // Try to parse the JSON response
+    let data: N8NResponse;
+    try {
+      data = await response.json();
+    } catch (jsonError) {
+      const responseText = await response.text(); // Get text if JSON parsing fails
+      console.error('Failed to parse JSON response from n8n:', jsonError);
+      console.error('n8n raw response text:', responseText);
+      return {
+        id: Date.now(),
+        content: `Error: n8n sent a response that was not valid JSON. Raw response: ${responseText.substring(0, 100)}${responseText.length > 100 ? '...' : ''}`,
+        sender: 'ai',
+        error: true,
+      };
+    }
+
 
     if (data.error) {
       console.error('n8n returned an error in the response body:', data.error);
@@ -76,17 +89,18 @@ export async function sendMessageToN8N(message: string): Promise<{ id: number; c
         sender: 'ai',
       };
     } else {
-      console.error('n8n response did not contain a "reply" field.');
+      // Log the actual data received for easier debugging
+      console.error('n8n response did not contain a "reply" field. Actual data received:', JSON.stringify(data, null, 2));
       return {
         id: Date.now(),
-        content: "Received an unexpected response format from the AI. Ensure n8n sends { \"reply\": \"...\" }.",
+        content: "Received an unexpected response format from the AI. Ensure n8n sends { \"reply\": \"...\" }. Check server logs for details.",
         sender: 'ai',
         error: true,
       };
     }
 
   } catch (error) {
-    console.error('Failed to send message to n8n or parse response:', error);
+    console.error('Failed to send message to n8n or process its response:', error);
     let errorMessage = 'An unexpected error occurred while trying to reach the AI assistant.';
     if (error instanceof Error) {
         errorMessage = error.message;
