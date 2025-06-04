@@ -10,7 +10,7 @@ export default function MarbellaHero() {
   return (
     <div className="relative h-[calc(100vh-80px)] min-h-[500px] md:min-h-[600px] flex items-center justify-center text-center -mt-8 -mx-4 sm:-mx-container-padding">
       <Image
-        src="https://placehold.co/1920x1080.png"
+        src="https://placehold.co/1920x1080.png?text="
         alt="Envision the stunning beauty of Marbella: sun-drenched coasts and luxurious lifestyle"
         fill={true}
         priority
