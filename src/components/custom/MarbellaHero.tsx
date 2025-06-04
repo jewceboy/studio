@@ -17,12 +17,11 @@ export default function MarbellaHero() {
         className="absolute inset-0 z-0 opacity-90 object-cover"
         data-ai-hint="Marbella luxury lifestyle sea view woman sunglasses"
       />
-      {/* Removed dark overlay: <div className="absolute inset-0 bg-black/40 z-10"></div> */}
       <div className="relative z-20 container mx-auto px-4">
         <h1 className="font-anton text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-primary-dark mb-6 leading-tight">
           Experience Marbella's Splendor
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-foreground mb-10 max-w-3xl mx-auto font-inter">
+        <p className="text-lg sm:text-xl md:text-2xl text-primary-dark mb-10 max-w-3xl mx-auto font-inter leading-relaxed">
           Discover a world of golden beaches, azure waters, and vibrant luxury. Your unforgettable Marbella story begins now.
         </p>
         <Button
@@ -35,7 +34,6 @@ export default function MarbellaHero() {
           </Link>
         </Button>
       </div>
-      {/* Removed style jsx block that contained .shadow-text and .shadow-text-sm */}
     </div>
   );
 }
