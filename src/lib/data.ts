@@ -56,6 +56,32 @@ export const destinationsData: { [key: string]: Destination } = {
     hotelsIntro: 'Nerja offers a variety of accommodations, including beachfront hotels, charming villas with private pools, and budget-friendly apartments. Many options provide easy access to beaches and town amenities.',
     foodAndDrink: 'Enjoy fresh seafood paella at chiringuitos on Burriana Beach, sample local tapas in the old town, and try regional specialties. Nerja has a lively dining scene with options for all tastes.',
     practicalInfo: 'Nerja is about an hour\'s drive east of Málaga Airport. The town center is pedestrian-friendly. Consider renting a car to explore the surrounding natural parks and villages.'
+  },
+  benalmadena: {
+    id: 'benalmadena',
+    name: 'Benalmádena',
+    slug: 'benalmadena',
+    heroImage: PLACEHOLDER_IMAGE_URL(1200, 400),
+    imageHint: 'Benalmadena marina boats',
+    overview: 'Benalmádena is a diverse town offering something for everyone, from its bustling Puerto Marina and lively beaches to the charming old village (Benalmádena Pueblo) and the heights of Mount Calamorro accessible by cable car.',
+    thingsToDo: ['Visit Puerto Marina, an award-winning marina', 'Take the cable car up Mount Calamorro for panoramic views', 'Explore Selwo Marina dolphinarium and Sea Life Benalmádena', 'Relax on Santa Ana Beach or Carvajal Beach', 'Wander through the traditional streets of Benalmádena Pueblo'],
+    beaches: ['Santa Ana Beach', 'Carvajal Beach', 'Malapesquera Beach', 'Bil Bil Beach'],
+    hotelsIntro: 'Benalmádena offers a wide array of hotels, from large family-friendly resorts along the coast to quieter options in Benalmádena Pueblo. Many hotels provide excellent amenities and sea views.',
+    foodAndDrink: 'Discover a variety of dining options in Benalmádena, from international cuisine at the marina to traditional Spanish restaurants in the old village. Fresh seafood is a highlight.',
+    practicalInfo: 'Benalmádena is conveniently located between Málaga and Fuengirola, approximately 20 minutes from Málaga Airport. It has good public transport links, including a coastal train.'
+  },
+  fuengirola: {
+    id: 'fuengirola',
+    name: 'Fuengirola',
+    slug: 'fuengirola',
+    heroImage: PLACEHOLDER_IMAGE_URL(1200, 400),
+    imageHint: 'Fuengirola beach promenade',
+    overview: 'Fuengirola is a popular resort town known for its long sandy beaches, lively promenade, Bioparc Fuengirola (a unique zoo), and the historic Sohail Castle which hosts concerts and events.',
+    thingsToDo: ['Walk along the Paseo Marítimo (promenade)', 'Visit Bioparc Fuengirola', 'Explore Sohail Castle', 'Enjoy the beaches like Los Boliches or Las Gaviotas', 'Shop at the large Tuesday market'],
+    beaches: ['Los Boliches Beach', 'Las Gaviotas Beach', 'Carvajal Beach (shared with Benalmádena)', 'Torreblanca Beach'],
+    hotelsIntro: 'Fuengirola has a vast selection of hotels catering to all budgets, from high-rise beachfront hotels with full amenities to smaller, family-run establishments. It\'s a popular choice for families and package holidays.',
+    foodAndDrink: 'Fuengirola offers a diverse culinary scene with numerous chiringuitos (beachfront restaurants), tapas bars, and international eateries. The "fish alley" area is famous for its seafood restaurants.',
+    practicalInfo: 'Fuengirola is easily accessible by coastal train from Málaga and the airport (approx. 35 minutes). The town is largely flat and walkable, especially along the extensive promenade.'
   }
 };
 
