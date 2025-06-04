@@ -1,7 +1,8 @@
+// src/app/chat-demo/page.tsx
 "use client"
 
 import { useState, FormEvent } from "react"
-import { Send, Bot, Paperclip, Mic, CornerDownLeft } from "lucide-react"
+import { Bot, Paperclip, Mic, CornerDownLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   ChatBubble,
@@ -16,63 +17,66 @@ import {
   ExpandableChatFooter,
 } from "@/components/ui/expandable-chat"
 import { ChatMessageList } from "@/components/ui/chat-message-list"
+import { sendMessageToN8N } from "./actions"; // Import the server action
+
+interface ChatMessage {
+  id: number;
+  content: string;
+  sender: 'user' | 'ai';
+  error?: boolean;
+}
 
 export default function ExpandableChatDemo() {
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: 1,
       content: "Hello! How can I help you today?",
       sender: "ai",
     },
-    {
-      id: 2,
-      content: "I have a question about the component library.",
-      sender: "user",
-    },
-    {
-      id: 3,
-      content: "Sure! I'd be happy to help. What would you like to know?",
-      sender: "ai",
-    },
-  ])
+  ]);
 
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     if (!input.trim()) return
 
-    setMessages((prev) => [
-      ...prev,
-      {
-        id: prev.length + 1,
-        content: input,
-        sender: "user",
-      },
-    ])
-    setInput("")
-    setIsLoading(true)
+    const userMessage: ChatMessage = {
+      id: Date.now(),
+      content: input,
+      sender: "user",
+    };
 
-    setTimeout(() => {
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+    setIsLoading(true);
+
+    try {
+      const aiResponse = await sendMessageToN8N(userMessage.content);
+      setMessages((prev) => [...prev, aiResponse]);
+    } catch (error) {
+      console.error("Error sending message:", error);
       setMessages((prev) => [
         ...prev,
         {
-          id: prev.length + 1,
-          content: "This is an AI response to your message.",
+          id: Date.now() + 1,
+          content: "Sorry, I couldn't connect to the assistant. Please try again.",
           sender: "ai",
+          error: true,
         },
-      ])
-      setIsLoading(false)
-    }, 1000)
-  }
+      ]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleAttachFile = () => {
-    //
+    // Placeholder for file attachment logic
   }
 
   const handleMicrophoneClick = () => {
-    //
+    // Placeholder for microphone input logic
   }
 
   return (
@@ -107,6 +111,7 @@ export default function ExpandableChatDemo() {
               />
               <ChatBubbleMessage
                 variant={message.sender === "user" ? "sent" : "received"}
+                className={message.error ? "bg-destructive text-destructive-foreground" : ""}
               >
                 {message.content}
               </ChatBubbleMessage>
@@ -158,9 +163,9 @@ export default function ExpandableChatDemo() {
                 <Mic className="size-4" />
               </Button>
             </div>
-            <Button type="submit" size="sm" className="ml-auto gap-1.5">
-              Send Message
-              <CornerDownLeft className="size-3.5" />
+            <Button type="submit" size="sm" className="ml-auto gap-1.5" disabled={isLoading}>
+              {isLoading ? 'Sending...' : 'Send Message'}
+              {!isLoading && <CornerDownLeft className="size-3.5" />}
             </Button>
           </div>
         </form>
