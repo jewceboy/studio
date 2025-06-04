@@ -14,14 +14,14 @@ export default function MarbellaHero() {
         alt="Envision the stunning beauty of Marbella: sun-drenched coasts and luxurious lifestyle"
         fill={true}
         priority
-        className="absolute inset-0 z-0 opacity-90 object-cover"
-        data-ai-hint="Marbella luxury lifestyle sea view woman sunglasses"
+        className="absolute inset-0 z-0 object-cover"
+        data-ai-hint="Marbella panoramic beach luxury"
       />
       <div className="relative z-20 container mx-auto px-4">
         <h1 className="font-anton text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-primary-dark mb-8 leading-tight">
           Experience Marbella's Splendor
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-primary-dark mb-10 max-w-3xl mx-auto font-inter leading-relaxed">
+        <p className="font-inter text-lg sm:text-xl md:text-2xl text-primary-dark mb-10 max-w-3xl mx-auto leading-relaxed">
           Discover a world of golden beaches, azure waters, and vibrant luxury. Your unforgettable Marbella story begins now.
         </p>
         <Button
