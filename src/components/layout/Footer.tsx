@@ -22,7 +22,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="font-montserrat font-semibold text-lg mb-4">Costa del Sol Navigator</h3>
+            <h3 className="font-montserrat font-semibold text-lg mb-4">MalagaTravelGuide</h3>
             <p className="text-sm text-primary-light/80">
               Your ultimate guide to Malaga and the Costa del Sol. Discover, plan, and explore with us.
             </p>
@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-primary-light/20 pt-8 text-center text-sm text-primary-light/60">
-          <p>&copy; {new Date().getFullYear()} Costa del Sol Navigator. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} MalagaTravelGuide. All rights reserved.</p>
         </div>
       </div>
     </footer>
