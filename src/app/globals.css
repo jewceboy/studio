@@ -9,25 +9,25 @@ body {
 @layer base {
   :root {
     --primary-dark: 207 100% 14.3%;
-    --primary-light: 39 87.5% 91.4%;
+    --primary-light: 0 0% 100%; /* White */
     --accent-1-red: 356 82.9% 41.4%;
     --accent-2-maroon: 0 100% 23.5%;
     --accent-3-light-blue: 207 38.4% 59.6%;
     
-    --background: var(--primary-light); /* Cream */
+    --background: var(--primary-light); /* White */
     --foreground: var(--primary-dark); /* Navy */
 
-    --card: 39 80% 95%; /* Slightly desaturated Cream */
+    --card: 0 0% 97%; /* Slightly off-white for cards to contrast with pure white background */
     --card-foreground: var(--primary-dark); /* Navy */
 
-    --popover: var(--primary-light); /* Cream */
+    --popover: var(--primary-light); /* White */
     --popover-foreground: var(--primary-dark); /* Navy */
 
     --primary: var(--accent-1-red); /* Red */
-    --primary-foreground: var(--primary-light); /* Cream */
+    --primary-foreground: var(--primary-light); /* White */
 
     --secondary: 207 100% 19%; /* Darker Navy */
-    --secondary-foreground: var(--primary-light); /* Cream */
+    --secondary-foreground: var(--primary-light); /* White */
 
     --muted: 207 29% 40%; /* Grey from Navy */
     --muted-foreground: 207 24% 56%; /* Lighter Grey from Navy */
@@ -46,7 +46,7 @@ body {
 
     /* Specific colors for direct use if needed */
     --color-navy: hsl(var(--primary-dark));
-    --color-cream: hsl(var(--primary-light));
+    --color-cream: hsl(var(--primary-light)); /* This is now White */
     --color-red: hsl(var(--accent-1-red));
     --color-maroon: hsl(var(--accent-2-maroon));
     --color-light-blue: hsl(var(--accent-3-light-blue));
@@ -69,32 +69,32 @@ body {
 
   .dark {
     /* TODO: Define dark theme if required. For now, keeping it consistent with light but inverted for basic structure */
-    --primary-dark: 39 87.5% 91.4%; 
-    --primary-light: 207 100% 14.3%; 
+    --primary-dark: 0 0% 100%; /* Was light theme's --primary-light (now white) */
+    --primary-light: 207 100% 14.3%; /* Was light theme's --primary-dark (navy) */
     --accent-1-red: 356 82.9% 55%; /* Lighter Red for dark mode */
     --accent-2-maroon: 0 100% 35%; /* Lighter Maroon */
     --accent-3-light-blue: 207 38.4% 70%; /* Lighter Light Blue */
 
     --background: 207 100% 9%; /* Darker Navy for dark background */
-    --foreground: 39 87.5% 85%; /* Lighter Cream for dark text */
+    --foreground: 0 0% 90%; /* Lighter version of white/off-white for dark text */
 
     --card: 207 100% 12%; 
-    --card-foreground: 39 87.5% 85%;
+    --card-foreground: 0 0% 90%;
 
     --popover: 207 100% 12%;
-    --popover-foreground: 39 87.5% 85%;
+    --popover-foreground: 0 0% 90%;
 
     --primary: var(--accent-1-red);
     --primary-foreground: 207 100% 14.3%;
 
     --secondary: 207 100% 25%;
-    --secondary-foreground: 39 87.5% 85%;
+    --secondary-foreground: 0 0% 90%;
 
     --muted: 207 29% 30%;
     --muted-foreground: 207 24% 65%;
 
     --accent: var(--accent-3-light-blue);
-    --accent-foreground: 39 87.5% 85%;
+    --accent-foreground: 0 0% 90%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -103,8 +103,8 @@ body {
     --input: 207 38.4% 25%;
     --ring: var(--accent-1-red);
 
-    --color-navy: hsl(var(--primary-dark));
-    --color-cream: hsl(var(--primary-light));
+    --color-navy: hsl(var(--primary-dark)); /* This is now White in dark mode context */
+    --color-cream: hsl(var(--primary-light)); /* This is now Navy in dark mode context */
     --color-red: hsl(var(--accent-1-red));
     --color-maroon: hsl(var(--accent-2-maroon));
     --color-light-blue: hsl(var(--accent-3-light-blue));
