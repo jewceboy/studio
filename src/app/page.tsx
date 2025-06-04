@@ -1,12 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import NewsletterForm from '@/components/forms/NewsletterForm';
-import { ArrowRight, MapPin, Hotel, Activity, BookOpen, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
+import MarbellaHero from '@/components/custom/MarbellaHero'; // Import the new hero component
 
 const featuredDestinations = [
   { title: 'Málaga City', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Malaga City skyline', description: 'Vibrant culture, historic sites, and stunning beaches.', linkHref: '/destinations/malaga', imageHint: 'Malaga skyline' },
@@ -36,41 +36,8 @@ const topArticles = [
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <div className="relative h-[calc(100vh-80px)] min-h-[500px] md:min-h-[600px] flex items-center justify-center text-center text-primary-light -mt-8 -mx-4 sm:-mx-container-padding">
-        <Image
-          src="https://placehold.co/1920x1080.png"
-          alt="Beautiful view of Costa del Sol"
-          layout="fill"
-          objectFit="cover"
-          priority
-          className="absolute inset-0 z-0 opacity-80"
-          data-ai-hint="Costa Sol"
-        />
-        <div className="absolute inset-0 bg-black/40 z-10"></div>
-        <div className="relative z-20 container mx-auto px-4">
-          <h1 className="font-anton text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight shadow-text">
-            Your Ultimate <span className="text-accent-3-light-blue">Costa del Sol</span> Adventure Starts Here
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto font-inter shadow-text-sm">
-            Discover breathtaking landscapes, vibrant culture, and unforgettable experiences in sunny Southern Spain.
-          </p>
-          <Button asChild size="lg" className="bg-accent-1-red text-primary-light hover:bg-accent-1-red/90 text-lg px-10 py-7 font-montserrat font-semibold">
-            <Link href="/plan-your-trip">
-              Plan Your Trip Now <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-      </div>
-      <style jsx>{`
-        .shadow-text {
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-        }
-        .shadow-text-sm {
-          text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-      `}</style>
-
+      {/* New Marbella Hero Section */}
+      <MarbellaHero />
 
       {/* Featured Destinations Section */}
       <Section title="Featured Destinations" subtitle="Explore the jewels of the Costa del Sol, each with its unique charm and attractions.">
