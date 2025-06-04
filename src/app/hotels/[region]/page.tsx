@@ -1,43 +1,18 @@
 
+
 import { notFound } from 'next/navigation';
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import type { Hotel } from '@/lib/constants'; // For potential featured hotel
-import { PLACEHOLDER_IMAGE_URL, BOOKING_COM_AFFILIATE_LINK_MALAGA_GENERAL } from '@/lib/constants';
+// import type { Hotel } from '@/lib/constants'; // For potential featured hotel, not used here
+// import { PLACEHOLDER_IMAGE_URL, BOOKING_COM_AFFILIATE_LINK_MALAGA_GENERAL } from '@/lib/constants'; // PLACEHOLDER_IMAGE_URL used by data
 import TestimonialCard from '@/components/shared/TestimonialCard';
+import { hotelSiloData } from '@/lib/data'; // Import data from new location
+// import type { HotelCategory } from '@/types'; // Type comes implicitly from hotelSiloData
 
-interface HotelCategory {
-  name: string;
-  slug: string;
-  description: string;
-  imageUrl: string;
-  imageHint?: string;
-}
-
-// Placeholder data - replace with actual data fetching
-const hotelSiloData: { [key: string]: { name: string; categories: HotelCategory[] } } = {
-  malaga: {
-    name: 'Málaga',
-    categories: [
-      { name: 'Luxury Hotels', slug: 'luxury', description: 'Indulge in opulent stays with top-tier amenities and services.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint: "luxury hotel interior" },
-      { name: 'Family-Friendly Hotels', slug: 'family-friendly', description: 'Find hotels with facilities and activities perfect for all ages.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint: "family pool fun" },
-      { name: 'Beachfront Hotels', slug: 'beachfront', description: 'Wake up to stunning sea views and direct beach access.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint: "beach hotel view" },
-      { name: 'Boutique Hotels', slug: 'boutique', description: 'Discover unique charm and personalized service in smaller, stylish hotels.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint: "boutique hotel lobby" },
-    ],
-  },
-  marbella: {
-    name: 'Marbella',
-    categories: [
-      { name: '5-Star Resorts', slug: '5-star-resorts', description: 'Experience ultimate luxury and exclusivity in Marbella\'s finest resorts.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint: "Marbella resort pool" },
-      { name: 'Golf Hotels', slug: 'golf-hotels', description: 'Stay and play at hotels with access to world-class golf courses.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint: "golf course hotel" },
-      { name: 'Spa Hotels', slug: 'spa-hotels', description: 'Relax and rejuvenate with exceptional spa facilities and treatments.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint: "spa massage therapy" },
-    ],
-  },
-};
-
+// Placeholder data for testimonials (can be moved to data.ts later if needed)
 const testimonials = [
   { quote: "Booking through this site was easy and I found a fantastic hotel in Malaga!", author: "Jane D.", source: "Email Feedback" },
   { quote: "The hotel categories helped me narrow down my search quickly. Great resource!", author: "Mike P.", source: "Site Review" },

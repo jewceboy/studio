@@ -23,3 +23,21 @@ export type TripRecommendation = {
   idealAccommodations: string;
   insiderTips?: string; // Optional based on PRD wording, AI output has it as part of accommodation
 };
+
+// Moved from src/app/hotels/[region]/page.tsx
+export interface HotelCategory {
+  name: string;
+  slug: string;
+  description: string;
+  imageUrl: string;
+  imageHint?: string;
+}
+
+// Moved from src/app/interests/[niche]/page.tsx
+export interface NicheSubCategory {
+  name: string;
+  slug: string;
+  description: string;
+  imageUrl: string;
+  imageHint?: string;
+}

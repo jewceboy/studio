@@ -1,3 +1,4 @@
+
 'use client';
 
 import { notFound } from 'next/navigation';
@@ -6,33 +7,20 @@ import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { PLACEHOLDER_IMAGE_URL, GETYOURGUIDE_AFFILIATE_LINK_MALAGA_ACTIVITY } from '@/lib/constants';
+import { GETYOURGUIDE_AFFILIATE_LINK_MALAGA_ACTIVITY } from '@/lib/constants'; // PLACEHOLDER_IMAGE_URL used by data
 import Image from 'next/image';
-import { Golf } from 'lucide-react'; // Placeholder for GolfIcon or similar
+import { Golf, Waves, MountainSnow, Utensils } from 'lucide-react'; // Example icons
+import { nicheInterestData } from '@/lib/data'; // Import data from new location
+// import type { NicheSubCategory } from '@/types'; // Type comes implicitly from nicheInterestData
 
-interface NicheSubCategory {
-  name: string;
-  slug: string;
-  description: string;
-  imageUrl: string;
-  imageHint?: string;
-}
-
-// Placeholder data - replace with actual data fetching
-const nicheInterestData: { [key: string]: { name: string; heroImage: string; imageHint?: string; intro: string; subCategories: NicheSubCategory[] } } = {
-  golf: {
-    name: 'Golfing in Costa del Sol',
-    heroImage: PLACEHOLDER_IMAGE_URL(1200, 400),
-    imageHint: "golf course landscape",
-    intro: "Welcome to Europe's Golf Paradise! The Costa del Sol, often dubbed the 'Costa del Golf', boasts over 70 world-class golf courses, stunning coastal views, and year-round sunshine, making it a premier destination for golfers of all levels.",
-    subCategories: [
-      { name: 'Best Golf Courses', slug: 'best-courses', description: 'Discover top-rated championship courses and hidden gems.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint:"golf green fairway" },
-      { name: 'Golf Resorts', slug: 'golf-resorts', description: 'Find luxurious resorts with on-site golf facilities and amenities.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint:"golf resort hotel" },
-      { name: 'Marbella Golf Guide', slug: 'marbella-golf', description: 'Explore the prestigious golf scene in and around Marbella.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint:"Marbella golf view" },
-    ],
-  },
-  // Add other niches like 'watersports', 'hiking', 'culinary' here
+const NicheIcons: { [key: string]: React.ElementType } = {
+  golf: Golf,
+  watersports: Waves,
+  hiking: MountainSnow,
+  culinary: Utensils,
+  default: Sparkles, // Default icon from lucide-react
 };
+
 
 export async function generateStaticParams() {
   return Object.keys(nicheInterestData).map((niche) => ({
@@ -46,6 +34,9 @@ export default function NicheInterestParentPage({ params }: { params: { niche: s
   if (!nicheData) {
     notFound();
   }
+  
+  const IconComponent = NicheIcons[params.niche] || NicheIcons.default;
+
 
   return (
     <div>
@@ -87,7 +78,7 @@ export default function NicheInterestParentPage({ params }: { params: { niche: s
       </Section>
 
       <Section className="bg-secondary/10 text-center">
-         <Golf className="h-16 w-16 text-accent-1-red mx-auto mb-6" /> {/* Use appropriate icon */}
+         <IconComponent className="h-16 w-16 text-accent-1-red mx-auto mb-6" />
         <h3 className="font-montserrat text-2xl font-bold text-primary-dark mb-4">
           Book Your {params.niche.charAt(0).toUpperCase() + params.niche.slice(1)} Adventure
         </h3>
@@ -103,3 +94,6 @@ export default function NicheInterestParentPage({ params }: { params: { niche: s
     </div>
   );
 }
+
+// Added a default icon Sparkles in case a niche is added without an icon in NicheIcons map
+import { Sparkles } from 'lucide-react';

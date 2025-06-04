@@ -1,74 +1,19 @@
+
 'use client';
 
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
-import InfoCard from '@/components/shared/InfoCard';
+// import InfoCard from '@/components/shared/InfoCard'; Removed as not used directly here
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { MapPin, Utensils, Umbrella, BedDouble, Info, Camera } from 'lucide-react';
-import type { Destination } from '@/lib/constants';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import { Utensils, Umbrella, BedDouble, Info, Camera } from 'lucide-react';
+// import type { Destination } from '@/lib/constants'; Removed, type comes from data import implicitly
 import TestimonialCard from '@/components/shared/TestimonialCard';
+import { destinationsData } from '@/lib/data'; // Import data from new location
 
-
-// Placeholder data - replace with actual data fetching
-const destinationsData: { [key: string]: Destination } = {
-  malaga: {
-    id: 'malaga',
-    name: 'Málaga City',
-    slug: 'malaga',
-    heroImage: PLACEHOLDER_IMAGE_URL(1200, 400),
-    imageHint: 'Malaga beach',
-    overview: 'Málaga, the vibrant capital of the Costa del Sol, offers a rich tapestry of history, art, and culture. From ancient fortresses to modern museums, sun-kissed beaches to bustling tapas bars, Málaga captivates every visitor.',
-    thingsToDo: ['Explore the Alcazaba and Gibralfaro Castle', 'Visit the Picasso Museum', 'Stroll along Muelle Uno waterfront', 'Relax on Malagueta Beach'],
-    beaches: ['Malagueta Beach', 'La Misericordia Beach', 'Pedregalejo Beach'],
-    hotelsIntro: 'Málaga boasts a wide range of accommodations, from luxurious hotels with stunning sea views to charming boutique guesthouses in the historic center. Find your perfect stay and enjoy Andalusian hospitality.',
-    foodAndDrink: 'Indulge in Málaga\'s culinary delights, from fresh seafood and traditional espetos (sardine skewers) to innovative tapas and sweet Málaga wine. The Atarazanas Market is a must-visit for food lovers.',
-    practicalInfo: 'Málaga is well-connected with an international airport (AGP). The city is easily navigable on foot, and public transport is efficient. Best time to visit is spring or autumn for pleasant weather.'
-  },
-  marbella: {
-    id: 'marbella',
-    name: 'Marbella',
-    slug: 'marbella',
-    heroImage: PLACEHOLDER_IMAGE_URL(1200, 400),
-    imageHint: 'Marbella port',
-    overview: 'Marbella is synonymous with luxury, glamour, and sophistication. Famous for its upscale boutiques, Michelin-starred restaurants, exclusive beach clubs, and the dazzling Puerto Banús marina, Marbella is a playground for the rich and famous.',
-    thingsToDo: ['Wander through Marbella Old Town (Casco Antiguo)', 'Shop at luxury boutiques in Puerto Banús', 'Relax at Nikki Beach Marbella', 'Play golf at world-class courses'],
-    beaches: ['Playa de Puerto Banús', 'Cabopino Beach', 'Playa de Fontanilla'],
-    hotelsIntro: 'Experience opulent stays in Marbella, with a plethora of five-star resorts, lavish villas, and chic beachfront hotels. Pamper yourself with top-notch amenities and impeccable service.',
-    foodAndDrink: 'Marbella offers a gastronomic paradise, from high-end dining experiences to traditional chiringuitos serving fresh seafood. Enjoy international cuisine and vibrant nightlife.',
-    practicalInfo: 'Marbella is about a 45-minute drive from Málaga Airport. Taxis and car rentals are readily available. The Golden Mile connects Marbella town with Puerto Banús.'
-  },
-   mijas: {
-    id: 'mijas',
-    name: 'Mijas Pueblo',
-    slug: 'mijas',
-    heroImage: PLACEHOLDER_IMAGE_URL(1200, 400),
-    imageHint: 'Mijas village',
-    overview: 'Mijas Pueblo is a picturesque white-washed Andalusian village nestled in the mountainside, offering stunning panoramic views of the Mediterranean coast. Its charming narrow streets, donkey-taxis, and traditional crafts make it a popular day trip.',
-    thingsToDo: ['Take a donkey-taxi ride', 'Visit the Ermita de la Virgen de la Peña', 'Explore the Plaza de Toros (bullring)', 'Enjoy the views from the Mirador'],
-    beaches: ['Mijas Costa offers several beaches like La Cala de Mijas, a short drive away.'],
-    hotelsIntro: 'While Mijas Pueblo has charming guesthouses, many visitors opt for hotels in nearby Mijas Costa for beach access. Options range from family-friendly resorts to quiet retreats.',
-    foodAndDrink: 'Savor traditional Andalusian cuisine in Mijas Pueblo\'s cozy restaurants. Enjoy tapas, local wines, and homemade desserts while soaking in the village atmosphere.',
-    practicalInfo: 'Mijas Pueblo is about a 30-minute drive from Málaga Airport. It can get crowded, especially during peak season. Wear comfortable shoes for walking the hilly streets.'
-  },
-   nerja: {
-    id: 'nerja',
-    name: 'Nerja',
-    slug: 'nerja',
-    heroImage: PLACEHOLDER_IMAGE_URL(1200, 400),
-    imageHint: 'Nerja coast',
-    overview: 'Nerja, located on the eastern tip of the Costa del Sol, is famed for its spectacular Nerja Caves, the stunning Balcón de Europa viewpoint, and its beautiful coves and beaches. It retains a more traditional Spanish charm compared to some other coastal towns.',
-    thingsToDo: ['Explore the Nerja Caves (Cuevas de Nerja)', 'Walk along the Balcón de Europa', 'Kayak to Maro waterfalls', 'Hike in the Sierra de Almijara Natural Park'],
-    beaches: ['Burriana Beach', 'Playa de Maro', 'Playa Carabeillo', 'Calahonda Beach'],
-    hotelsIntro: 'Nerja offers a variety of accommodations, including beachfront hotels, charming villas with private pools, and budget-friendly apartments. Many options provide easy access to beaches and town amenities.',
-    foodAndDrink: 'Enjoy fresh seafood paella at chiringuitos on Burriana Beach, sample local tapas in the old town, and try regional specialties. Nerja has a lively dining scene with options for all tastes.',
-    practicalInfo: 'Nerja is about an hour\'s drive east of Málaga Airport. The town center is pedestrian-friendly. Consider renting a car to explore the surrounding natural parks and villages.'
-  }
-};
-
+// Placeholder data for testimonials (can be moved to data.ts later if needed)
 const testimonials = [
   { quote: "Malaga was amazing! The guide helped us find the best spots.", author: "Sarah L.", source: "TripAdvisor" },
   { quote: "Loved the detailed info on beaches and food. Highly recommend!", author: "John B.", source: "Travel Blog" },
@@ -132,7 +77,7 @@ export default function DestinationPage({ params }: { params: { town: string } }
         </div>
       </Section>
 
-      {destination.beaches && (
+      {destination.beaches && destination.beaches.length > 0 && (
         <Section title="Beaches">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {destination.beaches.map((beach, index) => (
