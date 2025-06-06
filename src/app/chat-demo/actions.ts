@@ -9,6 +9,8 @@ interface N8NResponse {
 
 export async function sendMessageToN8N(message: string): Promise<{ id: number; content: string; sender: 'ai' | 'user'; error?: boolean }> {
   const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL;
+  const n8nAuthHeaderName = process.env.N8N_AUTH_HEADER_NAME || 'Authorization';
+  const n8nAuthHeaderValue = process.env.N8N_AUTH_HEADER_VALUE;
 
   if (!n8nWebhookUrl) {
     console.error('N8N_WEBHOOK_URL is not defined in environment variables.');
@@ -20,12 +22,18 @@ export async function sendMessageToN8N(message: string): Promise<{ id: number; c
     };
   }
 
+  const headers: HeadersInit = {
+    'Content-Type': 'application/json',
+  };
+
+  if (n8nAuthHeaderValue) {
+    headers[n8nAuthHeaderName] = n8nAuthHeaderValue;
+  }
+
   try {
     const response = await fetch(n8nWebhookUrl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: headers,
       body: JSON.stringify({ message }), // Send the user's message to n8n
     });
 
@@ -33,18 +41,23 @@ export async function sendMessageToN8N(message: string): Promise<{ id: number; c
       const errorBodyText = await response.text();
       console.error('n8n webhook responded with an error:', response.status, errorBodyText);
       let displayMessage = `Error: Received status ${response.status} from the n8n webhook. Please check your n8n workflow logs for details.`;
-      try {
-        const errorJson = JSON.parse(errorBodyText);
-        if (errorJson && typeof errorJson.message === 'string') {
-          displayMessage = `n8n Error (${response.status}): ${errorJson.message}`;
-        } else if (errorJson && typeof errorJson.error === 'string') {
-          displayMessage = `n8n Error (${response.status}): ${errorJson.error}`;
-        } else if (errorBodyText.length > 0 && errorBodyText.length < 250 && !errorBodyText.toLowerCase().includes('<html')) {
-          displayMessage = `n8n Error (${response.status}): ${errorBodyText.substring(0,180)}${errorBodyText.length > 180 ? '...' : ''}. Check n8n logs.`;
-        }
-      } catch (e) {
-        if (errorBodyText.length > 0 && errorBodyText.length < 250 && !errorBodyText.toLowerCase().includes('<html')) {
-            displayMessage = `Error: Received status ${response.status} from n8n. Response: ${errorBodyText.substring(0,180)}${errorBodyText.length > 180 ? '...' : ''}. Please check n8n logs.`;
+      
+      if (response.status === 401) {
+        displayMessage = `Error: Received status 401 (Unauthorized) from n8n. Ensure N8N_AUTH_HEADER_NAME and N8N_AUTH_HEADER_VALUE are correctly set in your .env file if authentication is required. Raw n8n response: ${errorBodyText.substring(0,100)}${errorBodyText.length > 100 ? '...' : ''}`;
+      } else {
+         try {
+            const errorJson = JSON.parse(errorBodyText);
+            if (errorJson && typeof errorJson.message === 'string') {
+            displayMessage = `n8n Error (${response.status}): ${errorJson.message}`;
+            } else if (errorJson && typeof errorJson.error === 'string') {
+            displayMessage = `n8n Error (${response.status}): ${errorJson.error}`;
+            } else if (errorBodyText.length > 0 && errorBodyText.length < 250 && !errorBodyText.toLowerCase().includes('<html')) {
+            displayMessage = `n8n Error (${response.status}): ${errorBodyText.substring(0,180)}${errorBodyText.length > 180 ? '...' : ''}. Check n8n logs.`;
+            }
+        } catch (e) {
+            if (errorBodyText.length > 0 && errorBodyText.length < 250 && !errorBodyText.toLowerCase().includes('<html')) {
+                displayMessage = `Error: Received status ${response.status} from n8n. Response: ${errorBodyText.substring(0,180)}${errorBodyText.length > 180 ? '...' : ''}. Please check n8n logs.`;
+            }
         }
       }
       return {
