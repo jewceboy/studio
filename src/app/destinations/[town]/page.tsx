@@ -67,7 +67,7 @@ export default function DestinationPage({ params }: { params: { town: string } }
         </div>
         {/* Placeholder for GetYourGuide CTAs */}
         <div className="mt-8 text-center">
-          <Button variant="default" className="bg-primary text-primary-foreground">
+          <Button variant="default" className="bg-accent-1-red text-primary-foreground hover:bg-accent-1-red-hover">
             <Link href={`https://getyourguide.com/${destination.slug}-activities?partner_id=YOUR_PARTNER_ID`} target="_blank" rel="noopener noreferrer">
               Find Tours in {destination.name}
             </Link>
