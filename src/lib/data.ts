@@ -82,6 +82,45 @@ export const destinationsData: { [key: string]: Destination } = {
     hotelsIntro: 'Fuengirola has a vast selection of hotels catering to all budgets, from high-rise beachfront hotels with full amenities to smaller, family-run establishments. It\'s a popular choice for families and package holidays.',
     foodAndDrink: 'Fuengirola offers a diverse culinary scene with numerous chiringuitos (beachfront restaurants), tapas bars, and international eateries. The "fish alley" area is famous for its seafood restaurants.',
     practicalInfo: 'Fuengirola is easily accessible by coastal train from Málaga and the airport (approx. 35 minutes). The town is largely flat and walkable, especially along the extensive promenade.'
+  },
+  'puerto-banus': {
+    id: 'puerto-banus',
+    name: 'Puerto Banús',
+    slug: 'puerto-banus',
+    heroImage: PLACEHOLDER_IMAGE_URL(1200, 400),
+    imageHint: 'puerto banus yachts',
+    overview: 'Puerto Banús is a world-renowned luxury marina and shopping complex known for its high-end boutiques, superyachts, and vibrant nightlife near Marbella.',
+    thingsToDo: ['Admire superyachts in the marina', 'Shop at designer boutiques', 'Enjoy celebrity spotting', 'Experience the nightlife at exclusive clubs'],
+    beaches: ['Playa Puerto Banús', 'Playa Nueva Andalucía'],
+    hotelsIntro: 'Puerto Banús offers glamorous hotels and apartments, many with direct views of the marina and easy access to its vibrant atmosphere.',
+    foodAndDrink: 'Dine at chic restaurants overlooking the marina, enjoy cocktails at trendy bars, or have a meal at one of the many international eateries.',
+    practicalInfo: 'Located near Marbella, Puerto Banús is known for its exclusivity. Parking can be expensive. It is a hotspot for luxury tourism.'
+  },
+  estepona: {
+    id: 'estepona',
+    name: 'Estepona',
+    slug: 'estepona',
+    heroImage: PLACEHOLDER_IMAGE_URL(1200, 400),
+    imageHint: 'estepona old town',
+    overview: 'Estepona is a charming coastal town that has retained its traditional Andalusian character, featuring a beautiful old town with flower-filled streets and lovely beaches.',
+    thingsToDo: ['Explore the picturesque Old Town (Centro Histórico)', 'Walk along the Paseo Marítimo', 'Visit the Orchidarium Estepona', 'Relax on Playa de la Rada'],
+    beaches: ['Playa de la Rada', 'Playa El Cristo', 'Playa Bahía Dorada'],
+    hotelsIntro: 'Estepona offers a range of hotels, from modern beachfront resorts to charming boutique hotels in the old town, catering to various tastes and budgets.',
+    foodAndDrink: 'Enjoy fresh seafood at chiringuitos, traditional tapas in the old town, and a variety of international cuisines. Estepona has a growing culinary scene.',
+    practicalInfo: 'Estepona is located west of Marbella. It has a more relaxed atmosphere than some other Costa del Sol towns, making it popular for families and those seeking authentic Spanish charm.'
+  },
+  'la-cala-de-mijas': {
+    id: 'la-cala-de-mijas',
+    name: 'La Cala de Mijas',
+    slug: 'la-cala-de-mijas',
+    heroImage: PLACEHOLDER_IMAGE_URL(1200, 400),
+    imageHint: 'la cala mijas beach',
+    overview: 'La Cala de Mijas is a popular former fishing village in Mijas Costa, offering beautiful sandy beaches, a charming town center, and a scenic coastal boardwalk.',
+    thingsToDo: ['Walk or cycle the Senda Litoral (coastal path)', 'Relax on La Cala beach', 'Explore the local market (Wednesdays & Saturdays)', 'Enjoy a meal at one of an array of restaurants'],
+    beaches: ['Playa de La Cala (Butibamba)', 'Playa El Bombo', 'Playa de Calahonda (nearby)'],
+    hotelsIntro: 'La Cala de Mijas provides a mix of beachfront hotels, holiday apartments, and villas, suitable for both families and couples.',
+    foodAndDrink: 'La Cala has a good selection of restaurants and bars, from traditional Spanish eateries and chiringuitos to international cuisine.',
+    practicalInfo: 'Located between Fuengirola and Marbella, La Cala is easily accessible. It has a friendly, village-like atmosphere.'
   }
 };
 
@@ -132,3 +171,6 @@ export const nicheInterestData: { [key: string]: { name: string; heroImage: stri
     ],
   }
 };
+
+
+    
