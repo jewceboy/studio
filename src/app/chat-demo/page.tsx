@@ -100,7 +100,7 @@ export default function ExpandableChatDemo() {
 
       <ExpandableChatBody>
         <ChatMessageList>
-          {messages.map((message) => (
+          {messages.filter(message => message != null).map((message) => (
             <ChatBubble
               key={message.id}
               variant={message.sender === "user" ? "sent" : "received"}
