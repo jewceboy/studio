@@ -1,13 +1,12 @@
-
 // src/app/chat-demo/actions.ts
 'use server';
 
 interface N8NResponse {
-  reply?: string; // Assuming n8n responds with an object containing a 'reply' field
+  reply?: string; 
   error?: string;
 }
 
-export async function sendMessageToN8N(message: string): Promise<{ id: number; content: string; sender: 'ai' | 'user'; error?: boolean }> {
+export async function sendMessageToN8N(message: string, sessionId: string): Promise<{ id: number; content: string; sender: 'ai' | 'user'; error?: boolean }> {
   const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL;
   const n8nAuthHeaderName = process.env.N8N_AUTH_HEADER_NAME || 'Authorization';
   const n8nAuthHeaderValue = process.env.N8N_AUTH_HEADER_VALUE;
@@ -34,7 +33,7 @@ export async function sendMessageToN8N(message: string): Promise<{ id: number; c
     const response = await fetch(n8nWebhookUrl, {
       method: 'POST',
       headers: headers,
-      body: JSON.stringify({ message }), // Send the user's message to n8n
+      body: JSON.stringify({ message, sessionId }), // Send the user's message and sessionId
     });
 
     if (!response.ok) {
@@ -68,12 +67,11 @@ export async function sendMessageToN8N(message: string): Promise<{ id: number; c
       };
     }
 
-    // Try to parse the JSON response
     let data: N8NResponse;
     try {
       data = await response.json();
     } catch (jsonError) {
-      const responseText = await response.text(); // Get text if JSON parsing fails
+      const responseText = await response.text(); 
       console.error('Failed to parse JSON response from n8n:', jsonError);
       console.error('n8n raw response text:', responseText);
       return {
@@ -83,7 +81,6 @@ export async function sendMessageToN8N(message: string): Promise<{ id: number; c
         error: true,
       };
     }
-
 
     if (data.error) {
       console.error('n8n returned an error in the response body:', data.error);
@@ -102,7 +99,6 @@ export async function sendMessageToN8N(message: string): Promise<{ id: number; c
         sender: 'ai',
       };
     } else {
-      // Log the actual data received for easier debugging
       console.error('n8n response did not contain a "reply" field. Actual data received:', JSON.stringify(data, null, 2));
       return {
         id: Date.now(),

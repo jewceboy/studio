@@ -1,7 +1,7 @@
 // src/app/chat-demo/page.tsx
 "use client"
 
-import { useState, FormEvent } from "react"
+import { useState, FormEvent, useEffect, useRef } from "react"
 import { Bot, Paperclip, Mic, CornerDownLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -17,7 +17,7 @@ import {
   ExpandableChatFooter,
 } from "@/components/ui/expandable-chat"
 import { ChatMessageList } from "@/components/ui/chat-message-list"
-import { sendMessageToN8N } from "./actions"; // Import the server action
+import { sendMessageToN8N } from "./actions"; 
 
 interface ChatMessage {
   id: number;
@@ -37,10 +37,16 @@ export default function ExpandableChatDemo() {
 
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [sessionId, setSessionId] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Generate a simple, unique session ID when the component mounts
+    setSessionId(Date.now().toString() + Math.random().toString(36).substring(2, 15));
+  }, []);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    if (!input.trim()) return
+    if (!input.trim() || !sessionId) return
 
     const userMessage: ChatMessage = {
       id: Date.now(),
@@ -53,7 +59,7 @@ export default function ExpandableChatDemo() {
     setIsLoading(true);
 
     try {
-      const aiResponse = await sendMessageToN8N(userMessage.content);
+      const aiResponse = await sendMessageToN8N(userMessage.content, sessionId);
       setMessages((prev) => [...prev, aiResponse]);
     } catch (error) {
       console.error("Error sending message:", error);
@@ -163,7 +169,7 @@ export default function ExpandableChatDemo() {
                 <Mic className="size-4" />
               </Button>
             </div>
-            <Button type="submit" size="sm" className="ml-auto gap-1.5" disabled={isLoading}>
+            <Button type="submit" size="sm" className="ml-auto gap-1.5" disabled={isLoading || !sessionId}>
               {isLoading ? 'Sending...' : 'Send Message'}
               {!isLoading && <CornerDownLeft className="size-3.5" />}
             </Button>
