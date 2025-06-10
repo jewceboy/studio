@@ -1,3 +1,4 @@
+
 // src/app/chat-demo/actions.ts
 'use server';
 
@@ -29,11 +30,14 @@ export async function sendMessageToN8N(message: string, sessionId: string): Prom
     headers[n8nAuthHeaderName] = n8nAuthHeaderValue;
   }
 
+  const payload = { message, sessionId };
+  console.log('Sending payload to n8n:', JSON.stringify(payload, null, 2)); // Added logging
+
   try {
     const response = await fetch(n8nWebhookUrl, {
       method: 'POST',
       headers: headers,
-      body: JSON.stringify({ message, sessionId }), // Send the user's message and sessionId
+      body: JSON.stringify(payload), // Send the user's message and sessionId
     });
 
     if (!response.ok) {
@@ -67,11 +71,12 @@ export async function sendMessageToN8N(message: string, sessionId: string): Prom
       };
     }
 
+    // Try to read response as text first to avoid JSON parse error if n8n sends non-JSON on success (unlikely but safe)
+    const responseText = await response.text();
     let data: N8NResponse;
     try {
-      data = await response.json();
+      data = JSON.parse(responseText);
     } catch (jsonError) {
-      const responseText = await response.text(); 
       console.error('Failed to parse JSON response from n8n:', jsonError);
       console.error('n8n raw response text:', responseText);
       return {
@@ -122,3 +127,4 @@ export async function sendMessageToN8N(message: string, sessionId: string): Prom
     };
   }
 }
+
