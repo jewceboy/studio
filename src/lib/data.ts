@@ -124,8 +124,16 @@ export const destinationsData: { [key: string]: Destination } = {
   }
 };
 
-// Originally from src/app/hotels/[region]/page.tsx
-export const hotelSiloData: { [key: string]: { name: string; categories: HotelCategory[] } } = {
+const defaultHotelCategories: HotelCategory[] = [
+  { name: 'Luxury Hotels', slug: 'luxury', description: 'Indulge in opulent stays with top-tier amenities and services.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint: "luxury hotel interior" },
+  { name: 'Family-Friendly Hotels', slug: 'family-friendly', description: 'Find hotels with facilities and activities perfect for all ages.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint: "family pool fun" },
+  { name: 'Beachfront Hotels', slug: 'beachfront', description: 'Wake up to stunning sea views and direct beach access.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint: "beach hotel view" },
+  { name: 'Boutique Hotels', slug: 'boutique', description: 'Discover unique charm and personalized service in smaller, stylish hotels.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint: "boutique hotel lobby" },
+  { name: 'Budget-Friendly Stays', slug: 'budget-friendly', description: 'Comfortable and affordable options for savvy travelers.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400), imageHint: "hostel budget room" },
+];
+
+// Initialize hotelSiloData with existing specific entries
+const initialHotelSiloData: { [key: string]: { name: string; categories: HotelCategory[] } } = {
   malaga: {
     name: 'Málaga',
     categories: [
@@ -144,6 +152,23 @@ export const hotelSiloData: { [key: string]: { name: string; categories: HotelCa
     ],
   },
 };
+
+// Dynamically populate hotelSiloData with remaining destinations
+export const hotelSiloData = Object.values(destinationsData).reduce((acc, destination) => {
+  if (!acc[destination.slug]) { // If the destination slug isn't already in acc (our initialHotelSiloData)
+    acc[destination.slug] = {
+      name: destination.name,
+      categories: defaultHotelCategories.map(cat => ({ // Create new instances for each category
+        ...cat,
+        // Optionally, customize descriptions or imageHints further based on destination.name if needed
+        description: `Discover ${cat.name.toLowerCase()} in ${destination.name}. ${cat.description}`,
+        imageHint: `${destination.slug} ${cat.slug}`
+      })),
+    };
+  }
+  return acc;
+}, initialHotelSiloData);
+
 
 // Originally from src/app/interests/[niche]/page.tsx
 export const nicheInterestData: { [key: string]: { name: string; heroImage: string; imageHint?: string; intro: string; subCategories: NicheSubCategory[] } } = {
