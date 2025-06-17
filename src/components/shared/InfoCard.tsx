@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -16,6 +17,7 @@ interface InfoCardProps {
   linkText?: string;
   className?: string;
   imageHint?: string;
+  buttonClassName?: string; // New prop for custom button styling
 }
 
 export default function InfoCard({
@@ -27,6 +29,7 @@ export default function InfoCard({
   linkText = 'Explore',
   className,
   imageHint,
+  buttonClassName, // Destructure the new prop
 }: InfoCardProps) {
   return (
     <Card className={cn('overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full bg-card group', className)}>
@@ -44,7 +47,14 @@ export default function InfoCard({
         {description && <p className="text-sm text-muted-foreground line-clamp-3">{description}</p>}
       </CardContent>
       <CardFooter className="p-6 pt-0">
-        <Button asChild variant="default" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-medium">
+        <Button
+          asChild
+          variant="default" // Keep variant default, specific classes will override
+          className={cn(
+            "w-full font-montserrat font-medium", // Base non-color styles
+            buttonClassName ? buttonClassName : "bg-primary text-primary-foreground hover:bg-primary/90" // Conditional color styles
+          )}
+        >
           <Link href={linkHref}>
             {linkText} <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>

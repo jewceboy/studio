@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -9,8 +10,8 @@ import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 import MarbellaHero from '@/components/custom/MarbellaHero'; // Import the new hero component
 
 const featuredDestinations = [
-  { title: 'Málaga', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Malaga City skyline', description: 'Vibrant culture, historic sites, and stunning beaches.', linkHref: '/destinations/malaga', imageHint: 'Malaga skyline' },
-  { title: 'Marbella', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Marbella luxury port', description: 'Luxury boutiques, glamorous nightlife, and beautiful marinas.', linkHref: '/destinations/marbella', imageHint: 'Marbella port' },
+  { title: 'Málaga', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Malaga City skyline', description: 'Vibrant culture, historic sites, and stunning beaches.', linkHref: '/destinations/malaga', imageHint: 'Malaga port' },
+  { title: 'Marbella', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Marbella luxury port', description: 'Luxury boutiques, glamorous nightlife, and beautiful marinas.', linkHref: '/destinations/marbella', imageHint: 'Marbella yacht' },
   { title: 'Mijas Pueblo', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Mijas Pueblo white village', description: 'Charming white-washed village with breathtaking views.', linkHref: '/destinations/mijas', imageHint: 'Mijas village' },
   { title: 'Nerja', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Nerja Balcon de Europa', description: 'Famous caves, stunning coastline, and the Balcón de Europa.', linkHref: '/destinations/nerja', imageHint: 'Nerja coast' },
 ];
@@ -43,7 +44,13 @@ export default function Home() {
       <Section title="Featured Destinations" subtitle="Explore the jewels of the Costa del Sol, each with its unique charm and attractions.">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {featuredDestinations.map((dest) => (
-            <InfoCard key={dest.title} {...dest} linkText="Explore" imageHint={dest.imageHint} />
+            <InfoCard 
+              key={dest.title} 
+              {...dest} 
+              linkText="Explore" 
+              imageHint={dest.imageHint}
+              buttonClassName="bg-orange-500 text-white hover:bg-orange-600" // Apply orange button style
+            />
           ))}
         </div>
       </Section>
