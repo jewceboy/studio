@@ -15,14 +15,14 @@ import ArticleCard from '@/components/blog/ArticleCard';
 const articlesData: { [key: string]: Article } = {
   'best-tapas-malaga': {
     id: '1', slug: 'best-tapas-malaga', title: 'Best Tapas Bars in Málaga Old Town', 
-    imageUrl: PLACEHOLDER_IMAGE_URL(1200, 500), imageHint: 'Malaga tapas bar',
+    imageUrl: PLACEHOLDER_IMAGE_URL(1200, 500, 'Malaga tapas bar'), imageHint: 'Malaga tapas bar',
     date: '2024-05-15', author: 'Elena Rodriguez', 
     excerpt: 'A culinary journey through Málaga\'s most authentic tapas spots, from traditional bites to modern creations.',
     content: `<p>Málaga's old town is a labyrinth of charming streets, and hidden within are some of the best tapas bars you'll ever encounter. This guide will take you on a flavorful journey, highlighting must-try dishes and local favorites. From centuries-old taverns serving classic Andalusian recipes to innovative kitchens putting a modern spin on tapas, there's something for every palate.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">El Tapeo de Cervantes</h3>
     <p>A popular spot known for its creative tapas and extensive wine list. Booking is recommended. Their mini burgers and cod confit are divine.</p>
     <figure class="my-6">
-      <img src="${PLACEHOLDER_IMAGE_URL(800,400)}" alt="Interior of El Tapeo de Cervantes" class="rounded-lg shadow-md" data-ai-hint="restaurant interior cozy"/>
+      <img src="${PLACEHOLDER_IMAGE_URL(800,400, 'restaurant interior')}" alt="Interior of El Tapeo de Cervantes" class="rounded-lg shadow-md" data-ai-hint="restaurant interior cozy"/>
       <figcaption class="text-xs text-center text-muted-foreground mt-2">El Tapeo de Cervantes offers a cozy atmosphere.</figcaption>
     </figure>
     <h3 class="text-2xl font-montserrat font-semibold my-4">Casa Lola</h3>

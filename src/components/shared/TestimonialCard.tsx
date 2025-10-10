@@ -25,7 +25,7 @@ export default function TestimonialCard({
       <CardHeader className="pb-4">
         <div className="flex items-start space-x-4">
           <Avatar className="h-12 w-12">
-            <AvatarImage src={avatarUrl || `https://placehold.co/48x48.png?text=${author.charAt(0)}`} alt={author} data-ai-hint="person avatar" />
+            <AvatarImage src={avatarUrl || `https://picsum.photos/seed/${author.replace(/\s+/g, '-')}/48/48`} alt={author} data-ai-hint="person avatar" />
             <AvatarFallback>{author.charAt(0).toUpperCase()}</AvatarFallback>
           </Avatar>
           <div>

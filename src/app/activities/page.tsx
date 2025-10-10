@@ -14,7 +14,7 @@ const activityCategories = [
     slug: 'culture',
     name: 'Cultural Experiences',
     description: 'Immerse yourself in art, history, and local traditions. Visit museums, ancient sites, and attend vibrant festivals.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400),
+    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'historic architecture museum'),
     imageHint: 'historic architecture museum',
     linkHref: '/activities/culture', // Placeholder, to be built
     linkText: 'Explore Culture',
@@ -23,7 +23,7 @@ const activityCategories = [
     slug: 'outdoor',
     name: 'Outdoor Adventures',
     description: 'Explore breathtaking landscapes. Go hiking, cycling, or take scenic tours through natural parks.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400),
+    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'mountain hiking trail'),
     imageHint: 'mountain hiking trail',
     linkHref: '/activities/outdoor', // Placeholder, to be built
     linkText: 'Find Adventures',
@@ -32,7 +32,7 @@ const activityCategories = [
     slug: 'watersports',
     name: 'Watersports Fun',
     description: 'Dive into the Mediterranean with activities like kayaking, paddleboarding, jet skiing, and boat trips.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400),
+    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'kayaking sea adventure'),
     imageHint: 'kayaking sea adventure',
     linkHref: '/interests/watersports', // Links to existing niche
     linkText: 'Discover Watersports',
@@ -41,7 +41,7 @@ const activityCategories = [
     slug: 'golf',
     name: 'World-Class Golfing',
     description: 'Tee off on internationally renowned golf courses with stunning views and excellent facilities.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400),
+    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'golf course green'),
     imageHint: 'golf course green',
     linkHref: '/interests/golf', // Links to existing niche
     linkText: 'Explore Golf',
@@ -50,7 +50,7 @@ const activityCategories = [
     slug: 'culinary',
     name: 'Culinary Delights',
     description: 'Savor Andalusian flavors with food tours, cooking classes, wine tasting, and visits to local markets.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400),
+    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'spanish tapas food'),
     imageHint: 'spanish tapas food',
     linkHref: '/activities/culinary', // Placeholder, to be built
     linkText: 'Taste a Tour',
@@ -59,7 +59,7 @@ const activityCategories = [
     slug: 'nightlife',
     name: 'Nightlife & Entertainment',
     description: 'Experience vibrant evenings with flamenco shows, lively bars, beach clubs, and live music venues.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400),
+    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'flamenco dance show'),
     imageHint: 'flamenco dance show',
     linkHref: '/activities/nightlife', // Placeholder, to be built
     linkText: 'Enjoy the Night',
