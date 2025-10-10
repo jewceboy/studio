@@ -41,6 +41,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          as="style"
+          href={`https://fonts.googleapis.com/css2?family=Anton&family=Inter&family=Montserrat&display=swap`}
+        />
+        <link
+          rel="stylesheet"
+          href={`https://fonts.googleapis.com/css2?family=Anton&family=Inter&family=Montserrat&display=swap`}
+        />
+      </head>
       <body className={cn(
         'font-body antialiased min-h-screen flex flex-col bg-background',
         inter.variable,
