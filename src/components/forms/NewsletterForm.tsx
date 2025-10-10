@@ -44,8 +44,10 @@ export default function NewsletterForm() {
           aria-label="Email for newsletter"
         />
         <Button type="submit" disabled={isLoading} className="bg-accent-1-red text-primary-light hover:bg-accent-1-red/90 font-montserrat font-medium">
-          <Mail className="mr-2 h-4 w-4" />
-          {isLoading ? 'Subscribing...' : 'Subscribe'}
+          <span className="flex items-center gap-2">
+            <Mail className="mr-2 h-4 w-4" />
+            {isLoading ? 'Subscribing...' : 'Subscribe'}
+          </span>
         </Button>
       </form>
     </div>
