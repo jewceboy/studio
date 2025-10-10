@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import Link from 'next/link';
@@ -17,9 +18,9 @@ const featuredDestinations = [
 ];
 
 const topActivities = [
-  { title: 'Caminito del Rey Hike', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Caminito del Rey gorge walk', description: 'Thrilling cliffside path with spectacular views.', linkHref: '/activities/caminito-del-rey', imageHint: 'Caminito Rey' },
-  { title: 'Picasso Museum Visit', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Picasso Museum Malaga', description: 'Explore the works of the legendary artist in his birthplace.', linkHref: '/activities/picasso-museum', imageHint: 'Picasso art' },
-  { title: 'Flamenco Show Experience', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Flamenco dancers', description: 'Immerse yourself in the passion of authentic Andalusian flamenco.', linkHref: '/activities/flamenco-show', imageHint: 'Flamenco dance' },
+  { title: 'Caminito del Rey Hike', imageUrl: 'https://picsum.photos/seed/caminito/600/400', imageAlt: 'Caminito del Rey gorge walk', description: 'Thrilling cliffside path with spectacular views.', linkHref: '/activities/caminito-del-rey', imageHint: 'gorge hike' },
+  { title: 'Picasso Museum Visit', imageUrl: 'https://picsum.photos/seed/picasso/600/400', imageAlt: 'Picasso Museum Malaga', description: 'Explore the works of the legendary artist in his birthplace.', linkHref: '/activities/picasso-museum', imageHint: 'art museum' },
+  { title: 'Flamenco Show Experience', imageUrl: 'https://picsum.photos/seed/flamenco/600/400', imageAlt: 'Flamenco dancers', description: 'Immerse yourself in the passion of authentic Andalusian flamenco.', linkHref: '/activities/flamenco-show', imageHint: 'flamenco dance' },
 ];
 
 const accommodationHighlights = [
