@@ -9,11 +9,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        anton: ['Anton', 'sans-serif'],
-        montserrat: ['Montserrat', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
-        body: ['Inter', 'sans-serif'], // Default body font
-        headline: ['Montserrat', 'sans-serif'], // Default headline font (H2-H6)
+        anton: ['var(--font-anton)', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        inter: ['var(--font-inter)', 'sans-serif'],
+        body: ['var(--font-inter)', 'sans-serif'], // Default body font
+        headline: ['var(--font-montserrat)', 'sans-serif'], // Default headline font (H2-H6)
       },
       colors: {
         background: 'hsl(var(--background))',
