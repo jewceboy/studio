@@ -1,6 +1,4 @@
 
-'use client'; // This is a client component because it uses hooks like useState and form events
-
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/shared/Section';
