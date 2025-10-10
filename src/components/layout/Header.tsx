@@ -30,7 +30,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6">
+        <nav aria-label="Main navigation" className="hidden md:flex space-x-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -51,6 +51,7 @@ export default function Header() {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
                 <Menu className="h-6 w-6" />
+                <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-accent-1-red text-white p-6">
@@ -62,10 +63,11 @@ export default function Header() {
                 <SheetClose asChild>
                    <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
                     <X className="h-6 w-6" />
+                    <span className="sr-only">Close menu</span>
                   </Button>
                 </SheetClose>
               </div>
-              <nav className="flex flex-col space-y-4">
+              <nav aria-label="Main mobile navigation" className="flex flex-col space-y-4">
                 {navLinks.map((link) => (
                   <SheetClose key={link.href} asChild>
                     <Link

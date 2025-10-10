@@ -48,6 +48,7 @@ const ExpandableChat: React.FC<ExpandableChatProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const chatRef = useRef<HTMLDivElement>(null);
+  const chatWindowId = React.useId();
 
   const toggleChat = () => setIsOpen(!isOpen);
 
@@ -57,7 +58,12 @@ const ExpandableChat: React.FC<ExpandableChatProps> = ({
       {...props}
     >
       <div
+        id={chatWindowId}
         ref={chatRef}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!isOpen}
+        aria-labelledby="chat-header"
         className={cn(
           "flex flex-col bg-background border sm:rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-out sm:absolute sm:w-[90vw] sm:h-[80vh] fixed inset-0 w-full h-full sm:inset-auto",
           chatConfig.chatPositions[position],
@@ -72,6 +78,7 @@ const ExpandableChat: React.FC<ExpandableChatProps> = ({
           size="icon"
           className="absolute top-2 right-2 sm:hidden"
           onClick={toggleChat}
+          aria-label="Close chat"
         >
           <X className="h-4 w-4" />
         </Button>
@@ -80,6 +87,7 @@ const ExpandableChat: React.FC<ExpandableChatProps> = ({
         icon={icon}
         isOpen={isOpen}
         toggleChat={toggleChat}
+        aria-controls={chatWindowId}
       />
     </div>
   );
@@ -89,9 +97,11 @@ ExpandableChat.displayName = "ExpandableChat";
 
 const ExpandableChatHeader: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
+  id = "chat-header",
   ...props
 }) => (
   <div
+    id={id}
     className={cn("flex items-center justify-between p-4 border-b", className)}
     {...props}
   />
@@ -131,6 +141,7 @@ const ExpandableChatToggle: React.FC<ExpandableChatToggleProps> = ({
     variant="default"
     onClick={toggleChat}
     aria-label={isOpen ? "Close chat" : "Open chat"}
+    aria-expanded={isOpen}
     className={cn(
       "w-14 h-14 rounded-full shadow-md flex items-center justify-center hover:shadow-lg hover:shadow-black/30 transition-all duration-300",
       className,
