@@ -35,8 +35,8 @@ const articlesData: { [key: string]: Article } = {
     <h3 class="text-2xl font-montserrat font-semibold my-4">Relevant Tours & Hotels</h3>
     <p>Enhance your culinary journey by booking a guided tapas tour or staying in a hotel conveniently located in the Old Town. Check out these options:</p>
     <ul class="list-disc list-inside my-4 space-y-2">
-        <li><a href="#" class="text-accent hover:underline">Malaga Old Town Tapas Tour</a></li>
-        <li><a href="#" class="text-accent hover:underline">Boutique Hotels in Malaga Center</a></li>
+        <li><a href="#" class="text-primary hover:underline">Malaga Old Town Tapas Tour</a></li>
+        <li><a href="#" class="text-primary hover:underline">Boutique Hotels in Malaga Center</a></li>
     </ul>
     `,
     categories: ['Food & Drink', 'Malaga'],
@@ -108,7 +108,7 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
 
         {/* Article Content */}
         <div
-          className="prose prose-lg max-w-none text-foreground font-inter prose-headings:font-montserrat prose-headings:text-foreground prose-a:text-accent hover:prose-a:underline prose-img:rounded-lg prose-img:shadow-md"
+          className="prose prose-lg max-w-none text-foreground font-inter prose-headings:font-montserrat prose-headings:text-foreground prose-a:text-primary hover:prose-a:underline prose-img:rounded-lg prose-img:shadow-md"
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
 
@@ -147,7 +147,7 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
                 <Button variant="outline" size="icon" aria-label="Share on Pinterest"><Share2 className="h-5 w-5 text-foreground" /></Button>
                  <Button variant="outline" size="icon" aria-label="Print article" onClick={() => typeof window !== 'undefined' && window.print()}><Printer className="h-5 w-5 text-foreground" /></Button>
             </div>
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
                 <MessageSquare className="mr-2 h-4 w-4" /> Leave a Comment (Coming Soon)
             </Button>
         </div>

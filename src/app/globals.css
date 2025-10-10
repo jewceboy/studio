@@ -12,6 +12,7 @@ body {
     --prd-accent-pink: 330 100% 71%; /* Hot Pink from image header */
     --prd-accent-pink-hover: 330 90% 65%;
     --prd-accent-cyan: 195 85% 45%; /* Cyan from image body */
+    --prd-accent-cyan-hover: 195 80% 40%;
     --color-text-dark-grey: 210 10% 23%; /* Dark Grey #353B41 */
     --color-background-white: 0 0% 100%;
 
@@ -29,7 +30,7 @@ body {
     --popover: var(--color-white);
     --popover-foreground: var(--color-text-dark-grey);
 
-    --primary: var(--prd-accent-pink); /* Primary accent is now PINK */
+    --primary: var(--prd-accent-cyan); /* Primary accent is now CYAN for buttons */
     --primary-foreground: var(--color-white);
 
     --secondary: hsl(var(--prd-accent-cyan) / 0.1); /* Light cyan for secondary backgrounds */
@@ -38,7 +39,7 @@ body {
     --muted: 210 10% 50%; 
     --muted-foreground: 210 10% 40%; 
 
-    --accent: var(--prd-accent-cyan); /* General accent is CYAN */
+    --accent: var(--prd-accent-pink); /* General accent is now PINK for header etc. */
     --accent-foreground: var(--color-white);
 
     --destructive: 0 72% 51%; 
@@ -46,14 +47,14 @@ body {
 
     --border: 210 10% 85%; 
     --input: 210 10% 90%; 
-    --ring: var(--prd-accent-pink); /* Focus ring color is PINK */
+    --ring: var(--prd-accent-cyan); /* Focus ring color is CYAN */
     
     --radius: 0.5rem;
 
     /* Custom specific colors for direct use if needed */
     --primary-dark: var(--color-text-dark-grey); 
     --primary-light: var(--color-background-white);
-    --accent-1-red: var(--prd-accent-pink); /* Mapped red to PINK */
+    --accent-1-red: var(--prd-accent-pink); /* Mapped red to PINK for header */
     --accent-1-red-hover: var(--prd-accent-pink-hover);
     --accent-2-maroon: 330 70% 50%; /* Darker pink */
     --accent-3-light-blue: var(--prd-accent-cyan); /* Mapped light blue to CYAN */
@@ -68,12 +69,12 @@ body {
     /* Sidebar - using new palette */
     --sidebar-background: 210 10% 97%; 
     --sidebar-foreground: var(--color-text-dark-grey);
-    --sidebar-primary: var(--prd-accent-pink);
+    --sidebar-primary: var(--prd-accent-cyan);
     --sidebar-primary-foreground: var(--color-white);
-    --sidebar-accent: hsl(var(--prd-accent-cyan) / 0.2);
+    --sidebar-accent: hsl(var(--prd-accent-pink) / 0.2);
     --sidebar-accent-foreground: var(--color-text-dark-grey);
     --sidebar-border: 210 10% 88%;
-    --sidebar-ring: var(--prd-accent-pink);
+    --sidebar-ring: var(--prd-accent-cyan);
   }
 
   .dark {
@@ -81,6 +82,7 @@ body {
     --prd-accent-pink: 330 100% 75%;
     --prd-accent-pink-hover: 330 90% 70%;
     --prd-accent-cyan: 195 85% 55%;
+    --prd-accent-cyan-hover: 195 80% 50%;
     --color-text-dark-grey: 47 50% 90%; 
     --color-background-white: 210 10% 15%; 
 
@@ -96,7 +98,7 @@ body {
     --popover: 210 10% 20%;
     --popover-foreground: var(--color-text-dark-grey);
 
-    --primary: var(--prd-accent-pink); 
+    --primary: var(--prd-accent-cyan); 
     --primary-foreground: 210 10% 15%; 
 
     --secondary: hsl(var(--prd-accent-cyan) / 0.15); 
@@ -105,7 +107,7 @@ body {
     --muted: 210 10% 35%;
     --muted-foreground: 210 10% 60%; 
 
-    --accent: var(--prd-accent-cyan);
+    --accent: var(--prd-accent-pink);
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 60% 45%; 
@@ -113,7 +115,7 @@ body {
 
     --border: 210 10% 30%; 
     --input: 210 10% 25%; 
-    --ring: var(--prd-accent-pink);
+    --ring: var(--prd-accent-cyan);
     
     --primary-dark: var(--color-text-dark-grey); 
     --primary-light: var(--color-background-white); 
@@ -129,12 +131,12 @@ body {
     /* Sidebar - dark */
     --sidebar-background: 210 10% 12%; 
     --sidebar-foreground: var(--color-text-dark-grey);
-    --sidebar-primary: var(--prd-accent-pink);
+    --sidebar-primary: var(--prd-accent-cyan);
     --sidebar-primary-foreground: 210 10% 15%;
-    --sidebar-accent: hsl(var(--prd-accent-cyan) / 0.2);
+    --sidebar-accent: hsl(var(--prd-accent-pink) / 0.2);
     --sidebar-accent-foreground: var(--color-text-dark-grey);
     --sidebar-border: 210 10% 25%;
-    --sidebar-ring: var(--prd-accent-pink);
+    --sidebar-ring: var(--prd-accent-cyan);
   }
 }
 
@@ -162,7 +164,7 @@ body {
     @apply mb-4;
   }
   a {
-    @apply text-accent hover:text-primary/80 transition-colors duration-200; /* Uses Cyan by default */
+    @apply text-primary hover:text-primary/80 transition-colors duration-200; /* Uses Cyan by default */
   }
 }
 
@@ -170,16 +172,16 @@ body {
   --tw-prose-body: hsl(var(--foreground));
   --tw-prose-headings: hsl(var(--foreground));
   --tw-prose-lead: hsl(var(--muted-foreground));
-  --tw-prose-links: hsl(var(--accent)); /* Cyan for links */
+  --tw-prose-links: hsl(var(--primary)); /* Cyan for links */
   --tw-prose-bold: hsl(var(--foreground));
   --tw-prose-counters: hsl(var(--muted-foreground));
   --tw-prose-bullets: hsl(var(--muted));
   --tw-prose-hr: hsl(var(--border));
   --tw-prose-quotes: hsl(var(--foreground));
-  --tw-prose-quote-borders: hsl(var(--accent)); 
+  --tw-prose-quote-borders: hsl(var(--primary)); 
   --tw-prose-captions: hsl(var(--muted-foreground));
-  --tw-prose-code: hsl(var(--primary));
-  --tw-prose-pre-code: hsl(var(--primary-foreground));
+  --tw-prose-code: hsl(var(--accent));
+  --tw-prose-pre-code: hsl(var(--accent-foreground));
   --tw-prose-pre-bg: hsl(var(--color-text-dark-grey)); 
   --tw-prose-th-borders: hsl(var(--border));
   --tw-prose-td-borders: hsl(var(--border));
@@ -189,16 +191,16 @@ body {
   --tw-prose-body: hsl(var(--foreground));
   --tw-prose-headings: hsl(var(--foreground));
   --tw-prose-lead: hsl(var(--muted-foreground));
-  --tw-prose-links: hsl(var(--accent));
+  --tw-prose-links: hsl(var(--primary));
   --tw-prose-bold: hsl(var(--foreground));
   --tw-prose-counters: hsl(var(--muted-foreground));
   --tw-prose-bullets: hsl(var(--muted));
   --tw-prose-hr: hsl(var(--border));
   --tw-prose-quotes: hsl(var(--foreground));
-  --tw-prose-quote-borders: hsl(var(--accent));
+  --tw-prose-quote-borders: hsl(var(--primary));
   --tw-prose-captions: hsl(var(--muted-foreground));
-  --tw-prose-code: hsl(var(--primary));
-  --tw-prose-pre-code: hsl(var(--primary-foreground));
+  --tw-prose-code: hsl(var(--accent));
+  --tw-prose-pre-code: hsl(var(--accent-foreground));
   --tw-prose-pre-bg: hsl(var(--color-background-white)); 
   --tw-prose-th-borders: hsl(var(--border));
   --tw-prose-td-borders: hsl(var(--border));
@@ -206,12 +208,12 @@ body {
 
 .info-box-custom-bg {
   background-color: hsl(var(--secondary));
-  border-left-color: hsl(var(--accent));
+  border-left-color: hsl(var(--primary));
   color: hsl(var(--foreground));
 }
 
 .dark .info-box-custom-bg {
   background-color: hsl(var(--secondary)); 
-  border-left-color: hsl(var(--accent)); 
+  border-left-color: hsl(var(--primary)); 
   color: hsl(var(--foreground)); 
 }

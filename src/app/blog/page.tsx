@@ -52,7 +52,7 @@ export default function BlogPage() {
             {articles.length > 6 && (
                 <div className="mt-12 flex justify-center space-x-2">
                     <Button variant="outline">Previous</Button>
-                    <Button variant="default" className="bg-accent-1-red text-primary-light">1</Button>
+                    <Button variant="default" className="bg-primary text-primary-foreground">1</Button>
                     <Button variant="outline">2</Button>
                     <Button variant="outline">Next</Button>
                 </div>
@@ -65,8 +65,8 @@ export default function BlogPage() {
             <div className="bg-card p-6 rounded-lg shadow-md">
               <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-3">Search Blog</h3>
               <form className="flex gap-2">
-                <Input type="search" placeholder="Keywords..." className="flex-grow bg-primary-light border-primary-dark/30 focus:ring-accent-1-red" />
-                <Button type="submit" variant="default" size="icon" className="bg-accent-1-red text-primary-light">
+                <Input type="search" placeholder="Keywords..." className="flex-grow bg-primary-light border-primary-dark/30 focus:ring-primary" />
+                <Button type="submit" variant="default" size="icon" className="bg-primary text-primary-foreground">
                   <Search className="h-5 w-5" />
                 </Button>
               </form>
@@ -78,7 +78,7 @@ export default function BlogPage() {
               <ul className="space-y-2">
                 {categories.map((category) => (
                   <li key={category}>
-                    <Link href={`/blog/category/${category.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-')}`} className="text-muted-foreground hover:text-accent-1-red transition-colors block py-1">
+                    <Link href={`/blog/category/${category.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-')}`} className="text-muted-foreground hover:text-primary transition-colors block py-1">
                       {category}
                     </Link>
                   </li>
@@ -92,7 +92,7 @@ export default function BlogPage() {
               <ul className="space-y-3">
                 {recentPosts.map((post) => (
                   <li key={post.slug}>
-                    <Link href={`/blog/${post.slug}`} className="text-muted-foreground hover:text-accent-1-red transition-colors font-medium block leading-snug">
+                    <Link href={`/blog/${post.slug}`} className="text-muted-foreground hover:text-primary transition-colors font-medium block leading-snug">
                       {post.title}
                     </Link>
                     <p className="text-xs text-muted-foreground/70">{new Date(post.date).toLocaleDateString()}</p>
@@ -103,10 +103,10 @@ export default function BlogPage() {
             
             {/* RSS Feed (Example) */}
             <div className="bg-card p-6 rounded-lg shadow-md text-center">
-                 <Rss className="h-8 w-8 text-accent-1-red mx-auto mb-2"/>
+                 <Rss className="h-8 w-8 text-primary mx-auto mb-2"/>
                 <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-2">Stay Updated</h3>
                 <p className="text-sm text-muted-foreground mb-3">Subscribe to our RSS feed for the latest articles.</p>
-                <Button variant="outline" className="w-full border-accent-3-light-blue text-accent-3-light-blue hover:bg-accent-3-light-blue hover:text-primary-light">
+                <Button variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground">
                    Subscribe to RSS
                 </Button>
             </div>

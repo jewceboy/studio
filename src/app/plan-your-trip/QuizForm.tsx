@@ -64,7 +64,7 @@ export default function QuizForm() {
 
   const prevStep = () => {
     if (currentStep > 0) {
-      setCurrentStep(currentStep - 1);
+      setCurrentStep(currentStep + 1);
     }
   };
 
@@ -100,7 +100,7 @@ export default function QuizForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8 p-4 md:p-8 bg-card rounded-lg shadow-xl max-w-2xl mx-auto">
-      <Progress value={progressValue} className="w-full mb-4 [&>div]:bg-accent-1-red" />
+      <Progress value={progressValue} className="w-full mb-4 [&>div]:bg-primary" />
       <h3 className="font-montserrat text-2xl font-semibold text-primary-dark text-center">
         {quizSteps[currentStep].title}
       </h3>
@@ -164,15 +164,15 @@ export default function QuizForm() {
       )}
 
       <div className="flex justify-between items-center pt-6">
-        <Button type="button" variant="outline" onClick={prevStep} disabled={currentStep === 0 || isLoading} className="border-accent-3-light-blue text-accent-3-light-blue hover:bg-accent-3-light-blue hover:text-primary-light">
+        <Button type="button" variant="outline" onClick={prevStep} disabled={currentStep === 0 || isLoading} className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
           <ArrowLeft className="mr-2 h-4 w-4" /> Previous
         </Button>
         {currentStep < quizSteps.length - 1 ? (
-          <Button type="button" onClick={nextStep} disabled={isLoading} className="bg-accent-1-red text-primary-light hover:bg-accent-1-red/90">
+          <Button type="button" onClick={nextStep} disabled={isLoading} className="bg-primary text-primary-foreground hover:bg-primary/90">
             Next <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         ) : (
-          <Button type="submit" disabled={isLoading} className="bg-accent-1-red text-primary-light hover:bg-accent-1-red/90">
+          <Button type="submit" disabled={isLoading} className="bg-primary text-primary-foreground hover:bg-primary/90">
             {isLoading ? 'Generating...' : 'Get My Plan'} <Sparkles className="ml-2 h-4 w-4" />
           </Button>
         )}

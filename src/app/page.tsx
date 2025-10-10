@@ -82,7 +82,7 @@ export default function Home() {
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button asChild variant="outline" size="lg" className="border-accent-1-red text-accent-1-red hover:bg-accent-1-red hover:text-primary-light font-montserrat font-medium">
+          <Button asChild variant="outline" size="lg" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground font-montserrat font-medium">
             <Link href="/blog">
               View All Articles <BookOpen className="ml-2 h-5 w-5" />
             </Link>
@@ -92,15 +92,15 @@ export default function Home() {
 
       {/* New Features Teaser (Plan Your Trip) */}
       <Section title="Plan Your Perfect Trip" subtitle="Let our smart trip planner craft a personalized itinerary just for you.">
-        <div className="text-center bg-accent-3-light-blue/20 p-8 md:p-12 rounded-lg shadow-lg max-w-3xl mx-auto">
-          <Sparkles className="h-16 w-16 text-accent-1-red mx-auto mb-6" />
+        <div className="text-center bg-accent/20 p-8 md:p-12 rounded-lg shadow-lg max-w-3xl mx-auto">
+          <Sparkles className="h-16 w-16 text-primary mx-auto mb-6" />
           <h3 className="font-montserrat text-3xl font-bold text-primary-dark mb-4">
             Personalized Itineraries in Minutes
           </h3>
           <p className="text-muted-foreground mb-8 text-lg">
             Answer a few simple questions about your travel style, interests, and budget, and our AI-powered tool will create a custom trip plan tailored to your preferences.
           </p>
-          <Button asChild size="lg" className="bg-accent-1-red text-primary-light hover:bg-accent-1-red/90 text-lg px-10 py-7 font-montserrat font-semibold">
+          <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-7 font-montserrat font-semibold">
             <Link href="/plan-your-trip">
               Start Planning <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

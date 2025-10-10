@@ -35,7 +35,7 @@ export default function TestimonialCard({
         </div>
       </CardHeader>
       <CardContent className="flex-grow">
-        <Star className="h-8 w-8 text-accent-3-light-blue/50 mb-3 transform -scale-x-100" fill="hsl(var(--accent))" /> {/* Quote mark style, updated fill */}
+        <Star className="h-8 w-8 text-primary/50 mb-3 transform -scale-x-100" fill="hsl(var(--primary))" /> {/* Quote mark style, updated fill */}
         <blockquote className="text-muted-foreground italic leading-relaxed">
           "{quote}"
         </blockquote>
