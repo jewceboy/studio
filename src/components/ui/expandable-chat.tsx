@@ -130,6 +130,7 @@ const ExpandableChatToggle: React.FC<ExpandableChatToggleProps> = ({
   <Button
     variant="default"
     onClick={toggleChat}
+    aria-label={isOpen ? "Close chat" : "Open chat"}
     className={cn(
       "w-14 h-14 rounded-full shadow-md flex items-center justify-center hover:shadow-lg hover:shadow-black/30 transition-all duration-300",
       className,
