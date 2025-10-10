@@ -50,7 +50,7 @@ export default function Home() {
               {...dest} 
               linkText="Explore" 
               imageHint={dest.imageHint}
-              buttonClassName="bg-orange-500 text-white hover:bg-orange-600" // Apply orange button style
+              buttonClassName="bg-accent text-white hover:bg-accent/90" // Apply accessible accent button style
             />
           ))}
         </div>

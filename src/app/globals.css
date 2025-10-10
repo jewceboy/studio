@@ -9,7 +9,7 @@ body {
 @layer base {
   :root {
     /* New palette from image */
-    --prd-accent-pink: 330 100% 71%; /* Hot Pink from image header */
+    --prd-accent-pink: 330 80% 55%; /* Darker Pink for better contrast */
     --prd-accent-pink-hover: 330 90% 65%;
     --prd-accent-cyan: 195 85% 45%; /* Cyan from image body */
     --prd-accent-cyan-hover: 195 80% 40%;
