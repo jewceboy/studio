@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/shared/Breadcrumbs';
 import type { BreadcrumbItem } from '@/types';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Placeholder data - replace with actual data fetching
 const categoryHotelsData: { [key: string]: { [key: string]: Hotel[] } } = {
@@ -71,10 +72,26 @@ export default function HotelSiloChildPage({ params }: { params: { region: strin
   return (
     <div>
       <Breadcrumbs items={breadcrumbItems} />
-      <PageHeader
-        title={`${categoryName} in ${regionName}`}
-        subtitle={`Browse our top picks for ${categoryName.toLowerCase()} in ${regionName}. Each hotel is selected for its quality, guest reviews, and unique offerings.`}
-      />
+      <div className="relative w-full h-64 md:h-80 mb-8 rounded-lg overflow-hidden shadow-xl">
+        <Image
+          src={PLACEHOLDER_IMAGE_URL(1200, 400, `${params.region} ${params.category}`)}
+          alt={`Hero image for ${categoryName} in ${regionName}`}
+          fill={true}
+          priority
+          className="object-cover"
+          data-ai-hint={`${params.region} ${params.category}`}
+        />
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
+            <PageHeader
+                title={`${categoryName} in ${regionName}`}
+                subtitle={`Browse our top picks for ${categoryName.toLowerCase()} in ${regionName}.`}
+                className="mb-0"
+                titleClassName="text-white"
+                subtitleClassName="text-white/90"
+            />
+        </div>
+      </div>
+
       <div className="mb-8 p-6 info-box-custom-bg border-l-4 rounded-lg"> {/* Updated class for info box */}
         <h3 className="font-montserrat text-lg font-semibold text-foreground mb-2">Book with Confidence</h3>
         <p className="text-sm text-muted-foreground">

@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/shared/Breadcrumbs';
 import type { BreadcrumbItem } from '@/types';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Placeholder data - replace with actual data fetching for hotels in a specific town
 const townHotelsData: { [key: string]: Hotel[] } = {
@@ -56,10 +57,25 @@ export default function DestinationHotelsPage({ params }: { params: { town: stri
   return (
     <div>
       <Breadcrumbs items={breadcrumbItems} />
-      <PageHeader
-        title={`Best Hotels in ${townName}`}
-        subtitle={`Discover top-rated accommodations in ${townName}, from luxury resorts to charming boutique hotels. Find the perfect place for your stay.`}
-      />
+       <div className="relative w-full h-64 md:h-80 mb-8 rounded-lg overflow-hidden shadow-xl">
+        <Image
+          src={PLACEHOLDER_IMAGE_URL(1200, 400, `${params.town} hotels`)}
+          alt={`Hero image for hotels in ${townName}`}
+          fill={true}
+          priority
+          className="object-cover"
+          data-ai-hint={`${params.town} hotel skyline`}
+        />
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
+          <PageHeader
+            title={`Best Hotels in ${townName}`}
+            subtitle={`Discover top-rated accommodations in ${townName}, from luxury resorts to charming boutique hotels.`}
+            className="mb-0"
+            titleClassName="text-white"
+            subtitleClassName="text-white/90"
+          />
+        </div>
+      </div>
       <div className="mb-8 p-6 info-box-custom-bg border-l-4 rounded-lg"> {/* Updated class for info box */}
         <h3 className="font-montserrat text-lg font-semibold text-foreground mb-2">Why Book Through Us?</h3>
         <p className="text-sm text-muted-foreground">

@@ -80,31 +80,35 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
   return (
     <div className="container mx-auto px-4">
       <article className="max-w-3xl mx-auto">
-        {/* Article Header */}
         <header className="mb-8 text-center">
           <div className="mb-4">
             {article.categories?.map(cat => (
               <Badge key={cat} variant="secondary" className="mr-2 bg-secondary/20 text-secondary-foreground font-montserrat">{cat}</Badge>
             ))}
           </div>
-          <h1 className="font-anton text-4xl md:text-5xl font-bold text-foreground mb-4">{article.title}</h1>
+          <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden shadow-xl">
+            <Image
+              src={article.imageUrl}
+              alt={`Hero image for ${article.title}`}
+              fill={true}
+              priority
+              className="object-cover"
+              data-ai-hint={article.imageHint || article.title.toLowerCase()}
+            />
+            <div className="absolute inset-0 bg-black/30 flex items-center justify-center p-4">
+              <h1 
+                className="font-anton text-4xl md:text-6xl text-white text-center"
+                style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}
+              >
+                {article.title}
+              </h1>
+            </div>
+          </div>
           <div className="flex items-center justify-center space-x-4 text-sm text-muted-foreground">
             <span className="flex items-center"><CalendarDays className="h-4 w-4 mr-1.5" /> {new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
             {article.author && <span className="flex items-center"><UserCircle className="h-4 w-4 mr-1.5" /> By {article.author}</span>}
           </div>
         </header>
-
-        {/* Featured Image */}
-        <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-xl mb-8">
-          <Image
-            src={article.imageUrl}
-            alt={`Featured image for ${article.title}`}
-            fill={true}
-            priority
-            className="object-cover"
-            data-ai-hint={article.imageHint || "article feature"}
-          />
-        </div>
 
         {/* Article Content */}
         <div

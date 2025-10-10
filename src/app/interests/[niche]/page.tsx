@@ -1,4 +1,5 @@
 
+
 import { notFound } from 'next/navigation';
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
@@ -47,7 +48,7 @@ export default function NicheInterestParentPage({ params }: { params: { niche: s
           className="object-cover"
           data-ai-hint={nicheData.imageHint || params.niche}
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
           <h1 
             className="font-anton text-5xl md:text-6xl text-white text-center"
             style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}

@@ -10,6 +10,8 @@ import Link from 'next/link';
 // import { PLACEHOLDER_IMAGE_URL, BOOKING_COM_AFFILIATE_LINK_MALAGA_GENERAL } from '@/lib/constants'; // PLACEHOLDER_IMAGE_URL used by data
 import TestimonialCard from '@/components/shared/TestimonialCard';
 import { hotelSiloData } from '@/lib/data'; // Import data from new location
+import Image from 'next/image';
+import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
 // import type { HotelCategory } from '@/types'; // Type comes implicitly from hotelSiloData
 
 // Placeholder data for testimonials (can be moved to data.ts later if needed)
@@ -34,10 +36,25 @@ export default function HotelSiloParentPage({ params }: { params: { region: stri
 
   return (
     <div>
-      <PageHeader
-        title={`Best Hotels in ${regionData.name}`}
-        subtitle={`Explore a curated selection of top hotels in ${regionData.name}. Whether you're looking for luxury, family fun, or a beachfront escape, find your perfect stay with us.`}
-      />
+      <div className="relative w-full h-64 md:h-80 mb-8 rounded-lg overflow-hidden shadow-xl">
+        <Image
+          src={PLACEHOLDER_IMAGE_URL(1200, 400, `hotel region ${params.region}`)}
+          alt={`Hero image for hotels in ${regionData.name}`}
+          fill={true}
+          priority
+          className="object-cover"
+          data-ai-hint={`hotel region ${params.region}`}
+        />
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
+          <PageHeader
+            title={`Best Hotels in ${regionData.name}`}
+            subtitle={`Explore a curated selection of top hotels in ${regionData.name}. Find your perfect stay with us.`}
+            className="mb-0"
+            titleClassName="text-white"
+            subtitleClassName="text-white/90"
+          />
+        </div>
+      </div>
       
       <Section title={`Hotel Categories in ${regionData.name}`} className="pt-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

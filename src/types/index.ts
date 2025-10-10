@@ -1,4 +1,5 @@
 
+
 export interface NavLink {
   href: string;
   label: string;
@@ -40,4 +41,5 @@ export interface NicheSubCategory {
   description: string;
   imageUrl: string;
   imageHint?: string;
+  heroImage?: string;
 }
