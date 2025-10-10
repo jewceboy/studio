@@ -9,7 +9,7 @@ body {
 @layer base {
   :root {
     /* Palette inspired by malagatravelguide.net, with PRD accent red corrected */
-    --color-background-beige: 47 50% 95%; /* Light Beige/Off-white #FDF0D5 (PRD Cream) */
+    --color-background-white: 0 0% 100%;
     --color-text-dark-grey: 210 10% 23%; /* Dark Grey #353B41 (from malagatravelguide) */
     --color-accent-teal: 175 60% 40%; /* Vibrant Teal #29A38E (from malagatravelguide) */
     --color-accent-light-teal: 175 45% 65%; /* Lighter, desaturated Teal */
@@ -25,7 +25,7 @@ body {
     --color-black: 0 0% 0%;
 
     /* ShadCN Semantic Variables (primarily malagatravelguide theme) */
-    --background: var(--color-background-beige); /* Main background (Cream) */
+    --background: var(--color-background-white); /* Main background (White) */
     --foreground: var(--color-text-dark-grey); /* Main text color (Dark Grey) */
 
     --card: var(--color-white); 
@@ -59,7 +59,7 @@ body {
     /* --primary-dark is now mapped to the malagatravelguide Dark Grey */
     --primary-dark: var(--color-text-dark-grey); 
      /* --primary-light is mapped to malagatravelguide Cream/Beige */
-    --primary-light: var(--color-background-beige);
+    --primary-light: var(--color-background-white);
     /* --accent-1-red now correctly maps to PRD Red #C1121F */
     --accent-1-red: var(--prd-accent-red); 
     --accent-1-red-hover: var(--prd-accent-red-hover);
