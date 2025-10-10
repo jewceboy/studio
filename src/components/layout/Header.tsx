@@ -20,12 +20,11 @@ const navLinks = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  // Removed isMounted state and useEffect for it
 
   return (
-    <header className="bg-primary-light shadow-md sticky top-0 z-50">
+    <header className="bg-accent-1-red text-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center space-x-2 text-primary-dark hover:text-accent-1-red transition-colors">
+        <Link href="/" className="flex items-center space-x-2 text-white hover:text-white/90 transition-colors">
           <Sun className="h-8 w-8" />
           <span className="font-montserrat font-bold text-xl">MalagaTravelGuide</span>
         </Link>
@@ -37,8 +36,8 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                'font-montserrat font-medium text-primary-dark hover:text-accent-1-red transition-colors pb-1',
-                pathname.startsWith(link.href) ? 'border-b-2 border-accent-1-red text-accent-1-red' : 'border-b-2 border-transparent'
+                'font-montserrat font-medium text-white hover:text-white/90 transition-colors pb-1',
+                pathname.startsWith(link.href) ? 'border-b-2 border-white text-white' : 'border-b-2 border-transparent'
               )}
             >
               {link.label}
@@ -50,18 +49,18 @@ export default function Header() {
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-primary-dark hover:bg-primary-light/80">
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-primary-light p-6">
+            <SheetContent side="right" className="w-[280px] bg-accent-1-red text-white p-6">
               <div className="flex justify-between items-center mb-8">
-                <Link href="/" className="flex items-center space-x-2 text-primary-dark" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link href="/" className="flex items-center space-x-2 text-white" onClick={() => setIsMobileMenuOpen(false)}>
                   <Sun className="h-7 w-7" />
                   <span className="font-montserrat font-bold text-lg">MalagaTravelGuide</span>
                 </Link>
                 <SheetClose asChild>
-                   <Button variant="ghost" size="icon" className="text-primary-dark hover:bg-primary-light/80">
+                   <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
                     <X className="h-6 w-6" />
                   </Button>
                 </SheetClose>
@@ -72,8 +71,8 @@ export default function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        'font-montserrat font-medium text-primary-dark hover:text-accent-1-red transition-colors py-2 text-lg',
-                         pathname.startsWith(link.href) ? 'text-accent-1-red' : ''
+                        'font-montserrat font-medium text-white hover:text-white/80 transition-colors py-2 text-lg',
+                         pathname.startsWith(link.href) ? 'font-bold' : ''
                       )}
                     >
                       {link.label}

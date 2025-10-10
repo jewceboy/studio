@@ -8,23 +8,18 @@ body {
 
 @layer base {
   :root {
-    /* Palette inspired by malagatravelguide.net, with PRD accent red corrected */
+    /* New palette from image */
+    --prd-accent-pink: 330 100% 71%; /* Hot Pink from image header */
+    --prd-accent-pink-hover: 330 90% 65%;
+    --prd-accent-cyan: 195 85% 45%; /* Cyan from image body */
+    --color-text-dark-grey: 210 10% 23%; /* Dark Grey #353B41 */
     --color-background-white: 0 0% 100%;
-    --color-text-dark-grey: 210 10% 23%; /* Dark Grey #353B41 (from malagatravelguide) */
-    --color-accent-teal: 175 60% 40%; /* Vibrant Teal #29A38E (from malagatravelguide) */
-    --color-accent-light-teal: 175 45% 65%; /* Lighter, desaturated Teal */
-    --color-accent-very-light-teal: 175 50% 88%; /* Very light teal for info boxes */
-    
-    /* PRD Specific Colors */
-    --prd-accent-red: 355 83% 41%;   /* Red #C1121F for primary CTA (PRD Accent) */
-    --prd-accent-red-hover: 355 80% 33%; /* Darker Red #A00F1A for hover (PRD Accent) */
-    --prd-navy: 207 100% 15%; /* Navy #003049 (PRD Primary) */
 
 
     --color-white: 0 0% 100%;
     --color-black: 0 0% 0%;
 
-    /* ShadCN Semantic Variables (primarily malagatravelguide theme) */
+    /* ShadCN Semantic Variables */
     --background: var(--color-background-white); /* Main background (White) */
     --foreground: var(--color-text-dark-grey); /* Main text color (Dark Grey) */
 
@@ -34,16 +29,16 @@ body {
     --popover: var(--color-white);
     --popover-foreground: var(--color-text-dark-grey);
 
-    --primary: var(--color-accent-teal); /* Primary accent for most buttons (Teal) */
-    --primary-foreground: var(--color-white); /* Text on primary (Teal) elements */
+    --primary: var(--prd-accent-pink); /* Primary accent is now PINK */
+    --primary-foreground: var(--color-white);
 
-    --secondary: var(--color-accent-light-teal); /* Secondary accent (Light Teal) */
+    --secondary: hsl(var(--prd-accent-cyan) / 0.1); /* Light cyan for secondary backgrounds */
     --secondary-foreground: var(--color-text-dark-grey); 
 
     --muted: 210 10% 50%; 
     --muted-foreground: 210 10% 40%; 
 
-    --accent: var(--color-accent-teal); /* General accent, defaults to Teal */
+    --accent: var(--prd-accent-cyan); /* General accent is CYAN */
     --accent-foreground: var(--color-white);
 
     --destructive: 0 72% 51%; 
@@ -51,57 +46,48 @@ body {
 
     --border: 210 10% 85%; 
     --input: 210 10% 90%; 
-    --ring: var(--color-accent-teal); /* Focus ring color (Teal) */
+    --ring: var(--prd-accent-pink); /* Focus ring color is PINK */
     
     --radius: 0.5rem;
 
     /* Custom specific colors for direct use if needed */
-    /* --primary-dark is now mapped to the malagatravelguide Dark Grey */
     --primary-dark: var(--color-text-dark-grey); 
-     /* --primary-light is mapped to malagatravelguide Cream/Beige */
     --primary-light: var(--color-background-white);
-    /* --accent-1-red now correctly maps to PRD Red #C1121F */
-    --accent-1-red: var(--prd-accent-red); 
-    --accent-1-red-hover: var(--prd-accent-red-hover);
-    /* These were based on teal, keeping for potential use or if other elements expect them */
-    --accent-2-maroon: 175 50% 30%; /* Darker Teal if maroon is remapped */
-    --accent-3-light-blue: var(--color-accent-light-teal); /* Re-mapping light blue to light teal */
+    --accent-1-red: var(--prd-accent-pink); /* Mapped red to PINK */
+    --accent-1-red-hover: var(--prd-accent-pink-hover);
+    --accent-2-maroon: 330 70% 50%; /* Darker pink */
+    --accent-3-light-blue: var(--prd-accent-cyan); /* Mapped light blue to CYAN */
 
 
-    --chart-1: 175 70% 45%;
+    --chart-1: var(--prd-accent-cyan);
     --chart-2: 195 60% 50%;
     --chart-3: 210 50% 55%;
     --chart-4: 43 74% 66%; 
     --chart-5: 27 87% 67%;
 
-    /* Sidebar - using malagatravelguide palette */
+    /* Sidebar - using new palette */
     --sidebar-background: 210 10% 97%; 
     --sidebar-foreground: var(--color-text-dark-grey);
-    --sidebar-primary: var(--color-accent-teal);
+    --sidebar-primary: var(--prd-accent-pink);
     --sidebar-primary-foreground: var(--color-white);
-    --sidebar-accent: var(--color-accent-very-light-teal);
+    --sidebar-accent: hsl(var(--prd-accent-cyan) / 0.2);
     --sidebar-accent-foreground: var(--color-text-dark-grey);
     --sidebar-border: 210 10% 88%;
-    --sidebar-ring: var(--color-accent-teal);
+    --sidebar-ring: var(--prd-accent-pink);
   }
 
   .dark {
     /* Dark Theme - Inverted and adjusted from light theme */
-    --color-background-beige: 210 10% 15%; 
+    --prd-accent-pink: 330 100% 75%;
+    --prd-accent-pink-hover: 330 90% 70%;
+    --prd-accent-cyan: 195 85% 55%;
     --color-text-dark-grey: 47 50% 90%; 
-    --color-accent-teal: 175 60% 55%; 
-    --color-accent-light-teal: 175 45% 45%; 
-    --color-accent-very-light-teal: 175 50% 25%; 
-
-    /* PRD Specific Colors for Dark Mode - adjust if needed */
-    --prd-accent-red: 355 83% 50%; /* Brighter Red for dark mode */
-    --prd-accent-red-hover: 355 80% 42%; /* Slightly darker red for hover */
-    --prd-navy: 207 100% 80%; /* Lighter Navy for dark mode text */
+    --color-background-white: 210 10% 15%; 
 
     --color-white: 0 0% 10%; 
     --color-black: 0 0% 100%; 
 
-    --background: var(--color-background-beige); 
+    --background: var(--color-background-white); 
     --foreground: var(--color-text-dark-grey);
 
     --card: 210 10% 20%; 
@@ -110,16 +96,16 @@ body {
     --popover: 210 10% 20%;
     --popover-foreground: var(--color-text-dark-grey);
 
-    --primary: var(--color-accent-teal); 
-    --primary-foreground: 0 0% 98%; 
+    --primary: var(--prd-accent-pink); 
+    --primary-foreground: 210 10% 15%; 
 
-    --secondary: var(--color-accent-light-teal); 
+    --secondary: hsl(var(--prd-accent-cyan) / 0.15); 
     --secondary-foreground: var(--color-text-dark-grey);
 
     --muted: 210 10% 35%;
     --muted-foreground: 210 10% 60%; 
 
-    --accent: var(--color-accent-teal); /* General accent Teal */
+    --accent: var(--prd-accent-cyan);
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 60% 45%; 
@@ -127,28 +113,28 @@ body {
 
     --border: 210 10% 30%; 
     --input: 210 10% 25%; 
-    --ring: var(--color-accent-teal);
+    --ring: var(--prd-accent-pink);
     
     --primary-dark: var(--color-text-dark-grey); 
-    --primary-light: var(--color-background-beige); 
-    --accent-1-red: var(--prd-accent-red); 
-    --accent-1-red-hover: var(--prd-accent-red-hover);
-    --accent-2-maroon: 175 50% 35%;
-    --accent-3-light-blue: var(--color-accent-light-teal);
+    --primary-light: var(--color-background-white); 
+    --accent-1-red: var(--prd-accent-pink); 
+    --accent-1-red-hover: var(--prd-accent-pink-hover);
+    --accent-2-maroon: 330 70% 55%;
+    --accent-3-light-blue: var(--prd-accent-cyan);
     
-    --chart-1: 175 70% 60%;
+    --chart-1: var(--prd-accent-cyan);
     --chart-2: 195 60% 65%;
     --chart-3: 210 50% 70%;
     
     /* Sidebar - dark */
     --sidebar-background: 210 10% 12%; 
     --sidebar-foreground: var(--color-text-dark-grey);
-    --sidebar-primary: var(--color-accent-teal);
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: var(--color-accent-very-light-teal);
+    --sidebar-primary: var(--prd-accent-pink);
+    --sidebar-primary-foreground: 210 10% 15%;
+    --sidebar-accent: hsl(var(--prd-accent-cyan) / 0.2);
     --sidebar-accent-foreground: var(--color-text-dark-grey);
     --sidebar-border: 210 10% 25%;
-    --sidebar-ring: var(--color-accent-teal);
+    --sidebar-ring: var(--prd-accent-pink);
   }
 }
 
@@ -176,7 +162,7 @@ body {
     @apply mb-4;
   }
   a {
-    @apply text-accent hover:text-primary/80 transition-colors duration-200; /* Uses Teal by default */
+    @apply text-accent hover:text-primary/80 transition-colors duration-200; /* Uses Cyan by default */
   }
 }
 
@@ -184,13 +170,13 @@ body {
   --tw-prose-body: hsl(var(--foreground));
   --tw-prose-headings: hsl(var(--foreground));
   --tw-prose-lead: hsl(var(--muted-foreground));
-  --tw-prose-links: hsl(var(--primary)); /* Teal for links */
+  --tw-prose-links: hsl(var(--accent)); /* Cyan for links */
   --tw-prose-bold: hsl(var(--foreground));
   --tw-prose-counters: hsl(var(--muted-foreground));
   --tw-prose-bullets: hsl(var(--muted));
   --tw-prose-hr: hsl(var(--border));
   --tw-prose-quotes: hsl(var(--foreground));
-  --tw-prose-quote-borders: hsl(var(--accent-light-teal)); 
+  --tw-prose-quote-borders: hsl(var(--accent)); 
   --tw-prose-captions: hsl(var(--muted-foreground));
   --tw-prose-code: hsl(var(--primary));
   --tw-prose-pre-code: hsl(var(--primary-foreground));
@@ -203,29 +189,29 @@ body {
   --tw-prose-body: hsl(var(--foreground));
   --tw-prose-headings: hsl(var(--foreground));
   --tw-prose-lead: hsl(var(--muted-foreground));
-  --tw-prose-links: hsl(var(--primary));
+  --tw-prose-links: hsl(var(--accent));
   --tw-prose-bold: hsl(var(--foreground));
   --tw-prose-counters: hsl(var(--muted-foreground));
   --tw-prose-bullets: hsl(var(--muted));
   --tw-prose-hr: hsl(var(--border));
   --tw-prose-quotes: hsl(var(--foreground));
-  --tw-prose-quote-borders: hsl(var(--accent-light-teal));
+  --tw-prose-quote-borders: hsl(var(--accent));
   --tw-prose-captions: hsl(var(--muted-foreground));
   --tw-prose-code: hsl(var(--primary));
   --tw-prose-pre-code: hsl(var(--primary-foreground));
-  --tw-prose-pre-bg: hsl(var(--color-background-beige)); 
+  --tw-prose-pre-bg: hsl(var(--color-background-white)); 
   --tw-prose-th-borders: hsl(var(--border));
   --tw-prose-td-borders: hsl(var(--border));
 }
 
 .info-box-custom-bg {
-  background-color: hsl(var(--color-accent-very-light-teal));
-  border-left-color: hsl(var(--color-accent-teal));
-  color: hsl(var(--color-text-dark-grey));
+  background-color: hsl(var(--secondary));
+  border-left-color: hsl(var(--accent));
+  color: hsl(var(--foreground));
 }
 
 .dark .info-box-custom-bg {
-  background-color: hsl(var(--color-accent-very-light-teal)); 
-  border-left-color: hsl(var(--color-accent-teal)); 
-  color: hsl(var(--color-text-dark-grey)); 
+  background-color: hsl(var(--secondary)); 
+  border-left-color: hsl(var(--accent)); 
+  color: hsl(var(--foreground)); 
 }
