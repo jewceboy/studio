@@ -31,6 +31,13 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  experimental: {
+    browsersListForSwc: [
+      "> 0.5%",
+      "not dead",
+      "not op_mini all"
+    ]
+  }
 };
 
 export default nextConfig;
