@@ -37,9 +37,9 @@ export default function InfoCard({
         <Image
           src={imageUrl}
           alt={imageAlt}
-          width={600}
-          height={400}
-          className="object-cover transition-transform duration-300 group-hover:scale-105 w-full h-auto"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
           data-ai-hint={imageHint}
         />
       </CardHeader>
