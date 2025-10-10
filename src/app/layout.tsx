@@ -44,6 +44,7 @@ export default function RootLayout({
        <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://picsum.photos" />
         <link
           rel="preload"
           as="style"
