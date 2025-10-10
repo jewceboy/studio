@@ -109,8 +109,8 @@ export default function ExpandableChatDemo() {
                 className="h-8 w-8 shrink-0"
                 src={
                   message.sender === "user"
-                    ? "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&q=80&crop=faces&fit=crop"
-                    : "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&q=80&crop=faces&fit=crop"
+                    ? "https://picsum.photos/seed/user-avatar/64/64"
+                    : "https://picsum.photos/seed/ai-avatar/64/64"
                 }
                 data-ai-hint={message.sender === "user" ? "man face" : "woman face"}
                 fallback={message.sender === "user" ? "US" : "AI"}
@@ -128,7 +128,7 @@ export default function ExpandableChatDemo() {
             <ChatBubble variant="received">
               <ChatBubbleAvatar
                 className="h-8 w-8 shrink-0"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&q=80&crop=faces&fit=crop"
+                src="https://picsum.photos/seed/ai-avatar/64/64"
                 data-ai-hint="woman face"
                 fallback="AI"
               />
