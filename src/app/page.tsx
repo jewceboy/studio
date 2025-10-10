@@ -11,27 +11,27 @@ import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 import MarbellaHero from '@/components/custom/MarbellaHero'; // Import the new hero component
 
 const featuredDestinations = [
-  { title: 'Málaga', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Malaga City skyline', description: 'Vibrant culture, historic sites, and stunning beaches.', linkHref: '/destinations/malaga', imageHint: 'Malaga port' },
-  { title: 'Marbella', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Marbella luxury port', description: 'Luxury boutiques, glamorous nightlife, and beautiful marinas.', linkHref: '/destinations/marbella', imageHint: 'Marbella yacht' },
-  { title: 'Mijas Pueblo', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Mijas Pueblo white village', description: 'Charming white-washed village with breathtaking views.', linkHref: '/destinations/mijas', imageHint: 'Mijas village' },
-  { title: 'Nerja', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Nerja Balcon de Europa', description: 'Famous caves, stunning coastline, and the Balcón de Europa.', linkHref: '/destinations/nerja', imageHint: 'Nerja coast' },
+  { title: 'Málaga', imageUrl: 'https://picsum.photos/seed/malaga-port/600/400', imageAlt: 'Malaga City skyline', description: 'Vibrant culture, historic sites, and stunning beaches.', linkHref: '/destinations/malaga', imageHint: 'Malaga port' },
+  { title: 'Marbella', imageUrl: 'https://picsum.photos/seed/marbella-yacht/600/400', imageAlt: 'Marbella luxury port', description: 'Luxury boutiques, glamorous nightlife, and beautiful marinas.', linkHref: '/destinations/marbella', imageHint: 'Marbella yacht' },
+  { title: 'Mijas Pueblo', imageUrl: 'https://picsum.photos/seed/mijas-village/600/400', imageAlt: 'Mijas Pueblo white village', description: 'Charming white-washed village with breathtaking views.', linkHref: '/destinations/mijas', imageHint: 'Mijas village' },
+  { title: 'Nerja', imageUrl: 'https://picsum.photos/seed/nerja-coast/600/400', imageAlt: 'Nerja Balcon de Europa', description: 'Famous caves, stunning coastline, and the Balcón de Europa.', linkHref: '/destinations/nerja', imageHint: 'Nerja coast' },
 ];
 
 const topActivities = [
-  { title: 'Caminito del Rey Hike', imageUrl: 'https://picsum.photos/seed/caminito/600/400', imageAlt: 'Caminito del Rey gorge walk', description: 'Thrilling cliffside path with spectacular views.', linkHref: '/activities/caminito-del-rey', imageHint: 'gorge hike' },
-  { title: 'Picasso Museum Visit', imageUrl: 'https://picsum.photos/seed/picasso/600/400', imageAlt: 'Picasso Museum Malaga', description: 'Explore the works of the legendary artist in his birthplace.', linkHref: '/activities/picasso-museum', imageHint: 'art museum' },
-  { title: 'Flamenco Show Experience', imageUrl: 'https://picsum.photos/seed/flamenco/600/400', imageAlt: 'Flamenco dancers', description: 'Immerse yourself in the passion of authentic Andalusian flamenco.', linkHref: '/activities/flamenco-show', imageHint: 'flamenco dance' },
+  { title: 'Caminito del Rey Hike', imageUrl: 'https://picsum.photos/seed/gorge-hike/600/400', imageAlt: 'Caminito del Rey gorge walk', description: 'Thrilling cliffside path with spectacular views.', linkHref: '/activities/caminito-del-rey', imageHint: 'gorge hike' },
+  { title: 'Picasso Museum Visit', imageUrl: 'https://picsum.photos/seed/art-museum/600/400', imageAlt: 'Picasso Museum Malaga', description: 'Explore the works of the legendary artist in his birthplace.', linkHref: '/activities/picasso-museum', imageHint: 'art museum' },
+  { title: 'Flamenco Show Experience', imageUrl: 'https://picsum.photos/seed/flamenco-show/600/400', imageAlt: 'Flamenco dancers', description: 'Immerse yourself in the passion of authentic Andalusian flamenco.', linkHref: '/activities/flamenco-show', imageHint: 'flamenco dance' },
 ];
 
 const accommodationHighlights = [
-  { title: 'Hotels in Málaga', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Luxury hotel in Malaga', linkHref: '/hotels/malaga', description: 'Find the perfect stay in the heart of the Costa del Sol.', imageHint: 'Malaga hotel' },
-  { title: 'Hotels in Marbella', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Beachfront resort in Marbella', linkHref: '/hotels/marbella', description: 'Experience luxury and comfort in glamorous Marbella.', imageHint: 'Marbella resort' },
+  { title: 'Hotels in Málaga', imageUrl: 'https://picsum.photos/seed/malaga-hotel/600/400', imageAlt: 'Luxury hotel in Malaga', linkHref: '/hotels/malaga', description: 'Find the perfect stay in the heart of the Costa del Sol.', imageHint: 'Malaga hotel' },
+  { title: 'Hotels in Marbella', imageUrl: 'https://picsum.photos/seed/marbella-resort/600/400', imageAlt: 'Beachfront resort in Marbella', linkHref: '/hotels/marbella', description: 'Experience luxury and comfort in glamorous Marbella.', imageHint: 'Marbella resort' },
 ];
 
 const topArticles = [
-  { title: 'Best Tapas Bars in Málaga Old Town', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Spanish tapas selection', description: 'A culinary journey through Málaga\'s most authentic tapas spots.', linkHref: '/blog/best-tapas-malaga', imageHint: 'tapas food' },
-  { title: 'Top 5 Hidden Beaches on the Costa del Sol', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Secluded beach cove', description: 'Discover tranquil coves and pristine sands away from the crowds.', linkHref: '/blog/hidden-beaches-costa-del-sol', imageHint: 'secluded beach' },
-  { title: 'A Day Trip to Ronda: What to See and Do', imageUrl: 'https://placehold.co/600x400.png', imageAlt: 'Ronda bridge Puente Nuevo', description: 'Explore the dramatic landscapes and historic charm of Ronda.', linkHref: '/blog/day-trip-ronda', imageHint: 'Ronda bridge' },
+  { title: 'Best Tapas Bars in Málaga Old Town', imageUrl: 'https://picsum.photos/seed/tapas-food/600/400', imageAlt: 'Spanish tapas selection', description: 'A culinary journey through Málaga\'s most authentic tapas spots.', linkHref: '/blog/best-tapas-malaga', imageHint: 'tapas food' },
+  { title: 'Top 5 Hidden Beaches on the Costa del Sol', imageUrl: 'https://picsum.photos/seed/secluded-beach/600/400', imageAlt: 'Secluded beach cove', description: 'Discover tranquil coves and pristine sands away from the crowds.', linkHref: '/blog/hidden-beaches-costa-del-sol', imageHint: 'secluded beach' },
+  { title: 'A Day Trip to Ronda: What to See and Do', imageUrl: 'https://picsum.photos/seed/ronda-bridge/600/400', imageAlt: 'Ronda bridge Puente Nuevo', description: 'Explore the dramatic landscapes and historic charm of Ronda.', linkHref: '/blog/day-trip-ronda', imageHint: 'Ronda bridge' },
 ];
 
 
