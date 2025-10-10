@@ -5,12 +5,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
 
 export default function MarbellaHero() {
   return (
     <div className="relative h-[calc(100vh-80px)] min-h-[500px] md:min-h-[600px] flex items-center justify-center text-center -mt-8 -mx-4 sm:-mx-container-padding">
       <Image
-        src="/images/hero-image.jpg"
+        src={PLACEHOLDER_IMAGE_URL(1920, 1080, 'Marbella panoramic beach luxury')}
         alt="Envision the stunning beauty of Marbella: sun-drenched coasts and luxurious lifestyle"
         fill={true}
         priority
@@ -30,7 +31,7 @@ export default function MarbellaHero() {
         <Button
           asChild
           size="lg"
-          className="bg-accent-1-red text-primary-light hover:bg-accent-1-red-hover text-lg px-10 py-7 font-montserrat font-semibold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-10 py-7 font-montserrat font-semibold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
         >
           <Link href="/destinations/marbella">
             Explore Marbella <ArrowRight className="ml-2 h-5 w-5" />
