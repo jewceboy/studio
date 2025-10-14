@@ -2,13 +2,14 @@
 import Breadcrumbs from '@/components/shared/Breadcrumbs';
 import type { BreadcrumbItem } from '@/types';
 
-export default function HotelsLayout({
+export default function FineDiningLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const breadcrumbItems: BreadcrumbItem[] = [
-    { label: 'Hotels', href: '/hotels' },
+    { label: 'Restaurants', href: '/restaurants' },
+    { label: 'Fine Dining', href: '/restaurants/fine-dining' },
   ];
 
   return (
