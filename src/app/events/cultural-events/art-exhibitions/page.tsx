@@ -1,0 +1,22 @@
+
+import PageHeader from '@/components/shared/PageHeader';
+import Section from '@/components/shared/Section';
+
+export const metadata = {
+  title: 'Art Exhibitions in Malaga | Costa del Sol Navigator',
+  description: 'Find current and upcoming art exhibitions in Malaga.',
+};
+
+export default function ArtExhibitionsPage() {
+  return (
+    <div>
+      <PageHeader
+        title="Art Exhibitions in Malaga"
+        subtitle="A guide to the vibrant art scene and exhibitions in Malaga."
+      />
+      <Section>
+        <p className="text-center text-lg">Placeholder content for art exhibitions. This page will list current and future exhibitions.</p>
+      </Section>
+    </div>
+  );
+}
