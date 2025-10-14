@@ -40,9 +40,10 @@ const townHotelsData: { [key: string]: Hotel[] } = {
 //   }));
 // }
 
-export default function DestinationHotelsPage({ params }: { params: { town: string } }) {
-  const hotels = townHotelsData[params.town];
-  const townName = params.town.charAt(0).toUpperCase() + params.town.slice(1);
+export default async function DestinationHotelsPage({ params }: { params: { town: string } }) {
+  const awaitedParams = await params;
+  const hotels = townHotelsData[awaitedParams.town];
+  const townName = awaitedParams.town.charAt(0).toUpperCase() + awaitedParams.town.slice(1);
 
   if (!hotels) {
     notFound();
@@ -50,8 +51,8 @@ export default function DestinationHotelsPage({ params }: { params: { town: stri
   
   const breadcrumbItems: BreadcrumbItem[] = [
     { label: 'Destinations', href: '/destinations' },
-    { label: townName, href: `/destinations/${params.town}` },
-    { label: 'Hotels', href: `/destinations/${params.town}/hotels` },
+    { label: townName, href: `/destinations/${awaitedParams.town}` },
+    { label: 'Hotels', href: `/destinations/${awaitedParams.town}/hotels` },
   ];
 
   return (
@@ -59,12 +60,12 @@ export default function DestinationHotelsPage({ params }: { params: { town: stri
       <Breadcrumbs items={breadcrumbItems} />
        <div className="relative w-full h-64 md:h-80 mb-8 rounded-lg overflow-hidden shadow-xl">
         <Image
-          src={PLACEHOLDER_IMAGE_URL(1200, 400, `${params.town} hotels`)}
+          src={PLACEHOLDER_IMAGE_URL(1200, 400, `${awaitedParams.town} hotels`)}
           alt={`Hero image for hotels in ${townName}`}
           fill={true}
           priority
           className="object-cover"
-          data-ai-hint={`${params.town} hotel skyline`}
+          data-ai-hint={`${awaitedParams.town} hotel skyline`}
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
           <PageHeader
@@ -95,7 +96,7 @@ export default function DestinationHotelsPage({ params }: { params: { town: stri
 
       <div className="mt-12 text-center">
         <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-montserrat font-medium">
-          <Link href={`https://booking.com/${params.town}-hotels?aid=YOUR_AID`} target="_blank" rel="noopener noreferrer">
+          <Link href={`https://booking.com/${awaitedParams.town}-hotels?aid=YOUR_AID`} target="_blank" rel="noopener noreferrer">
             See All Hotels in {townName} on Booking.com
           </Link>
         </Button>
