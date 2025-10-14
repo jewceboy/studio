@@ -4,32 +4,51 @@ import { Button } from '@/components/ui/button';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import NewsletterForm from '@/components/forms/NewsletterForm';
-import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles, Heart, Briefcase, Droplets, BedDouble, Car } from 'lucide-react';
 import Image from 'next/image';
 import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
 
-const featuredDestinations = [
-  { title: 'Málaga', imageUrl: 'https://picsum.photos/seed/malaga-port/600/400', imageAlt: 'Malaga City skyline', description: 'Vibrant culture, historic sites, and stunning beaches.', linkHref: '/destinations/malaga', imageHint: 'Malaga port' },
-  { title: 'Marbella', imageUrl: 'https://picsum.photos/seed/marbella-yacht/600/400', imageAlt: 'Marbella luxury port', description: 'Luxury boutiques, glamorous nightlife, and beautiful marinas.', linkHref: '/destinations/marbella', imageHint: 'Marbella yacht' },
-  { title: 'Mijas Pueblo', imageUrl: 'https://picsum.photos/seed/mijas-village/600/400', imageAlt: 'Mijas Pueblo white village', description: 'Charming white-washed village with breathtaking views.', linkHref: '/destinations/mijas', imageHint: 'Mijas village' },
-  { title: 'Nerja', imageUrl: 'https://picsum.photos/seed/nerja-coast/600/400', imageAlt: 'Nerja Balcon de Europa', description: 'Famous caves, stunning coastline, and the Balcón de Europa.', linkHref: '/destinations/nerja', imageHint: 'Nerja coast' },
-];
-
-const topActivities = [
-  { title: 'Caminito del Rey Hike', imageUrl: 'https://picsum.photos/seed/gorge-hike/600/400', imageAlt: 'Caminito del Rey gorge walk', description: 'Thrilling cliffside path with spectacular views.', linkHref: '/activities/caminito-del-rey', imageHint: 'gorge hike' },
-  { title: 'Picasso Museum Visit', imageUrl: 'https://picsum.photos/seed/art-museum/600/400', imageAlt: 'Picasso Museum Malaga', description: 'Explore the works of the legendary artist in his birthplace.', linkHref: '/activities/picasso-museum', imageHint: 'art museum' },
-  { title: 'Flamenco Show Experience', imageUrl: 'https://picsum.photos/seed/flamenco-show/600/400', imageAlt: 'Flamenco dancers', description: 'Immerse yourself in the passion of authentic Andalusian flamenco.', linkHref: '/activities/flamenco-show', imageHint: 'flamenco dance' },
-];
-
-const accommodationHighlights = [
-  { title: 'Hotels in Málaga', imageUrl: 'https://picsum.photos/seed/malaga-hotel/600/400', imageAlt: 'Luxury hotel in Malaga', linkHref: '/hotels/malaga', description: 'Find the perfect stay in the heart of the Costa del Sol.', imageHint: 'Malaga hotel' },
-  { title: 'Hotels in Marbella', imageUrl: 'https://picsum.photos/seed/marbella-resort/600/400', imageAlt: 'Beachfront resort in Marbella', linkHref: '/hotels/marbella', description: 'Experience luxury and comfort in glamorous Marbella.', imageHint: 'Marbella resort' },
-];
-
-const topArticles = [
-  { title: 'Best Tapas Bars in Málaga Old Town', imageUrl: 'https://picsum.photos/seed/tapas-food/600/400', imageAlt: 'Spanish tapas selection', description: 'A culinary journey through Málaga\'s most authentic tapas spots.', linkHref: '/blog/best-tapas-malaga', imageHint: 'tapas food' },
-  { title: 'Top 5 Hidden Beaches on the Costa del Sol', imageUrl: 'https://picsum.photos/seed/secluded-beach/600/400', imageAlt: 'Secluded beach cove', description: 'Discover tranquil coves and pristine sands away from the crowds.', linkHref: '/blog/hidden-beaches-costa-del-sol', imageHint: 'secluded beach' },
-  { title: 'A Day Trip to Ronda: What to See and Do', imageUrl: 'https://picsum.photos/seed/ronda-bridge/600/400', imageAlt: 'Ronda bridge Puente Nuevo', description: 'Explore the dramatic landscapes and historic charm of Ronda.', linkHref: '/blog/day-trip-ronda', imageHint: 'Ronda bridge' },
+const topMoneyPages = [
+    {
+      title: 'Weddings & Luxury Events',
+      description: 'Discover exclusive venues and bespoke planning for your dream wedding in Costa del Sol.',
+      linkHref: '/weddings',
+      imageHint: 'luxury wedding venue',
+      imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'luxury wedding'),
+      icon: Heart,
+    },
+    {
+      title: 'Business & MICE Tourism',
+      description: 'Host exceptional corporate events, conferences, and retreats in world-class facilities.',
+      linkHref: '/business',
+      imageHint: 'corporate event',
+      imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'corporate event'),
+      icon: Briefcase,
+    },
+    {
+      title: 'Wellness & Medical Tourism',
+      description: 'Access premium wellness retreats, spa services, and leading medical facilities.',
+      linkHref: '/wellness',
+      imageHint: 'wellness spa retreat',
+      imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'wellness spa'),
+      icon: Droplets,
+    },
+    {
+      title: 'Luxury Accommodation & Hotels',
+      description: 'Explore a curated selection of the finest luxury hotels and 5-star resorts.',
+      linkHref: '/hotels',
+      imageHint: 'luxury hotel malaga',
+      imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'luxury hotel'),
+      icon: BedDouble,
+    },
+    {
+      title: 'Airport Transfers & VIP Transport',
+      description: 'Arrange seamless and private transportation, from airport transfers to VIP travel.',
+      linkHref: '/transportation',
+      imageHint: 'vip airport transfer',
+      imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'vip transport'),
+      icon: Car,
+    },
 ];
 
 
@@ -66,57 +85,22 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Featured Destinations Section */}
-      <Section title="Featured Destinations" subtitle="Explore the jewels of the Costa del Sol, each with its unique charm and attractions.">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {featuredDestinations.map((dest) => (
+       {/* High-Value Money Pages Section */}
+      <Section title="Plan Your Luxury Experience" subtitle="Focusing on high-value services to create your perfect Costa del Sol journey.">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {topMoneyPages.map((page) => (
             <InfoCard 
-              key={dest.title} 
-              {...dest} 
+              key={page.title} 
+              {...page} 
               linkText="Explore" 
-              imageHint={dest.imageHint}
-              buttonClassName="bg-accent text-white hover:bg-accent/90" // Apply accessible accent button style
+              buttonClassName="bg-accent text-white hover:bg-accent/90"
             />
           ))}
         </div>
       </Section>
 
-      {/* Top Activities Section */}
-      <Section title="Top Activities" subtitle="Dive into exciting adventures and cultural experiences that make Costa del Sol unforgettable." className="bg-secondary/10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {topActivities.map((activity) => (
-            <InfoCard key={activity.title} {...activity} linkText="Learn More" imageHint={activity.imageHint}/>
-          ))}
-        </div>
-      </Section>
-
-      {/* Accommodation Highlights Section */}
-      <Section title="Accommodation Highlights" subtitle="Find the perfect place to stay, from luxury resorts to charming boutique hotels.">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-          {accommodationHighlights.map((acc) => (
-            <InfoCard key={acc.title} {...acc} linkText="Explore Hotels" imageHint={acc.imageHint} />
-          ))}
-        </div>
-      </Section>
-
-      {/* "Don't Miss" Articles Section */}
-      <Section title="Don't Miss Our Latest Articles" subtitle="Get insider tips, travel guides, and inspiration for your Costa del Sol journey." className="bg-secondary/10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {topArticles.map((article) => (
-            <InfoCard key={article.title} {...article} linkText="Read Article" imageHint={article.imageHint} />
-          ))}
-        </div>
-        <div className="text-center mt-12">
-          <Button asChild variant="outline" size="lg" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground font-montserrat font-medium">
-            <Link href="/blog">
-              View All Articles <BookOpen className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-      </Section>
-
       {/* New Features Teaser (Plan Your Trip) */}
-      <Section title="Plan Your Perfect Trip" subtitle="Let our smart trip planner craft a personalized itinerary just for you.">
+      <Section title="Plan Your Perfect Trip" subtitle="Let our smart trip planner craft a personalized itinerary just for you." className="bg-secondary/10">
         <div className="text-center bg-accent/20 p-8 md:p-12 rounded-lg shadow-lg max-w-3xl mx-auto">
           <Sparkles className="h-16 w-16 text-primary mx-auto mb-6" />
           <h3 className="font-montserrat text-3xl font-bold text-primary-dark mb-4">
