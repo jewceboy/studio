@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import NewsletterForm from '@/components/forms/NewsletterForm';
-import { ArrowRight, BookOpen, Sparkles, Heart, Briefcase, Droplets, BedDouble, Car } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
 
@@ -15,7 +15,6 @@ const topMoneyPages = [
       linkHref: '/weddings',
       imageHint: 'luxury wedding venue',
       imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'luxury wedding'),
-      icon: Heart,
     },
     {
       title: 'Business & MICE Tourism',
@@ -23,7 +22,6 @@ const topMoneyPages = [
       linkHref: '/business',
       imageHint: 'corporate event',
       imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'corporate event'),
-      icon: Briefcase,
     },
     {
       title: 'Wellness & Medical Tourism',
@@ -31,7 +29,6 @@ const topMoneyPages = [
       linkHref: '/wellness',
       imageHint: 'wellness spa retreat',
       imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'wellness spa'),
-      icon: Droplets,
     },
     {
       title: 'Luxury Accommodation & Hotels',
@@ -39,7 +36,6 @@ const topMoneyPages = [
       linkHref: '/hotels',
       imageHint: 'luxury hotel malaga',
       imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'luxury hotel'),
-      icon: BedDouble,
     },
     {
       title: 'Airport Transfers & VIP Transport',
@@ -47,7 +43,6 @@ const topMoneyPages = [
       linkHref: '/transportation',
       imageHint: 'vip airport transfer',
       imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'vip transport'),
-      icon: Car,
     },
 ];
 
@@ -91,7 +86,8 @@ export default function Home() {
           {topMoneyPages.map((page) => (
             <InfoCard 
               key={page.title} 
-              {...page} 
+              {...page}
+              imageAlt={page.title}
               linkText="Explore" 
               buttonClassName="bg-accent text-white hover:bg-accent/90"
             />
