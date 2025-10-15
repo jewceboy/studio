@@ -1,4 +1,5 @@
 
+
 export const PLACEHOLDER_IMAGE_URL = (width = 600, height = 400, seed: string = 'placeholder') => `https://picsum.photos/seed/${seed}/${width}/${height}`;
 
 // Placeholder Affiliate Links

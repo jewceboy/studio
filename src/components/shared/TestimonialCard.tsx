@@ -1,9 +1,21 @@
+
 'use client';
 
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Star } from 'lucide-react'; // Using Star as a generic quote icon or for rating
 import { cn } from '@/lib/utils';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
+
 
 interface TestimonialCardProps {
   quote: string;
@@ -25,7 +37,7 @@ export default function TestimonialCard({
       <CardHeader className="pb-4">
         <div className="flex items-start space-x-4">
           <Avatar className="h-12 w-12">
-            <AvatarImage src={avatarUrl || `https://picsum.photos/seed/${author.replace(/\s+/g, '-')}/48/48`} alt={author} data-ai-hint="person avatar" />
+            <AvatarImage src={avatarUrl || images['person-avatar'].url} alt={author} data-ai-hint={images['person-avatar'].hint} />
             <AvatarFallback>{author.charAt(0).toUpperCase()}</AvatarFallback>
           </Avatar>
           <div>

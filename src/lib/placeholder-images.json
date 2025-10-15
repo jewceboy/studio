@@ -1,0 +1,74 @@
+{
+  "Marbella-panoramic-beach-luxury": {
+    "url": "https://picsum.photos/seed/Marbella panoramic beach luxury/1920/1080",
+    "hint": "Marbella panoramic beach luxury"
+  },
+  "luxury-wedding": {
+    "url": "https://picsum.photos/seed/luxury wedding/600/400",
+    "hint": "luxury wedding venue"
+  },
+  "corporate-event": {
+    "url": "https://picsum.photos/seed/corporate event/600/400",
+    "hint": "corporate event"
+  },
+  "wellness-spa": {
+    "url": "https://picsum.photos/seed/wellness spa/600/400",
+    "hint": "wellness spa retreat"
+  },
+  "luxury-hotel": {
+    "url": "https://picsum.photos/seed/luxury hotel/600/400",
+    "hint": "luxury hotel malaga"
+  },
+  "vip-transport": {
+    "url": "https://picsum.photos/seed/vip transport/600/400",
+    "hint": "vip airport transfer"
+  },
+  "Malaga-tapas-bar": {
+    "url": "https://picsum.photos/seed/Malaga tapas bar/1200/500",
+    "hint": "Malaga tapas bar"
+  },
+  "restaurant-interior": {
+    "url": "https://picsum.photos/seed/restaurant interior/800/400",
+    "hint": "restaurant interior cozy"
+  },
+  "tapas-food-variety": {
+    "url": "https://picsum.photos/seed/tapas food variety/600/400",
+    "hint": "tapas food variety"
+  },
+  "secluded-cove-beach": {
+    "url": "https://picsum.photos/seed/secluded cove beach/600/400",
+    "hint": "secluded cove beach"
+  },
+  "Ronda-bridge-view": {
+    "url": "https://picsum.photos/seed/Ronda bridge view/600/400",
+    "hint": "Ronda bridge view"
+  },
+  "Caminito-del-Rey-path": {
+    "url": "https://picsum.photos/seed/Caminito del Rey path/600/400",
+    "hint": "Caminito Rey path"
+  },
+  "Christmas-lights-street": {
+    "url": "https://picsum.photos/seed/Christmas lights street/600/400",
+    "hint": "Christmas lights street"
+  },
+  "white-village-street": {
+    "url": "https://picsum.photos/seed/white village street/600/400",
+    "hint": "white village street"
+  },
+  "blog-article": {
+    "url": "https://picsum.photos/seed/blog article/600/400",
+    "hint": "blog article"
+  },
+  "person-avatar": {
+    "url": "https://picsum.photos/seed/person avatar/48/48",
+    "hint": "person avatar"
+  },
+  "user-avatar": {
+    "url": "https://picsum.photos/seed/user-avatar/64/64",
+    "hint": "man face"
+  },
+  "ai-avatar": {
+    "url": "https://picsum.photos/seed/ai-avatar/64/64",
+    "hint": "woman face"
+  }
+}

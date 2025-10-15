@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/shared/Section';
@@ -6,46 +7,49 @@ import InfoCard from '@/components/shared/InfoCard';
 import NewsletterForm from '@/components/forms/NewsletterForm';
 import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 import Image from 'next/image';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
 
 const topMoneyPages = [
     {
       title: 'Weddings & Luxury Events',
       description: 'Discover exclusive venues and bespoke planning for your dream wedding in Costa del Sol.',
       linkHref: '/weddings',
-      imageHint: 'luxury wedding venue',
-      imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'luxury wedding'),
+      imageKey: 'luxury-wedding',
     },
     {
       title: 'Business & MICE Tourism',
       description: 'Host exceptional corporate events, conferences, and retreats in world-class facilities.',
       linkHref: '/business',
-      imageHint: 'corporate event',
-      imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'corporate event'),
+      imageKey: 'corporate-event',
     },
     {
       title: 'Wellness & Medical Tourism',
       description: 'Access premium wellness retreats, spa services, and leading medical facilities.',
       linkHref: '/wellness',
-      imageHint: 'wellness spa retreat',
-      imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'wellness spa'),
+      imageKey: 'wellness-spa',
     },
     {
       title: 'Luxury Accommodation & Hotels',
       description: 'Explore a curated selection of the finest luxury hotels and 5-star resorts.',
       linkHref: '/hotels',
-      imageHint: 'luxury hotel malaga',
-      imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'luxury hotel'),
+      imageKey: 'luxury-hotel',
     },
     {
       title: 'Airport Transfers & VIP Transport',
       description: 'Arrange seamless and private transportation, from airport transfers to VIP travel.',
-      linkHref: '/transportation',
-      imageHint: 'vip airport transfer',
-      imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'vip transport'),
+      linkHref: '/transfers',
+      imageKey: 'vip-transport',
     },
 ];
 
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export default function Home() {
   return (
@@ -53,12 +57,12 @@ export default function Home() {
       {/* Marbella Hero Section */}
       <div className="relative h-[calc(100vh-80px)] min-h-[500px] md:min-h-[600px] flex items-center justify-center text-center -mt-8 -mx-4 sm:-mx-container-padding">
         <Image
-          src={PLACEHOLDER_IMAGE_URL(1920, 1080, 'Marbella panoramic beach luxury')}
+          src={images['Marbella-panoramic-beach-luxury'].url}
           alt="Envision the stunning beauty of Marbella: sun-drenched coasts and luxurious lifestyle"
           fill={true}
           priority
           className="absolute inset-0 z-0 object-cover w-full h-full"
-          data-ai-hint="Marbella panoramic beach luxury"
+          data-ai-hint={images['Marbella-panoramic-beach-luxury'].hint}
         />
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
         <div className="relative z-20 container mx-auto px-4">
@@ -86,7 +90,11 @@ export default function Home() {
           {topMoneyPages.map((page) => (
             <InfoCard 
               key={page.title} 
-              {...page}
+              title={page.title}
+              description={page.description}
+              linkHref={page.linkHref}
+              imageUrl={images[page.imageKey].url}
+              imageHint={images[page.imageKey].hint}
               imageAlt={page.title}
               linkText="Explore" 
               buttonClassName="bg-accent text-white hover:bg-accent/90"

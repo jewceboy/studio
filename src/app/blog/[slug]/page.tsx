@@ -1,28 +1,39 @@
+
 'use client'; // Added due to onClick for print
 
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import type { Article } from '@/lib/constants';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
 import { CalendarDays, UserCircle, MessageSquare, Share2, Printer, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import Section from '@/components/shared/Section';
 import ArticleCard from '@/components/blog/ArticleCard';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
+
 
 // Placeholder data - replace with actual data fetching logic
 const articlesData: { [key: string]: Article } = {
   'best-tapas-malaga': {
     id: '1', slug: 'best-tapas-malaga', title: 'Best Tapas Bars in Málaga Old Town', 
-    imageUrl: PLACEHOLDER_IMAGE_URL(1200, 500, 'Malaga tapas bar'), imageHint: 'Malaga tapas bar',
+    imageUrl: images['Malaga-tapas-bar'].url, imageHint: images['Malaga-tapas-bar'].hint,
     date: '2024-05-15', author: 'Elena Rodriguez', 
     excerpt: 'A culinary journey through Málaga\'s most authentic tapas spots, from traditional bites to modern creations.',
     content: `<p>Málaga's old town is a labyrinth of charming streets, and hidden within are some of the best tapas bars you'll ever encounter. This guide will take you on a flavorful journey, highlighting must-try dishes and local favorites. From centuries-old taverns serving classic Andalusian recipes to innovative kitchens putting a modern spin on tapas, there's something for every palate.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">El Tapeo de Cervantes</h3>
     <p>A popular spot known for its creative tapas and extensive wine list. Booking is recommended. Their mini burgers and cod confit are divine.</p>
     <figure class="my-6">
-      <img src="${PLACEHOLDER_IMAGE_URL(800,400, 'restaurant interior')}" alt="Interior of El Tapeo de Cervantes" class="rounded-lg shadow-md" data-ai-hint="restaurant interior cozy"/>
+      <img src="${images['restaurant-interior'].url}" alt="Interior of El Tapeo de Cervantes" class="rounded-lg shadow-md" data-ai-hint="${images['restaurant-interior'].hint}"/>
       <figcaption class="text-xs text-center text-muted-foreground mt-2">El Tapeo de Cervantes offers a cozy atmosphere.</figcaption>
     </figure>
     <h3 class="text-2xl font-montserrat font-semibold my-4">Casa Lola</h3>
