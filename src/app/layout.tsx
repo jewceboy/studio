@@ -6,12 +6,11 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { cn } from '@/lib/utils';
-import ExpandableChatDemo from './chat-demo/page'; // Import the chat demo component
 import Breadcrumbs from '@/components/shared/Breadcrumbs';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.costadelsolnavigator.com'),
-  title: 'MalagaTravelGuide', // Updated site name
+  title: 'Costa del Sol Navigator | Your Ultimate Malaga Travel Guide',
   description: 'Your ultimate guide to exploring Malaga and the Costa del Sol. Plan your trip with personalized recommendations, discover top destinations, hotels, and activities.',
   keywords: 'Malaga, Costa del Sol, travel guide, Spain, hotels, activities, trip planner',
 };
@@ -35,6 +34,47 @@ const montserrat = Montserrat({
   display: 'swap',
 });
 
+// JSON-LD Schema Markup
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['TravelAgency', 'Organization'],
+      'name': 'MalagaTravelGuide',
+      'url': 'https://www.costadelsolnavigator.com',
+      'logo': 'https://www.costadelsolnavigator.com/logo.png', // Placeholder URL - replace with actual logo
+      'contactPoint': {
+        '@type': 'ContactPoint',
+        'telephone': '+34-XXX-XXX-XXX', // Placeholder phone
+        'contactType': 'Customer Service',
+        'areaServed': 'ES',
+        'availableLanguage': ['en', 'es']
+      },
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Malaga',
+        'addressCountry': 'ES'
+      },
+      'description': 'Your ultimate guide to exploring Malaga and the Costa del Sol. We provide expert advice on destinations, hotels, luxury travel, weddings, and business events.',
+      'sameAs': [ // Add your social media profiles here
+        'https://facebook.com/your-profile',
+        'https://twitter.com/your-profile',
+        'https://instagram.com/your-profile'
+      ]
+    },
+    {
+      '@type': 'WebSite',
+      'url': 'https://www.costadelsolnavigator.com',
+      'name': 'MalagaTravelGuide',
+      'potentialAction': {
+        '@type': 'SearchAction',
+        'target': 'https://www.costadelsolnavigator.com/search?q={search_term_string}',
+        'query-input': 'required name=search_term_string'
+      }
+    }
+  ]
+};
+
 
 export default function RootLayout({
   children,
@@ -44,6 +84,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
        <head>
+        {/* Add JSON-LD to the head */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://picsum.photos" />
@@ -70,7 +115,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <Toaster />
-        <ExpandableChatDemo /> {/* Add the chat demo component here */}
+        
       </body>
     </html>
   );

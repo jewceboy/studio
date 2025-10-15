@@ -8,6 +8,8 @@ import NewsletterForm from '@/components/forms/NewsletterForm';
 import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import imageData from '@/lib/placeholder-images.json';
+import { allSiteUrls } from '@/lib/urls';
+import { destinationsData } from '@/lib/data';
 
 const topMoneyPages = [
     {

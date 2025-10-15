@@ -18,6 +18,18 @@ import {
 } from "@/components/ui/expandable-chat"
 import { ChatMessageList } from "@/components/ui/chat-message-list"
 import { sendMessageToN8N } from "./actions"; 
+import imageData from '@/lib/placeholder-images.json';
+
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
+
 
 interface ChatMessage {
   id: number;
@@ -109,10 +121,10 @@ export default function ExpandableChatDemo() {
                 className="h-8 w-8 shrink-0"
                 src={
                   message.sender === "user"
-                    ? "https://picsum.photos/seed/user-avatar/64/64"
-                    : "https://picsum.photos/seed/ai-avatar/64/64"
+                    ? images['user-avatar'].url
+                    : images['ai-avatar'].url
                 }
-                data-ai-hint={message.sender === "user" ? "man face" : "woman face"}
+                data-ai-hint={message.sender === "user" ? images['user-avatar'].hint : images['ai-avatar'].hint}
                 fallback={message.sender === "user" ? "US" : "AI"}
               />
               <ChatBubbleMessage
@@ -128,8 +140,8 @@ export default function ExpandableChatDemo() {
             <ChatBubble variant="received">
               <ChatBubbleAvatar
                 className="h-8 w-8 shrink-0"
-                src="https://picsum.photos/seed/ai-avatar/64/64"
-                data-ai-hint="woman face"
+                src={images['ai-avatar'].url}
+                data-ai-hint={images['ai-avatar'].hint}
                 fallback="AI"
               />
               <ChatBubbleMessage isLoading />
