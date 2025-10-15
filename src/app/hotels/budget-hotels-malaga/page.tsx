@@ -1,11 +1,34 @@
 
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
+import InfoCard from '@/components/shared/InfoCard';
+import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
 
 export const metadata = {
   title: 'Budget Hotels in Malaga | Costa del Sol Navigator',
   description: 'Find affordable and budget-friendly hotels in Malaga.',
 };
+
+const budgetHotelCategories = [
+    {
+        slug: 'hostels',
+        name: 'Backpacker Hostels',
+        description: 'A guide to the best hostels for backpackers in the Costa del Sol.',
+        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'backpacker hostel costa del sol'),
+        imageHint: 'hostel dorm room',
+        linkHref: '/hotels/budget-hotels-malaga/hostels',
+        linkText: 'Explore Hostels',
+    },
+    {
+        slug: 'cheap-accommodation',
+        name: 'Cheap Accommodation',
+        description: 'Affordable places to stay in the Costa del Sol.',
+        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'cheap accommodation costa del sol'),
+        imageHint: 'budget hotel room',
+        linkHref: '/hotels/budget-hotels-malaga/cheap-accommodation',
+        linkText: 'Find Cheap Stays',
+    },
+];
 
 export default function BudgetHotelsPage() {
   return (
@@ -14,8 +37,21 @@ export default function BudgetHotelsPage() {
         title="Budget Hotels in Malaga"
         subtitle="Great value hotels for your stay in Malaga."
       />
-      <Section>
-        <p className="text-center text-lg">Placeholder content for budget hotels in Malaga. This page will list affordable hotel options.</p>
+       <Section className="pt-0" title="Budget Options">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+            {budgetHotelCategories.map((category) => (
+                <InfoCard
+                key={category.slug}
+                title={category.name}
+                imageUrl={category.imageUrl}
+                imageAlt={`Explore ${category.name}`}
+                description={category.description}
+                linkHref={category.linkHref}
+                linkText={category.linkText}
+                imageHint={category.imageHint}
+                />
+            ))}
+        </div>
       </Section>
     </div>
   );
