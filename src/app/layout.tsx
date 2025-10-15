@@ -10,6 +10,7 @@ import ExpandableChatDemo from './chat-demo/page'; // Import the chat demo compo
 import Breadcrumbs from '@/components/shared/Breadcrumbs';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.costadelsolnavigator.com'),
   title: 'MalagaTravelGuide', // Updated site name
   description: 'Your ultimate guide to exploring Malaga and the Costa del Sol. Plan your trip with personalized recommendations, discover top destinations, hotels, and activities.',
   keywords: 'Malaga, Costa del Sol, travel guide, Spain, hotels, activities, trip planner',
