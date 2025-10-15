@@ -7,6 +7,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { cn } from '@/lib/utils';
 import ExpandableChatDemo from './chat-demo/page'; // Import the chat demo component
+import Breadcrumbs from '@/components/shared/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'MalagaTravelGuide', // Updated site name
@@ -63,6 +64,7 @@ export default function RootLayout({
       )}>
         <Header />
         <main className="flex-grow container mx-auto px-4 py-8">
+          <Breadcrumbs />
           {children}
         </main>
         <Footer />
