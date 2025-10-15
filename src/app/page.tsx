@@ -64,6 +64,7 @@ export default function Home() {
           fill={true}
           priority
           className="absolute inset-0 z-0 object-cover w-full h-full"
+          sizes="(max-width: 768px) 100vw, 1080px"
           data-ai-hint={images['Marbella-panoramic-beach-luxury'].hint}
         />
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
