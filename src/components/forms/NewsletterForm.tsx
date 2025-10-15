@@ -27,12 +27,14 @@ export default function NewsletterForm() {
 
   return (
     <div className="bg-secondary/50 p-8 rounded-lg shadow-md">
-      <h3 className="font-montserrat text-2xl font-bold text-primary-dark mb-3 text-center">
-        Get Your Free Costa del Sol Itinerary Planner!
-      </h3>
-      <p className="text-muted-foreground mb-6 text-center">
-        Sign up for our newsletter and receive exclusive tips, updates, and your free itinerary planner.
-      </p>
+      <div className="text-center">
+        <h3 className="font-montserrat text-2xl font-bold text-primary-dark mb-3">
+          Get Your Free Costa del Sol Itinerary Planner!
+        </h3>
+        <p className="text-muted-foreground mb-6">
+          Sign up for our newsletter and receive exclusive tips, updates, and your free itinerary planner.
+        </p>
+      </div>
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
         <Input
           type="email"
