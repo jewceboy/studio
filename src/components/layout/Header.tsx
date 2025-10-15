@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { Menu, X, Sun, Briefcase, Droplets, Heart, ShoppingCart, Calendar, Map, Plane, Sailboat, Users, Tv, Palette } from 'lucide-react';
+import { Menu, X, Sun, Briefcase, Droplets, Heart, ShoppingCart, Calendar, Map, Plane, Sailboat, Users, Tv, Palette, Building, Utensils, Waves, MountainSnow, Star } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import {
@@ -19,11 +19,9 @@ import {
 import React from 'react';
 
 const primaryNavLinks = [
-  { href: '/destinations', label: 'Destinations' },
-  { href: '/hotels', label: 'Hotels' },
-  { href: '/attractions', label: 'Attractions' },
-  { href: '/restaurants', label: 'Restaurants' },
-  { href: '/beaches', label: 'Beaches' },
+  { href: '/destinations', label: 'Destinations', icon: Map },
+  { href: '/hotels', label: 'Hotels', icon: Building },
+  { href: '/attractions', label: 'Attractions', icon: Star },
 ];
 
 const luxuryServicesSubItems = [
@@ -32,14 +30,15 @@ const luxuryServicesSubItems = [
   { href: '/wellness', title: 'Wellness & Medical', description: 'Discover premium wellness and medical services.', icon: Droplets },
 ];
 
-const planAndExploreSubItems = [
+const exploreSubItems = [
+    { href: '/restaurants', title: 'Restaurants', description: 'From tapas bars to fine dining.', icon: Utensils },
+    { href: '/beaches', title: 'Beaches', description: 'Explore sandy shores and beach clubs.', icon: Waves },
+    { href: '/nightlife', title: 'Nightlife', description: 'Bars, clubs, and flamenco shows.', icon: Tv },
+    { href: '/sports', title: 'Sports & Golf', description: 'Golf courses, tennis, and water sports.', icon: MountainSnow },
     { href: '/shopping', title: 'Shopping', description: 'From luxury brands to local markets.', icon: ShoppingCart },
-    { href: '/travel-planning', title: 'Travel Planning', description: 'Itineraries, tips, and practical info.', icon: Map },
-    { href: '/nightlife', title: 'Nightlife', description: 'Explore bars, clubs, and flamenco shows.', icon: Tv },
-    { href: '/sports', title: 'Sports & Golf', description: 'Discover golf courses, tennis, and water sports.', icon: Sailboat },
     { href: '/events', title: 'Events', description: 'Find festivals and cultural happenings.', icon: Calendar },
+    { href: '/travel-planning', title: 'Travel Planning', description: 'Itineraries, tips, and practical info.', icon: Map },
     { href: '/digital-nomad', title: 'Digital Nomad', description: 'Resources for remote work in the sun.', icon: Users },
-    { href: '/transfers', title: 'Transfers', description: 'Airport transfers and transport options.', icon: Plane },
 ];
 
 
@@ -78,34 +77,34 @@ export default function Header() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                    {luxuryServicesSubItems.map((item) => (
-                        <ListItem
-                        key={item.title}
-                        title={item.title}
-                        href={item.href}
-                        >
-                        {item.description}
-                        </ListItem>
-                    ))}
+                      {luxuryServicesSubItems.map((item) => (
+                          <ListItem
+                          key={item.title}
+                          title={item.title}
+                          href={item.href}
+                          >
+                          {item.description}
+                          </ListItem>
+                      ))}
                     </ul>
                 </NavigationMenuContent>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
                 <NavigationMenuTrigger className="font-montserrat font-medium text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
-                    Plan & Explore
+                    Explore
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                    {planAndExploreSubItems.map((item) => (
-                        <ListItem
-                        key={item.title}
-                        title={item.title}
-                        href={item.href}
-                        >
-                        {item.description}
-                        </ListItem>
-                    ))}
+                      {exploreSubItems.map((item) => (
+                          <ListItem
+                          key={item.title}
+                          title={item.title}
+                          href={item.href}
+                          >
+                          {item.description}
+                          </ListItem>
+                      ))}
                     </ul>
                 </NavigationMenuContent>
             </NavigationMenuItem>
@@ -118,6 +117,18 @@ export default function Header() {
                     pathname.startsWith('/blog') ? 'bg-white/10' : ''
                     )}>
                     Blog
+                    </NavigationMenuLink>
+                </Link>
+            </NavigationMenuItem>
+            
+            <NavigationMenuItem>
+                <Link href="/contact" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(
+                    navigationMenuTriggerStyle(),
+                    'font-montserrat font-medium text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
+                    pathname.startsWith('/contact') ? 'bg-white/10' : ''
+                    )}>
+                    Contact
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
@@ -148,7 +159,7 @@ export default function Header() {
                 </SheetClose>
               </div>
               <nav aria-label="Main mobile navigation" className="flex flex-col space-y-2">
-                {[...primaryNavLinks, {href: '/blog', label: 'Blog'}].map((link) => (
+                {[...primaryNavLinks, {href: '/blog', label: 'Blog', icon: Palette}, {href: '/contact', label: 'Contact', icon: Users}].map((link) => (
                   <SheetClose key={link.href} asChild>
                     <Link
                       href={link.href}
@@ -177,8 +188,8 @@ export default function Header() {
                 </div>
 
                 <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-montserrat font-semibold text-white text-lg py-2 border-t border-white/20'>Plan & Explore</span>
-                     {planAndExploreSubItems.map((subItem) => (
+                    <span className='font-montserrat font-semibold text-white text-lg py-2 border-t border-white/20'>Explore</span>
+                     {exploreSubItems.map((subItem) => (
                       <SheetClose key={subItem.href} asChild>
                         <Link
                           href={subItem.href}
