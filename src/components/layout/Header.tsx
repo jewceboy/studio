@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { Menu, X, Sun, Briefcase, Droplets, Heart } from 'lucide-react'; 
+import { Menu, X, Sun, Briefcase, Droplets, Heart, ShoppingCart, Calendar, Map, Plane, Sailboat, Users, Tv, Palette } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import {
@@ -18,22 +18,30 @@ import {
 } from "@/components/ui/navigation-menu"
 import React from 'react';
 
-const navLinks = [
+const primaryNavLinks = [
   { href: '/destinations', label: 'Destinations' },
   { href: '/hotels', label: 'Hotels' },
-  { href: '/attractions', label: 'Activities' },
-  { 
-    href: '#', 
-    label: 'Luxury Services',
-    subItems: [
-      { href: '/weddings', title: 'Weddings & Events', description: 'Plan your dream wedding or luxury event.', icon: Heart },
-      { href: '/business', title: 'Business & MICE', description: 'Host world-class corporate events.', icon: Briefcase },
-      { href: '/wellness', title: 'Wellness & Medical', description: 'Discover premium wellness and medical services.', icon: Droplets },
-    ]
-  },
-  { href: '/plan-your-trip', label: 'Plan Your Trip' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/attractions', label: 'Attractions' },
+  { href: '/restaurants', label: 'Restaurants' },
+  { href: '/beaches', label: 'Beaches' },
 ];
+
+const luxuryServicesSubItems = [
+  { href: '/weddings', title: 'Weddings & Events', description: 'Plan your dream wedding or luxury event.', icon: Heart },
+  { href: '/business', title: 'Business & MICE', description: 'Host world-class corporate events.', icon: Briefcase },
+  { href: '/wellness', title: 'Wellness & Medical', description: 'Discover premium wellness and medical services.', icon: Droplets },
+];
+
+const planAndExploreSubItems = [
+    { href: '/shopping', title: 'Shopping', description: 'From luxury brands to local markets.', icon: ShoppingCart },
+    { href: '/travel-planning', title: 'Travel Planning', description: 'Itineraries, tips, and practical info.', icon: Map },
+    { href: '/nightlife', title: 'Nightlife', description: 'Explore bars, clubs, and flamenco shows.', icon: Tv },
+    { href: '/sports', title: 'Sports & Golf', description: 'Discover golf courses, tennis, and water sports.', icon: Sailboat },
+    { href: '/events', title: 'Events', description: 'Find festivals and cultural happenings.', icon: Calendar },
+    { href: '/digital-nomad', title: 'Digital Nomad', description: 'Resources for remote work in the sun.', icon: Users },
+    { href: '/transfers', title: 'Transfers', description: 'Airport transfers and transport options.', icon: Plane },
+];
+
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -50,40 +58,70 @@ export default function Header() {
         {/* Desktop Navigation */}
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
-             {navLinks.map((link) => (
-              <NavigationMenuItem key={link.href}>
-                {link.subItems ? (
-                  <>
-                    <NavigationMenuTrigger className="font-montserrat font-medium text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
-                      {link.label}
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        {link.subItems.map((item) => (
-                           <ListItem
-                            key={item.title}
-                            title={item.title}
-                            href={item.href}
-                           >
-                            {item.description}
-                          </ListItem>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </>
-                ) : (
-                  <Link href={link.href} legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(
-                      navigationMenuTriggerStyle(),
-                      'font-montserrat font-medium text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
-                      pathname.startsWith(link.href) ? 'bg-white/10' : ''
-                    )}>
-                      {link.label}
-                    </NavigationMenuLink>
-                  </Link>
-                )}
-              </NavigationMenuItem>
+            {primaryNavLinks.map((link) => (
+                <NavigationMenuItem key={link.href}>
+                    <Link href={link.href} legacyBehavior passHref>
+                        <NavigationMenuLink className={cn(
+                        navigationMenuTriggerStyle(),
+                        'font-montserrat font-medium text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
+                        pathname.startsWith(link.href) ? 'bg-white/10' : ''
+                        )}>
+                        {link.label}
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
             ))}
+
+            <NavigationMenuItem>
+                <NavigationMenuTrigger className="font-montserrat font-medium text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
+                    Luxury Services
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {luxuryServicesSubItems.map((item) => (
+                        <ListItem
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                        >
+                        {item.description}
+                        </ListItem>
+                    ))}
+                    </ul>
+                </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+                <NavigationMenuTrigger className="font-montserrat font-medium text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
+                    Plan & Explore
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {planAndExploreSubItems.map((item) => (
+                        <ListItem
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                        >
+                        {item.description}
+                        </ListItem>
+                    ))}
+                    </ul>
+                </NavigationMenuContent>
+            </NavigationMenuItem>
+
+             <NavigationMenuItem>
+                <Link href="/blog" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(
+                    navigationMenuTriggerStyle(),
+                    'font-montserrat font-medium text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
+                    pathname.startsWith('/blog') ? 'bg-white/10' : ''
+                    )}>
+                    Blog
+                    </NavigationMenuLink>
+                </Link>
+            </NavigationMenuItem>
+
           </NavigationMenuList>
         </NavigationMenu>
 
@@ -96,7 +134,7 @@ export default function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-accent-1-red text-white p-6">
+            <SheetContent side="right" className="w-[280px] bg-accent-1-red text-white p-6 overflow-y-auto">
               <div className="flex justify-between items-center mb-8">
                 <Link href="/" className="flex items-center space-x-2 text-white" onClick={() => setIsMobileMenuOpen(false)}>
                   <Sun className="h-7 w-7" />
@@ -109,38 +147,48 @@ export default function Header() {
                   </Button>
                 </SheetClose>
               </div>
-              <nav aria-label="Main mobile navigation" className="flex flex-col space-y-4">
-                {navLinks.map((link) => (
-                  <React.Fragment key={link.href}>
-                    {link.subItems ? (
-                      <div className='flex flex-col space-y-2'>
-                        <span className='font-montserrat font-medium text-white/80 text-lg py-2'>{link.label}</span>
-                         {link.subItems.map((subItem) => (
-                          <SheetClose key={subItem.href} asChild>
-                            <Link
-                              href={subItem.href}
-                              className={cn('font-montserrat font-normal text-white hover:text-white/80 transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold' : '')}
-                            >
-                              {subItem.title}
-                            </Link>
-                          </SheetClose>
-                         ))}
-                      </div>
-                    ) : (
-                      <SheetClose asChild>
+              <nav aria-label="Main mobile navigation" className="flex flex-col space-y-2">
+                {[...primaryNavLinks, {href: '/blog', label: 'Blog'}].map((link) => (
+                  <SheetClose key={link.href} asChild>
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        'font-montserrat font-medium text-white hover:text-white/80 transition-colors py-2 text-lg',
+                        pathname.startsWith(link.href) ? 'font-bold' : ''
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  </SheetClose>
+                ))}
+                
+                <div className='flex flex-col space-y-2 pt-2'>
+                    <span className='font-montserrat font-semibold text-white text-lg py-2 border-t border-white/20'>Luxury Services</span>
+                     {luxuryServicesSubItems.map((subItem) => (
+                      <SheetClose key={subItem.href} asChild>
                         <Link
-                          href={link.href}
-                          className={cn(
-                            'font-montserrat font-medium text-white hover:text-white/80 transition-colors py-2 text-lg',
-                            pathname.startsWith(link.href) ? 'font-bold' : ''
-                          )}
+                          href={subItem.href}
+                          className={cn('font-montserrat font-normal text-white hover:text-white/80 transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold' : '')}
                         >
-                          {link.label}
+                          {subItem.title}
                         </Link>
                       </SheetClose>
-                    )}
-                  </React.Fragment>
-                ))}
+                     ))}
+                </div>
+
+                <div className='flex flex-col space-y-2 pt-2'>
+                    <span className='font-montserrat font-semibold text-white text-lg py-2 border-t border-white/20'>Plan & Explore</span>
+                     {planAndExploreSubItems.map((subItem) => (
+                      <SheetClose key={subItem.href} asChild>
+                        <Link
+                          href={subItem.href}
+                          className={cn('font-montserrat font-normal text-white hover:text-white/80 transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold' : '')}
+                        >
+                          {subItem.title}
+                        </Link>
+                      </SheetClose>
+                     ))}
+                </div>
               </nav>
             </SheetContent>
           </Sheet>
