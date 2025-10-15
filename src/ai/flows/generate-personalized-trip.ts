@@ -11,7 +11,6 @@
  */
 
 import {ai} from '@/ai/genkit';
-import { googleSearch } from '@genkit-ai/googleai';
 import {z} from 'genkit';
 
 const PersonalizedTripInputSchema = z.object({
@@ -45,7 +44,6 @@ const prompt = ai.definePrompt({
   name: 'personalizedTripPrompt',
   input: {schema: PersonalizedTripInputSchema},
   output: {schema: PersonalizedTripOutputSchema},
-  tools: [googleSearch],
   prompt: `You are an expert travel planner for the Costa del Sol region in Spain. Based on the user's quiz responses,
 you will generate a personalized trip plan including town recommendations, suggested activities, and ideal accommodations.
 
