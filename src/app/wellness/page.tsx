@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Wellness & Medical Tourism in Costa del Sol | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const wellnessCategories = [
     slug: 'spa-retreats',
     name: 'Spa & Relaxation',
     description: 'Unwind at exclusive spa resorts offering rejuvenating treatments and tranquil atmospheres.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'spa massage therapy'),
-    imageHint: 'spa massage therapy',
+    imageKey: 'spa-massage-therapy',
     linkHref: '/wellness/spa-retreats',
     linkText: 'Find Spa Retreats',
   },
@@ -23,8 +31,7 @@ const wellnessCategories = [
     slug: 'medical-tourism',
     name: 'Medical Tourism',
     description: 'Access leading private clinics and specialists for various medical treatments in a comfortable setting.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'modern clinic interior'),
-    imageHint: 'modern clinic interior',
+    imageKey: 'modern-clinic-interior',
     linkHref: '/wellness/medical-tourism',
     linkText: 'Explore Medical Services',
   },
@@ -32,8 +39,7 @@ const wellnessCategories = [
     slug: 'wellness-retreats',
     name: 'Wellness Retreats',
     description: 'Embark on a journey of self-care with yoga, meditation, and fitness retreats in beautiful locations.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'yoga class sunrise'),
-    imageHint: 'yoga class sunrise',
+    imageKey: 'yoga-class-sunrise',
     linkHref: '/wellness/wellness-retreats',
     linkText: 'Discover Retreats',
   },
@@ -52,12 +58,12 @@ export default function WellnessPage() {
             <InfoCard
               key={category.slug}
               title={category.name}
-              imageUrl={category.imageUrl}
+              imageUrl={images[category.imageKey].url}
+              imageHint={images[category.imageKey].hint}
               imageAlt={`Explore ${category.name}`}
               description={category.description}
               linkHref={category.linkHref}
               linkText={category.linkText}
-              imageHint={category.imageHint}
             />
           ))}
         </div>

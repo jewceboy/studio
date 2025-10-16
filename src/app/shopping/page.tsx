@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Shopping in Malaga | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const shoppingCategories = [
         slug: 'luxury-shopping',
         name: 'Luxury Shopping',
         description: 'Indulge in a world of high fashion, designer brands, and exclusive boutiques in Marbella.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'luxury fashion store'),
-        imageHint: 'luxury store',
+        imageKey: 'luxury-fashion-store',
         linkHref: '/shopping/luxury-shopping',
         linkText: 'Explore Luxury',
     },
@@ -23,8 +31,7 @@ const shoppingCategories = [
         slug: 'malls-centers',
         name: 'Shopping Malls',
         description: 'Discover the best places for one-stop shopping at large malls and centers.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'modern shopping mall'),
-        imageHint: 'shopping mall',
+        imageKey: 'modern-shopping-mall',
         linkHref: '/shopping/malls-centers',
         linkText: 'Visit Malls',
     },
@@ -32,8 +39,7 @@ const shoppingCategories = [
         slug: 'markets',
         name: 'Markets',
         description: 'Explore fresh produce at food markets and find unique crafts at local street markets.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'local craft market'),
-        imageHint: 'craft market',
+        imageKey: 'local-craft-market',
         linkHref: '/shopping/markets',
         linkText: 'Discover Markets',
     },
@@ -52,12 +58,12 @@ export default function ShoppingPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
+                imageHint={images[category.imageKey].hint}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
                 />
             ))}
         </div>

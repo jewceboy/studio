@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Malaga Airport Transfers | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const transferCategories = [
     slug: 'airport-transfers',
     name: 'Airport Transfers',
     description: 'Reliable and convenient options to get you from Malaga Airport to your destination.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'airport arrivals hall'),
-    imageHint: 'airport arrivals hall',
+    imageKey: 'airport-arrivals-hall',
     linkHref: '/transfers/airport-transfers',
     linkText: 'View Options',
   },
@@ -23,8 +31,7 @@ const transferCategories = [
     slug: 'luxury-transportation',
     name: 'Luxury Transportation',
     description: 'Travel in style with high-end car rentals, chauffeur services, and private jets.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'luxury car interior'),
-    imageHint: 'luxury car interior',
+    imageKey: 'luxury-car-interior',
     linkHref: '/transfers/luxury-transportation',
     linkText: 'Explore Luxury',
   },
@@ -32,8 +39,7 @@ const transferCategories = [
     slug: 'public-transport',
     name: 'Public Transport',
     description: 'Navigate the Costa del Sol efficiently with tips on local buses and trains.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'malaga train station'),
-    imageHint: 'malaga train station',
+    imageKey: 'malaga-train-station',
     linkHref: '/transfers/public-transport',
     linkText: 'Get Tips',
   },
@@ -52,12 +58,12 @@ export default function TransfersPage() {
             <InfoCard
               key={category.slug}
               title={category.name}
-              imageUrl={category.imageUrl}
+              imageUrl={images[category.imageKey].url}
+              imageHint={images[category.imageKey].hint}
               imageAlt={`Explore ${category.name}`}
               description={category.description}
               linkHref={category.linkHref}
               linkText={category.linkText}
-              imageHint={category.imageHint}
             />
           ))}
         </div>

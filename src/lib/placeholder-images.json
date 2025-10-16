@@ -74,5 +74,85 @@
   "ai-avatar": {
     "url": "https://picsum.photos/seed/ai-avatar/64/64",
     "hint": "woman face"
+  },
+  "luxury-hotel-malaga": {
+    "url": "https://picsum.photos/seed/luxury hotel malaga/600/400",
+    "hint": "luxury hotel malaga"
+  },
+  "budget-hotel-malaga": {
+    "url": "https://picsum.photos/seed/budget hotel malaga/600/400",
+    "hint": "budget hotel malaga"
+  },
+  "family-hotel-malaga": {
+    "url": "https://picsum.photos/seed/family hotel malaga/600/400",
+    "hint": "family hotel malaga"
+  },
+  "costa-del-sol-resort": {
+    "url": "https://picsum.photos/seed/costa del sol resort/600/400",
+    "hint": "costa del sol resort"
+  },
+  "wedding-venue-setting": {
+    "url": "https://picsum.photos/seed/wedding venue setting/600/400",
+    "hint": "wedding venue setting"
+  },
+  "wedding-planning-details": {
+    "url": "https://picsum.photos/seed/wedding planning details/600/400",
+    "hint": "wedding planning details"
+  },
+  "honeymoon-couple-beach": {
+    "url": "https://picsum.photos/seed/honeymoon couple beach/600/400",
+    "hint": "honeymoon couple beach"
+  },
+  "conference-hall": {
+    "url": "https://picsum.photos/seed/conference hall/600/400",
+    "hint": "conference hall"
+  },
+  "corporate-team-building": {
+    "url": "https://picsum.photos/seed/corporate team building/600/400",
+    "hint": "corporate team building"
+  },
+  "business-hotel-lobby": {
+    "url": "https://picsum.photos/seed/business hotel lobby/600/400",
+    "hint": "business hotel lobby"
+  },
+  "spa-massage-therapy": {
+    "url": "https://picsum.photos/seed/spa massage therapy/600/400",
+    "hint": "spa massage therapy"
+  },
+  "modern-clinic-interior": {
+    "url": "https://picsum.photos/seed/modern clinic interior/600/400",
+    "hint": "modern clinic interior"
+  },
+  "yoga-class-sunrise": {
+    "url": "https://picsum.photos/seed/yoga class sunrise/600/400",
+    "hint": "yoga class sunrise"
+  },
+  "airport-arrivals-hall": {
+    "url": "https://picsum.photos/seed/airport arrivals hall/600/400",
+    "hint": "airport arrivals hall"
+  },
+  "luxury-car-interior": {
+    "url": "https://picsum.photos/seed/luxury car interior/600/400",
+    "hint": "luxury car interior"
+  },
+  "malaga-train-station": {
+    "url": "https://picsum.photos/seed/malaga train station/600/400",
+    "hint": "malaga train station"
+  },
+  "malaga-weather-seasons": {
+    "url": "https://picsum.photos/seed/malaga weather seasons/600/400",
+    "hint": "malaga seasons"
+  },
+  "travel-map-itinerary": {
+    "url": "https://picsum.photos/seed/travel map itinerary/600/400",
+    "hint": "travel map"
+  },
+  "budget-travel-money": {
+    "url": "https://picsum.photos/seed/budget travel money/600/400",
+    "hint": "budget travel"
+  },
+  "tourist-info-map": {
+    "url": "https://picsum.photos/seed/tourist info map/600/400",
+    "hint": "tourist map"
   }
 }

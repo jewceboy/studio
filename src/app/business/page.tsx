@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Business & MICE Tourism in Costa del Sol | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const businessCategories = [
     slug: 'mice-events',
     name: 'MICE Events',
     description: 'Find state-of-the-art congress centers and venues for meetings, incentives, conferences, and exhibitions.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'conference hall'),
-    imageHint: 'conference hall',
+    imageKey: 'conference-hall',
     linkHref: '/business/mice-events',
     linkText: 'Explore MICE Venues',
   },
@@ -23,8 +31,7 @@ const businessCategories = [
     slug: 'corporate-retreats',
     name: 'Corporate Retreats',
     description: 'Organize impactful team-building and executive retreats in inspiring, luxurious settings.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'corporate team building'),
-    imageHint: 'corporate team building',
+    imageKey: 'corporate-team-building',
     linkHref: '/business/corporate-retreats',
     linkText: 'Plan a Retreat',
   },
@@ -32,8 +39,7 @@ const businessCategories = [
     slug: 'business-hotels',
     name: 'Business Hotels',
     description: 'Select from top hotels equipped with modern business facilities, meeting rooms, and executive services.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'business hotel lobby'),
-    imageHint: 'business hotel lobby',
+    imageKey: 'business-hotel-lobby',
     linkHref: '/business/business-hotels',
     linkText: 'Find Business Hotels',
   },
@@ -52,12 +58,12 @@ export default function BusinessPage() {
             <InfoCard
               key={category.slug}
               title={category.name}
-              imageUrl={category.imageUrl}
+              imageUrl={images[category.imageKey].url}
+              imageHint={images[category.imageKey].hint}
               imageAlt={`Explore ${category.name}`}
               description={category.description}
               linkHref={category.linkHref}
               linkText={category.linkText}
-              imageHint={category.imageHint}
             />
           ))}
         </div>

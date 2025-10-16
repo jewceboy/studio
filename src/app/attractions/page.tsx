@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Things to do in Malaga | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const attractionCategories = [
         slug: 'malaga-city',
         name: 'Malaga City',
         description: 'Explore the vibrant heart of the Costa del Sol, from historic sites to modern museums.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'malaga city skyline'),
-        imageHint: 'malaga city skyline',
+        imageKey: 'malaga-city-skyline',
         linkHref: '/attractions/malaga-city',
         linkText: 'Explore the City',
     },
@@ -23,8 +31,7 @@ const attractionCategories = [
         slug: 'family-attractions',
         name: 'Family Attractions',
         description: 'Discover attractions suitable for the whole family, from water parks to theme parks.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'family at theme park'),
-        imageHint: 'family theme park',
+        imageKey: 'family-at-theme-park',
         linkHref: '/attractions/family-attractions',
         linkText: 'Find Family Fun',
     },
@@ -32,8 +39,7 @@ const attractionCategories = [
         slug: 'adventure-activities',
         name: 'Adventure Activities',
         description: 'From hiking scenic trails to thrilling water sports, discover your next adventure.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'hiking mountain trail'),
-        imageHint: 'hiking mountain trail',
+        imageKey: 'hiking-mountain-trail',
         linkHref: '/attractions/adventure-activities',
         linkText: 'Seek Adventure',
     },
@@ -52,12 +58,12 @@ export default function AttractionsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
+                imageHint={images[category.imageKey].hint}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
                 />
             ))}
         </div>

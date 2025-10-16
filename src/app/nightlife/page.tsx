@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Malaga Nightlife Guide | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const nightlifeCategories = [
         slug: 'malaga-city',
         name: 'Malaga City Nightlife',
         description: 'Explore the vibrant nightlife of Malaga\'s city center, from traditional bars to lively clubs.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'malaga nightlife street'),
-        imageHint: 'malaga nightlife',
+        imageKey: 'malaga-nightlife-street',
         linkHref: '/nightlife/malaga-city',
         linkText: 'Explore Malaga City',
     },
@@ -23,8 +31,7 @@ const nightlifeCategories = [
         slug: 'marbella-puerto-banus',
         name: 'Marbella & Puerto Banus',
         description: 'Experience the glamorous and exclusive nightlife scene in Marbella and Puerto Banus.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'marbella nightclub'),
-        imageHint: 'marbella nightclub',
+        imageKey: 'marbella-nightclub',
         linkHref: '/nightlife/marbella-puerto-banus',
         linkText: 'Discover Luxury Nightlife',
     },
@@ -32,8 +39,7 @@ const nightlifeCategories = [
         slug: 'flamenco-shows',
         name: 'Flamenco Shows',
         description: 'Experience the passion and soul of Andalusia with an authentic flamenco performance.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'flamenco dancer'),
-        imageHint: 'flamenco dancer',
+        imageKey: 'flamenco-dancer',
         linkHref: '/nightlife/flamenco-shows',
         linkText: 'Find Shows',
     },
@@ -52,12 +58,12 @@ export default function NightlifePage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
+                imageHint={images[category.imageKey].hint}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
                 />
             ))}
         </div>

@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Costa del Sol Destinations | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const destinationCategories = [
         slug: 'mijas-pueblo',
         name: 'Mijas Pueblo',
         description: 'Discover the charm of this picturesque white-washed Andalusian village.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'mijas pueblo village'),
-        imageHint: 'mijas pueblo',
+        imageKey: 'mijas-pueblo-village',
         linkHref: '/destinations/mijas-pueblo',
         linkText: 'Explore Mijas',
     },
@@ -23,8 +31,7 @@ const destinationCategories = [
         slug: 'puerto-banus',
         name: 'Puerto Banus',
         description: 'Experience the luxury and glamour of this world-famous marina.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'puerto banus marina'),
-        imageHint: 'puerto banus yacht',
+        imageKey: 'puerto-banus-marina',
         linkHref: '/destinations/puerto-banus',
         linkText: 'Visit Puerto Banus',
     },
@@ -32,8 +39,7 @@ const destinationCategories = [
         slug: 'marbella',
         name: 'Marbella',
         description: 'Explore the iconic old town, luxurious shops, and beautiful beaches of Marbella.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'marbella old town'),
-        imageHint: 'marbella old town',
+        imageKey: 'marbella-old-town',
         linkHref: '/destinations/marbella',
         linkText: 'Discover Marbella',
     },
@@ -41,8 +47,7 @@ const destinationCategories = [
         slug: 'benalmadena',
         name: 'Benalmadena',
         description: 'From its stunning marina to the cable car, Benalmadena offers fun for everyone.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'benalmadena puerto'),
-        imageHint: 'benalmadena marina',
+        imageKey: 'benalmadena-puerto',
         linkHref: '/destinations/benalmadena',
         linkText: 'See Benalmadena',
     },
@@ -61,12 +66,12 @@ export default function DestinationsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
+                imageHint={images[category.imageKey].hint}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
                 />
             ))}
         </div>

@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Digital Nomad Malaga | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const nomadCategories = [
         slug: 'coworking',
         name: 'Coworking Spaces',
         description: 'Find the perfect workspace to be productive and connect with other nomads.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'modern coworking space'),
-        imageHint: 'coworking space',
+        imageKey: 'modern-coworking-space',
         linkHref: '/digital-nomad/coworking',
         linkText: 'Find a Space',
     },
@@ -23,8 +31,7 @@ const nomadCategories = [
         slug: 'workation',
         name: 'Workation Packages',
         description: 'Curated packages for the perfect blend of work and leisure in the sun.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'laptop beach view'),
-        imageHint: 'laptop beach',
+        imageKey: 'laptop-beach-view',
         linkHref: '/digital-nomad/workation',
         linkText: 'Explore Packages',
     },
@@ -32,8 +39,7 @@ const nomadCategories = [
         slug: 'visa-guide',
         name: 'Digital Nomad Visa',
         description: 'Your step-by-step guide to applying for the Spanish digital nomad visa.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'spain visa document'),
-        imageHint: 'spain visa',
+        imageKey: 'spain-visa-document',
         linkHref: '/digital-nomad/visa-guide',
         linkText: 'Get Visa Info',
     },
@@ -52,12 +58,12 @@ export default function DigitalNomadPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
+                imageHint={images[category.imageKey].hint}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
                 />
             ))}
         </div>

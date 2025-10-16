@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Malaga Events and Festivals | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const eventCategories = [
         slug: 'annual-festivals',
         name: 'Annual Festivals',
         description: 'Discover Malaga\'s most important annual festivals, from Semana Santa to the Feria de Malaga.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'malaga feria festival'),
-        imageHint: 'malaga festival',
+        imageKey: 'malaga-feria-festival',
         linkHref: '/events/annual-festivals',
         linkText: 'See Festival Dates',
     },
@@ -23,8 +31,7 @@ const eventCategories = [
         slug: 'cultural-events',
         name: 'Cultural Events',
         description: 'Explore the vibrant cultural scene with concerts, art exhibitions, and more.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'art gallery exhibition'),
-        imageHint: 'art gallery',
+        imageKey: 'art-gallery-exhibition',
         linkHref: '/events/cultural-events',
         linkText: 'Find Cultural Events',
     },
@@ -43,12 +50,12 @@ export default function EventsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
+                imageHint={images[category.imageKey].hint}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
                 />
             ))}
         </div>

@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Malaga Restaurants Guide | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const restaurantCategories = [
         slug: 'traditional-spanish',
         name: 'Traditional Spanish',
         description: 'Savor the authentic flavors of Spain, from classic tapas to fresh seafood.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'spanish tapas platter'),
-        imageHint: 'spanish tapas',
+        imageKey: 'spanish-tapas-platter',
         linkHref: '/restaurants/traditional-spanish',
         linkText: 'Find Authentic Eats',
     },
@@ -23,8 +31,7 @@ const restaurantCategories = [
         slug: 'fine-dining',
         name: 'Fine Dining',
         description: 'Experience exquisite culinary creations at Michelin-starred and luxury restaurants.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'fine dining plate'),
-        imageHint: 'gourmet food',
+        imageKey: 'fine-dining-plate',
         linkHref: '/restaurants/fine-dining',
         linkText: 'Explore Fine Dining',
     },
@@ -32,8 +39,7 @@ const restaurantCategories = [
         slug: 'culinary-experiences',
         name: 'Culinary Experiences',
         description: 'Go beyond the meal with cooking classes, food tours, and wine tasting events.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'wine tasting glasses'),
-        imageHint: 'wine tasting',
+        imageKey: 'wine-tasting-glasses',
         linkHref: '/restaurants/culinary-experiences',
         linkText: 'Discover Experiences',
     },
@@ -41,8 +47,7 @@ const restaurantCategories = [
         slug: 'budget-dining',
         name: 'Budget Dining',
         description: 'Enjoy great food without spending a fortune, from cheap eats to local favorites.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'street food market'),
-        imageHint: 'street food',
+        imageKey: 'street-food-market',
         linkHref: '/restaurants/budget-dining',
         linkText: 'Find Budget Eats',
     },
@@ -61,12 +66,12 @@ export default function RestaurantsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
+                imageHint={images[category.imageKey].hint}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
                 />
             ))}
         </div>

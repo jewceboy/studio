@@ -2,7 +2,17 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
+
 
 export const metadata = {
   title: 'Luxury Weddings & Events in Costa del Sol | Costa del Sol Navigator',
@@ -14,8 +24,7 @@ const weddingCategories = [
     slug: 'venues',
     name: 'Wedding Venues',
     description: 'Explore breathtaking villas, beachfront hotels, and rustic fincas perfect for your ceremony.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'wedding venue setting'),
-    imageHint: 'wedding venue setting',
+    imageKey: 'wedding-venue-setting',
     linkHref: '/weddings/venues',
     linkText: 'Discover Venues',
   },
@@ -23,8 +32,7 @@ const weddingCategories = [
     slug: 'planning',
     name: 'Wedding Planning',
     description: 'Connect with elite planners to manage every detail of your special day flawlessly.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'wedding planning details'),
-    imageHint: 'wedding planning details',
+    imageKey: 'wedding-planning-details',
     linkHref: '/weddings/planning',
     linkText: 'Find a Planner',
   },
@@ -32,8 +40,7 @@ const weddingCategories = [
     slug: 'honeymoons',
     name: 'Honeymoons',
     description: 'Start your new life together with a romantic and luxurious honeymoon in southern Spain.',
-    imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'honeymoon couple beach'),
-    imageHint: 'honeymoon couple beach',
+    imageKey: 'honeymoon-couple-beach',
     linkHref: '/weddings/honeymoons',
     linkText: 'Plan Your Honeymoon',
   },
@@ -52,12 +59,12 @@ export default function WeddingsPage() {
             <InfoCard
               key={category.slug}
               title={category.name}
-              imageUrl={category.imageUrl}
+              imageUrl={images[category.imageKey].url}
+              imageHint={images[category.imageKey].hint}
               imageAlt={`Explore ${category.name}`}
               description={category.description}
               linkHref={category.linkHref}
               linkText={category.linkText}
-              imageHint={category.imageHint}
             />
           ))}
         </div>
