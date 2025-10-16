@@ -1,31 +1,45 @@
 {
   "Marbella-panoramic-beach-luxury": {
     "url": "https://picsum.photos/seed/Marbella panoramic beach luxury/1920/1080",
-    "hint": "Marbella panoramic beach luxury"
+    "hint": "Marbella panoramic beach luxury",
+    "width": 1920,
+    "height": 1080
   },
   "Marbella-panoramic-beach-luxury-mobile": {
     "url": "https://picsum.photos/seed/Marbella panoramic beach luxury mobile/600/800",
-    "hint": "Marbella beach mobile"
+    "hint": "Marbella beach mobile",
+    "width": 600,
+    "height": 800
   },
   "luxury-wedding": {
     "url": "https://picsum.photos/seed/luxury wedding/600/400",
-    "hint": "luxury wedding venue"
+    "hint": "luxury wedding venue",
+    "width": 600,
+    "height": 400
   },
   "corporate-event": {
     "url": "https://picsum.photos/seed/corporate event/600/400",
-    "hint": "corporate event"
+    "hint": "corporate event",
+    "width": 600,
+    "height": 400
   },
   "wellness-spa": {
     "url": "https://picsum.photos/seed/wellness spa/600/400",
-    "hint": "wellness spa retreat"
+    "hint": "wellness spa retreat",
+    "width": 600,
+    "height": 400
   },
   "luxury-hotel": {
     "url": "https://picsum.photos/seed/luxury hotel/600/400",
-    "hint": "luxury hotel malaga"
+    "hint": "luxury hotel malaga",
+    "width": 600,
+    "height": 400
   },
   "vip-transport": {
     "url": "https://picsum.photos/seed/vip transport/600/400",
-    "hint": "vip airport transfer"
+    "hint": "vip airport transfer",
+    "width": 600,
+    "height": 400
   },
   "Malaga-tapas-bar": {
     "url": "https://picsum.photos/seed/Malaga tapas bar/1200/500",
@@ -66,5 +80,301 @@
   "person-avatar": {
     "url": "https://picsum.photos/seed/person avatar/48/48",
     "hint": "person avatar"
+  },
+  "ai-avatar": {
+    "url": "https://picsum.photos/seed/ai-avatar/48/48",
+    "hint": "ai bot avatar"
+  },
+  "user-avatar": {
+    "url": "https://picsum.photos/seed/user-avatar/48/48",
+    "hint": "user avatar"
+  },
+  "malaga-city-skyline": {
+    "url": "https://picsum.photos/seed/malaga-city-skyline/600/400",
+    "hint": "Malaga city skyline",
+    "width": 600,
+    "height": 400
+  },
+  "family-at-theme-park": {
+    "url": "https://picsum.photos/seed/family-at-theme-park/600/400",
+    "hint": "family theme park",
+    "width": 600,
+    "height": 400
+  },
+  "hiking-mountain-trail": {
+    "url": "https://picsum.photos/seed/hiking-mountain-trail/600/400",
+    "hint": "hiking mountain trail",
+    "width": 600,
+    "height": 400
+  },
+  "malaga-city-beach": {
+    "url": "https://picsum.photos/seed/malaga-city-beach/600/400",
+    "hint": "Malaga city beach",
+    "width": 600,
+    "height": 400
+  },
+  "beach-resort-holiday": {
+    "url": "https://picsum.photos/seed/beach-resort-holiday/600/400",
+    "hint": "beach resort holiday",
+    "width": 600,
+    "height": 400
+  },
+  "luxury-beach-club": {
+    "url": "https://picsum.photos/seed/luxury-beach-club/600/400",
+    "hint": "luxury beach club",
+    "width": 600,
+    "height": 400
+  },
+  "conference-hall": {
+    "url": "https://picsum.photos/seed/conference-hall/600/400",
+    "hint": "conference hall",
+    "width": 600,
+    "height": 400
+  },
+  "corporate-team-building": {
+    "url": "https://picsum.photos/seed/corporate-team-building/600/400",
+    "hint": "corporate team building",
+    "width": 600,
+    "height": 400
+  },
+  "business-hotel-lobby": {
+    "url": "https://picsum.photos/seed/business-hotel-lobby/600/400",
+    "hint": "business hotel lobby",
+    "width": 600,
+    "height": 400
+  },
+  "mijas-pueblo-village": {
+    "url": "https://picsum.photos/seed/mijas-pueblo-village/600/400",
+    "hint": "Mijas Pueblo village",
+    "width": 600,
+    "height": 400
+  },
+  "puerto-banus-marina": {
+    "url": "https://picsum.photos/seed/puerto-banus-marina/600/400",
+    "hint": "Puerto Banus marina",
+    "width": 600,
+    "height": 400
+  },
+  "marbella-old-town": {
+    "url": "https://picsum.photos/seed/marbella-old-town/600/400",
+    "hint": "Marbella old town",
+    "width": 600,
+    "height": 400
+  },
+  "benalmadena-puerto": {
+    "url": "https://picsum.photos/seed/benalmadena-puerto/600/400",
+    "hint": "Benalmadena puerto",
+    "width": 600,
+    "height": 400
+  },
+  "modern-coworking-space": {
+    "url": "https://picsum.photos/seed/modern-coworking-space/600/400",
+    "hint": "modern coworking space",
+    "width": 600,
+    "height": 400
+  },
+  "laptop-beach-view": {
+    "url": "https://picsum.photos/seed/laptop-beach-view/600/400",
+    "hint": "laptop beach view",
+    "width": 600,
+    "height": 400
+  },
+  "spain-visa-document": {
+    "url": "https://picsum.photos/seed/spain-visa-document/600/400",
+    "hint": "spain visa document",
+    "width": 600,
+    "height": 400
+  },
+  "malaga-feria-festival": {
+    "url": "https://picsum.photos/seed/malaga-feria-festival/600/400",
+    "hint": "Malaga feria festival",
+    "width": 600,
+    "height": 400
+  },
+  "art-gallery-exhibition": {
+    "url": "https://picsum.photos/seed/art-gallery-exhibition/600/400",
+    "hint": "art gallery exhibition",
+    "width": 600,
+    "height": 400
+  },
+  "luxury-hotel-malaga": {
+    "url": "https://picsum.photos/seed/luxury-hotel-malaga/600/400",
+    "hint": "luxury hotel malaga",
+    "width": 600,
+    "height": 400
+  },
+  "budget-hotel-malaga": {
+    "url": "https://picsum.photos/seed/budget-hotel-malaga/600/400",
+    "hint": "budget hotel malaga",
+    "width": 600,
+    "height": 400
+  },
+  "family-hotel-malaga": {
+    "url": "https://picsum.photos/seed/family-hotel-malaga/600/400",
+    "hint": "family hotel malaga",
+    "width": 600,
+    "height": 400
+  },
+  "costa-del-sol-resort": {
+    "url": "https://picsum.photos/seed/costa-del-sol-resort/600/400",
+    "hint": "costa del sol resort",
+    "width": 600,
+    "height": 400
+  },
+  "malaga-nightlife-street": {
+    "url": "https://picsum.photos/seed/malaga-nightlife-street/600/400",
+    "hint": "Malaga nightlife street",
+    "width": 600,
+    "height": 400
+  },
+  "marbella-nightclub": {
+    "url": "https://picsum.photos/seed/marbella-nightclub/600/400",
+    "hint": "Marbella nightclub",
+    "width": 600,
+    "height": 400
+  },
+  "flamenco-dancer": {
+    "url": "https://picsum.photos/seed/flamenco-dancer/600/400",
+    "hint": "flamenco dancer",
+    "width": 600,
+    "height": 400
+  },
+  "spanish-tapas-platter": {
+    "url": "https://picsum.photos/seed/spanish-tapas-platter/600/400",
+    "hint": "spanish tapas platter",
+    "width": 600,
+    "height": 400
+  },
+  "fine-dining-plate": {
+    "url": "https://picsum.photos/seed/fine-dining-plate/600/400",
+    "hint": "fine dining plate",
+    "width": 600,
+    "height": 400
+  },
+  "wine-tasting-glasses": {
+    "url": "https://picsum.photos/seed/wine-tasting-glasses/600/400",
+    "hint": "wine tasting glasses",
+    "width": 600,
+    "height": 400
+  },
+  "street-food-market": {
+    "url": "https://picsum.photos/seed/street-food-market/600/400",
+    "hint": "street food market",
+    "width": 600,
+    "height": 400
+  },
+  "luxury-fashion-store": {
+    "url": "https://picsum.photos/seed/luxury-fashion-store/600/400",
+    "hint": "luxury fashion store",
+    "width": 600,
+    "height": 400
+  },
+  "modern-shopping-mall": {
+    "url": "https://picsum.photos/seed/modern-shopping-mall/600/400",
+    "hint": "modern shopping mall",
+    "width": 600,
+    "height": 400
+  },
+  "local-craft-market": {
+    "url": "https://picsum.photos/seed/local-craft-market/600/400",
+    "hint": "local craft market",
+    "width": 600,
+    "height": 400
+  },
+  "golf-course-green": {
+    "url": "https://picsum.photos/seed/golf-course-green/600/400",
+    "hint": "golf course green",
+    "width": 600,
+    "height": 400
+  },
+  "padel-tennis-court": {
+    "url": "https://picsum.photos/seed/padel-tennis-court/600/400",
+    "hint": "padel tennis court",
+    "width": 600,
+    "height": 400
+  },
+  "sailing-boat-sea": {
+    "url": "https://picsum.photos/seed/sailing-boat-sea/600/400",
+    "hint": "sailing boat sea",
+    "width": 600,
+    "height": 400
+  },
+  "airport-arrivals-hall": {
+    "url": "https://picsum.photos/seed/airport-arrivals-hall/600/400",
+    "hint": "airport arrivals hall",
+    "width": 600,
+    "height": 400
+  },
+  "luxury-car-interior": {
+    "url": "https://picsum.photos/seed/luxury-car-interior/600/400",
+    "hint": "luxury car interior",
+    "width": 600,
+    "height": 400
+  },
+  "malaga-train-station": {
+    "url": "https://picsum.photos/seed/malaga-train-station/600/400",
+    "hint": "malaga train station",
+    "width": 600,
+    "height": 400
+  },
+  "malaga-weather-seasons": {
+    "url": "https://picsum.photos/seed/malaga-weather-seasons/600/400",
+    "hint": "malaga weather seasons",
+    "width": 600,
+    "height": 400
+  },
+  "travel-map-itinerary": {
+    "url": "https://picsum.photos/seed/travel-map-itinerary/600/400",
+    "hint": "travel map itinerary",
+    "width": 600,
+    "height": 400
+  },
+  "budget-travel-money": {
+    "url": "https://picsum.photos/seed/budget-travel-money/600/400",
+    "hint": "budget travel money",
+    "width": 600,
+    "height": 400
+  },
+  "tourist-info-map": {
+    "url": "https://picsum.photos/seed/tourist-info-map/600/400",
+    "hint": "tourist info map",
+    "width": 600,
+    "height": 400
+  },
+  "wedding-venue-setting": {
+    "url": "https://picsum.photos/seed/wedding-venue-setting/600/400",
+    "hint": "wedding venue setting",
+    "width": 600,
+    "height": 400
+  },
+  "wedding-planning-details": {
+    "url": "https://picsum.photos/seed/wedding-planning-details/600/400",
+    "hint": "wedding planning details",
+    "width": 600,
+    "height": 400
+  },
+  "honeymoon-couple-beach": {
+    "url": "https://picsum.photos/seed/honeymoon-couple-beach/600/400",
+    "hint": "honeymoon couple beach",
+    "width": 600,
+    "height": 400
+  },
+  "spa-massage-therapy": {
+    "url": "https://picsum.photos/seed/spa-massage-therapy/600/400",
+    "hint": "spa massage therapy",
+    "width": 600,
+    "height": 400
+  },
+  "modern-clinic-interior": {
+    "url": "https://picsum.photos/seed/modern-clinic-interior/600/400",
+    "hint": "modern clinic interior",
+    "width": 600,
+    "height": 400
+  },
+  "yoga-class-sunrise": {
+    "url": "https://picsum.photos/seed/yoga-class-sunrise/600/400",
+    "hint": "yoga class sunrise",
+    "width": 600,
+    "height": 400
   }
 }

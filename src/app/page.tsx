@@ -9,6 +9,7 @@ import Image from 'next/image';
 import imageData from '@/lib/placeholder-images.json';
 import { allSiteUrls } from '@/lib/urls';
 import { destinationsData } from '@/lib/data';
+import ClientOnly from '@/components/shared/ClientOnly';
 
 const topMoneyPages = [
     {
@@ -47,6 +48,8 @@ type ImageData = {
   [key: string]: {
     url: string;
     hint: string;
+    width: number;
+    height: number;
   };
 };
 
@@ -61,8 +64,8 @@ export default function Home() {
         <Image
           src={images['Marbella-panoramic-beach-luxury-mobile'].url}
           alt="Envision the stunning beauty of Marbella: sun-drenched coasts and luxurious lifestyle"
-          width={600}
-          height={800}
+          width={images['Marbella-panoramic-beach-luxury-mobile'].width}
+          height={images['Marbella-panoramic-beach-luxury-mobile'].height}
           className="absolute inset-0 z-0 object-cover w-full h-full sm:hidden"
           data-ai-hint={images['Marbella-panoramic-beach-luxury-mobile'].hint}
         />
@@ -70,8 +73,8 @@ export default function Home() {
         <Image
           src={images['Marbella-panoramic-beach-luxury'].url}
           alt="Envision the stunning beauty of Marbella: sun-drenched coasts and luxurious lifestyle"
-          width={1920}
-          height={1080}
+          width={images['Marbella-panoramic-beach-luxury'].width}
+          height={images['Marbella-panoramic-beach-luxury'].height}
           priority
           className="absolute inset-0 z-0 object-cover w-full h-full hidden sm:block"
           data-ai-hint={images['Marbella-panoramic-beach-luxury'].hint}
@@ -136,9 +139,9 @@ export default function Home() {
 
       {/* Newsletter Sign-up Section */}
       <Section>
-        <div>
+        <ClientOnly>
           <NewsletterForm />
-        </div>
+        </ClientOnly>
       </Section>
     </>
   );
