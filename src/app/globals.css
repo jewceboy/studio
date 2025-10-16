@@ -37,7 +37,7 @@ body {
     --secondary-foreground: var(--color-text-dark-grey); 
 
     --muted: 210 10% 50%; 
-    --muted-foreground: 210 10% 40%; 
+    --muted-foreground: 210 10% 35%; 
 
     --accent: var(--prd-accent-pink); /* General accent is now PINK for header etc. */
     --accent-foreground: var(--color-white);
