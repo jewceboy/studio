@@ -4,7 +4,7 @@ import Section from '@/components/shared/Section';
 
 export const metadata = {
   title: 'Water Sports in Malaga | Costa del Sol Navigator',
-  description: 'Enjoy a variety of water sports in Malaga.',
+  description: 'Find fun water sports and activities in Malaga, from jet skiing to paddleboarding, as part of your attractions itinerary.',
 };
 
 export default function WaterSportsPage() {

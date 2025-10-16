@@ -5,8 +5,8 @@ import InfoCard from '@/components/shared/InfoCard';
 import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
 
 export const metadata = {
-  title: 'Water Sports in Malaga | Costa del Sol Navigator',
-  description: 'A guide to water sports activities in Malaga and the Costa del Sol.',
+  title: 'Water Sports Tourism Costa del Sol | Costa del Sol Navigator',
+  description: 'Explore the Costa del Sol as a premier destination for water sports tourism, including sailing and scuba diving schools and charters.',
 };
 
 const waterSportsCategories = [
