@@ -36,19 +36,23 @@ export default function NewsletterForm() {
         </p>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-        <Input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="flex-grow bg-primary-light border-primary-dark/30 focus:ring-accent-1-red"
-          aria-label="Email for newsletter"
-        />
-        <Button type="submit" disabled={isLoading} className="bg-accent-1-red text-primary-light hover:bg-accent-1-red/90 font-montserrat font-medium">
-          <Mail className="mr-2 h-4 w-4" />
-          {isLoading ? 'Subscribing...' : 'Subscribe'}
-        </Button>
+        <div className="flex-grow">
+          <Input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full bg-primary-light border-primary-dark/30 focus:ring-accent-1-red"
+            aria-label="Email for newsletter"
+          />
+        </div>
+        <div>
+          <Button type="submit" disabled={isLoading} className="w-full sm:w-auto bg-accent-1-red text-primary-light hover:bg-accent-1-red/90 font-montserrat font-medium">
+            <Mail className="mr-2 h-4 w-4" />
+            {isLoading ? 'Subscribing...' : 'Subscribe'}
+          </Button>
+        </div>
       </form>
     </div>
   );

@@ -137,7 +137,9 @@ export default function Home() {
 
       {/* Newsletter Sign-up Section */}
       <Section>
-        <NewsletterForm />
+        <div>
+          <NewsletterForm />
+        </div>
       </Section>
     </>
   );
