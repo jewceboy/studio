@@ -56,25 +56,24 @@ export default function Home() {
   return (
     <>
       {/* Marbella Hero Section */}
-      <div className="relative h-[calc(100vh-80px)] min-h-[500px] md:min-h-[600px] flex items-center justify-center text-center -mt-8 -mx-4 sm:-mx-container-padding">
+      <div className="relative h-[calc(100vh-80px)] min-h-[500px] md:min-h-[600px] flex items-center justify-center text-center -mt-8 -mx-4 sm:-mx-container-padding overflow-hidden">
         {/* Mobile Image */}
         <Image
           src={images['Marbella-panoramic-beach-luxury-mobile'].url}
           alt="Envision the stunning beauty of Marbella: sun-drenched coasts and luxurious lifestyle"
-          fill={true}
-          priority
+          width={600}
+          height={800}
           className="absolute inset-0 z-0 object-cover w-full h-full sm:hidden"
-          sizes="100vw"
           data-ai-hint={images['Marbella-panoramic-beach-luxury-mobile'].hint}
         />
         {/* Desktop Image */}
         <Image
           src={images['Marbella-panoramic-beach-luxury'].url}
           alt="Envision the stunning beauty of Marbella: sun-drenched coasts and luxurious lifestyle"
-          fill={true}
+          width={1920}
+          height={1080}
           priority
           className="absolute inset-0 z-0 object-cover w-full h-full hidden sm:block"
-          sizes="100vw"
           data-ai-hint={images['Marbella-panoramic-beach-luxury'].hint}
         />
 
