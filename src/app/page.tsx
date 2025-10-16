@@ -74,7 +74,7 @@ export default function Home() {
           fill={true}
           priority
           className="absolute inset-0 z-0 object-cover w-full h-full hidden sm:block"
-          sizes="(min-width: 768px) 100vw, 0vw"
+          sizes="100vw"
           data-ai-hint={images['Marbella-panoramic-beach-luxury'].hint}
         />
 
