@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, type FormEvent } from 'react';
@@ -36,7 +35,7 @@ export default function NewsletterForm() {
         </p>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-        <div className="flex-grow">
+        <div className="flex-grow" suppressHydrationWarning>
           <Input
             type="email"
             placeholder="Enter your email"
