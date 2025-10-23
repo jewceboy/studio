@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Luxury Wedding Venues Malaga | Costa del Sol Navigator',
-  description: 'Find exclusive and luxury wedding venues in Malaga.',
+  title: 'Luxury Wedding Venues in Malaga | Exclusive Locations',
+  description: 'Find exclusive and luxury wedding venues in Malaga and Marbella. Host an unforgettable celebration at one of Costa del Sol\'s most stunning locations.',
 };
 
 export default function LuxuryVenuesPage() {

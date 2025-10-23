@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Coworking Marbella | Costa del Sol Navigator',
-  description: 'Discover coworking spaces in Marbella.',
+  title: 'Coworking Spaces in Marbella | Your Remote Work Guide',
+  description: 'Discover the best coworking spaces in Marbella. Find your ideal workspace with fast Wi-Fi, meeting rooms, and a network of professionals.',
 };
 
 export default function CoworkingMarbellaPage() {

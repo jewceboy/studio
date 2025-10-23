@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Conference Venues Malaga | Costa del Sol Navigator',
-  description: 'Find the best conference venues in Malaga.',
+  title: 'Conference Venues in Malaga | MICE & Business Events',
+  description: 'Find the best conference venues in Malaga for your corporate events, meetings, and MICE tourism needs. Explore hotels and convention centers.',
 };
 
 export default function ConferenceVenuesPage() {

@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Luxury Beach Clubs Costa del Sol | Costa del Sol Navigator',
-  description: 'Experience the best luxury beach clubs in the Costa del Sol.',
+  title: 'Luxury Beach Clubs Costa del Sol | Nikki Beach, Ocean Club',
+  description: 'Experience the best luxury beach clubs in the Costa del Sol, including Nikki Beach Marbella and Ocean Club. Your guide to VIP beds, parties, and more.',
 };
 
 export default function LuxuryBeachClubsPage() {

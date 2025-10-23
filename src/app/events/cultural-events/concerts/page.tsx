@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Concerts in Malaga | Costa del Sol Navigator',
-  description: 'Find upcoming concerts and live music events in Malaga.',
+  title: 'Concerts in Malaga | Live Music & Events Calendar',
+  description: 'Find upcoming concerts and live music events in Malaga. Your guide to shows, venues, and festivals in the Costa del Sol.',
 };
 
 export default function ConcertsPage() {

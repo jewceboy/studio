@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Marbella Shopping District | Costa del Sol Navigator',
-  description: 'A guide to the best shopping districts in Marbella.',
+  title: 'Marbella Shopping District Guide | Luxury & High-Street',
+  description: 'A guide to the best shopping districts in Marbella, from the luxury boutiques of Puerto Banus to the high-street brands in the city center.',
 };
 
 export default function MarbellaShoppingPage() {

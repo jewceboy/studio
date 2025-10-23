@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Chauffeur Services Costa del Sol | Costa del Sol Navigator',
-  description: 'Hire professional chauffeur services in the Costa del Sol.',
+  title: 'Chauffeur Services in Costa del Sol | Luxury Car & Driver Hire',
+  description: 'Hire professional chauffeur services in the Costa del Sol. Travel in style and comfort with a luxury car and private driver in Marbella and Malaga.',
 };
 
 export default function ChauffeurPage() {

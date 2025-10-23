@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Tennis Camps Costa del Sol | Costa del Sol Navigator',
-  description: 'Join intensive tennis camps for all ages and levels in the Costa del Sol.',
+  title: 'Tennis Camps in Costa del Sol | Coaching & Academies',
+  description: 'Join intensive tennis camps for all ages and levels in the Costa del Sol. Find professional coaching and top tennis academies.',
 };
 
 export default function TennisCampsPage() {

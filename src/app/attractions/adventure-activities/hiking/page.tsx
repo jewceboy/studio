@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Costa del Sol Hiking Trails | Costa del Sol Navigator',
-  description: 'Explore the best hiking trails in the Costa del Sol region.',
+  title: 'Costa del Sol Hiking Trails | Your Guide to the Best Hikes',
+  description: 'Explore the best hiking trails in the Costa del Sol region, from coastal paths to mountain treks. Find routes for all fitness levels.',
 };
 
 export default function HikingPage() {

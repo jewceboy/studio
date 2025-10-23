@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Malaga Weather Guide | Costa del Sol Navigator',
-  description: 'A detailed guide to the weather in Malaga throughout the year.',
+  title: 'Malaga Weather Guide | Month-by-Month Temperatures',
+  description: 'A detailed guide to the weather in Malaga throughout the year, with month-by-month averages for temperature, rainfall, and sunshine hours.',
 };
 
 export default function WeatherPage() {

@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Theme Parks near Malaga | Costa del Sol Navigator',
-  description: 'Find theme parks near Malaga for a fun day out.',
+  title: 'Theme Parks near Malaga | Costa del Sol Family Fun',
+  description: 'Find theme parks near Malaga for a fun day out. Explore Tivoli World, water parks, and other family-friendly attractions.',
 };
 
 export default function ThemeParksPage() {

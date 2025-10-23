@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Backpacker Hostels Costa del Sol | Costa del Sol Navigator',
-  description: 'Find the best backpacker hostels in the Costa del Sol.',
+  title: 'Backpacker Hostels in Costa del Sol | Best Hostels Guide',
+  description: 'Find the best backpacker hostels in the Costa del Sol. Compare prices, social vibes, and locations in Malaga, Marbella, and more.',
 };
 
 export default function HostelsPage() {

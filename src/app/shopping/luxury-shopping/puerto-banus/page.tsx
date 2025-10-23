@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Shopping in Puerto Banus | Costa del Sol Navigator',
-  description: 'The ultimate guide to shopping in Puerto Banus, from designer stores to luxury brands.',
+  title: 'Shopping in Puerto Banus | The Ultimate Luxury Guide',
+  description: 'The ultimate guide to luxury shopping in Puerto Banus, from flagship designer stores to exclusive boutiques and jewelry shops.',
 };
 
 export default function PuertoBanusPage() {

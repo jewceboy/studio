@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Best Bars in Malaga | Costa del Sol Navigator',
-  description: 'A guide to the best bars in Malaga, from rooftop terraces to traditional bodegas.',
+  title: 'Best Bars in Malaga | Rooftop, Tapas & Cocktail Bars',
+  description: 'A guide to the best bars in Malaga, from rooftop terraces with stunning views to traditional bodegas and creative cocktail bars.',
 };
 
 export default function MalagaBarsPage() {

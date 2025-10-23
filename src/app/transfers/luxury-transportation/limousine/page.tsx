@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Limousine Services Marbella | Costa del Sol Navigator',
-  description: 'Arrive in style with limousine services in Marbella.',
+  title: 'Limousine Services in Marbella | Limo Hire Guide',
+  description: 'Arrive in style with exclusive limousine services in Marbella. Find limo hire for airport transfers, weddings, and special events.',
 };
 
 export default function LimousinePage() {

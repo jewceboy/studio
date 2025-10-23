@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Scuba Diving Malaga | Costa del Sol Navigator',
-  description: 'Explore the underwater world with scuba diving in Malaga and the Costa del Sol.',
+  title: 'Scuba Diving in Malaga & Costa del Sol | Dive Sites Guide',
+  description: 'Explore the underwater world with scuba diving in Malaga and the Costa del Sol. Find the best dive sites, schools, and certification courses.',
 };
 
 export default function DivingPage() {

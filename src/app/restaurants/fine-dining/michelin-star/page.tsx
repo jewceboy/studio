@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Michelin Star Restaurants Costa del Sol | Costa del Sol Navigator',
-  description: 'A guide to Michelin-starred restaurants in the Costa del Sol.',
+  title: 'Michelin Star Restaurants in Costa del Sol | The Ultimate Guide',
+  description: 'A guide to all Michelin-starred restaurants in the Costa del Sol. Discover the best of Andalusian haute cuisine in Marbella, Malaga, and beyond.',
 };
 
 export default function MichelinStarPage() {

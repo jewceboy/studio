@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Yoga Retreats Costa del Sol | Costa del Sol Navigator',
-  description: 'Find yoga retreats in the Costa del Sol.',
+  title: 'Yoga Retreats in Costa del Sol | Spain Wellness',
+  description: 'Find the best yoga retreats in the Costa del Sol. Explore centers for Vinyasa, Hatha, and meditation on the sunny coast of Spain.',
 };
 
 export default function YogaRetreatsPage() {

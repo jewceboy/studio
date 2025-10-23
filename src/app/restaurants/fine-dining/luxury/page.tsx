@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Luxury Restaurants in Marbella | Costa del Sol Navigator',
-  description: 'Dine at the most luxurious restaurants in Marbella.',
+  title: 'Luxury Restaurants in Marbella | Fine Dining Guide',
+  description: 'Dine at the most luxurious and exclusive restaurants in Marbella. Experience exquisite cuisine, glamorous settings, and impeccable service.',
 };
 
 export default function LuxuryRestaurantsPage() {

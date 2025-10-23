@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'All Inclusive Beach Holidays | Costa del Sol Navigator',
-  description: 'Find all-inclusive beach holiday packages in the Costa del Sol.',
+  title: 'All Inclusive Beach Holidays Costa del Sol | Packages & Deals',
+  description: 'Find the best all-inclusive beach holiday packages in the Costa del Sol for a hassle-free vacation. Compare resorts and deals.',
 };
 
 export default function AllInclusivePage() {

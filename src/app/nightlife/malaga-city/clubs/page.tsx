@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Nightclubs in Malaga | Costa del Sol Navigator',
-  description: 'Your guide to the best nightclubs and late-night venues in Malaga.',
+  title: 'Nightclubs in Malaga | Your Guide to Malaga Nightlife',
+  description: 'Your guide to the best nightclubs and late-night venues in Malaga. Find clubs for electronic, Latin, and commercial music.',
 };
 
 export default function MalagaClubsPage() {

@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Sailing Costa del Sol | Costa del Sol Navigator',
-  description: 'Experience sailing on the Mediterranean with charters and lessons in the Costa del Sol.',
+  title: 'Sailing in Costa del Sol | Charters, Tours & Schools',
+  description: 'Experience sailing on the Mediterranean with boat charters, lessons, and sailing tours departing from Malaga, Marbella, and more.',
 };
 
 export default function SailingPage() {

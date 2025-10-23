@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Workation Packages Costa del Sol | Costa del Sol Navigator',
-  description: 'Explore workation packages in the Costa del Sol.',
+  title: 'Workation Packages in Costa del Sol | Remote Work & Play',
+  description: 'Explore curated workation packages in the Costa del Sol, combining accommodation, coworking access, and leisure activities.',
 };
 
 export default function PackagesPage() {

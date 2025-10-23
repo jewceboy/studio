@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Padel Courts Costa del Sol | Costa del Sol Navigator',
-  description: 'Find and book padel courts across the Costa del Sol.',
+  title: 'Padel Courts in Costa del Sol | Book & Play',
+  description: 'Find and book padel courts across the Costa del Sol. A guide to the best padel clubs and facilities for Spain\'s most popular racquet sport.',
 };
 
 export default function PadelCourtsPage() {

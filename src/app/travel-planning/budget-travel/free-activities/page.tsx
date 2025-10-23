@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Free Activities in Malaga | Costa del Sol Navigator',
-  description: 'A list of free things to do and see in Malaga.',
+  title: 'Free Activities in Malaga | Things to Do on a Budget',
+  description: 'A list of the best free things to do and see in Malaga. Explore parks, museums with free entry times, and other attractions without spending money.',
 };
 
 export default function FreeActivitiesPage() {

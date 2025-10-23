@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Costa del Sol Holidays | Costa del Sol Navigator',
-  description: 'Explore holiday packages for the Costa del Sol.',
+  title: 'Costa del Sol Holidays | Beach & Hotel Packages',
+  description: 'Explore holiday packages for the Costa del Sol. Find the best deals on flights, hotels, and all-inclusive resorts for your next vacation.',
 };
 
 export default function PackagesPage() {

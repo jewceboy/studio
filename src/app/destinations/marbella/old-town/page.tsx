@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Marbella Old Town Guide | Costa del Sol Navigator',
-  description: 'A complete guide to exploring Marbella\'s charming old town.',
+  title: 'Marbella Old Town Guide | What to See & Do',
+  description: 'A complete guide to exploring Marbella\'s charming old town (Casco Antiguo). Discover Plaza de los Naranjos, narrow streets, shops, and restaurants.',
 };
 
 export default function MarbellaOldTownPage() {

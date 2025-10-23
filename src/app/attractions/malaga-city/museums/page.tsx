@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Malaga Museums Guide | Costa del Sol Navigator',
-  description: 'A comprehensive guide to the museums in Malaga.',
+  title: 'Malaga Museums Guide | Picasso, Carmen Thyssen & More',
+  description: 'A comprehensive guide to the museums in Malaga, featuring the Picasso Museum, Carmen Thyssen Museum, and the Centre Pompidou.',
 };
 
 export default function MuseumsPage() {

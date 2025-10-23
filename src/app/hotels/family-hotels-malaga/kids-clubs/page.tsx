@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Hotels with Kids Clubs in Malaga | Costa del Sol Navigator',
-  description: 'Find hotels in Malaga that offer kids clubs and activities.',
+  title: 'Hotels with Kids Clubs in Malaga | Family-Friendly Stays',
+  description: 'Find the best hotels in Malaga that offer kids clubs and activities to keep children entertained on your family holiday.',
 };
 
 export default function KidsClubsPage() {

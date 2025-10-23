@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Destination Weddings Costa del Sol | Costa del Sol Navigator',
-  description: 'Plan your perfect destination wedding in the Costa del Sol.',
+  title: 'Destination Weddings in Costa del Sol | Planning Guide',
+  description: 'Plan your perfect destination wedding in the Costa del Sol. Find expert planners, venues, and tips for a dream wedding in sunny Spain.',
 };
 
 export default function DestinationWeddingsPage() {

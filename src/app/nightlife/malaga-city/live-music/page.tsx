@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Live Music Venues in Malaga | Costa del Sol Navigator',
-  description: 'Discover the best venues for live music in Malaga.',
+  title: 'Live Music Venues in Malaga | Jazz, Rock & More',
+  description: 'Discover the best venues for live music in Malaga. From intimate jazz clubs to lively rock bars, find your sound in the city.',
 };
 
 export default function LiveMusicPage() {

@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Luxury Coworking Malaga | Costa del Sol Navigator',
-  description: 'Explore high-end and luxury coworking spaces in Malaga.',
+  title: 'Luxury Coworking Spaces in Malaga | Premium Workspaces',
+  description: 'Explore high-end and luxury coworking spaces in Malaga, offering premium amenities, exclusive networking, and inspiring environments.',
 };
 
 export default function LuxuryCoworkingPage() {

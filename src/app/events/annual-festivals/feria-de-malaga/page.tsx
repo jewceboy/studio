@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Feria de Malaga | Costa del Sol Navigator',
-  description: 'A guide to the annual Feria de Malaga.',
+  title: 'Feria de Malaga Guide | Dates, Tips & What to Wear',
+  description: 'A complete guide to the annual Feria de Malaga. Find dates, tips for the day and night fair, what to wear, and how to enjoy the festivities.',
 };
 
 export default function FeriaDeMalagaPage() {

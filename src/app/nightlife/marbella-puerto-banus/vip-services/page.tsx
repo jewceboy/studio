@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'VIP Nightlife Services in Marbella | Costa del Sol Navigator',
-  description: 'Access exclusive VIP tables and services in Marbella\'s best clubs.',
+  title: 'VIP Nightlife Services in Marbella | Table Bookings & Concierge',
+  description: 'Access exclusive VIP tables, bottle service, and concierge services in Marbella and Puerto Banus\'s best nightclubs.',
 };
 
 export default function VipServicesPage() {

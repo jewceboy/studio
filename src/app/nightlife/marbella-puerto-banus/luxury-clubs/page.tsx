@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Luxury Nightclubs in Puerto Banus | Costa del Sol Navigator',
-  description: 'A guide to the most exclusive and luxurious nightclubs in Puerto Banus.',
+  title: 'Luxury Nightclubs in Puerto Banus | VIP Tables & DJs',
+  description: 'A guide to the most exclusive and luxurious nightclubs in Puerto Banus, Marbella. Find information on VIP tables, famous DJs, and dress codes.',
 };
 
 export default function LuxuryClubsPage() {

@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'One Week Costa del Sol Itinerary | Costa del Sol Navigator',
-  description: 'A one-week itinerary to explore the highlights of the Costa del Sol.',
+  title: 'One Week in Costa del Sol Itinerary | Malaga, Marbella & More',
+  description: 'A one-week itinerary to explore the highlights of the Costa del Sol, including Malaga, Marbella, Mijas, and other charming white villages.',
 };
 
 export default function WeekPage() {

@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Benalmadena Cable Car | Costa del Sol Navigator',
-  description: 'A guide to the Benalmadena cable car.',
+  title: 'Benalmadena Cable Car | Tickets, Prices & Views',
+  description: 'A guide to the Benalmadena cable car (Teleférico). Find information on tickets, opening times, and the stunning views you can expect from the top.',
 };
 
 export default function BenalmadenaCableCarPage() {

@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Malaga Sightseeing Tours | Costa del Sol Navigator',
-  description: 'Find the best sightseeing tours in Malaga.',
+  title: 'Malaga Sightseeing Tours | Bus, Walking & Segway Tours',
+  description: 'Find the best sightseeing tours in Malaga, including hop-on-hop-off bus tours, guided walking tours, and Segway adventures.',
 };
 
 export default function SightseeingPage() {

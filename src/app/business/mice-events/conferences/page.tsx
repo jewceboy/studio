@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Executive Conferences Malaga | Costa del Sol Navigator',
-  description: 'Host executive conferences in Malaga.',
+  title: 'Executive Conferences in Malaga | MICE Venues',
+  description: 'Host your executive conferences in Malaga with world-class venues and services. Find the perfect location for your MICE event in Costa del Sol.',
 };
 
 export default function ConferencesPage() {

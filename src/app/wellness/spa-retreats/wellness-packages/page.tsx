@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Wellness Packages Malaga | Costa del Sol Navigator',
-  description: 'Discover wellness packages in Malaga for a rejuvenating trip.',
+  title: 'Wellness Packages in Malaga | Spa & Relaxation Deals',
+  description: 'Discover curated wellness packages in Malaga for a rejuvenating trip. Find deals on spa treatments, yoga, and mind-body experiences.',
 };
 
 export default function WellnessPackagesPage() {

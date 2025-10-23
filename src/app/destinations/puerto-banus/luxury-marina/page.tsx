@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Puerto Banus Luxury Travel | Costa del Sol Navigator',
-  description: 'A guide to luxury travel in Puerto Banus.',
+  title: 'Puerto Banus Luxury Travel Guide | Yachts & Supercars',
+  description: 'A guide to luxury travel in Puerto Banus. Discover superyachts, supercars, fine dining, and exclusive experiences at this world-famous marina.',
 };
 
 export default function PuertoBanusLuxuryMarinaPage() {

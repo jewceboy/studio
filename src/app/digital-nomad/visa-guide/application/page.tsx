@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Spain Digital Nomad Visa Application | Costa del Sol Navigator',
-  description: 'How to apply for the Spanish digital nomad visa.',
+  title: 'Spain Digital Nomad Visa Application | Step-by-Step Guide',
+  description: 'How to apply for the Spanish digital nomad visa. A detailed walkthrough of the application steps, required documents, and process.',
 };
 
 export default function ApplicationPage() {

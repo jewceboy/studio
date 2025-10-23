@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Food Tours in Malaga | Costa del Sol Navigator',
-  description: 'Explore the culinary scene of Malaga with guided food tours.',
+  title: 'Food Tours in Malaga | Tapas & Wine Tasting Tours',
+  description: 'Explore the culinary scene of Malaga with guided food tours. Discover the best tapas, local markets, and wines with an expert guide.',
 };
 
 export default function FoodToursPage() {

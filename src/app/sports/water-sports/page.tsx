@@ -14,8 +14,8 @@ type ImageData = {
 const images: ImageData = imageData;
 
 export const metadata = {
-    title: 'Water Sports Tourism Costa del Sol | Costa del Sol Navigator',
-    description: 'Explore the Costa del Sol as a premier destination for water sports tourism, including sailing and scuba diving schools and charters.',
+    title: 'Water Sports in Malaga | Sailing, Diving & More',
+    description: 'Explore the Costa del Sol as a premier destination for water sports tourism, including sailing, scuba diving, jet skiing, and more.',
 };
 
 const waterSportsCategories = [

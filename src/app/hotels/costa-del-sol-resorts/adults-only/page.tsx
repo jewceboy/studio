@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Adults Only Luxury Resorts | Costa del Sol Navigator',
-  description: 'Discover adults-only luxury resorts for a peaceful getaway in the Costa del Sol.',
+  title: 'Adults-Only Luxury Resorts in Costa del Sol | Child-Free',
+  description: 'Discover adults-only luxury resorts for a peaceful and romantic getaway in the Costa del Sol. Find the best child-free hotels and spas.',
 };
 
 export default function AdultsOnlyPage() {

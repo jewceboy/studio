@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Premium Digital Nomad Accommodation | Costa del Sol Navigator',
-  description: 'Find premium accommodation for digital nomads in the Costa del Sol.',
+  title: 'Premium Digital Nomad Accommodation | Apartments & Hotels',
+  description: 'Find premium accommodation for digital nomads in the Costa del Sol. Explore apartments and hotels with great Wi-Fi and workspaces.',
 };
 
 export default function AccommodationPage() {

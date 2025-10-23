@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Wedding Planners Malaga Luxury | Costa del Sol Navigator',
-  description: 'Find luxury wedding planners in Malaga for a high-end celebration.',
+  title: 'Luxury Wedding Planners in Malaga | High-End Event Design',
+  description: 'Find the best luxury wedding planners in Malaga and Marbella for a bespoke, high-end celebration. Connect with elite event designers.',
 };
 
 export default function LuxuryPlannersPage() {

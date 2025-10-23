@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Luxury Spa Hotels Marbella | Costa del Sol Navigator',
-  description: 'Find the best luxury spa hotels in Marbella.',
+  title: 'Luxury Spa Hotels in Marbella | Best Wellness Resorts',
+  description: 'Find the best luxury spa hotels and wellness resorts in Marbella. Indulge in ultimate relaxation at top-rated spas with exclusive treatments.',
 };
 
 export default function LuxurySpasPage() {

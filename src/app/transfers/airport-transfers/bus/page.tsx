@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Malaga Airport to City Center Bus | Costa del Sol Navigator',
-  description: 'Information on taking the bus from Malaga airport to the city center.',
+  title: 'Malaga Airport to City Center by Bus | A-Line Express',
+  description: 'A guide to taking the A-Line Express bus from Malaga airport (AGP) to the city center, including schedules, prices, and stops.',
 };
 
 export default function BusPage() {

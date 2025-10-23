@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Cheap Flights to Malaga | Costa del Sol Navigator',
-  description: 'A guide to finding cheap flights to Malaga airport (AGP).',
+  title: 'Cheap Flights to Malaga (AGP) | A Booking Guide',
+  description: 'A guide to finding cheap flights to Malaga airport (AGP). Get tips, tricks, and tools for booking the best airfare deals to Costa del Sol.',
 };
 
 export default function CheapFlightsPage() {

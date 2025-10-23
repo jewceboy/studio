@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Presidential Suites in Malaga | Costa del Sol Navigator',
-  description: 'Experience the ultimate luxury with presidential suites in Malaga.',
+  title: 'Presidential Suites in Malaga | Most Luxurious Hotel Rooms',
+  description: 'Experience the ultimate luxury with the most exclusive and opulent presidential suites in Malaga\'s top hotels.',
 };
 
 export default function PresidentialSuitesPage() {

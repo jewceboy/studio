@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: '3-Day Malaga Itinerary | Costa del Sol Navigator',
-  description: 'A perfect 3-day itinerary for exploring the best of Malaga.',
+  title: '3-Day Malaga Itinerary | The Perfect Long Weekend',
+  description: 'A perfect and detailed 3-day itinerary for exploring the best of Malaga, from historic sites and museums to tapas bars and the beach.',
 };
 
 export default function ThreeDayPage() {

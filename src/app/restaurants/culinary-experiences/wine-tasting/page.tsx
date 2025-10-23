@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Wine Tasting in Malaga | Costa del Sol Navigator',
-  description: 'Discover the local wines of Malaga with guided wine tasting tours.',
+  title: 'Wine Tasting in Malaga | Andalusian Wine Tours',
+  description: 'Discover the local wines of Malaga and the surrounding Andalusian region with guided wine tasting tours and experiences.',
 };
 
 export default function WineTastingPage() {

@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Puerto Banus Beach Clubs | Costa del Sol Navigator',
-  description: 'Discover the exclusive beach clubs in Puerto Banus.',
+  title: 'Puerto Banus Beach Clubs | La Sala, Ocean Club & More',
+  description: 'Discover the exclusive and glamorous beach clubs in Puerto Banus. Find the best parties, DJs, and VIP experiences by the sea.',
 };
 
 export default function PuertoBanusBeachClubsPage() {

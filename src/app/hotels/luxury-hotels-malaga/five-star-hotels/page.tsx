@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Five Star Hotels in Malaga | Costa del Sol Navigator',
-  description: 'Explore the most luxurious five-star hotels in Malaga.',
+  title: 'Five-Star Hotels in Malaga | Ultimate Luxury Stays',
+  description: 'Explore the most luxurious five-star hotels in Malaga. Experience ultimate luxury, fine dining, and impeccable service.',
 };
 
 export default function FiveStarHotelsPage() {

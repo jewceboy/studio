@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Team Building Events Malaga | Costa del Sol Navigator',
-  description: 'Find team building events and activities in Malaga.',
+  title: 'Team Building Events in Malaga | Corporate Activities',
+  description: 'Find engaging team building events and activities in Malaga. Boost morale with fun and collaborative corporate experiences on the Costa del Sol.',
 };
 
 export default function TeamBuildingPage() {

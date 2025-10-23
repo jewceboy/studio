@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Cheap Accommodation Costa del Sol | Costa del Sol Navigator',
-  description: 'Find cheap accommodation options in the Costa del Sol.',
+  title: 'Cheap Accommodation in Costa del Sol | Budget Stays',
+  description: 'Find cheap accommodation options like hostels, budget hotels, and affordable apartments across the Costa del Sol.',
 };
 
 export default function CheapAccommodationPage() {

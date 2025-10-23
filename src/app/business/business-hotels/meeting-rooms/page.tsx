@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Business Meeting Venues Marbella | Costa del Sol Navigator',
-  description: 'Find business meeting venues in Marbella.',
+  title: 'Business Meeting Venues in Marbella | Boardrooms & Spaces',
+  description: 'Find professional business meeting venues and boardrooms in Marbella. Compare spaces equipped with modern technology for your corporate needs.',
 };
 
 export default function MeetingRoomsPage() {

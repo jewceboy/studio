@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Luxury Resorts Costa del Sol | Costa del Sol Navigator',
-  description: 'Explore the most luxurious resorts in the Costa del Sol.',
+  title: 'Luxury Resorts in Costa del Sol | 5-Star Hotels & Villas',
+  description: 'Explore the most luxurious 5-star resorts and villas in the Costa del Sol. Find opulence in Marbella, Estepona, and beyond.',
 };
 
 export default function LuxuryResortsPage() {

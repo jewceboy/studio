@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Malaga Sightseeing Map | Costa del Sol Navigator',
-  description: 'A downloadable sightseeing map of Malaga.',
+  title: 'Malaga Sightseeing Map | Printable & Downloadable',
+  description: 'A downloadable and printable sightseeing map of Malaga city center, highlighting key attractions, museums, and points of interest.',
 };
 
 export default function MapsPage() {

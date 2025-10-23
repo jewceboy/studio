@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Family Resorts Costa del Sol | Costa del Sol Navigator',
-  description: 'Find all-inclusive family resorts in the Costa del Sol.',
+  title: 'Family Resorts in Costa del Sol | All-Inclusive Packages',
+  description: 'Find the best all-inclusive family resorts in the Costa del Sol. Enjoy a carefree family vacation with activities and amenities for all ages.',
 };
 
 export default function AllInclusivePage() {

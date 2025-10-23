@@ -4,7 +4,7 @@ import ContactForm from '@/components/ui/ContactForm'; // Ensure this path is co
 
 export const metadata = {
   title: 'Contact Us | Malaga Travel Guide',
-  description: 'Get in touch with Malaga Travel Guide. Send us your questions, feedback, or inquiries.',
+  description: 'Get in touch with the Malaga Travel Guide team. Send us your questions, feedback, or inquiries about traveling to Costa del Sol.',
 };
 
 export default function ContactPage() {

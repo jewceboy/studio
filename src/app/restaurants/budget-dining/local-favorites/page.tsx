@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Local Restaurants in Malaga | Costa del Sol Navigator',
-  description: 'Eat like a local at these favorite restaurants in Malaga.',
+  title: 'Local Restaurants in Malaga | Eat Like a Local',
+  description: 'Eat like a local at these favorite restaurants in Malaga. Discover the hidden gems and authentic eateries loved by Malagueños.',
 };
 
 export default function LocalFavoritesPage() {

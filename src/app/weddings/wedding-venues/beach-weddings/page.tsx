@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Beach Wedding Venues Marbella | Costa del Sol Navigator',
-  description: 'Find the perfect beach wedding venue in Marbella.',
+  title: 'Beach Wedding Venues in Marbella | Say "I Do" by the Sea',
+  description: 'Find the perfect beach wedding venue in Marbella and the Costa del Sol. Explore beach clubs, hotels, and private locations for your seaside ceremony.',
 };
 
 export default function BeachWeddingsPage() {

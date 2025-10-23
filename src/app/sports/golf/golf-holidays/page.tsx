@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Golf Holidays Malaga | Costa del Sol Navigator',
-  description: 'Plan your perfect golf holiday in Malaga and the Costa del Sol.',
+  title: 'Golf Holidays in Malaga | Packages & Deals',
+  description: 'Plan your perfect golf holiday in Malaga and the Costa del Sol. Find packages, deals, and guides for your ultimate golf vacation.',
 };
 
 export default function GolfHolidaysPage() {

@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Restaurants in Mijas Pueblo | Costa del Sol Navigator',
-  description: 'Find the best restaurants in Mijas Pueblo.',
+  title: 'Restaurants in Mijas Pueblo | Best Places to Eat',
+  description: 'Find the best restaurants in Mijas Pueblo. From traditional Andalusian cuisine with a view to charming tapas bars in the village center.',
 };
 
 export default function MijasPuebloRestaurantsPage() {

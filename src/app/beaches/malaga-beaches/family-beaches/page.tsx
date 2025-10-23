@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Best Malaga Beaches for Families | Costa del Sol Navigator',
-  description: 'Find the best family-friendly beaches in Malaga.',
+  title: 'Best Malaga Beaches for Families | Safe & Fun Options',
+  description: 'Find the best family-friendly beaches in Malaga. Discover beaches with shallow waters, playgrounds, and all the necessary amenities.',
 };
 
 export default function FamilyBeachesPage() {

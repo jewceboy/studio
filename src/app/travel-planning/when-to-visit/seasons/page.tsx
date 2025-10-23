@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Malaga Seasons Guide | Costa del Sol Navigator',
-  description: 'A guide to visiting Malaga in spring, summer, autumn, and winter.',
+  title: 'Malaga Seasons Guide | Spring, Summer, Autumn & Winter',
+  description: 'A guide to visiting Malaga in spring, summer, autumn, and winter. Discover the pros and cons of each season for your trip to Costa del Sol.',
 };
 
 export default function SeasonsPage() {

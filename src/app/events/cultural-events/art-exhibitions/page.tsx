@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Art Exhibitions in Malaga | Costa del Sol Navigator',
-  description: 'Find current and upcoming art exhibitions in Malaga.',
+  title: 'Art Exhibitions in Malaga | Current & Upcoming Shows',
+  description: 'Find current and upcoming art exhibitions in Malaga\'s top museums and galleries, including the Picasso Museum and Centre Pompidou.',
 };
 
 export default function ArtExhibitionsPage() {

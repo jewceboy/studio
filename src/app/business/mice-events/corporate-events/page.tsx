@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Corporate Events Costa del Sol | Costa del Sol Navigator',
-  description: 'Plan corporate events in the Costa del Sol.',
+  title: 'Corporate Events in Costa del Sol | Planning & Venues',
+  description: 'Plan unforgettable corporate events in the Costa del Sol. Explore top venues, suppliers, and ideas for your next company gathering in Spain.',
 };
 
 export default function CorporateEventsPage() {

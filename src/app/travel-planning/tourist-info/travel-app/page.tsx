@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Malaga Travel App | Costa del Sol Navigator',
-  description: 'Download our recommended travel app for Malaga.',
+  title: 'Malaga Travel App | Your Pocket Guide to the City',
+  description: 'Download our recommended travel app for Malaga. Get offline maps, guides, and tips for exploring the Costa del Sol on your phone.',
 };
 
 export default function TravelAppPage() {

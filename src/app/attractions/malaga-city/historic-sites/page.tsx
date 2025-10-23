@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Malaga Historic Sites | Costa del Sol Navigator',
-  description: 'A guide to the historic sites of Malaga.',
+  title: 'Malaga Historic Sites | Alcazaba, Roman Theatre & More',
+  description: 'A guide to the historic sites of Malaga, including the Alcazaba, Roman Theatre, and Gibralfaro Castle. Explore the rich history of the city.',
 };
 
 export default function HistoricSitesPage() {

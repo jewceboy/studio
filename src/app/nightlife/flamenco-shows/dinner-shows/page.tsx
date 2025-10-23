@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Flamenco Dinner Shows in Malaga | Costa del Sol Navigator',
-  description: 'Enjoy a fantastic flamenco show with a delicious dinner in Malaga.',
+  title: 'Flamenco Dinner Shows in Malaga | Food & Entertainment',
+  description: 'Enjoy a fantastic flamenco show combined with a delicious dinner in Malaga. Find the best venues for a complete evening of entertainment.',
 };
 
 export default function FlamencoDinnerShowsPage() {

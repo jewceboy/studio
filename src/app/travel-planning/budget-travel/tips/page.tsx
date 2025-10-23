@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Budget Travel Tips for Spain | Costa del Sol Navigator',
-  description: 'General budget travel tips for visiting Spain.',
+  title: 'Budget Travel Tips for Spain | Save Money on Your Trip',
+  description: 'General budget travel tips for visiting Spain. Save money on accommodation, food, and transport with our expert advice.',
 };
 
 export default function TipsPage() {

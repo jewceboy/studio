@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Cosmetic Surgery Costa del Sol | Costa del Sol Navigator',
-  description: 'Information on cosmetic surgery options in the Costa del Sol.',
+  title: 'Cosmetic Surgery in Costa del Sol | Clinics & Procedures',
+  description: 'Information on world-class cosmetic surgery clinics and procedures in the Costa del Sol. Access leading specialists in a discreet, luxury setting.',
 };
 
 export default function CosmeticSurgeryPage() {
