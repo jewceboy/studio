@@ -74,6 +74,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: article.title,
     description: article.excerpt,
+    alternates: {
+      canonical: `/blog/${article.slug}`,
+    },
     openGraph: {
         title: article.title,
         description: article.excerpt,
@@ -94,9 +97,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         title: article.title,
         description: article.excerpt,
         images: [article.imageUrl],
-    },
-    alternates: {
-      canonical: `/blog/${article.slug}`,
     },
     other: {
       // JSON-LD for Article Schema
