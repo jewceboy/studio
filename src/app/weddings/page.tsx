@@ -21,19 +21,19 @@ export const metadata = {
 
 const weddingCategories = [
   {
-    slug: 'venues',
+    slug: 'wedding-venues',
     name: 'Wedding Venues',
     description: 'Explore breathtaking villas, beachfront hotels, and rustic fincas perfect for your ceremony.',
     imageKey: 'wedding-venue-setting',
-    linkHref: '/weddings/venues',
+    linkHref: '/weddings/wedding-venues',
     linkText: 'Discover Venues',
   },
   {
-    slug: 'planning',
+    slug: 'wedding-planning',
     name: 'Wedding Planning',
     description: 'Connect with elite planners to manage every detail of your special day flawlessly.',
     imageKey: 'wedding-planning-details',
-    linkHref: '/weddings/planning',
+    linkHref: '/weddings/wedding-planning',
     linkText: 'Find a Planner',
   },
   {
