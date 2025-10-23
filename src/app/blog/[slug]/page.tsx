@@ -71,15 +71,19 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
   }
 
+  const siteUrl = 'https://www.malagatravelguide.net';
+  const articleUrl = `${siteUrl}/blog/${article.slug}`;
+
   return {
     title: article.title,
     description: article.excerpt,
     alternates: {
-      canonical: `/blog/${article.slug}`,
+      canonical: articleUrl,
     },
     openGraph: {
         title: article.title,
         description: article.excerpt,
+        url: articleUrl,
         type: 'article',
         publishedTime: article.date,
         authors: article.author ? [article.author] : [],
@@ -105,21 +109,21 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         '@type': 'Article',
         'mainEntityOfPage': {
           '@type': 'WebPage',
-          '@id': `https://www.costadelsolnavigator.com/blog/${article.slug}`,
+          '@id': articleUrl,
         },
         'headline': article.title,
         'description': article.excerpt,
         'image': article.imageUrl,
         'author': {
           '@type': 'Person',
-          'name': article.author || 'Costa del Sol Navigator',
+          'name': article.author || 'Malaga Travel Guide',
         },
         'publisher': {
           '@type': 'Organization',
-          'name': 'Costa del Sol Navigator',
+          'name': 'Malaga Travel Guide',
           'logo': {
             '@type': 'ImageObject',
-            'url': 'https://www.costadelsolnavigator.com/logo.png', // Replace with actual logo
+            'url': `${siteUrl}/logo.png`, // Replace with actual logo
           },
         },
         'datePublished': article.date,

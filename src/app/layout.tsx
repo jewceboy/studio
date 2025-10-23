@@ -11,25 +11,28 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // This is the base metadata. Child pages will merge with this.
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.costadelsolnavigator.com'),
+  metadataBase: new URL('https://www.malagatravelguide.net'),
   title: {
-    default: 'Costa del Sol Navigator | Your Ultimate Malaga Travel Guide',
-    template: '%s | Costa del Sol Navigator',
+    default: 'Malaga Travel Guide | Your Ultimate Costa del Sol Resource',
+    template: '%s | Malaga Travel Guide',
   },
   description: 'Your ultimate guide to exploring Malaga and the Costa del Sol. Plan your trip with personalized recommendations, discover top destinations, hotels, and activities.',
   keywords: 'Malaga, Costa del Sol, travel guide, Spain, hotels, activities, trip planner',
   openGraph: {
-    title: 'Costa del Sol Navigator | Your Ultimate Malaga Travel Guide',
+    title: 'Malaga Travel Guide | Your Ultimate Costa del Sol Resource',
     description: 'Your ultimate guide to exploring Malaga and the Costa del Sol.',
-    url: 'https://www.costadelsolnavigator.com',
-    siteName: 'Costa del Sol Navigator',
+    url: 'https://www.malagatravelguide.net',
+    siteName: 'Malaga Travel Guide',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Costa del Sol Navigator | Your Ultimate Malaga Travel Guide',
+    title: 'Malaga Travel Guide | Your Ultimate Costa del Sol Resource',
     description: 'Your ultimate guide to exploring Malaga and the Costa del Sol.',
+  },
+  alternates: {
+    canonical: '/',
   },
 };
 
@@ -59,8 +62,8 @@ const jsonLd = {
     {
       '@type': ['TravelAgency', 'Organization'],
       'name': 'MalagaTravelGuide',
-      'url': 'https://www.costadelsolnavigator.com',
-      'logo': 'https://www.costadelsolnavigator.com/logo.png', // Placeholder URL - replace with actual logo
+      'url': 'https://www.malagatravelguide.net',
+      'logo': 'https://www.malagatravelguide.net/logo.png', // Placeholder URL
       'contactPoint': {
         '@type': 'ContactPoint',
         'telephone': '+34-XXX-XXX-XXX', // Placeholder phone
@@ -82,11 +85,11 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      'url': 'https://www.costadelsolnavigator.com',
+      'url': 'https://www.malagatravelguide.net',
       'name': 'MalagaTravelGuide',
       'potentialAction': {
         '@type': 'SearchAction',
-        'target': 'https://www.costadelsolnavigator.com/search?q={search_term_string}',
+        'target': 'https://www.malagatravelguide.net/search?q={search_term_string}',
         'query-input': 'required name=search_term_string'
       }
     }
