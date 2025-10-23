@@ -1,4 +1,5 @@
 
+export const PLACEHOLDER_IMAGE_URL = (width: number, height: number, seed: string) => `https://picsum.photos/seed/${seed}/${width}/${height}`;
 
 // Placeholder Affiliate Links
 export const BOOKING_COM_AFFILIATE_LINK_MALAGA_GENERAL = "https://booking.com/malaga-hotels?aid=12345";
