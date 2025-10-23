@@ -376,5 +376,17 @@
     "hint": "yoga class sunrise",
     "width": 600,
     "height": 400
+  },
+  "valderrama-golf": {
+    "url": "https://picsum.photos/seed/valderrama-golf/600/400",
+    "hint": "valderrama golf course"
+  },
+  "finca-cortesin-golf": {
+    "url": "https://picsum.photos/seed/finca-cortesin-golf/600/400",
+    "hint": "finca cortesin golf"
+  },
+  "la-reserva-golf": {
+    "url": "https://picsum.photos/seed/la-reserva-golf/600/400",
+    "hint": "la reserva golf"
   }
 }

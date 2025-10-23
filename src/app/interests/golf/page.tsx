@@ -59,7 +59,7 @@ const featuredCourses: GolfCourse[] = [
     {
         id: '3',
         name: 'La Reserva Club Sotogrande',
-        slug: 'la-reserva-sotogrande',
+        slug: 'la-reserva-golf',
         imageUrl: images['la-reserva-golf'].url,
         imageHint: images['la-reserva-golf'].hint,
         description: 'Set within an exclusive community, La Reserva provides a luxurious golfing experience with wide fairways and spectacular views.',
