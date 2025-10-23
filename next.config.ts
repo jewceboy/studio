@@ -32,6 +32,35 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/tourism/caminito-del-rey',
+        destination: '/attractions/adventure-activities/caminito-del-rey',
+        permanent: true,
+      },
+      {
+        source: '/tourism/costa-del-sol-top-5-resorts',
+        destination: '/hotels/costa-del-sol-resorts',
+        permanent: true,
+      },
+      {
+        source: '/tourism/7-authentic-flamenco-shows-andalucia',
+        destination: '/nightlife/flamenco-shows/authentic',
+        permanent: true,
+      },
+      {
+        source: '/locations/an-insiders-guide-to-puerto-banus',
+        destination: '/destinations/puerto-banus',
+        permanent: true,
+      },
+      {
+        source: '/locations/6-must-do-things-to-in-stunning-mijas-pueblo',
+        destination: '/destinations/mijas-pueblo/things-to-do',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
