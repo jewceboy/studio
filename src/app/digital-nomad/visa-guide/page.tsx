@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Digital Nomad Visa Spain | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const visaGuideCategories = [
         slug: 'requirements',
         name: 'Visa Requirements',
         description: 'A checklist of all the requirements for the Spanish remote work visa.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'remote work spain visa'),
-        imageHint: 'document checklist',
+        imageKey: 'document-checklist',
         linkHref: '/digital-nomad/visa-guide/requirements',
         linkText: 'See Requirements',
     },
@@ -23,8 +31,7 @@ const visaGuideCategories = [
         slug: 'application',
         name: 'Application Process',
         description: 'A detailed walkthrough of the application steps for the Spanish digital nomad visa.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'spain digital nomad visa application'),
-        imageHint: 'application form',
+        imageKey: 'application-form',
         linkHref: '/digital-nomad/visa-guide/application',
         linkText: 'Learn the Process',
     },
@@ -43,12 +50,12 @@ export default function VisaGuidePage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

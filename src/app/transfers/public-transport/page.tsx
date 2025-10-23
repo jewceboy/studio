@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Malaga Public Transport Tips | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const publicTransportCategories = [
         slug: 'trains',
         name: 'Trains',
         description: 'Schedules for the Cercanías C1 line from Fuengirola to Malaga.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'fuengirola train times'),
-        imageHint: 'train station platform',
+        imageKey: 'train-station-platform',
         linkHref: '/transfers/public-transport/trains',
         linkText: 'See Train Times',
     },
@@ -23,8 +31,7 @@ const publicTransportCategories = [
         slug: 'buses',
         name: 'Buses',
         description: 'Navigating Malaga by bus with a guide to the city\'s bus network.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'malaga bus routes'),
-        imageHint: 'city bus street',
+        imageKey: 'city-bus-street',
         linkHref: '/transfers/public-transport/buses',
         linkText: 'Explore Bus Routes',
     },
@@ -43,12 +50,12 @@ export default function PublicTransportPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

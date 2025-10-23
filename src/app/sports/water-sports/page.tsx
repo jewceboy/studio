@@ -2,11 +2,20 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
-  title: 'Water Sports Tourism Costa del Sol | Costa del Sol Navigator',
-  description: 'Explore the Costa del Sol as a premier destination for water sports tourism, including sailing and scuba diving schools and charters.',
+    title: 'Water Sports Tourism Costa del Sol | Costa del Sol Navigator',
+    description: 'Explore the Costa del Sol as a premier destination for water sports tourism, including sailing and scuba diving schools and charters.',
 };
 
 const waterSportsCategories = [
@@ -14,8 +23,7 @@ const waterSportsCategories = [
         slug: 'sailing',
         name: 'Sailing',
         description: 'Set sail on the beautiful Mediterranean sea.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'sailing costa del sol'),
-        imageHint: 'sailboat sunset',
+        imageKey: 'sailing-boat-sea',
         linkHref: '/sports/water-sports/sailing',
         linkText: 'Go Sailing',
     },
@@ -23,8 +31,7 @@ const waterSportsCategories = [
         slug: 'diving',
         name: 'Scuba Diving',
         description: 'Discover the best dive sites and schools in Malaga.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'scuba diving malaga'),
-        imageHint: 'scuba diver underwater',
+        imageKey: 'scuba-diver',
         linkHref: '/sports/water-sports/diving',
         linkText: 'Explore Diving',
     },
@@ -43,12 +50,12 @@ export default function WaterSportsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Workation Malaga | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const workationCategories = [
         slug: 'packages',
         name: 'Workation Packages',
         description: 'Curated packages for the perfect blend of work and leisure.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'workation packages costa del sol'),
-        imageHint: 'laptop pool',
+        imageKey: 'laptop-beach-view',
         linkHref: '/digital-nomad/workation/packages',
         linkText: 'Explore Packages',
     },
@@ -23,8 +31,7 @@ const workationCategories = [
         slug: 'accommodation',
         name: 'Premium Accommodation',
         description: 'Find comfortable and well-equipped accommodation for your remote work stay.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'premium digital nomad accommodation'),
-        imageHint: 'modern apartment interior',
+        imageKey: 'modern-apartment-interior',
         linkHref: '/digital-nomad/workation/accommodation',
         linkText: 'Find Accommodation',
     },
@@ -43,12 +50,12 @@ export default function WorkationPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Malaga MICE Events | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const miceCategories = [
         slug: 'conferences',
         name: 'Executive Conferences',
         description: 'World-class venues and services for your executive conferences.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'executive conference malaga'),
-        imageHint: 'executive conference',
+        imageKey: 'conference-hall',
         linkHref: '/business/mice-events/conferences',
         linkText: 'Explore Venues',
     },
@@ -23,8 +31,7 @@ const miceCategories = [
         slug: 'corporate-events',
         name: 'Corporate Events',
         description: 'Organize unforgettable corporate events on the sunny coast of Spain.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'corporate event costa del sol'),
-        imageHint: 'corporate event gala',
+        imageKey: 'corporate-event',
         linkHref: '/business/mice-events/corporate-events',
         linkText: 'Plan an Event',
     },
@@ -32,8 +39,7 @@ const miceCategories = [
         slug: 'team-building',
         name: 'Team Building Events',
         description: 'Boost morale and collaboration with engaging team building activities.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'team building malaga'),
-        imageHint: 'team building activity',
+        imageKey: 'corporate-team-building',
         linkHref: '/business/mice-events/team-building',
         linkText: 'Discover Activities',
     },
@@ -52,12 +58,12 @@ export default function MICEEventsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

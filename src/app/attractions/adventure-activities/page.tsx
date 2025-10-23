@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Malaga Adventure Activities | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const adventureCategories = [
         slug: 'hiking',
         name: 'Hiking Trails',
         description: 'Discover the most scenic hiking trails in the Costa del Sol.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'costa del sol hiking trails'),
-        imageHint: 'hiking trail mountain',
+        imageKey: 'hiking-mountain-trail',
         linkHref: '/attractions/adventure-activities/hiking',
         linkText: 'Explore Trails',
     },
@@ -23,8 +31,7 @@ const adventureCategories = [
         slug: 'water-sports',
         name: 'Water Sports',
         description: 'Information on water sports activities available in Malaga.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'water sports malaga'),
-        imageHint: 'kayaking sea',
+        imageKey: 'sailing-boat-sea',
         linkHref: '/attractions/adventure-activities/water-sports',
         linkText: 'Discover Sports',
     },
@@ -32,8 +39,7 @@ const adventureCategories = [
         slug: 'caminito-del-rey',
         name: 'Caminito del Rey Walk',
         description: 'Detailed guide for the breathtaking Caminito del Rey walk.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'caminito del rey walk'),
-        imageHint: 'cliffside walking path',
+        imageKey: 'Caminito-del-Rey-path',
         linkHref: '/attractions/adventure-activities/caminito-del-rey',
         linkText: 'Learn More',
     },
@@ -52,12 +58,12 @@ export default function AdventureActivitiesPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

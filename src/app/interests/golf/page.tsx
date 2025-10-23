@@ -8,6 +8,17 @@ import type { GolfCourse } from '@/lib/constants';
 import GolfCourseCard from '@/components/interests/GolfCourseCard';
 import { BOOKING_COM_AFFILIATE_LINK_MALAGA_GENERAL } from '@/lib/constants';
 import Image from 'next/image';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
+
 
 export const metadata = {
   title: 'Golf in Costa del Sol | Your Guide to the Best Courses & Resorts',
@@ -21,8 +32,8 @@ const featuredCourses: GolfCourse[] = [
         id: '1',
         name: 'Valderrama Golf Club',
         slug: 'valderrama',
-        imageUrl: 'https://picsum.photos/seed/valderrama-golf/600/400',
-        imageHint: 'Lush golf fairway',
+        imageUrl: images['valderrama-golf'].url,
+        imageHint: images['valderrama-golf'].hint,
         description: 'Renowned for its challenging layout and pristine condition, Valderrama has hosted numerous professional tournaments, including the Ryder Cup.',
         keyFeatures: [
             { label: 'Difficulty', value: 'Very High' },
@@ -35,8 +46,8 @@ const featuredCourses: GolfCourse[] = [
         id: '2',
         name: 'Finca Cortesin Golf Club',
         slug: 'finca-cortesin',
-        imageUrl: 'https://picsum.photos/seed/finca-cortesin-golf/600/400',
-        imageHint: 'Golf course ocean view',
+        imageUrl: images['finca-cortesin-golf'].url,
+        imageHint: images['finca-cortesin-golf'].hint,
         description: 'A masterpiece of landscape design, Finca Cortesin offers a perfect balance of natural beauty and a challenging game, with impeccable service.',
         keyFeatures: [
             { label: 'Difficulty', value: 'High' },
@@ -49,8 +60,8 @@ const featuredCourses: GolfCourse[] = [
         id: '3',
         name: 'La Reserva Club Sotogrande',
         slug: 'la-reserva-sotogrande',
-        imageUrl: 'https://picsum.photos/seed/la-reserva-golf/600/400',
-        imageHint: 'Golf clubhouse luxury',
+        imageUrl: images['la-reserva-golf'].url,
+        imageHint: images['la-reserva-golf'].hint,
         description: 'Set within an exclusive community, La Reserva provides a luxurious golfing experience with wide fairways and spectacular views.',
         keyFeatures: [
             { label: 'Difficulty', value: 'High' },

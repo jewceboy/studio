@@ -2,7 +2,17 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
+
 
 export const metadata = {
   title: 'Beach Clubs in Marbella | Costa del Sol Navigator',
@@ -14,8 +24,7 @@ const beachClubCategories = [
         slug: 'puerto-banus',
         name: 'Puerto Banus Beach Clubs',
         description: 'Experience the luxury and glamour of Puerto Banus beach clubs.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'puerto banus beach clubs'),
-        imageHint: 'luxury beach club party',
+        imageKey: 'luxury-beach-club',
         linkHref: '/beaches/beach-clubs/puerto-banus',
         linkText: 'Explore Puerto Banus Clubs',
     },
@@ -23,8 +32,7 @@ const beachClubCategories = [
         slug: 'luxury',
         name: 'Luxury Beach Clubs',
         description: 'Indulge in the ultimate luxury at the top beach clubs in Costa del Sol.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'luxury beach clubs costa del sol'),
-        imageHint: 'beach club champagne',
+        imageKey: 'beach-club-party',
         linkHref: '/beaches/beach-clubs/luxury',
         linkText: 'Discover Luxury Clubs',
     },
@@ -43,12 +51,12 @@ export default function BeachClubsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

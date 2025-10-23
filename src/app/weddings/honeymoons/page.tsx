@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Honeymoon Costa del Sol | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const honeymoonCategories = [
         slug: 'luxury-suites',
         name: 'Honeymoon Suites',
         description: 'Indulge in the ultimate romantic getaway in a stunning luxury suite.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'honeymoon suite costa del sol'),
-        imageHint: 'honeymoon suite luxury',
+        imageKey: 'honeymoon-suite',
         linkHref: '/weddings/honeymoons/luxury-suites',
         linkText: 'Discover Suites',
     },
@@ -23,8 +31,7 @@ const honeymoonCategories = [
         slug: 'romantic-hotels',
         name: 'Romantic Hotels',
         description: 'Discover charming and romantic hotels for an unforgettable stay.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'romantic hotel malaga'),
-        imageHint: 'romantic hotel couple',
+        imageKey: 'romantic-hotel-couple',
         linkHref: '/weddings/honeymoons/romantic-hotels',
         linkText: 'Find Romantic Hotels',
     },
@@ -43,12 +50,12 @@ export default function HoneymoonsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

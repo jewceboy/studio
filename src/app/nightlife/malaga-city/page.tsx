@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Malaga Nightlife Hotspots | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const nightlifeCategories = [
         slug: 'bars',
         name: 'Best Bars',
         description: 'A guide to the best bars in Malaga, from rooftop terraces to traditional bodegas.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'best bars malaga'),
-        imageHint: 'rooftop bar malaga',
+        imageKey: 'rooftop-bar-malaga',
         linkHref: '/nightlife/malaga-city/bars',
         linkText: 'Find Bars',
     },
@@ -23,8 +31,7 @@ const nightlifeCategories = [
         slug: 'clubs',
         name: 'Nightclubs',
         description: 'Your guide to the best nightclubs and late-night venues in Malaga.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'nightclubs malaga'),
-        imageHint: 'nightclub dance floor',
+        imageKey: 'nightclub-dance-floor',
         linkHref: '/nightlife/malaga-city/clubs',
         linkText: 'Go Clubbing',
     },
@@ -32,8 +39,7 @@ const nightlifeCategories = [
         slug: 'live-music',
         name: 'Live Music Venues',
         description: 'From jazz clubs to rock bars, find your sound in Malaga.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'live music venues malaga'),
-        imageHint: 'live music band',
+        imageKey: 'live-music-band',
         linkHref: '/nightlife/malaga-city/live-music',
         linkText: 'Find Live Music',
     },
@@ -52,12 +58,12 @@ export default function MalagaCityNightlifePage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

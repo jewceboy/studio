@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Corporate Retreats Costa del Sol | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const retreatCategories = [
         slug: 'leadership',
         name: 'Leadership Retreats',
         description: 'Exclusive retreats for executive leadership teams in Andalucia.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'leadership retreat andalucia'),
-        imageHint: 'leadership meeting',
+        imageKey: 'leadership-meeting',
         linkHref: '/business/corporate-retreats/leadership',
         linkText: 'Explore Retreats',
     },
@@ -23,8 +31,7 @@ const retreatCategories = [
         slug: 'incentive-travel',
         name: 'Incentive Travel Packages',
         description: 'Motivate your team with unique incentive travel packages in Spain.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'incentive travel spain'),
-        imageHint: 'luxury travel team',
+        imageKey: 'incentive-travel',
         linkHref: '/business/corporate-retreats/incentive-travel',
         linkText: 'Discover Packages',
     },
@@ -43,12 +50,12 @@ export default function CorporateRetreatsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

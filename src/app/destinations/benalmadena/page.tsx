@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Benalmadena Travel Guide | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const benalmadenaCategories = [
         slug: 'marina',
         name: 'Benalmadena Marina',
         description: 'A guide to the stunning marina in Benalmadena.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'benalmadena marina'),
-        imageHint: 'yachts in marina',
+        imageKey: 'benalmadena-puerto',
         linkHref: '/destinations/benalmadena/marina',
         linkText: 'Explore the Marina',
     },
@@ -23,8 +31,7 @@ const benalmadenaCategories = [
         slug: 'cable-car',
         name: 'Benalmadena Cable Car',
         description: 'Enjoy stunning views from the Benalmadena cable car.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'benalmadena cable car'),
-        imageHint: 'cable car mountain',
+        imageKey: 'cable-car-mountain',
         linkHref: '/destinations/benalmadena/cable-car',
         linkText: 'See the Views',
     },
@@ -43,12 +50,12 @@ export default function BenalmadenaPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

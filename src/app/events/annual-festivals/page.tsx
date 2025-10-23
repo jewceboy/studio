@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Malaga Festival Dates | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const festivalCategories = [
         slug: 'semana-santa',
         name: 'Semana Santa',
         description: 'Discover the tradition and spectacle of Holy Week in Malaga.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'semana santa malaga'),
-        imageHint: 'religious procession',
+        imageKey: 'semana-santa-procession',
         linkHref: '/events/annual-festivals/semana-santa',
         linkText: 'Learn More',
     },
@@ -23,8 +31,7 @@ const festivalCategories = [
         slug: 'feria-de-malaga',
         name: 'Feria de Malaga',
         description: 'Everything you need to know about Malaga\'s biggest festival.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'feria de malaga'),
-        imageHint: 'festival crowd fun',
+        imageKey: 'malaga-feria-festival',
         linkHref: '/events/annual-festivals/feria-de-malaga',
         linkText: 'Join the Fun',
     },
@@ -32,8 +39,7 @@ const festivalCategories = [
         slug: 'christmas',
         name: 'Christmas Markets',
         description: 'Experience the magic of Christmas in Malaga.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'christmas markets malaga'),
-        imageHint: 'christmas market stall',
+        imageKey: 'Christmas-lights-street',
         linkHref: '/events/annual-festivals/christmas',
         linkText: 'Explore Markets',
     },
@@ -52,12 +58,12 @@ export default function AnnualFestivalsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

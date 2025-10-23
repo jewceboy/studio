@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Shopping Malls in Malaga | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const mallCategories = [
         slug: 'plaza-mayor',
         name: 'Plaza Mayor',
         description: 'Your guide to one of the largest open-air shopping and leisure centers on the coast.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'plaza mayor malaga'),
-        imageHint: 'outdoor shopping center',
+        imageKey: 'outdoor-shopping-center',
         linkHref: '/shopping/malls-centers/plaza-mayor',
         linkText: 'Explore Plaza Mayor',
     },
@@ -23,8 +31,7 @@ const mallCategories = [
         slug: 'larios-centro',
         name: 'Larios Centro',
         description: 'Explore one of Malaga\'s most popular city-center shopping malls.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'larios centro shopping'),
-        imageHint: 'indoor shopping mall',
+        imageKey: 'modern-shopping-mall',
         linkHref: '/shopping/malls-centers/larios-centro',
         linkText: 'Visit Larios Centro',
     },
@@ -43,12 +50,12 @@ export default function MallsCentersPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

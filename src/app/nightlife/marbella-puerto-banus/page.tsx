@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Marbella Nightlife Guide | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const nightlifeCategories = [
         slug: 'luxury-clubs',
         name: 'Luxury Nightclubs',
         description: 'Experience the most glamorous nightlife on the Costa del Sol.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'luxury nightclubs puerto banus'),
-        imageHint: 'vip nightclub bottle service',
+        imageKey: 'vip-nightclub',
         linkHref: '/nightlife/marbella-puerto-banus/luxury-clubs',
         linkText: 'Find Luxury Clubs',
     },
@@ -23,8 +31,7 @@ const nightlifeCategories = [
         slug: 'vip-services',
         name: 'VIP Nightlife Services',
         description: 'Elevate your night out with our VIP services.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'vip nightlife services marbella'),
-        imageHint: 'vip table club',
+        imageKey: 'vip-table-club',
         linkHref: '/nightlife/marbella-puerto-banus/vip-services',
         linkText: 'Get VIP Access',
     },
@@ -43,12 +50,12 @@ export default function MarbellaPuertoBanusPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

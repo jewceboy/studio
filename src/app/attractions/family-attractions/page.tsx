@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Malaga Family Attractions | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const familyAttractionCategories = [
         slug: 'kids-activities',
         name: 'Kids Activities',
         description: 'A guide to the best activities for children in Malaga.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'kids activities malaga'),
-        imageHint: 'children playing',
+        imageKey: 'family-at-theme-park',
         linkHref: '/attractions/family-attractions/kids-activities',
         linkText: 'Find Activities',
     },
@@ -23,8 +31,7 @@ const familyAttractionCategories = [
         slug: 'water-parks',
         name: 'Water Parks',
         description: 'Cool off at the best water parks in the Costa del Sol.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'water parks costa del sol'),
-        imageHint: 'water park slide',
+        imageKey: 'water-park-slide',
         linkHref: '/attractions/family-attractions/water-parks',
         linkText: 'Discover Parks',
     },
@@ -32,8 +39,7 @@ const familyAttractionCategories = [
         slug: 'theme-parks',
         name: 'Theme Parks',
         description: 'Find theme parks near Malaga for a fun day out.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'theme parks near malaga'),
-        imageHint: 'theme park rollercoaster',
+        imageKey: 'theme-park-ride',
         linkHref: '/attractions/family-attractions/theme-parks',
         linkText: 'Explore Parks',
     },
@@ -52,12 +58,12 @@ export default function FamilyAttractionsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

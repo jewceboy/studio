@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Luxury Hotels Malaga | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const luxuryHotelCategories = [
         slug: 'five-star-hotels',
         name: 'Five Star Hotels',
         description: 'Experience ultimate luxury and service at these five-star hotels.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'five star hotel malaga'),
-        imageHint: 'luxury hotel lobby',
+        imageKey: 'luxury-hotel-lobby',
         linkHref: '/hotels/luxury-hotels-malaga/five-star-hotels',
         linkText: 'Explore 5-Star Hotels',
     },
@@ -23,8 +31,7 @@ const luxuryHotelCategories = [
         slug: 'boutique-hotels',
         name: 'Boutique Hotels',
         description: 'Charming and unique hotels in the heart of the city.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'boutique hotel malaga center'),
-        imageHint: 'boutique hotel room',
+        imageKey: 'boutique-hotel-room',
         linkHref: '/hotels/luxury-hotels-malaga/boutique-hotels',
         linkText: 'Discover Boutique Hotels',
     },
@@ -32,8 +39,7 @@ const luxuryHotelCategories = [
         slug: 'presidential-suites',
         name: 'Presidential Suites',
         description: 'The most exclusive and luxurious suites for an extraordinary stay.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'presidential suite malaga'),
-        imageHint: 'luxury hotel suite',
+        imageKey: 'luxury-hotel-suite',
         linkHref: '/hotels/luxury-hotels-malaga/presidential-suites',
         linkText: 'Explore Suites',
     },
@@ -52,12 +58,12 @@ export default function LuxuryHotelsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

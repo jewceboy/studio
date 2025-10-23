@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Medical Tourism Malaga | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const medicalCategories = [
         slug: 'cosmetic-surgery',
         name: 'Cosmetic Surgery',
         description: 'Access world-class cosmetic and plastic surgery clinics in the Costa del Sol.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'cosmetic surgery costa del sol'),
-        imageHint: 'cosmetic clinic',
+        imageKey: 'cosmetic-clinic',
         linkHref: '/wellness/medical-tourism/cosmetic-surgery',
         linkText: 'Explore Clinics',
     },
@@ -23,8 +31,7 @@ const medicalCategories = [
         slug: 'dental-tourism',
         name: 'Luxury Dental Tourism',
         description: 'Combine a luxury holiday with top-quality dental care in the Costa del Sol.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'dental tourism costa del sol'),
-        imageHint: 'luxury dental clinic',
+        imageKey: 'luxury-dental-clinic',
         linkHref: '/wellness/medical-tourism/dental-tourism',
         linkText: 'Discover Dental Care',
     },
@@ -43,12 +50,12 @@ export default function MedicalTourismPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

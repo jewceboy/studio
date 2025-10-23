@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: "An Insider's Guide to Puerto Banus | Costa del Sol Navigator",
@@ -14,8 +23,7 @@ const puertoBanusCategories = [
         slug: 'shopping',
         name: 'Shopping',
         description: 'Discover designer boutiques and luxury brands.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'shopping puerto banus'),
-        imageHint: 'luxury store window',
+        imageKey: 'luxury-shopping-street',
         linkHref: '/destinations/puerto-banus/shopping',
         linkText: 'Explore Shopping',
     },
@@ -23,8 +31,7 @@ const puertoBanusCategories = [
         slug: 'luxury-marina',
         name: 'Luxury Marina',
         description: 'Experience the epitome of luxury at the Puerto Banus marina.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'puerto banus luxury travel'),
-        imageHint: 'superyacht marina',
+        imageKey: 'puerto-banus-marina',
         linkHref: '/destinations/puerto-banus/luxury-marina',
         linkText: 'Visit the Marina',
     },
@@ -43,12 +50,12 @@ export default function PuertoBanusPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

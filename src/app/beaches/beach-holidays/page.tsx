@@ -2,7 +2,17 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
+
 
 export const metadata = {
   title: 'Beach Holidays in Malaga | Costa del Sol Navigator',
@@ -14,8 +24,7 @@ const beachHolidayCategories = [
         slug: 'packages',
         name: 'Holiday Packages',
         description: 'Find the perfect holiday package for your trip to the Costa del Sol.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'costa del sol holidays'),
-        imageHint: 'beach resort package',
+        imageKey: 'beach-resort-holiday',
         linkHref: '/beaches/beach-holidays/packages',
         linkText: 'Explore Packages',
     },
@@ -23,8 +32,7 @@ const beachHolidayCategories = [
         slug: 'all-inclusive',
         name: 'All-Inclusive Holidays',
         description: 'Enjoy a hassle-free vacation with our all-inclusive beach holiday packages.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'all inclusive beach holidays'),
-        imageHint: 'resort food buffet',
+        imageKey: 'resort-food-buffet',
         linkHref: '/beaches/beach-holidays/all-inclusive',
         linkText: 'Find All-Inclusive Deals',
     },
@@ -43,12 +51,12 @@ export default function BeachHolidaysPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

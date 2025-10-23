@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Family Friendly Hotels in Malaga | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const familyHotelCategories = [
         slug: 'all-inclusive',
         name: 'All-Inclusive Family Resorts',
         description: 'Enjoy a carefree family vacation with these all-inclusive resorts.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'family resort costa del sol'),
-        imageHint: 'family resort pool',
+        imageKey: 'family-hotel-pool',
         linkHref: '/hotels/family-hotels-malaga/all-inclusive',
         linkText: 'Explore All-Inclusive',
     },
@@ -23,8 +31,7 @@ const familyHotelCategories = [
         slug: 'kids-clubs',
         name: 'Hotels with Kids Clubs',
         description: 'Keep the little ones entertained with these family-friendly hotels.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'hotel kids club malaga'),
-        imageHint: 'kids club playground',
+        imageKey: 'kids-club-playground',
         linkHref: '/hotels/family-hotels-malaga/kids-clubs',
         linkText: 'Find Kids Clubs',
     },
@@ -43,12 +50,12 @@ export default function FamilyHotelsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

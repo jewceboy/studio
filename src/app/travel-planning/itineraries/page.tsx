@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Malaga Travel Itineraries | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const itineraryCategories = [
         slug: '3-day',
         name: '3-Day Malaga Itinerary',
         description: 'How to spend a perfect long weekend in Malaga.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, '3 day malaga itinerary'),
-        imageHint: 'city map plan',
+        imageKey: 'travel-map-itinerary',
         linkHref: '/travel-planning/itineraries/3-day',
         linkText: 'See 3-Day Plan',
     },
@@ -23,8 +31,7 @@ const itineraryCategories = [
         slug: 'week',
         name: 'One Week in Costa del Sol',
         description: 'Experience the best of the coast with this 7-day travel plan.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'one week costa del sol itinerary'),
-        imageHint: 'coastal road trip',
+        imageKey: 'coastal-road-trip',
         linkHref: '/travel-planning/itineraries/week',
         linkText: 'See 7-Day Plan',
     },
@@ -43,12 +50,12 @@ export default function ItinerariesPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

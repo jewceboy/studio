@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Marbella Travel Tips | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const marbellaCategories = [
         slug: 'old-town',
         name: 'Marbella Old Town',
         description: 'A complete guide to exploring Marbella\'s charming old town.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'marbella old town guide'),
-        imageHint: 'old town street',
+        imageKey: 'marbella-old-town',
         linkHref: '/destinations/marbella/old-town',
         linkText: 'Explore Old Town',
     },
@@ -23,8 +31,7 @@ const marbellaCategories = [
         slug: 'shopping',
         name: 'Marbella Shopping',
         description: 'A guide to the best shopping districts in Marbella.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'marbella shopping district'),
-        imageHint: 'luxury shopping street',
+        imageKey: 'luxury-shopping-street',
         linkHref: '/destinations/marbella/shopping',
         linkText: 'Discover Shopping',
     },
@@ -43,12 +50,12 @@ export default function MarbellaPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

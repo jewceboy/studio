@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Luxury Shopping Marbella | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const luxuryShoppingCategories = [
         slug: 'puerto-banus',
         name: 'Shopping in Puerto Banus',
         description: 'Explore the world-famous marina and its luxury shopping scene.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'shopping puerto banus'),
-        imageHint: 'luxury brand store',
+        imageKey: 'luxury-fashion-store',
         linkHref: '/shopping/luxury-shopping/puerto-banus',
         linkText: 'Explore Puerto Banus',
     },
@@ -23,8 +31,7 @@ const luxuryShoppingCategories = [
         slug: 'designer-boutiques',
         name: 'Designer Boutiques',
         description: 'A curated guide to the finest fashion stores and designer labels in Marbella.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'designer boutiques marbella'),
-        imageHint: 'high fashion boutique',
+        imageKey: 'high-fashion-boutique',
         linkHref: '/shopping/luxury-shopping/designer-boutiques',
         linkText: 'Find Boutiques',
     },
@@ -32,8 +39,7 @@ const luxuryShoppingCategories = [
         slug: 'personal-shoppers',
         name: 'Personal Shoppers',
         description: 'Bespoke styling and shopping services for a truly luxurious experience.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'personal shoppers puerto banus'),
-        imageHint: 'personal shopper style',
+        imageKey: 'personal-shopper-style',
         linkHref: '/shopping/luxury-shopping/personal-shoppers',
         linkText: 'Hire a Shopper',
     },
@@ -52,12 +58,12 @@ export default function LuxuryShoppingPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

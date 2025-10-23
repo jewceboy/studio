@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Markets in Malaga | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const marketCategories = [
         slug: 'local-markets',
         name: 'Local Markets',
         description: 'Explore the weekly markets for unique finds and local culture.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'local markets malaga'),
-        imageHint: 'street market crafts',
+        imageKey: 'local-craft-market',
         linkHref: '/shopping/markets/local-markets',
         linkText: 'Find Local Markets',
     },
@@ -23,8 +31,7 @@ const marketCategories = [
         slug: 'food-markets',
         name: 'Food Markets',
         description: 'A feast for the senses. Discover fresh, local produce and culinary delights.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'food markets malaga'),
-        imageHint: 'fresh produce market',
+        imageKey: 'food-market-produce',
         linkHref: '/shopping/markets/food-markets',
         linkText: 'Explore Food Markets',
     },
@@ -43,12 +50,12 @@ export default function MarketsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

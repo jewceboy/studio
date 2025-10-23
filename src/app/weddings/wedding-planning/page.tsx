@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Wedding Planners Malaga | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const planningCategories = [
         slug: 'luxury-planners',
         name: 'Luxury Wedding Planners',
         description: 'Connect with elite planners for a bespoke, high-end wedding experience.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'luxury wedding planner malaga'),
-        imageHint: 'luxury wedding planner',
+        imageKey: 'luxury-wedding-planner',
         linkHref: '/weddings/wedding-planning/luxury-planners',
         linkText: 'Find Luxury Planners',
     },
@@ -23,8 +31,7 @@ const planningCategories = [
         slug: 'destination-weddings',
         name: 'Destination Wedding Specialists',
         description: 'Expert planning for your dream destination wedding in sunny Spain.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'destination wedding costa del sol'),
-        imageHint: 'destination wedding spain',
+        imageKey: 'destination-wedding',
         linkHref: '/weddings/wedding-planning/destination-weddings',
         linkText: 'Find a Specialist',
     },
@@ -43,12 +50,12 @@ export default function WeddingPlanningPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

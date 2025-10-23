@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Coworking Spaces Malaga | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const coworkingCategories = [
         slug: 'luxury-coworking',
         name: 'Luxury Coworking Spaces',
         description: 'Work in style with these premium coworking options in Malaga.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'luxury coworking malaga'),
-        imageHint: 'luxury office interior',
+        imageKey: 'luxury-office-space',
         linkHref: '/digital-nomad/coworking/luxury-coworking',
         linkText: 'Explore Luxury Spaces',
     },
@@ -23,8 +31,7 @@ const coworkingCategories = [
         slug: 'coworking-marbella',
         name: 'Coworking in Marbella',
         description: 'Find your ideal workspace in the luxurious setting of Marbella.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'coworking marbella'),
-        imageHint: 'marbella office view',
+        imageKey: 'coworking-marbella',
         linkHref: '/digital-nomad/coworking/coworking-marbella',
         linkText: 'Explore Marbella Spaces',
     },
@@ -43,12 +50,12 @@ export default function CoworkingPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

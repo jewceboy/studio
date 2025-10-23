@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Tennis & Padel in Costa del Sol | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const tennisPadelCategories = [
         slug: 'tennis-camps',
         name: 'Tennis Camps',
         description: 'Improve your game with professional coaching and facilities.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'tennis camps costa del sol'),
-        imageHint: 'tennis lesson',
+        imageKey: 'tennis-lesson',
         linkHref: '/sports/tennis-padel/tennis-camps',
         linkText: 'Find a Camp',
     },
@@ -23,8 +31,7 @@ const tennisPadelCategories = [
         slug: 'padel-courts',
         name: 'Padel Courts',
         description: 'Discover the best places to play Spain\'s most popular racquet sport.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'padel courts costa del sol'),
-        imageHint: 'padel players action',
+        imageKey: 'padel-tennis-court',
         linkHref: '/sports/tennis-padel/padel-courts',
         linkText: 'Find Courts',
     },
@@ -43,12 +50,12 @@ export default function TennisPadelPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

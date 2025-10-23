@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Culinary Experiences in Malaga | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const culinaryExperienceCategories = [
         slug: 'cooking-classes',
         name: 'Cooking Classes',
         description: 'Master the art of Spanish cooking.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'cooking classes malaga'),
-        imageHint: 'cooking class hands-on',
+        imageKey: 'cooking-class',
         linkHref: '/restaurants/culinary-experiences/cooking-classes',
         linkText: 'Find a Class',
     },
@@ -23,8 +31,7 @@ const culinaryExperienceCategories = [
         slug: 'food-tours',
         name: 'Food Tours',
         description: 'Taste your way through Malaga with our food tours.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'food tours malaga'),
-        imageHint: 'market food tour',
+        imageKey: 'market-food-tour',
         linkHref: '/restaurants/culinary-experiences/food-tours',
         linkText: 'Join a Tour',
     },
@@ -32,8 +39,7 @@ const culinaryExperienceCategories = [
         slug: 'wine-tasting',
         name: 'Wine Tasting',
         description: 'Explore the flavors of Andalusian wines.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'wine tasting malaga'),
-        imageHint: 'wine glasses tasting',
+        imageKey: 'wine-tasting-glasses',
         linkHref: '/restaurants/culinary-experiences/wine-tasting',
         linkText: 'Go Wine Tasting',
     },
@@ -52,12 +58,12 @@ export default function CulinaryExperiencesPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

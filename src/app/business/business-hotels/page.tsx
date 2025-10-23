@@ -2,7 +2,17 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
+
 
 export const metadata = {
   title: 'Business Hotels Malaga | Costa del Sol Navigator',
@@ -14,8 +24,7 @@ const hotelCategories = [
         slug: 'conference-venues',
         name: 'Conference Venues',
         description: 'Explore top venues for your next conference in Malaga.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'conference venue malaga'),
-        imageHint: 'conference hall',
+        imageKey: 'conference-hall',
         linkHref: '/business/business-hotels/conference-venues',
         linkText: 'Find Venues',
     },
@@ -23,8 +32,7 @@ const hotelCategories = [
         slug: 'meeting-rooms',
         name: 'Business Meeting Rooms',
         description: 'Professional spaces for your business meetings in Marbella.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'meeting room marbella'),
-        imageHint: 'business meeting',
+        imageKey: 'business-meeting',
         linkHref: '/business/business-hotels/meeting-rooms',
         linkText: 'Find Rooms',
     },
@@ -43,12 +51,12 @@ export default function BusinessHotelsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>

@@ -2,7 +2,16 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
-import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
+import imageData from '@/lib/placeholder-images.json';
+
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+  };
+};
+
+const images: ImageData = imageData;
 
 export const metadata = {
   title: 'Wellness Retreats Marbella | Costa del Sol Navigator',
@@ -14,8 +23,7 @@ const retreatCategories = [
         slug: 'detox',
         name: 'Detox Retreats',
         description: 'Rejuvenate your body and mind with a specialized detox retreat in Spain.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'detox retreat spain'),
-        imageHint: 'healthy food detox',
+        imageKey: 'detox-retreat-food',
         linkHref: '/wellness/wellness-retreats/detox',
         linkText: 'Explore Detox',
     },
@@ -23,8 +31,7 @@ const retreatCategories = [
         slug: 'yoga',
         name: 'Yoga Retreats',
         description: 'Find your inner peace with a yoga retreat on the sunny coast of Costa del Sol.',
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, 'yoga retreat costa del sol'),
-        imageHint: 'yoga meditation',
+        imageKey: 'yoga-meditation-retreat',
         linkHref: '/wellness/wellness-retreats/yoga',
         linkText: 'Discover Yoga',
     },
@@ -43,12 +50,12 @@ export default function WellnessRetreatsPage() {
                 <InfoCard
                 key={category.slug}
                 title={category.name}
-                imageUrl={category.imageUrl}
+                imageUrl={images[category.imageKey].url}
                 imageAlt={`Explore ${category.name}`}
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={category.imageHint}
+                imageHint={images[category.imageKey].hint}
                 />
             ))}
         </div>
