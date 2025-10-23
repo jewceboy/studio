@@ -388,5 +388,73 @@
   "la-reserva-golf": {
     "url": "https://picsum.photos/seed/la-reserva-golf/600/400",
     "hint": "la reserva golf"
+  },
+  "luxury-wedding-venue": {
+    "url": "https://picsum.photos/seed/luxury-wedding-venue/600/400",
+    "hint": "luxury wedding venue"
+  },
+  "beach-wedding-ceremony": {
+    "url": "https://picsum.photos/seed/beach-wedding-ceremony/600/400",
+    "hint": "beach wedding ceremony"
+  },
+  "luxury-wedding-villa": {
+    "url": "https://picsum.photos/seed/luxury-wedding-villa/600/400",
+    "hint": "luxury wedding villa"
+  },
+  "rustic-finca-wedding": {
+    "url": "https://picsum.photos/seed/rustic-finca-wedding/600/400",
+    "hint": "rustic finca wedding"
+  },
+  "luxury-wedding-planner": {
+    "url": "https://picsum.photos/seed/luxury-wedding-planner/600/400",
+    "hint": "luxury wedding planner"
+  },
+  "destination-wedding": {
+    "url": "https://picsum.photos/seed/destination-wedding/600/400",
+    "hint": "destination wedding"
+  },
+  "honeymoon-suite": {
+    "url": "https://picsum.photos/seed/honeymoon-suite/600/400",
+    "hint": "honeymoon suite"
+  },
+  "romantic-hotel-couple": {
+    "url": "https://picsum.photos/seed/romantic-hotel-couple/600/400",
+    "hint": "romantic hotel couple"
+  },
+  "leadership-meeting": {
+    "url": "https://picsum.photos/seed/leadership-meeting/600/400",
+    "hint": "leadership meeting"
+  },
+  "incentive-travel": {
+    "url": "https://picsum.photos/seed/incentive-travel/600/400",
+    "hint": "incentive travel"
+  },
+  "business-meeting": {
+    "url": "https://picsum.photos/seed/business-meeting/600/400",
+    "hint": "business meeting"
+  },
+  "luxury-spa-hotel": {
+    "url": "https://picsum.photos/seed/luxury-spa-hotel/600/400",
+    "hint": "luxury spa hotel"
+  },
+  "wellness-package": {
+    "url": "https://picsum.photos/seed/wellness-package/600/400",
+    "hint": "wellness package"
+  },
+  "cosmetic-clinic": {
+    "url": "https://picsum.photos/seed/cosmetic-clinic/600/400",
+    "hint": "cosmetic clinic"
+  },
+  "luxury-dental-clinic": {
+    "url": "https://picsum.photos/seed/luxury-dental-clinic/600/400",
+    "hint": "luxury dental clinic"
+  },
+  "detox-retreat-food": {
+    "url": "https://picsum.photos/seed/detox-retreat-food/600/400",
+    "hint": "detox retreat food"
+  },
+  "yoga-meditation-retreat": {
+    "url": "https://picsum.photos/seed/yoga-meditation-retreat/600/400",
+    "hint": "yoga meditation retreat"
   }
 }
