@@ -22,6 +22,7 @@ export const allSiteUrls: string[] = [
   '/transfers/airport-transfers/taxi',
   '/transfers/airport-transfers/shuttle',
   '/transfers/airport-transfers/bus',
+  '/transfers/airport-transfers/airlines',
   '/transfers/luxury-transportation',
   '/transfers/luxury-transportation/chauffeur',
   '/transfers/luxury-transportation/limousine',
@@ -29,6 +30,7 @@ export const allSiteUrls: string[] = [
   '/transfers/public-transport',
   '/transfers/public-transport/trains',
   '/transfers/public-transport/buses',
+  '/transfers/car-hire',
   '/attractions',
   '/attractions/malaga-city',
   '/attractions/malaga-city/museums',
@@ -185,10 +187,9 @@ export const allSiteUrls: string[] = [
   '/blog/caminito-del-rey-guide',
   '/blog/malaga-christmas-lights',
   '/blog/andalusian-white-villages',
+  '/blog/clubhotel-riu-review',
   '/contact',
   '/plan-your-trip',
   '/plan-your-trip/results',
   '/chat-demo',
 ];
-
-    

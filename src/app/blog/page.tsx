@@ -28,9 +28,10 @@ const articles: Pick<Article, 'title' | 'slug' | 'imageUrl' | 'imageHint' | 'exc
   { slug: 'caminito-del-rey-guide', title: 'Ultimate Guide to Hiking Caminito del Rey', imageUrl: images['Caminito-del-Rey-path'].url, imageHint: images['Caminito-del-Rey-path'].hint, excerpt: 'Everything you need to know before tackling one of Spain\'s most breathtaking hiking trails.', date: '2024-04-25', author: 'Carlos Gomez', categories: ['Adventure', 'Hiking'] },
   { slug: 'malaga-christmas-lights', title: 'Málaga Christmas Lights: A Festive Spectacle', imageUrl: images['Christmas-lights-street'].url, imageHint: images['Christmas-lights-street'].hint, excerpt: 'Experience the magic of Calle Larios adorned with spectacular Christmas lights and music.', date: '2023-12-01', author: 'Laura Schmidt', categories: ['Festivals', 'Malaga'] },
   { slug: 'andalusian-white-villages', title: 'Exploring the Charm of Andalusian White Villages', imageUrl: images['white-village-street'].url, imageHint: images['white-village-street'].hint, excerpt: 'A guide to the most picturesque "pueblos blancos" near Costa del Sol, rich in history and beauty.', date: '2024-03-18', author: 'David Miller', categories: ['Culture', 'Day Trips'] },
+  { slug: 'clubhotel-riu-review', title: 'Clubhotel Riu Costa del Sol: An Honest Review', imageUrl: images['beach-resort-holiday'].url, imageHint: images['beach-resort-holiday'].hint, excerpt: 'Is the all-inclusive Clubhotel Riu worth it? We break down the rooms, food, pools, and overall experience.', date: '2024-02-20', author: 'Travel Critic', categories: ['Hotels', 'Reviews'] },
 ];
 
-const categories = ['Food & Drink', 'Beaches', 'Travel Tips', 'Day Trips', 'Adventure', 'Culture', 'Festivals'];
+const categories = ['Food & Drink', 'Beaches', 'Travel Tips', 'Day Trips', 'Adventure', 'Culture', 'Festivals', 'Hotels', 'Reviews'];
 const recentPosts = articles.slice(0, 3);
 
 

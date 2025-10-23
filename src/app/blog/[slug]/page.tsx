@@ -31,7 +31,7 @@ const articlesData: { [key: string]: Article } = {
     imageUrl: images['Malaga-tapas-bar'].url, imageHint: images['Malaga-tapas-bar'].hint,
     date: '2024-05-15', author: 'Elena Rodriguez', 
     excerpt: 'A culinary journey through Málaga\'s most authentic tapas spots, from traditional bites to modern creations.',
-    content: `<p>Málaga's old town is a labyrinth of charming streets, and hidden within are some of the best tapas bars you'll ever encounter. This guide will take you on a flavorful journey, highlighting must-try dishes and local favorites. From centuries-old taverns serving classic Andalusian recipes to innovative kitchens putting a modern spin on tapas, there's something for every palate.</p>
+    content: `<p>Málaga's old town is a labyrinth of charming streets, and hidden within are some of the best tapas bars you\'\'\'ll ever encounter. This guide will take you on a flavorful journey, highlighting must-try dishes and local favorites. From centuries-old taverns serving classic Andalusian recipes to innovative kitchens putting a modern spin on tapas, there's something for every palate.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">El Tapeo de Cervantes</h3>
     <p>A popular spot known for its creative tapas and extensive wine list. Booking is recommended. Their mini burgers and cod confit are divine.</p>
     <figure class="my-6">
@@ -60,7 +60,7 @@ const articlesData: { [key: string]: Article } = {
     imageUrl: images['secluded-cove-beach'].url, imageHint: images['secluded-cove-beach'].hint,
     date: '2024-05-10', author: 'Mark Stevenson',
     excerpt: 'Discover tranquil coves and pristine sands away from the crowds for a perfect day of relaxation.',
-    content: `<p>Escape the bustling tourist spots and discover the serene beauty of Costa del Sol's hidden beaches. This guide unveils five secluded gems where you can enjoy pristine sands and crystal-clear waters in peace. From hidden coves accessible only by foot to quiet stretches of coastline loved by locals, these beaches offer a perfect retreat.</p>
+    content: `<p>Escape the bustling tourist spots and discover the serene beauty of Costa del Sol\'\'\'s hidden beaches. This guide unveils five secluded gems where you can enjoy pristine sands and crystal-clear waters in peace. From hidden coves accessible only by foot to quiet stretches of coastline loved by locals, these beaches offer a perfect retreat.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">Playa de Maro</h3>
     <p>Often cited as one of Spain's best beaches, Playa de Maro is a stunning cove near Nerja, boasting turquoise waters perfect for snorkeling and kayaking. Its protected status means marine life is abundant.</p>
     <figure class="my-6">
@@ -78,7 +78,7 @@ const articlesData: { [key: string]: Article } = {
     excerpt: 'Explore the dramatic landscapes, iconic bridge, and historic charm of the stunning town of Ronda.',
     content: `<p>Perched dramatically atop the El Tajo gorge, Ronda is one of Andalusia's most breathtaking towns and makes for an unforgettable day trip from the Costa del Sol. This guide covers the must-see sights for a perfect visit.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">Puente Nuevo (New Bridge)</h3>
-    <p>The iconic Puente Nuevo is Ronda's most famous landmark, spanning the 120-meter-deep chasm. The views from the bridge are spectacular, but be sure to hike down into the gorge for the most impressive photo opportunities.</p>
+    <p>The iconic Puente Nuevo is Ronda\'\'\'s most famous landmark, spanning the 120-meter-deep chasm. The views from the bridge are spectacular, but be sure to hike down into the gorge for the most impressive photo opportunities.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">Plaza de Toros</h3>
     <p>Visit one of Spain's oldest and most revered bullrings, the Plaza de Toros. Its museum offers fascinating insights into the history of bullfighting. Whether you agree with the tradition or not, the architectural and historical significance is undeniable.</p>`,
     categories: ['Day Trips'],
@@ -115,7 +115,7 @@ const articlesData: { [key: string]: Article } = {
     imageUrl: images['white-village-street'].url, imageHint: images['white-village-street'].hint,
     date: '2024-03-18', author: 'David Miller',
     excerpt: 'A guide to the most picturesque "pueblos blancos" near Costa del Sol, rich in history and beauty.',
-    content: `<p>The 'pueblos blancos,' or white villages of Andalusia, are a photographer's dream. Characterized by their simple white-washed walls, narrow cobbled streets, and vibrant floral displays, these villages offer a glimpse into a more traditional way of life.</p>
+    content: `<p>The 'pueblos blancos,' or white villages of Andalusia, are a photographer\'\'\'s dream. Characterized by their simple white-washed walls, narrow cobbled streets, and vibrant floral displays, these villages offer a glimpse into a more traditional way of life.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">Mijas Pueblo</h3>
     <p>One of the most accessible from the Costa del Sol, Mijas Pueblo is famous for its charming streets and donkey-taxis. The views of the coastline from its elevated position are simply stunning.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">Frigiliana</h3>
@@ -123,6 +123,114 @@ const articlesData: { [key: string]: Article } = {
     categories: ['Culture', 'Day Trips'],
     tags: ['pueblos blancos', 'andalucia', 'day trips', 'mijas', 'frigiliana']
   },
+  'clubhotel-riu-review': {
+    id: '7', slug: 'clubhotel-riu-review', title: 'Clubhotel Riu Costa del Sol: An Honest Review', 
+    imageUrl: images['beach-resort-holiday'].url, imageHint: images['beach-resort-holiday'].hint,
+    date: '2024-02-20', author: 'Travel Critic', 
+    excerpt: 'Is the all-inclusive Clubhotel Riu worth it? We break down the rooms, food, pools, and overall experience.',
+    content: `<p>Placeholder content for the Clubhotel Riu review.</p>`,
+    categories: ['Hotels', 'Reviews'],
+    tags: ['riu', 'costa del sol', 'all inclusive', 'hotel review']
+  },
+  'mystory-about-us': {
+    id: '8', slug: 'mystory-about-us', title: 'Our Story',
+    imageUrl: 'https://picsum.photos/seed/our-story-image/1200/500', imageHint: 'personal journey',
+    date: '2024-01-10', author: 'Founder',
+    excerpt: 'The story behind Malaga Travel Guide.',
+    content: '<p>Placeholder content for our story.</p>',
+    categories: ['About'],
+    tags: ['about us', 'our story']
+  },
+  'san-pedro-boulevard-review': {
+    id: '9', slug: 'san-pedro-boulevard-review', title: 'San Pedro Boulevard: Is It Worth the Hype?',
+    imageUrl: 'https://picsum.photos/seed/san-pedro-boulevard/1200/500', imageHint: 'modern city park',
+    date: '2024-03-05', author: 'Local Explorer',
+    excerpt: 'A deep dive into the San Pedro Boulevard.',
+    content: '<p>Placeholder content for the San Pedro Boulevard review.</p>',
+    categories: ['Destinations', 'Reviews'],
+    tags: ['san pedro', 'marbella', 'review']
+  },
+  'world-tourism-day-malaga': {
+    id: '10', slug: 'world-tourism-day-malaga', title: 'World Tourism Day in Malaga',
+    imageUrl: 'https://picsum.photos/seed/world-tourism-day/1200/500', imageHint: 'tourism event',
+    date: '2023-09-27', author: 'Event Reporter',
+    excerpt: 'Celebrating World Tourism Day in the heart of Costa del Sol.',
+    content: '<p>Placeholder content for World Tourism Day in Malaga.</p>',
+    categories: ['Events', 'Malaga'],
+    tags: ['world tourism day', 'malaga', 'events']
+  },
+  'bullfighting-andalusia-ban-feature': {
+    id: '11', slug: 'bullfighting-andalusia-ban-feature', title: 'The Controversial Ban on Bullfighting',
+    imageUrl: 'https://picsum.photos/seed/bullfighting-ban/1200/500', imageHint: 'bullfighting arena',
+    date: '2023-07-15', author: 'Cultural Analyst',
+    excerpt: 'A look into the controversial decision to ban bullfighting in parts of Andalusia.',
+    content: '<p>Placeholder content for the feature on the bullfighting ban.</p>',
+    categories: ['Culture', 'News'],
+    tags: ['bullfighting', 'andalusia', 'culture']
+  },
+  'mayan-monkey-mijas-review': {
+    id: '12', slug: 'mayan-monkey-mijas-review', title: 'Mayan Monkey Mijas: A Chocolate Lover\'s Dream',
+    imageUrl: 'https://picsum.photos/seed/mayan-monkey-mijas/1200/500', imageHint: 'chocolate factory',
+    date: '2024-04-01', author: 'Foodie Guide',
+    excerpt: 'A review of the famous chocolate factory in Mijas Pueblo.',
+    content: '<p>Placeholder content for the Mayan Monkey Mijas review.</p>',
+    categories: ['Food & Drink', 'Mijas', 'Reviews'],
+    tags: ['mayan monkey', 'mijas', 'chocolate', 'review']
+  },
+  'child-free-date-night-review': {
+    id: '13', slug: 'child-free-date-night-review', title: 'Our Child-Free Date Night: Did It Live Up to the Hype?',
+    imageUrl: 'https://picsum.photos/seed/date-night-review/1200/500', imageHint: 'couple dining romantically',
+    date: '2024-02-14', author: 'Parent Blogger',
+    excerpt: 'A personal review of a much-needed child-free night out in Costa del Sol.',
+    content: '<p>Placeholder content for the date night review blog post.</p>',
+    categories: ['Lifestyle', 'Reviews'],
+    tags: ['date night', 'review', 'lifestyle']
+  },
+  'chirimoya-organic-restaurant-review': {
+    id: '14', slug: 'chirimoya-organic-restaurant-review', title: 'Chirimoya Organic Restaurant Review',
+    imageUrl: 'https://picsum.photos/seed/chirimoya-restaurant/1200/500', imageHint: 'organic vegan food',
+    date: '2024-01-20', author: 'Healthy Eater',
+    excerpt: 'A review of the popular organic and vegan restaurant Chirimoya.',
+    content: '<p>Placeholder content for the Chirimoya restaurant review.</p>',
+    categories: ['Food & Drink', 'Reviews', 'Vegan'],
+    tags: ['chirimoya', 'vegan', 'organic', 'restaurant', 'review']
+  },
+  'sunborn-gibraltar-yacht-hotel-review': {
+    id: '15', slug: 'sunborn-gibraltar-yacht-hotel-review', title: 'Sunborn Gibraltar: A 5-Star Super Yacht Hotel',
+    imageUrl: 'https://picsum.photos/seed/sunborn-gibraltar/1200/500', imageHint: 'super yacht hotel',
+    date: '2023-11-10', author: 'Luxury Traveler',
+    excerpt: 'Reviewing the unique experience of staying on a 5-star super yacht hotel in Gibraltar.',
+    content: '<p>Placeholder content for the Sunborn Gibraltar review.</p>',
+    categories: ['Hotels', 'Reviews', 'Luxury'],
+    tags: ['sunborn', 'gibraltar', 'luxury hotel', 'yacht']
+  },
+  'full-body-workout-women': {
+    id: '16', slug: 'full-body-workout-women', title: 'Full Body Workout for Women',
+    imageUrl: 'https://picsum.photos/seed/workout-women/1200/500', imageHint: 'woman fitness workout',
+    date: '2023-10-01', author: 'Fitness Coach',
+    excerpt: 'A full-body workout routine for women to stay fit while traveling.',
+    content: '<p>Placeholder content for the workout blog post.</p>',
+    categories: ['Fitness', 'Wellness'],
+    tags: ['fitness', 'workout', 'wellness']
+  },
+  'costa-del-sol-glamping': {
+    id: '17', slug: 'costa-del-sol-glamping', title: 'Glamping on the Costa del Sol',
+    imageUrl: 'https://picsum.photos/seed/costa-glamping/1200/500', imageHint: 'luxury glamping tent',
+    date: '2023-08-15', author: 'Adventure Seeker',
+    excerpt: 'Experience the outdoors without sacrificing comfort with these top glamping spots on the Costa del Sol.',
+    content: '<p>Placeholder content for the glamping blog post.</p>',
+    categories: ['Hotels', 'Adventure'],
+    tags: ['glamping', 'costa del sol', 'accommodation']
+  },
+  'expert-traveler-roundup': {
+    id: '18', slug: 'expert-traveler-roundup', title: '7 Expert Travelers Share Their Tips',
+    imageUrl: 'https://picsum.photos/seed/expert-travelers/1200/500', imageHint: 'group of travelers',
+    date: '2023-06-25', author: 'Editor',
+    excerpt: 'We asked 7 expert travelers for their best tips for visiting the Costa del Sol.',
+    content: '<p>Placeholder content for the expert traveler roundup.</p>',
+    categories: ['Travel Tips'],
+    tags: ['expert tips', 'travel', 'roundup']
+  }
 };
 
 const allArticles = Object.values(articlesData);
@@ -304,5 +412,3 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
     </div>
   );
 }
-
-    
