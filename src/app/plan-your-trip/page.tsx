@@ -4,6 +4,7 @@ import QuizForm from './QuizForm'; // Client Component
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import imageData from '@/lib/placeholder-images.json';
+import Faq from '@/components/shared/Faq';
 
 type ImageData = {
   [key: string]: {
@@ -16,7 +17,7 @@ const images: ImageData = imageData;
 
 
 export const metadata = {
-  title: 'Plan Your Personalized Costa del Sol Trip | Costa del Sol Navigator',
+  title: 'Plan Your Personalized Costa del Sol Trip | Malaga Travel Guide',
   description: 'Answer a few questions and get a personalized trip plan for your Costa del Sol adventure, including town recommendations, activities, and accommodation ideas.',
 };
 
@@ -55,6 +56,25 @@ const planningCategories = [
     },
 ];
 
+const tripPlannerFaqs = [
+  {
+    question: "How does the personalized trip planner work?",
+    answer: "Our AI-powered tool analyzes your answers to the quiz—your travel style, interests, trip duration, and budget—to generate a custom itinerary. It suggests a town that best fits your vibe, along with recommended activities and accommodation types to get you started."
+  },
+  {
+    question: "Is the trip plan final?",
+    answer: "Not at all! The generated plan is a starting point designed to inspire you. You can use it as a guide and explore our other pages for more detailed information on specific destinations, hotels, and activities to build your perfect trip."
+  },
+  {
+    question: "How much does it cost to use the trip planner?",
+    answer: "The personalized trip planner is completely free to use. Our goal is to help you discover the best of the Costa del Sol."
+  },
+  {
+    question: "Can I save my trip plan?",
+    answer: "Currently, you cannot save the plan directly on our site. However, we are working on a feature that will allow you to email the results to yourself for future reference."
+  }
+];
+
 
 export default function PlanYourTripPage() {
   return (
@@ -64,7 +84,7 @@ export default function PlanYourTripPage() {
         subtitle="Tell us about your dream trip, and we'll craft a unique plan just for you. Answer a few quick questions to get started!"
       />
       <QuizForm />
-        <Section className="pt-0" title="Or, Plan It Yourself">
+        <Section className="py-16" title="Or, Plan It Yourself">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 {planningCategories.map((category) => (
                     <InfoCard
@@ -80,6 +100,9 @@ export default function PlanYourTripPage() {
                 ))}
             </div>
         </Section>
+        <Section title="Frequently Asked Questions" className="bg-secondary/10 pt-16 pb-16">
+          <Faq faqs={tripPlannerFaqs} />
+      </Section>
     </div>
   );
 }
