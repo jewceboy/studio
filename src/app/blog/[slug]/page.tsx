@@ -11,6 +11,8 @@ import { Badge } from '@/components/ui/badge';
 import Section from '@/components/shared/Section';
 import ArticleCard from '@/components/blog/ArticleCard';
 import imageData from '@/lib/placeholder-images.json';
+import { Metadata } from 'next';
+
 
 type ImageData = {
   [key: string]: {
@@ -58,27 +60,74 @@ const articlesData: { [key: string]: Article } = {
 
 const relatedArticles = Object.values(articlesData).slice(0,3).filter(a => a.slug !== 'best-tapas-malaga');
 
+// This is a server-side function, but it's okay to have it in a 'use client' file
+// as Next.js will correctly handle it during the build process.
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const article = articlesData[params.slug];
+  if (!article) {
+    return {
+      title: 'Article Not Found',
+      description: 'The article you are looking for does not exist.',
+    }
+  }
 
-// generateStaticParams should be in a Server Component or a separate file if this page must be client
-// For now, commenting out as this page is 'use client' due to onClick for print button.
-// export async function generateStaticParams() {
-//   return Object.keys(articlesData).map((slug) => ({
-//     slug,
-//   }));
-// }
-
-// generateMetadata should ideally be in a Server Component.
-// If this page remains 'use client', metadata should be handled differently or this moved.
-// export async function generateMetadata({ params }: { params: { slug: string } }) {
-//   const article = articlesData[params.slug];
-//   if (!article) {
-//     return { title: 'Article Not Found' }
-//   }
-//   return {
-//     title: `${article.title} | Costa del Sol Navigator Blog`,
-//     description: article.excerpt,
-//   }
-// }
+  return {
+    title: article.title,
+    description: article.excerpt,
+    openGraph: {
+        title: article.title,
+        description: article.excerpt,
+        type: 'article',
+        publishedTime: article.date,
+        authors: article.author ? [article.author] : [],
+        images: [
+            {
+                url: article.imageUrl,
+                width: 1200,
+                height: 630,
+                alt: article.title,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: article.title,
+        description: article.excerpt,
+        images: [article.imageUrl],
+    },
+    alternates: {
+      canonical: `/blog/${article.slug}`,
+    },
+    other: {
+      // JSON-LD for Article Schema
+      'application/ld+json': JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        'mainEntityOfPage': {
+          '@type': 'WebPage',
+          '@id': `https://www.costadelsolnavigator.com/blog/${article.slug}`,
+        },
+        'headline': article.title,
+        'description': article.excerpt,
+        'image': article.imageUrl,
+        'author': {
+          '@type': 'Person',
+          'name': article.author || 'Costa del Sol Navigator',
+        },
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'Costa del Sol Navigator',
+          'logo': {
+            '@type': 'ImageObject',
+            'url': 'https://www.costadelsolnavigator.com/logo.png', // Replace with actual logo
+          },
+        },
+        'datePublished': article.date,
+        'dateModified': article.date,
+      }, null, 2),
+    },
+  }
+}
 
 
 export default function SinglePostPage({ params }: { params: { slug: string } }) {

@@ -9,11 +9,28 @@ import { cn } from '@/lib/utils';
 import Breadcrumbs from '@/components/shared/Breadcrumbs';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+// This is the base metadata. Child pages will merge with this.
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.costadelsolnavigator.com'),
-  title: 'Costa del Sol Navigator | Your Ultimate Malaga Travel Guide',
+  title: {
+    default: 'Costa del Sol Navigator | Your Ultimate Malaga Travel Guide',
+    template: '%s | Costa del Sol Navigator',
+  },
   description: 'Your ultimate guide to exploring Malaga and the Costa del Sol. Plan your trip with personalized recommendations, discover top destinations, hotels, and activities.',
   keywords: 'Malaga, Costa del Sol, travel guide, Spain, hotels, activities, trip planner',
+  openGraph: {
+    title: 'Costa del Sol Navigator | Your Ultimate Malaga Travel Guide',
+    description: 'Your ultimate guide to exploring Malaga and the Costa del Sol.',
+    url: 'https://www.costadelsolnavigator.com',
+    siteName: 'Costa del Sol Navigator',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Costa del Sol Navigator | Your Ultimate Malaga Travel Guide',
+    description: 'Your ultimate guide to exploring Malaga and the Costa del Sol.',
+  },
 };
 
 const anton = Anton({
@@ -93,15 +110,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://picsum.photos" />
-        <link
-          rel="preload"
-          as="style"
-          href={`https://fonts.googleapis.com/css2?family=Anton&family=Inter&family=Montserrat&display=swap`}
-        />
-        <link
-          rel="stylesheet"
-          href={`https://fonts.googleapis.com/css2?family=Anton&family=Inter&family=Montserrat&display=swap`}
-        />
       </head>
       <body className={cn(
         'font-body antialiased min-h-screen flex flex-col bg-background',
