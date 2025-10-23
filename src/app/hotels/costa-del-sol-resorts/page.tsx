@@ -5,8 +5,8 @@ import InfoCard from '@/components/shared/InfoCard';
 import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
 
 export const metadata = {
-  title: 'Costa del Sol Resorts | Costa del Sol Navigator',
-  description: 'Find the best resorts in the Costa del Sol for your vacation.',
+  title: 'Top 5 Costa del Sol Resorts | Costa del Sol Navigator',
+  description: 'Discover the top 5 best resorts in the Costa del Sol for your vacation, from luxury to family-friendly options.',
 };
 
 const resortCategories = [

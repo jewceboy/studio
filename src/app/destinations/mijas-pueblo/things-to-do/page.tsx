@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: 'Things to Do in Mijas Pueblo | Costa del Sol Navigator',
-  description: 'Discover the best things to do in Mijas Pueblo.',
+  title: '6 Must-Do Things in Stunning Mijas Pueblo | Costa del Sol Navigator',
+  description: 'Discover the 6 best things to do in Mijas Pueblo, from donkey taxis to panoramic views. Your guide to exploring this charming white village.',
 };
 
 export default function MijasPuebloThingsToDoPage() {

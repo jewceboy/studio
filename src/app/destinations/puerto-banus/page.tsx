@@ -5,8 +5,8 @@ import InfoCard from '@/components/shared/InfoCard';
 import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
 
 export const metadata = {
-  title: 'Puerto Banus Guide | Costa del Sol Navigator',
-  description: 'Your complete guide to visiting Puerto Banus.',
+  title: "An Insider's Guide to Puerto Banus | Costa del Sol Navigator",
+  description: "Your complete insider's guide to visiting Puerto Banus. Discover the best shopping, restaurants, and luxury experiences in this glamorous marina.",
 };
 
 const puertoBanusCategories = [

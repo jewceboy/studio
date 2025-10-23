@@ -4,7 +4,7 @@ import Section from '@/components/shared/Section';
 
 export const metadata = {
   title: 'Caminito del Rey Walk | Costa del Sol Navigator',
-  description: 'Learn about the Caminito del Rey walk, a stunning hiking trail in Malaga.',
+  description: 'Your complete guide to the Caminito del Rey walk. Get tips on booking tickets, trail difficulty, and how to get there for this breathtaking hike near Malaga.',
 };
 
 export default function CaminitoDelReyPage() {
