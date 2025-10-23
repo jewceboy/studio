@@ -125,53 +125,53 @@ export const destinationsData: { [key: string]: Destination } = {
 };
 
 const defaultHotelCategories: HotelCategory[] = [
-  { name: 'Luxury Hotels', slug: 'luxury', description: 'Indulge in opulent stays with top-tier amenities and services.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "luxury hotel interior"), imageHint: "luxury hotel interior" },
-  { name: 'Family-Friendly Hotels', slug: 'family-friendly', description: 'Find hotels with facilities and activities perfect for all ages.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "family pool fun"), imageHint: "family pool fun" },
-  { name: 'Beachfront Hotels', slug: 'beachfront', description: 'Wake up to stunning sea views and direct beach access.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "beach hotel view"), imageHint: "beach hotel view" },
-  { name: 'Boutique Hotels', slug: 'boutique', description: 'Discover unique charm and personalized service in smaller, stylish hotels.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "boutique hotel lobby"), imageHint: "boutique hotel lobby" },
-  { name: 'Budget-Friendly Stays', slug: 'budget-friendly', description: 'Comfortable and affordable options for savvy travelers.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "hostel budget room"), imageHint: "hostel budget room" },
+  { name: 'Luxury Hotels', slug: 'luxury-hotels', description: 'Indulge in opulent stays with top-tier amenities and services.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "luxury hotel interior"), imageHint: "luxury hotel interior" },
+  { name: 'Family-Friendly Hotels', slug: 'family-hotels', description: 'Find hotels with facilities and activities perfect for all ages.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "family pool fun"), imageHint: "family pool fun" },
+  { name: 'Beachfront Hotels', slug: 'beachfront-hotels', description: 'Wake up to stunning sea views and direct beach access.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "beach hotel view"), imageHint: "beach hotel view" },
+  { name: 'Boutique Hotels', slug: 'boutique-hotels', description: 'Discover unique charm and personalized service in smaller, stylish hotels.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "boutique hotel lobby"), imageHint: "boutique hotel lobby" },
+  { name: 'Budget-Friendly Stays', slug: 'budget-hotels', description: 'Comfortable and affordable options for savvy travelers.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "hostel budget room"), imageHint: "hostel budget room" },
 ];
 
-// Initialize hotelSiloData with existing specific entries
+
 const initialHotelSiloData: { [key: string]: { name: string; categories: HotelCategory[] } } = {
   malaga: {
     name: 'Málaga',
     categories: [
-      { name: 'Luxury Hotels', slug: 'luxury', description: 'Indulge in opulent stays with top-tier amenities and services.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "luxury hotel interior"), imageHint: "luxury hotel interior" },
-      { name: 'Family-Friendly Hotels', slug: 'family-friendly', description: 'Find hotels with facilities and activities perfect for all ages.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "family pool fun"), imageHint: "family pool fun" },
-      { name: 'Beachfront Hotels', slug: 'beachfront', description: 'Wake up to stunning sea views and direct beach access.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "beach hotel view"), imageHint: "beach hotel view" },
-      { name: 'Boutique Hotels', slug: 'boutique', description: 'Discover unique charm and personalized service in smaller, stylish hotels.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "boutique hotel lobby"), imageHint: "boutique hotel lobby" },
+      { name: 'Luxury Hotels', slug: 'luxury-hotels-malaga', description: 'Indulge in opulent stays with top-tier amenities and services in Málaga.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "malaga luxury hotel"), imageHint: "Málaga luxury hotel" },
+      { name: 'Family-Friendly Hotels', slug: 'family-hotels-malaga', description: 'Find Málaga hotels with facilities and activities perfect for all ages.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "malaga family hotel"), imageHint: "Málaga family hotel" },
+      { name: 'Beachfront Hotels', slug: 'malaga-beaches', description: 'Wake up to stunning sea views and direct beach access in Málaga.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "malaga beach hotel"), imageHint: "Málaga beach hotel" },
+      { name: 'Boutique Hotels', slug: 'boutique-hotels-malaga', description: 'Discover unique charm and personalized service in Málaga\'s stylish hotels.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "malaga boutique hotel"), imageHint: "Málaga boutique hotel" },
     ],
   },
   marbella: {
     name: 'Marbella',
     categories: [
-      { name: '5-Star Resorts', slug: '5-star-resorts', description: 'Experience ultimate luxury and exclusivity in Marbella\'s finest resorts.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "Marbella resort pool"), imageHint: "Marbella resort pool" },
-      { name: 'Golf Hotels', slug: 'golf-hotels', description: 'Stay and play at hotels with access to world-class golf courses.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "golf course hotel"), imageHint: "golf course hotel" },
-      { name: 'Spa Hotels', slug: 'spa-hotels', description: 'Relax and rejuvenate with exceptional spa facilities and treatments.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "spa massage therapy"), imageHint: "spa massage therapy" },
+      { name: '5-Star Resorts', slug: 'luxury-hotels-marbella', description: 'Experience ultimate luxury and exclusivity in Marbella\'s finest resorts.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "Marbella resort pool"), imageHint: "Marbella resort pool" },
+      { name: 'Golf Hotels', slug: 'golf-resorts', description: 'Stay and play at hotels with access to world-class golf courses.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "golf course hotel"), imageHint: "golf course hotel" },
+      { name: 'Spa Hotels', slug: 'spa-retreats', description: 'Relax and rejuvenate with exceptional spa facilities and treatments.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "spa massage therapy"), imageHint: "spa massage therapy" },
     ],
   },
 };
 
-// Dynamically populate hotelSiloData with remaining destinations
-export const hotelSiloData = Object.values(destinationsData).reduce((acc, destination) => {
-  if (!acc[destination.slug]) { // If the destination slug isn't already in acc (our initialHotelSiloData)
-    acc[destination.slug] = {
-      name: destination.name,
-      categories: defaultHotelCategories.map(cat => ({ // Create new instances for each category
-        ...cat,
-        // Optionally, customize descriptions or imageHints further based on destination.name if needed
-        description: `Discover ${cat.name.toLowerCase()} in ${destination.name}. ${cat.description}`,
-        imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, `${destination.slug}-${cat.slug}`), // Ensure default placeholder for these generated ones
-        imageHint: `${destination.slug} ${cat.slug}`
-      })),
-    };
-  }
-  return acc;
+
+export const hotelSiloData = Object.keys(destinationsData).reduce((acc, slug) => {
+    if (!acc[slug]) {
+        acc[slug] = {
+            name: destinationsData[slug].name,
+            categories: defaultHotelCategories.map(category => ({
+                ...category,
+                slug: `${category.slug}-${slug}`,
+                description: `Find and book ${category.name.toLowerCase()} in ${destinationsData[slug].name}. ${category.description}`,
+                imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, `${slug}-${category.slug}`),
+                imageHint: `${destinationsData[slug].name} ${category.name}`
+            }))
+        };
+    }
+    return acc;
 }, initialHotelSiloData);
 
 
-// Originally from src/app/interests/[niche]/page.tsx
+
 export const nicheInterestData: { [key: string]: { name: string; heroImage: string; imageHint?: string; intro: string; subCategories: NicheSubCategory[] } } = {
   golf: {
     name: 'Golfing in Costa del Sol',
