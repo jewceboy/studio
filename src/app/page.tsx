@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import NewsletterForm from '@/components/forms/NewsletterForm';
-import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles, Map, Star, PenSquare } from 'lucide-react';
 import Image from 'next/image';
 import imageData from '@/lib/placeholder-images.json';
 import { allSiteUrls } from '@/lib/urls';
@@ -43,6 +43,31 @@ const topMoneyPages = [
       imageKey: 'vip-transport',
     },
 ];
+
+const contentPillars = [
+  {
+    title: 'Destinations',
+    description: 'Explore the charming towns and vibrant cities of the Costa del Sol.',
+    linkHref: '/destinations',
+    imageKey: 'mijas-pueblo-village',
+    icon: Map,
+  },
+  {
+    title: 'Attractions',
+    description: 'Discover the best attractions, from historic sites to family fun.',
+    linkHref: '/attractions',
+    imageKey: 'malaga-city-skyline',
+    icon: Star,
+  },
+  {
+    title: 'Travel Blog',
+    description: 'Get insider tips, guides, and stories from our local experts.',
+    linkHref: '/blog',
+    imageKey: 'tapas-food-variety',
+    icon: PenSquare,
+  },
+];
+
 
 type ImageData = {
   [key: string]: {
@@ -114,6 +139,24 @@ export default function Home() {
               imageAlt={page.title}
               linkText="Explore" 
               buttonClassName="bg-accent text-white hover:bg-accent/90"
+            />
+          ))}
+        </div>
+      </Section>
+      
+      {/* Content Pillars Section */}
+      <Section title="Explore the Costa del Sol" subtitle="From stunning destinations to insider tips, start your journey here.">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {contentPillars.map((page) => (
+            <InfoCard 
+              key={page.title} 
+              title={page.title}
+              description={page.description}
+              linkHref={page.linkHref}
+              imageUrl={images[page.imageKey].url}
+              imageHint={images[page.imageKey].hint}
+              imageAlt={page.title}
+              linkText="Discover" 
             />
           ))}
         </div>
