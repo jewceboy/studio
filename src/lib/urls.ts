@@ -183,4 +183,5 @@ export const allSiteUrls: string[] = [
   '/contact',
   '/plan-your-trip',
   '/plan-your-trip/results',
+  '/chat-demo',
 ];
