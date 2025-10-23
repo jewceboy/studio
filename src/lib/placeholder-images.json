@@ -456,5 +456,25 @@
   "yoga-meditation-retreat": {
     "url": "https://picsum.photos/seed/yoga-meditation-retreat/600/400",
     "hint": "yoga meditation retreat"
+  },
+  "luxury-hotel-lobby": {
+    "url": "https://picsum.photos/seed/luxury-hotel-lobby/600/400",
+    "hint": "luxury hotel lobby"
+  },
+  "boutique-hotel-room": {
+    "url": "https://picsum.photos/seed/boutique-hotel-room/600/400",
+    "hint": "boutique hotel room"
+  },
+  "hostel-dorm-room": {
+    "url": "https://picsum.photos/seed/hostel-dorm-room/600/400",
+    "hint": "hostel dorm room"
+  },
+  "luxury-resort-pool": {
+    "url": "https://picsum.photos/seed/luxury-resort-pool/600/400",
+    "hint": "luxury resort pool"
+  },
+  "family-hotel-pool": {
+    "url": "https://picsum.photos/seed/family-hotel-pool/600/400",
+    "hint": "family hotel pool"
   }
 }

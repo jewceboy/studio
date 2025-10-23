@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -16,13 +17,13 @@ interface HotelCardProps {
 
 export default function HotelCard({ hotel, className }: HotelCardProps) {
   return (
-    <Card className={cn('overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full bg-card', className)}>
+    <Card className={cn('overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full bg-card group', className)}>
       <CardHeader className="p-0 relative aspect-[16/10]">
         <Image
           src={hotel.imageUrl}
           alt={`Image of ${hotel.name}`}
           fill={true}
-          className="object-cover"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
           data-ai-hint={hotel.imageHint || "hotel exterior"}
         />
         {(hotel.userScore || hotel.priceGuide) && (
@@ -33,7 +34,7 @@ export default function HotelCard({ hotel, className }: HotelCardProps) {
               </Badge>
             )}
             {hotel.priceGuide && (
-              <Badge variant="secondary" className="bg-secondary text-secondary-foreground text-xs font-semibold px-2 py-1 rounded-full flex items-center">
+              <Badge variant="secondary" className="bg-secondary/80 backdrop-blur-sm text-secondary-foreground text-xs font-semibold px-2 py-1 rounded-full flex items-center">
                 <Tag className="w-3 h-3 mr-1" /> {hotel.priceGuide}
               </Badge>
             )}
@@ -41,20 +42,20 @@ export default function HotelCard({ hotel, className }: HotelCardProps) {
         )}
       </CardHeader>
       <CardContent className="p-6 flex-grow">
-        <CardTitle className="font-montserrat text-xl font-semibold text-primary-dark mb-2 line-clamp-2">{hotel.name}</CardTitle>
+        <CardTitle className="font-montserrat text-xl font-semibold text-primary-dark mb-2 line-clamp-2 group-hover:text-primary transition-colors">{hotel.name}</CardTitle>
         <p className="text-sm text-muted-foreground mb-3 line-clamp-3">{hotel.description}</p>
         {hotel.features && hotel.features.length > 0 && (
           <ul className="space-y-1 text-sm mb-3">
             {hotel.features.slice(0, 3).map((feature, index) => ( // Show max 3 features
               <li key={index} className="flex items-center text-muted-foreground">
-                <CheckCircle className="w-4 h-4 mr-2 text-accent shrink-0" />
+                <CheckCircle className="w-4 h-4 mr-2 text-primary shrink-0" />
                 {feature}
               </li>
             ))}
           </ul>
         )}
       </CardContent>
-      <CardFooter className="p-6 pt-0">
+      <CardFooter className="p-6 pt-0 mt-auto">
         <Button asChild variant="default" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-medium">
           <Link href={hotel.affiliateLink} target="_blank" rel="noopener noreferrer">
             Check Prices & Availability <ExternalLink className="ml-2 h-4 w-4" />
