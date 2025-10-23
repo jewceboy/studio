@@ -3,8 +3,8 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 
 export const metadata = {
-  title: '7 Authentic Flamenco Shows in Andalucia | Costa del Sol Navigator',
-  description: 'Discover the 7 most authentic and traditional flamenco shows in Andalucia for an unforgettable cultural experience.',
+  title: '7 Authentic Flamenco Shows in Andalucia | Best of 2024',
+  description: 'Discover the 7 most authentic and traditional flamenco shows in Andalucia for an unforgettable cultural experience in 2024. Find the best shows in Malaga, Seville, and more.',
 };
 
 export default function AuthenticFlamencoPage() {

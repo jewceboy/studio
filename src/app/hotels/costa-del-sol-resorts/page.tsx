@@ -14,8 +14,8 @@ type ImageData = {
 const images: ImageData = imageData;
 
 export const metadata = {
-  title: 'Top 5 Costa del Sol Resorts | Costa del Sol Navigator',
-  description: 'Discover the top 5 best resorts in the Costa del Sol for your vacation, from luxury to family-friendly options.',
+  title: 'Top 5 Costa del Sol Resorts | Best Resorts Near Malaga (2024)',
+  description: 'Discover the top 5 best resorts in the Costa del Sol for your 2024 vacation. Our guide covers luxury, all-inclusive, and family-friendly options near Malaga.',
 };
 
 const resortCategories = [

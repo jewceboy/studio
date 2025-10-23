@@ -14,8 +14,8 @@ type ImageData = {
 const images: ImageData = imageData;
 
 export const metadata = {
-  title: "An Insider's Guide to Puerto Banus | Costa del Sol Navigator",
-  description: "Your complete insider's guide to visiting Puerto Banus. Discover the best shopping, restaurants, and luxury experiences in this glamorous marina.",
+  title: "An Insider's Guide to Puerto Banus (2024) | What to Do & See",
+  description: "Your complete insider's guide to visiting Puerto Banus in 2024. Discover the best shopping, restaurants, beach clubs, and luxury experiences in this glamorous marina.",
 };
 
 const puertoBanusCategories = [
