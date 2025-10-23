@@ -55,10 +55,77 @@ const articlesData: { [key: string]: Article } = {
     categories: ['Food & Drink', 'Malaga'],
     tags: ['tapas', 'old town', 'restaurants', 'malaga city']
   },
-  // Add more articles as needed
+  'hidden-beaches-costa-del-sol': {
+    id: '2', slug: 'hidden-beaches-costa-del-sol', title: 'Top 5 Hidden Beaches on the Costa del Sol',
+    imageUrl: images['secluded-cove-beach'].url, imageHint: images['secluded-cove-beach'].hint,
+    date: '2024-05-10', author: 'Mark Stevenson',
+    excerpt: 'Discover tranquil coves and pristine sands away from the crowds for a perfect day of relaxation.',
+    content: `<p>Escape the bustling tourist spots and discover the serene beauty of Costa del Sol's hidden beaches. This guide unveils five secluded gems where you can enjoy pristine sands and crystal-clear waters in peace. From hidden coves accessible only by foot to quiet stretches of coastline loved by locals, these beaches offer a perfect retreat.</p>
+    <h3 class="text-2xl font-montserrat font-semibold my-4">Playa de Maro</h3>
+    <p>Often cited as one of Spain's best beaches, Playa de Maro is a stunning cove near Nerja, boasting turquoise waters perfect for snorkeling and kayaking. Its protected status means marine life is abundant.</p>
+    <figure class="my-6">
+      <img src="https://picsum.photos/seed/maro-beach-kayak/800/400" alt="Kayaking at Playa de Maro" class="rounded-lg shadow-md" data-ai-hint="kayak beach cove"/>
+      <figcaption class="text-xs text-center text-muted-foreground mt-2">The clear waters of Maro are ideal for water sports.</figcaption>
+    </figure>
+    <p>Each of these hidden spots provides a unique coastal experience, far from the typical tourist trail. Pack a picnic, bring your sunscreen, and get ready to discover the tranquil side of the Costa del Sol.</p>`,
+    categories: ['Beaches', 'Travel Tips'],
+    tags: ['beaches', 'costa del sol', 'nerja', 'hidden gems']
+  },
+  'day-trip-ronda': {
+    id: '3', slug: 'day-trip-ronda', title: 'A Day Trip to Ronda: What to See and Do',
+    imageUrl: images['Ronda-bridge-view'].url, imageHint: images['Ronda-bridge-view'].hint,
+    date: '2024-05-01', author: 'Sofia Chen',
+    excerpt: 'Explore the dramatic landscapes, iconic bridge, and historic charm of the stunning town of Ronda.',
+    content: `<p>Perched dramatically atop the El Tajo gorge, Ronda is one of Andalusia's most breathtaking towns and makes for an unforgettable day trip from the Costa del Sol. This guide covers the must-see sights for a perfect visit.</p>
+    <h3 class="text-2xl font-montserrat font-semibold my-4">Puente Nuevo (New Bridge)</h3>
+    <p>The iconic Puente Nuevo is Ronda's most famous landmark, spanning the 120-meter-deep chasm. The views from the bridge are spectacular, but be sure to hike down into the gorge for the most impressive photo opportunities.</p>
+    <h3 class="text-2xl font-montserrat font-semibold my-4">Plaza de Toros</h3>
+    <p>Visit one of Spain's oldest and most revered bullrings, the Plaza de Toros. Its museum offers fascinating insights into the history of bullfighting. Whether you agree with the tradition or not, the architectural and historical significance is undeniable.</p>`,
+    categories: ['Day Trips'],
+    tags: ['ronda', 'day trip', 'andalucia', 'sightseeing']
+  },
+  'caminito-del-rey-guide': {
+    id: '4', slug: 'caminito-del-rey-guide', title: 'Ultimate Guide to Hiking Caminito del Rey',
+    imageUrl: images['Caminito-del-Rey-path'].url, imageHint: images['Caminito-del-Rey-path'].hint,
+    date: '2024-04-25', author: 'Carlos Gomez',
+    excerpt: 'Everything you need to know before tackling one of Spain\'s most breathtaking hiking trails.',
+    content: `<p>Once known as the world's most dangerous footpath, the Caminito del Rey has been transformed into a safe and stunningly beautiful hiking trail. Suspended along the walls of the Gaitanes Gorge, this trail offers breathtaking views and a thrilling experience.</p>
+    <h3 class="text-2xl font-montserrat font-semibold my-4">Booking Tickets</h3>
+    <p>Tickets for the Caminito del Rey sell out weeks or even months in advance, especially during peak season. It is crucial to book online through the official website or a registered tour operator. Do not show up expecting to buy tickets on the day.</p>
+    <h3 class="text-2xl font-montserrat font-semibold my-4">The Trail</h3>
+    <p>The hike is a one-way route of about 7.7 kilometers in total, which takes around 3-4 hours. Most of the path is flat, but it includes sections on boardwalks suspended over 100 meters above the river below. It is not suitable for those with a severe fear of heights.</p>`,
+    categories: ['Adventure', 'Hiking'],
+    tags: ['caminito del rey', 'hiking', 'adventure', 'malaga']
+  },
+  'malaga-christmas-lights': {
+    id: '5', slug: 'malaga-christmas-lights', title: 'Málaga Christmas Lights: A Festive Spectacle',
+    imageUrl: images['Christmas-lights-street'].url, imageHint: images['Christmas-lights-street'].hint,
+    date: '2023-12-01', author: 'Laura Schmidt',
+    excerpt: 'Experience the magic of Calle Larios adorned with spectacular Christmas lights and music.',
+    content: `<p>Each year, Málaga transforms into a winter wonderland, with its spectacular Christmas light display on Calle Larios being the main event. Millions of LED lights create a stunning architectural structure, synchronized with popular Christmas music.</p>
+    <h3 class="text-2xl font-montserrat font-semibold my-4">The Main Show</h3>
+    <p>The music and light shows on Calle Larios typically run several times each evening from late November until early January. It's a hugely popular free event, so expect large crowds. Arrive early to get a good viewing spot.</p>
+    <h3 class="text-2xl font-montserrat font-semibold my-4">Beyond Calle Larios</h3>
+    <p>While Calle Larios is the star, the entire historic center is beautifully decorated. Explore the surrounding streets, visit the Christmas markets at Paseo del Parque, and enjoy the festive atmosphere throughout the city.</p>`,
+    categories: ['Festivals', 'Malaga'],
+    tags: ['christmas', 'malaga', 'festivals', 'lights']
+  },
+  'andalusian-white-villages': {
+    id: '6', slug: 'andalusian-white-villages', title: 'Exploring the Charm of Andalusian White Villages',
+    imageUrl: images['white-village-street'].url, imageHint: images['white-village-street'].hint,
+    date: '2024-03-18', author: 'David Miller',
+    excerpt: 'A guide to the most picturesque "pueblos blancos" near Costa del Sol, rich in history and beauty.',
+    content: `<p>The 'pueblos blancos,' or white villages of Andalusia, are a photographer's dream. Characterized by their simple white-washed walls, narrow cobbled streets, and vibrant floral displays, these villages offer a glimpse into a more traditional way of life.</p>
+    <h3 class="text-2xl font-montserrat font-semibold my-4">Mijas Pueblo</h3>
+    <p>One of the most accessible from the Costa del Sol, Mijas Pueblo is famous for its charming streets and donkey-taxis. The views of the coastline from its elevated position are simply stunning.</p>
+    <h3 class="text-2xl font-montserrat font-semibold my-4">Frigiliana</h3>
+    <p>Often voted the prettiest village in Spain, Frigiliana, near Nerja, is a maze of immaculate, winding streets. Its well-preserved Moorish old quarter is a delight to explore.</p>`,
+    categories: ['Culture', 'Day Trips'],
+    tags: ['pueblos blancos', 'andalucia', 'day trips', 'mijas', 'frigiliana']
+  },
 };
 
-const relatedArticles = Object.values(articlesData).slice(0,3).filter(a => a.slug !== 'best-tapas-malaga');
+const allArticles = Object.values(articlesData);
 
 // This is a server-side function, but it's okay to have it in a 'use client' file
 // as Next.js will correctly handle it during the build process.
@@ -71,7 +138,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
   }
 
-  const siteUrl = 'https://www.malagatravelguide.net';
+  const siteUrl = 'https://malagatravelguide.net';
   const articleUrl = `${siteUrl}/blog/${article.slug}`;
 
   return {
@@ -140,6 +207,9 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
   if (!article) {
     notFound();
   }
+
+  const relatedArticles = allArticles.filter(a => a.slug !== params.slug).slice(0, 3);
+
 
   return (
     <div className="container mx-auto px-4">
@@ -234,3 +304,5 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
     </div>
   );
 }
+
+    

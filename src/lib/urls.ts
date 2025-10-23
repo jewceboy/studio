@@ -180,8 +180,15 @@ export const allSiteUrls: string[] = [
   '/travel-planning/tourist-info/maps',
   '/blog',
   '/blog/best-tapas-malaga',
+  '/blog/hidden-beaches-costa-del-sol',
+  '/blog/day-trip-ronda',
+  '/blog/caminito-del-rey-guide',
+  '/blog/malaga-christmas-lights',
+  '/blog/andalusian-white-villages',
   '/contact',
   '/plan-your-trip',
   '/plan-your-trip/results',
   '/chat-demo',
 ];
+
+    
