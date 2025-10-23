@@ -48,8 +48,8 @@ const articlesData: { [key: string]: Article } = {
     <h3 class="text-2xl font-montserrat font-semibold my-4">Relevant Tours & Hotels</h3>
     <p>Enhance your culinary journey by booking a guided tapas tour or staying in a hotel conveniently located in the Old Town. Check out these options:</p>
     <ul class="list-disc list-inside my-4 space-y-2">
-        <li><a href="#" class="text-primary hover:underline">Malaga Old Town Tapas Tour</a></li>
-        <li><a href="#" class="text-primary hover:underline">Boutique Hotels in Malaga Center</a></li>
+        <li><a href="/restaurants/culinary-experiences/food-tours" class="text-primary hover:underline">Malaga Old Town Tapas Tour</a></li>
+        <li><a href="/hotels/search?category=boutique-hotels-malaga" class="text-primary hover:underline">Boutique Hotels in Malaga Center</a></li>
     </ul>
     `,
     categories: ['Food & Drink', 'Malaga'],
