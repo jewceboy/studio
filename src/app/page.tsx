@@ -10,6 +10,7 @@ import Image from 'next/image';
 import imageData from '@/lib/placeholder-images.json';
 import { allSiteUrls } from '@/lib/urls';
 import { destinationsData } from '@/lib/data';
+import ClientOnly from '@/components/shared/ClientOnly';
 
 const topMoneyPages = [
     {
@@ -83,18 +84,35 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <div className="relative -mt-8 -mx-4 sm:-mx-container-padding">
-        <div className="h-[50vh] min-h-[300px] bg-primary-dark flex flex-col justify-center items-center text-white text-center p-4">
-          <h1 className="font-anton text-5xl md:text-6xl font-bold tracking-tight mb-4">
-              Your Costa del Sol Journey Starts Here
-          </h1>
-          <p className="max-w-2xl text-lg md:text-xl text-white/90">
-            The ultimate travel guide for independent and luxury travelers.
-          </p>
-          <Button asChild size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 font-montserrat font-semibold">
-            <Link href="/plan-your-trip">
-              Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+        <div className="relative h-[60vh] min-h-[400px] w-full">
+          <Image
+            src={images['travel-hero-background'].url}
+            alt="Beautiful travel landscape"
+            fill
+            priority
+            className="object-cover"
+            data-ai-hint={images['travel-hero-background'].hint}
+          />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center p-4">
+            <h1 className="font-anton text-5xl md:text-7xl font-bold tracking-tight mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
+              The World Is Your Oyster
+            </h1>
+            <p className="max-w-2xl text-lg md:text-xl text-white/90" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.7)' }}>
+              The ultimate travel guide for independent and solo travelers.
+            </p>
+            <form className="mt-8 flex w-full max-w-md items-center space-x-2">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                className="h-12 flex-1 bg-white/90 text-primary-dark placeholder:text-muted-foreground border-none focus:ring-2 focus:ring-primary"
+              />
+              <Button type="submit" size="lg" className="h-12 w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-semibold">
+                Subscribe
+              </Button>
+            </form>
+            <p className="mt-4 text-xs text-white/70">Join 100,000+ other readers and get my free travel tips.</p>
+          </div>
         </div>
       </div>
       
@@ -155,7 +173,9 @@ export default function Home() {
 
       {/* Newsletter Form Section */}
       <Section title="Stay in the Know" subtitle="Subscribe to our newsletter for the latest travel tips and exclusive deals.">
-        <NewsletterForm />
+        <ClientOnly>
+          <NewsletterForm />
+        </ClientOnly>
       </Section>
     </>
   );
