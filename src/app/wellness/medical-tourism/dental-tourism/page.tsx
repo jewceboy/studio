@@ -15,8 +15,4 @@ export default function DentalTourismPage() {
         subtitle="Combine a luxury holiday with top-quality dental care."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for luxury dental tourism. This page will feature high-end dental clinics and packages.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for luxury dental tourism

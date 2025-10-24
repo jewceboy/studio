@@ -16,7 +16,4 @@ export default function ThreeDayPage() {
       />
       <Section>
         <p className="text-center text-lg">Placeholder content for a 3-day Malaga itinerary. This page will provide a detailed day-by-day plan.</p>
-      </Section>
-    </div>
-  );
-}
+      </

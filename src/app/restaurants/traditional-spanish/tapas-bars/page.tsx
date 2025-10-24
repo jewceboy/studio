@@ -19,4 +19,3 @@ export default function TapasBarsPage() {
       </Section>
     </div>
   );
-}

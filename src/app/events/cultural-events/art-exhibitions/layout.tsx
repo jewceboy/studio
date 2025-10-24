@@ -9,5 +9,3 @@ export default function ArtExhibitionsLayout({
     <div>
       {children}
     </div>
-  );
-}

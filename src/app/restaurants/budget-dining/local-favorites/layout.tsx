@@ -7,7 +7,4 @@ export default function LocalFavoritesLayout({
 }) {
   return (
     <div>
-      {children}
-    </div>
-  );
-}
+      {children

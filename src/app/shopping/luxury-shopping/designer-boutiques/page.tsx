@@ -15,8 +15,4 @@ export default function DesignerBoutiquesPage() {
         subtitle="A curated guide to the finest fashion stores and designer labels."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for designer boutiques in Marbella. This page will highlight must-visit stores for fashion lovers.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for designer boutiques in Marbella. This page will highlight must-visit stores for fashion lovers.</p

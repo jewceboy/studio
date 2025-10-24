@@ -15,8 +15,4 @@ export default function BusesPage() {
         subtitle="Navigating Malaga by bus."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for Malaga bus routes. This page will provide details on the city's bus network.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for Malaga bus routes. This page will provide details on the city's bus network.</p

@@ -6,8 +6,3 @@ export default function HotelsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      {children}
-    </div>
-  );
-}

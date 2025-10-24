@@ -15,8 +15,4 @@ export default function FreeActivitiesPage() {
         subtitle="Explore the city without spending a euro."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for free activities. This page will list parks, museums with free entry times, and other free attractions.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for free

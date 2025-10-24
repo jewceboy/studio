@@ -94,10 +94,3 @@ export default function Breadcrumbs({ className, homeLabel = 'Home' }: Breadcrum
                   </Link>
                 )}
               </li>
-            );
-          })}
-        </ol>
-      </nav>
-    </>
-  );
-}

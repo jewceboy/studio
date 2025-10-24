@@ -10,4 +10,3 @@ export default function DivingLayout({
       {children}
     </div>
   );
-}

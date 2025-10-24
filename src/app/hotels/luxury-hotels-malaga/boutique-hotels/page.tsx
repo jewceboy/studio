@@ -15,8 +15,4 @@ export default function BoutiqueHotelsPage() {
         subtitle="Charming and unique hotels in the heart of the city."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for boutique hotels. This page will showcase unique and stylish hotels.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for boutique hotels. This page will showcase unique

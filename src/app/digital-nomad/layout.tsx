@@ -7,7 +7,4 @@ export default function DigitalNomadLayout({
 }) {
   return (
     <div>
-      {children}
-    </div>
-  );
-}
+      

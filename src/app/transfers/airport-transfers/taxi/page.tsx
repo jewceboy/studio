@@ -15,8 +15,4 @@ export default function TaxiPage() {
         subtitle="A guide to taxi fares from Malaga airport."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for Malaga airport taxi prices. This page will provide estimated fares to popular destinations.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for Malaga airport taxi prices. This page

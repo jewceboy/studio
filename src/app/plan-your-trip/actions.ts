@@ -34,7 +34,4 @@ export async function submitQuiz(answers: QuizAnswers): Promise<{ success: boole
     if (error instanceof Error) {
         errorMessage = error.message;
     }
-    // This path won't be hit due to redirect, but good practice for non-redirect scenarios
-    return { success: false, error: errorMessage };
-  }
-}
+    // This path won't be hit due to redirect, but good practice for

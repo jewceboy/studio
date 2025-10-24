@@ -15,8 +15,4 @@ export default function ConferencesPage() {
         subtitle="World-class venues and services for your executive conferences."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for executive conferences in Malaga. This page will list top conference facilities.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for executive conferences in Malaga. This

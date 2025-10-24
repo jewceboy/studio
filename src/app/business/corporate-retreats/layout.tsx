@@ -9,5 +9,3 @@ export default function CorporateRetreatsLayout({
     <div>
       {children}
     </div>
-  );
-}

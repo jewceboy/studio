@@ -17,6 +17,3 @@ export default function ConcertsPage() {
       <Section>
         <p className="text-center text-lg">Placeholder content for concerts in Malaga. This page will list upcoming shows and events.</p>
       </Section>
-    </div>
-  );
-}

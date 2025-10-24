@@ -1,4 +1,3 @@
-
 import { MetadataRoute } from 'next';
 import { allSiteUrls } from '@/lib/urls'; // We will create this helper file
 

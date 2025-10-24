@@ -7,7 +7,3 @@ export default function LuxuryResortsLayout({
 }) {
   return (
     <div>
-      {children}
-    </div>
-  );
-}

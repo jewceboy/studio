@@ -15,8 +15,4 @@ export default function ArtExhibitionsPage() {
         subtitle="A guide to the vibrant art scene and exhibitions in Malaga."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for art exhibitions. This page will list current and future exhibitions.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">

@@ -15,8 +15,4 @@ export default function CorporateEventsPage() {
         subtitle="Organize unforgettable corporate events on the sunny coast of Spain."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for corporate events in Costa del Sol. This page will showcase event planning services and venues.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for corporate events in Costa del Sol. This page will showcase event

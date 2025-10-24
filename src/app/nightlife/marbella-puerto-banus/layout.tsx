@@ -5,9 +5,4 @@ export default function MarbellaPuertoBanusLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div>
-      {children}
-    </div>
-  );
-}
+  

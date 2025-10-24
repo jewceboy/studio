@@ -15,8 +15,4 @@ export default function GolfResortsPage() {
         subtitle="Stay and play at these top-tier golf resorts."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for golf resorts in Costa del Sol. This page will list the best resorts with on-site courses.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for golf resorts in Costa del Sol. This page will list the best resorts

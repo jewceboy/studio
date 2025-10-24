@@ -7,7 +7,3 @@ export default function LuxurySpasLayout({
 }) {
   return (
     <div>
-      {children}
-    </div>
-  );
-}

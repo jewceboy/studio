@@ -8,6 +8,4 @@ export default function SemanaSantaLayout({
   return (
     <div>
       {children}
-    </div>
-  );
-}
+    

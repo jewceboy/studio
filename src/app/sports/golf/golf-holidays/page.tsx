@@ -15,8 +15,4 @@ export default function GolfHolidaysPage() {
         subtitle="Packages and guides for your ultimate golf vacation."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for golf holidays in Malaga. This page will feature golf packages and travel tips.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for golf holidays in Malaga. This page will feature golf

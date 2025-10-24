@@ -55,5 +55,4 @@ export default function ArticleCard({ article, className }: ArticleCardProps) {
         </CardFooter>
       </Card>
     </Link>
-  );
-}
+  

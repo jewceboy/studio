@@ -7,7 +7,4 @@ export default function ConferenceVenuesLayout({
 }) {
   return (
     <div>
-      {children}
-    </div>
-  );
-}
+      

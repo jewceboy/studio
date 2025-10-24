@@ -17,6 +17,3 @@ export default function CarHirePage() {
       <Section>
         <p className="text-center text-lg">Placeholder content for car hire rates from Malaga Airport. This page will feature a booking engine or comparison table.</p>
       </Section>
-    </div>
-  );
-}

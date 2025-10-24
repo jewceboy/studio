@@ -7,7 +7,3 @@ export default function EventsLayout({
 }) {
   return (
     <div>
-      {children}
-    </div>
-  );
-}

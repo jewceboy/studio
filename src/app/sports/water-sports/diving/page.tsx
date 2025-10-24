@@ -15,8 +15,4 @@ export default function DivingPage() {
         subtitle="Discover the best dive sites and schools."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for scuba diving. This page will list dive centers, popular dive sites, and certification courses.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for scuba diving. This page will list dive centers, popular

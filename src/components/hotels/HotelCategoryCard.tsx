@@ -33,10 +33,4 @@ export default function HotelCategoryCard({ category, className }: HotelCategory
       <CardFooter className="p-6 pt-0">
         <Button asChild variant="default" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-medium">
           <Link href={`/hotels/search?category=${category.slug}`}>
-             Explore {category.name} <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </Button>
-      </CardFooter>
-    </Card>
-  );
-}
+             Explore {category.name} <ArrowRight className="ml-2 h-4 w

@@ -162,5 +162,4 @@ export {
   ExpandableChat,
   ExpandableChatHeader,
   ExpandableChatBody,
-  ExpandableChatFooter,
-};
+  ExpandableChatFooter

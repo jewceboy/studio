@@ -58,8 +58,3 @@ export default function CorporateRetreatsPage() {
                 imageHint={images[category.imageKey].hint}
                 />
             ))}
-        </div>
-      </Section>
-    </div>
-  );
-}

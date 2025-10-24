@@ -7,7 +7,3 @@ export default function RequirementsLayout({
 }) {
   return (
     <div>
-      {children}
-    </div>
-  );
-}

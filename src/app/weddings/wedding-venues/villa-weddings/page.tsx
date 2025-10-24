@@ -16,7 +16,4 @@ export default function VillaWeddingsPage() {
       />
       <Section>
         <p className="text-center text-lg">Placeholder content for villa wedding venues. This page will feature exclusive villas available for weddings.</p>
-      </Section>
-    </div>
-  );
-}
+      </

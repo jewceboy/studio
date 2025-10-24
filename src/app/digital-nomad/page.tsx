@@ -69,5 +69,4 @@ export default function DigitalNomadPage() {
         </div>
       </Section>
     </div>
-  );
-}
+  

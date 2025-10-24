@@ -15,8 +15,4 @@ export default function FoodToursPage() {
         subtitle="Taste your way through Malaga with our food tours."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for food tours in Malaga. This page will feature various culinary tours.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for food tours in Malaga

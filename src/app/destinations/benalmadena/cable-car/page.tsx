@@ -18,5 +18,4 @@ export default function BenalmadenaCableCarPage() {
         <p className="text-center text-lg">Placeholder content for the Benalmadena cable car. This page will provide details on the attraction.</p>
       </Section>
     </div>
-  );
-}
+  

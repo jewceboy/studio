@@ -18,5 +18,4 @@ export default function HostelsPage() {
         <p className="text-center text-lg">Placeholder content for backpacker hostels. This page will feature top-rated hostels.</p>
       </Section>
     </div>
-  );
-}
+  

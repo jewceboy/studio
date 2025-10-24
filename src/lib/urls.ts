@@ -187,9 +187,4 @@ export const allSiteUrls: string[] = [
   '/blog/caminito-del-rey-guide',
   '/blog/malaga-christmas-lights',
   '/blog/andalusian-white-villages',
-  '/blog/clubhotel-riu-review',
-  '/contact',
-  '/plan-your-trip',
-  '/plan-your-trip/results',
-  '/chat-demo',
-];
+  '/blog/clubhotel-riu

@@ -15,8 +15,4 @@ export default function VipServicesPage() {
         subtitle="Elevate your night out with our VIP services."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for VIP nightlife services. This page will detail how to book tables and get VIP access.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for VIP nightlife services. This page will detail how

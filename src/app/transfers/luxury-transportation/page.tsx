@@ -69,5 +69,4 @@ export default function LuxuryTransportationPage() {
         </div>
       </Section>
     </div>
-  );
-}
+  

@@ -15,8 +15,4 @@ export default function CheapEatsPage() {
         subtitle="Delicious food that won't break the bank."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for cheap eats in Malaga. This page will list affordable dining options.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for cheap eats in Malaga.

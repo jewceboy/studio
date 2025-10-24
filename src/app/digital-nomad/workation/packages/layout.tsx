@@ -6,8 +6,3 @@ export default function PackagesLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      {children}
-    </div>
-  );
-}

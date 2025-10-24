@@ -7,7 +7,4 @@ export default function TennisCampsLayout({
 }) {
   return (
     <div>
-      {children}
-    </div>
-  );
-}
+      

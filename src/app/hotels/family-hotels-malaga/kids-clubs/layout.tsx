@@ -7,7 +7,4 @@ export default function KidsClubsLayout({
 }) {
   return (
     <div>
-      {children}
-    </div>
-  );
-}
+      {

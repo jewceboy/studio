@@ -15,8 +15,4 @@ export default function LuxuryRestaurantsPage() {
         subtitle="Experience exquisite dining in glamorous settings."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for luxury restaurants in Marbella. This page will highlight high-end dining experiences.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for luxury restaurants in Marbella

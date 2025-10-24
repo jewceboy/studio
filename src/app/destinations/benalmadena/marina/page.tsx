@@ -15,8 +15,4 @@ export default function BenalmadenaMarinaPage() {
         subtitle="A guide to the stunning marina in Benalmadena."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for Benalmadena marina. This page will showcase the shops, restaurants, and attractions.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for Benalmadena marina. This page will showcase the shops

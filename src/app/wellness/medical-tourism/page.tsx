@@ -57,9 +57,3 @@ export default function MedicalTourismPage() {
                 linkText={category.linkText}
                 imageHint={images[category.imageKey].hint}
                 />
-            ))}
-        </div>
-      </Section>
-    </div>
-  );
-}

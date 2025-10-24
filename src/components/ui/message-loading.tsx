@@ -44,4 +44,4 @@ function MessageLoading() {
   );
 }
 
-export { MessageLoading };
+export { Message

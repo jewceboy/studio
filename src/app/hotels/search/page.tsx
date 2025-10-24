@@ -99,11 +99,4 @@ export default function HotelSearchPage({ searchParams }: HotelSearchPageProps) 
             <Info className="h-4 w-4" />
             <AlertTitle>No Hotels Found</AlertTitle>
             <AlertDescription>
-              We couldn't find any hotels matching your current selection. Please try different filters or broaden your search.
-            </AlertDescription>
-          </Alert>
-        )}
-      </Section>
-    </div>
-  );
-}
+              We couldn't find any hotels matching your current selection. Please try different filters or

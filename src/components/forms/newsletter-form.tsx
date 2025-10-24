@@ -71,7 +71,3 @@ export function NewsletterForm() {
         )}
       </form>
     </ClientOnly>
-  );
-}
-
-export default NewsletterForm;

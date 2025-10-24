@@ -15,8 +15,4 @@ export default function ChauffeurPage() {
         subtitle="Travel in style and comfort with our professional chauffeur services."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for chauffeur services. This page will feature luxury car and driver hire options.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for chauffeur

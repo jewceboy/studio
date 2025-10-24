@@ -74,9 +74,3 @@ export default function HotelsPage() {
               linkHref={category.linkHref}
               linkText={category.linkText}
             />
-          ))}
-        </div>
-      </Section>
-    </div>
-  );
-}

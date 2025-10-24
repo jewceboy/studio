@@ -15,8 +15,4 @@ export default function WeatherPage() {
         subtitle="Month-by-month weather averages and what to expect."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for the Malaga weather guide. This page will include temperature, rainfall, and sunshine hours.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for the Malaga weather guide. This page will include temperature

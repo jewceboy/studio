@@ -177,7 +177,4 @@ export default function QuizForm() {
           </Button>
         )}
       </div>
-    </form>
-  );
-}
-
+    </

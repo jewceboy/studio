@@ -9,5 +9,4 @@ export default function PuertoBanusShoppingLayout({
     <div>
       {children}
     </div>
-  );
-}
+  

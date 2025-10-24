@@ -186,8 +186,3 @@ export default function ExpandableChatDemo() {
               {!isLoading && <CornerDownLeft className="size-3.5" />}
             </Button>
           </div>
-        </form>
-      </ExpandableChatFooter>
-    </ExpandableChat>
-  )
-}

@@ -46,10 +46,3 @@ const ChatMessageList = React.forwardRef<HTMLDivElement, ChatMessageListProps>(
           </Button>
         )}
       </div>
-    );
-  }
-);
-
-ChatMessageList.displayName = "ChatMessageList";
-
-export { ChatMessageList };

@@ -5,9 +5,4 @@ export default function IncentiveTravelLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div>
-      {children}
-    </div>
-  );
-}
+  return

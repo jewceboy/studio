@@ -60,6 +60,3 @@ export default function ItinerariesPage() {
             ))}
         </div>
       </Section>
-    </div>
-  );
-}

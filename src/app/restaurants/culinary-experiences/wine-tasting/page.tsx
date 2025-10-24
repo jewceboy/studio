@@ -15,8 +15,4 @@ export default function WineTastingPage() {
         subtitle="Explore the flavors of Andalusian wines."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for wine tasting in Malaga. This page will feature wine tours and tasting events.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for wine tasting in Malaga. This page will feature wine

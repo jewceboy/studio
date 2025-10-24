@@ -15,8 +15,4 @@ export default function WeekPage() {
         subtitle="Experience the best of the coast with this 7-day travel plan."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for a one-week Costa del Sol itinerary. This page will suggest a route and activities for a week-long trip.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for a one-week Costa del Sol itinerary. This page will suggest a route and activities for a week

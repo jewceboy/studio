@@ -121,10 +121,4 @@ export async function sendMessageToN8N(message: string, sessionId: string): Prom
     }
     return {
       id: Date.now(),
-      content: errorMessage,
-      sender: 'ai',
-      error: true,
-    };
-  }
-}
-
+      content:

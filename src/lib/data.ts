@@ -1,4 +1,3 @@
-
 import type { Destination } from '@/lib/constants';
 import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
 import type { HotelCategory, NicheSubCategory } from '@/types';

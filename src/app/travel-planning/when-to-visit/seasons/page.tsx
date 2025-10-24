@@ -15,8 +15,4 @@ export default function SeasonsPage() {
         subtitle="Discover what each season has to offer in the Costa del Sol."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for the Malaga seasons guide. This page will describe the pros and cons of visiting during each season.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for the Malaga seasons guide. This page will describe

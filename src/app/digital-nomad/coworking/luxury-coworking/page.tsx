@@ -17,6 +17,3 @@ export default function LuxuryCoworkingPage() {
       <Section>
         <p className="text-center text-lg">Placeholder content for luxury coworking spaces in Malaga. This page will feature exclusive and high-end workspaces.</p>
       </Section>
-    </div>
-  );
-}

@@ -58,8 +58,3 @@ export default function MarbellaPuertoBanusPage() {
                 imageHint={images[category.imageKey].hint}
                 />
             ))}
-        </div>
-      </Section>
-    </div>
-  );
-}

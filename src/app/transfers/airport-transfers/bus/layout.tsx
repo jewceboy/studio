@@ -8,6 +8,3 @@ export default function BusLayout({
   return (
     <div>
       {children}
-    </div>
-  );
-}

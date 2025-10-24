@@ -15,8 +15,4 @@ export default function LuxuryClubsPage() {
         subtitle="Experience the most glamorous nightlife on the Costa del Sol."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for luxury nightclubs. This page will feature the most exclusive clubs in Puerto Banus.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for luxury nightclubs. This page will feature

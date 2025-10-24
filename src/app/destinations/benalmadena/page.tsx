@@ -59,7 +59,4 @@ export default function BenalmadenaPage() {
                 />
             ))}
         </div>
-      </Section>
-    </div>
-  );
-}
+      </

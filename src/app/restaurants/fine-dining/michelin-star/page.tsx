@@ -15,8 +15,4 @@ export default function MichelinStarPage() {
         subtitle="Discover the best of Andalusian haute cuisine."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for Michelin star restaurants. This page will list all Michelin-starred establishments in the region.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for Michelin star restaurants. This page will list all

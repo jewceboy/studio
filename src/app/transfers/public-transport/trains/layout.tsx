@@ -7,7 +7,4 @@ export default function TrainsLayout({
 }) {
   return (
     <div>
-      {children}
-    </div>
-  );
-}
+      

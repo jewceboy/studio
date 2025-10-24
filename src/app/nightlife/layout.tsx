@@ -7,7 +7,4 @@ export default function NightlifeLayout({
 }) {
   return (
     <div>
-      {children}
-    </div>
-  );
-}
+      

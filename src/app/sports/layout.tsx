@@ -9,5 +9,3 @@ export default function SportsLayout({
     <div>
       {children}
     </div>
-  );
-}

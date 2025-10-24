@@ -7,7 +7,4 @@ export default function LimousineLayout({
 }) {
   return (
     <div>
-      {children}
-    </div>
-  );
-}
+      {

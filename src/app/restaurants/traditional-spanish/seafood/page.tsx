@@ -17,6 +17,3 @@ export default function SeafoodPage() {
       <Section>
         <p className="text-center text-lg">Placeholder content for seafood restaurants. This page will feature the best places for fresh seafood.</p>
       </Section>
-    </div>
-  );
-}

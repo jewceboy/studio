@@ -15,8 +15,4 @@ export default function MijasPuebloThingsToDoPage() {
         subtitle="Explore the attractions and activities in this charming village."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for things to do in Mijas Pueblo. This page will list key attractions.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for things to do in Mijas Pueblo. This page will list

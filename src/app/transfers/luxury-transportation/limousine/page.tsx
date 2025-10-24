@@ -15,8 +15,4 @@ export default function LimousinePage() {
         subtitle="Exclusive limousine hire for any occasion."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for limousine services. This page will list companies offering limo hire in Marbella.</p>
-      </Section>
-    </div>
-  );
-}
+        <p className="text-center text-lg">Placeholder content for limousine services

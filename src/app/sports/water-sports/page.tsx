@@ -59,7 +59,4 @@ export default function WaterSportsPage() {
                 />
             ))}
         </div>
-      </Section>
-    </div>
-  );
-}
+      </

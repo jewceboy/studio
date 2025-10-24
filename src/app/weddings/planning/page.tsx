@@ -16,7 +16,4 @@ export default function WeddingPlanningPage() {
       />
       <Section>
         <p className="text-center text-lg">Placeholder content for Wedding Planning. This page will list expert wedding planners, their services, and galleries of their work.</p>
-      </Section>
-    </div>
-  );
-}
+      
