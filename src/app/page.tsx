@@ -8,6 +8,7 @@ import Image from 'next/image';
 import imageData from '@/lib/placeholder-images.json';
 import { allSiteUrls } from '@/lib/urls';
 import { destinationsData } from '@/lib/data';
+import ClientOnly from '@/components/shared/ClientOnly';
 
 const topMoneyPages = [
     {
@@ -171,7 +172,9 @@ export default function Home() {
 
       {/* Newsletter Form Section */}
       <Section title="Stay in the Know" subtitle="Subscribe to our newsletter for the latest travel tips and exclusive deals.">
-        <NewsletterForm />
+        <ClientOnly>
+          <NewsletterForm />
+        </ClientOnly>
       </Section>
     </>
   );
