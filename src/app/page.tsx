@@ -103,16 +103,6 @@ export default function Home() {
               </Button>
             </div>
         </div>
-        <div className="relative w-full h-64 md:h-96">
-            <Image
-            src={images['Marbella-panoramic-beach-luxury'].url}
-            alt="Panoramic view of a luxury beach in Marbella"
-            fill
-            priority
-            className="object-cover"
-            data-ai-hint={images['Marbella-panoramic-beach-luxury'].hint}
-            />
-        </div>
       </div>
       
       {/* High-Value Money Pages Section */}
