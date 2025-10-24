@@ -63,7 +63,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-2">
             <NavigationMenu>
             <NavigationMenuList>
                 {primaryNavLinks.map((link) => (
@@ -71,7 +71,7 @@ export default function Header() {
                         <Link href={link.href} legacyBehavior passHref>
                             <NavigationMenuLink className={cn(
                             navigationMenuTriggerStyle(),
-                            'bg-transparent hover:bg-gray-800 focus:bg-gray-800',
+                            'bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider',
                             pathname.startsWith(link.href) ? 'bg-gray-700 text-white' : ''
                             )}>
                             {link.label}
@@ -81,7 +81,7 @@ export default function Header() {
                 ))}
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800'>
+                    <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider'>
                         Luxury Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -100,7 +100,7 @@ export default function Header() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800'>
+                    <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider'>
                         Explore
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -120,7 +120,7 @@ export default function Header() {
 
                 <NavigationMenuItem>
                     <Link href="/blog" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800', pathname.startsWith('/blog') ? 'bg-gray-700 text-white' : '')}>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider', pathname.startsWith('/blog') ? 'bg-gray-700 text-white' : '')}>
                         Blog
                         </NavigationMenuLink>
                     </Link>
@@ -128,7 +128,7 @@ export default function Header() {
                 
                 <NavigationMenuItem>
                     <Link href="/contact" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800', pathname.startsWith('/contact') ? 'bg-gray-700 text-white' : '')}>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider', pathname.startsWith('/contact') ? 'bg-gray-700 text-white' : '')}>
                         Contact
                         </NavigationMenuLink>
                     </Link>

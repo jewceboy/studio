@@ -15,6 +15,7 @@ export default {
         inter: ['var(--font-inter)', 'sans-serif'],
         body: ['var(--font-inter)', 'sans-serif'], // Default body font
         headline: ['var(--font-montserrat)', 'sans-serif'], // Default headline font (H2-H6)
+        impact: ['Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
