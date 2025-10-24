@@ -1,10 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { Menu, X, Sun, Briefcase, Droplets, Heart, ShoppingCart, Calendar, Map, Plane, Sailboat, Users, Tv, Palette, Building, Utensils, Waves, MountainSnow, Star, Search, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Menu, X, Sun, Briefcase, Droplets, Heart, ShoppingCart, Calendar, Map, Plane, Sailboat, Users, Tv, Palette, Building, Utensils, Waves, MountainSnow, Star } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import {
@@ -17,7 +17,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import React from 'react';
-import { Input } from '../ui/input';
 
 const primaryNavLinks = [
   { href: '/destinations', label: 'Destinations', icon: Map },
@@ -42,215 +41,168 @@ const exploreSubItems = [
     { href: '/digital-nomad', title: 'Digital Nomad', description: 'Resources for remote work in the sun.', icon: Users },
 ];
 
-const socialLinks = [
-    { href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
-    { href: 'https://instagram.com', icon: Instagram, label: 'Instagram' },
-    { href: 'https://twitter.com', icon: Twitter, label: 'Twitter' },
-];
-
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 50); // Becomes solid after scrolling 50px
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    // Cleanup function
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
-    <header className={cn(
-      'site-header sticky top-0 z-50 transition-colors duration-300',
-      isScrolled || pathname !== '/' ? 'bg-header-background' : 'bg-transparent'
-    )}>
-      <div className="container mx-auto px-4">
-        {/* Top Tier: Logo & Socials/Search */}
-        <div className="flex justify-between items-center py-3 border-b border-white/10">
-          <Link href="/" className="flex items-center space-x-2 text-white hover:text-white/90 transition-colors">
-            <Sun className="h-8 w-8" />
-            <span className="font-montserrat font-bold text-xl">MalagaTravelGuide</span>
-          </Link>
-          <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-center gap-3">
-              {socialLinks.map(link => (
-                <Link key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">
-                  <link.icon className="h-5 w-5" />
-                  <span className="sr-only">{link.label}</span>
-                </Link>
-              ))}
-            </div>
-            <div className="relative">
-              <Input
-                type="search"
-                placeholder="Search..."
-                className="h-9 w-48 bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:bg-white/20 focus:w-56 transition-all"
-              />
-              <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/60" />
-            </div>
-          </div>
-        </div>
+    <header className="site-header sticky top-0 z-50">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
+        <Link href="/" className="flex items-center space-x-2 text-white hover:text-white/90 transition-colors">
+          <Sun className="h-8 w-8" />
+          <span className="font-montserrat font-bold text-xl">MalagaTravelGuide</span>
+        </Link>
 
-        {/* Bottom Tier: Main Navigation */}
-        <div className="flex justify-center items-center py-2">
-            <NavigationMenu className="hidden md:flex">
-            <NavigationMenuList>
-                {primaryNavLinks.map((link) => (
-                    <NavigationMenuItem key={link.href}>
-                        <Link href={link.href} legacyBehavior passHref>
-                            <NavigationMenuLink className={cn(
-                            navigationMenuTriggerStyle(),
-                            'font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
-                            pathname.startsWith(link.href) ? 'bg-white/10' : ''
-                            )}>
-                            {link.label}
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                ))}
-
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className="font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
-                        Luxury Services
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        {luxuryServicesSubItems.map((item) => (
-                            <ListItem
-                            key={item.title}
-                            title={item.title}
-                            href={item.href}
-                            >
-                            {item.description}
-                            </ListItem>
-                        ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className="font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
-                        Explore
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        {exploreSubItems.map((item) => (
-                            <ListItem
-                            key={item.title}
-                            title={item.title}
-                            href={item.href}
-                            >
-                            {item.description}
-                            </ListItem>
-                        ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                    <Link href="/blog" legacyBehavior passHref>
+        {/* Desktop Navigation */}
+        <NavigationMenu className="hidden md:flex">
+          <NavigationMenuList>
+             {primaryNavLinks.map((link) => (
+                <NavigationMenuItem key={link.href}>
+                    <Link href={link.href} legacyBehavior passHref>
                         <NavigationMenuLink className={cn(
                         navigationMenuTriggerStyle(),
                         'font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
-                        pathname.startsWith('/blog') ? 'bg-white/10' : ''
+                        pathname.startsWith(link.href) ? 'bg-white/10' : ''
                         )}>
-                        Blog
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                    <Link href="/contact" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(
-                        navigationMenuTriggerStyle(),
-                        'font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
-                        pathname.startsWith('/contact') ? 'bg-white/10' : ''
-                        )}>
-                        Contact
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-
-            </NavigationMenuList>
-            </NavigationMenu>
-
-            {/* Mobile Navigation Trigger */}
-            <div className="md:hidden flex-grow text-right">
-            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-                <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
-                    <Menu className="h-6 w-6" />
-                    <span className="sr-only">Open menu</span>
-                </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-[280px] bg-primary-dark text-white p-6 overflow-y-auto">
-                <div className="flex justify-between items-center mb-8">
-                    <Link href="/" className="flex items-center space-x-2 text-white" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Sun className="h-7 w-7" />
-                    <span className="font-montserrat font-bold text-lg">MalagaTravelGuide</span>
-                    </Link>
-                    <SheetClose asChild>
-                    <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
-                        <X className="h-6 w-6" />
-                        <span className="sr-only">Close menu</span>
-                    </Button>
-                    </SheetClose>
-                </div>
-                <nav aria-label="Main mobile navigation" className="flex flex-col space-y-2">
-                    {[...primaryNavLinks, {href: '/blog', label: 'Blog', icon: Palette}, {href: '/contact', label: 'Contact', icon: Users}].map((link) => (
-                    <SheetClose key={link.href} asChild>
-                        <Link
-                        href={link.href}
-                        className={cn(
-                            'font-montserrat uppercase font-medium text-white hover:text-white/80 transition-colors py-2 text-lg',
-                            pathname.startsWith(link.href) ? 'font-bold' : ''
-                        )}
-                        >
                         {link.label}
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
+            ))}
+
+            <NavigationMenuItem>
+                <NavigationMenuTrigger className="font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
+                    Luxury Services
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {luxuryServicesSubItems.map((item) => (
+                        <ListItem
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                        >
+                        {item.description}
+                        </ListItem>
+                    ))}
+                    </ul>
+                </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+                <NavigationMenuTrigger className="font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
+                    Explore
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {exploreSubItems.map((item) => (
+                        <ListItem
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                        >
+                        {item.description}
+                        </ListItem>
+                    ))}
+                    </ul>
+                </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+                <Link href="/blog" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(
+                    navigationMenuTriggerStyle(),
+                    'font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
+                     pathname.startsWith('/blog') ? 'bg-white/10' : ''
+                    )}>
+                    Blog
+                    </NavigationMenuLink>
+                </Link>
+            </NavigationMenuItem>
+            
+            <NavigationMenuItem>
+                <Link href="/contact" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(
+                    navigationMenuTriggerStyle(),
+                    'font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
+                     pathname.startsWith('/contact') ? 'bg-white/10' : ''
+                    )}>
+                    Contact
+                    </NavigationMenuLink>
+                </Link>
+            </NavigationMenuItem>
+
+          </NavigationMenuList>
+        </NavigationMenu>
+
+        {/* Mobile Navigation Trigger */}
+        <div className="md:hidden">
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Open menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[280px] bg-primary-dark text-white p-6 overflow-y-auto">
+              <div className="flex justify-between items-center mb-8">
+                <Link href="/" className="flex items-center space-x-2 text-white" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Sun className="h-7 w-7" />
+                  <span className="font-montserrat font-bold text-lg">MalagaTravelGuide</span>
+                </Link>
+                <SheetClose asChild>
+                  <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                    <X className="h-6 w-6" />
+                    <span className="sr-only">Close menu</span>
+                  </Button>
+                </SheetClose>
+              </div>
+              <nav aria-label="Main mobile navigation" className="flex flex-col space-y-2">
+                {[...primaryNavLinks, {href: '/blog', label: 'Blog', icon: Palette}, {href: '/contact', label: 'Contact', icon: Users}].map((link) => (
+                  <SheetClose key={link.href} asChild>
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        'font-montserrat uppercase font-medium text-white hover:text-white/80 transition-colors py-2 text-lg',
+                        pathname.startsWith(link.href) ? 'font-bold' : ''
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  </SheetClose>
+                ))}
+                
+                 <div className='flex flex-col space-y-2 pt-2'>
+                    <span className='font-montserrat uppercase font-semibold text-white text-lg py-2 border-t border-white/20'>Luxury Services</span>
+                    {luxuryServicesSubItems.map((subItem) => (
+                    <SheetClose key={subItem.href} asChild>
+                        <Link
+                        href={subItem.href}
+                        className={cn('font-montserrat font-normal text-white hover:text-white/80 transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold' : '')}
+                        >
+                        {subItem.title}
                         </Link>
                     </SheetClose>
                     ))}
-                    
-                    <div className='flex flex-col space-y-2 pt-2'>
-                        <span className='font-montserrat uppercase font-semibold text-white text-lg py-2 border-t border-white/20'>Luxury Services</span>
-                        {luxuryServicesSubItems.map((subItem) => (
-                        <SheetClose key={subItem.href} asChild>
-                            <Link
-                            href={subItem.href}
-                            className={cn('font-montserrat font-normal text-white hover:text-white/80 transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold' : '')}
-                            >
-                            {subItem.title}
-                            </Link>
-                        </SheetClose>
-                        ))}
-                    </div>
+                </div>
 
-                    <div className='flex flex-col space-y-2 pt-2'>
-                        <span className='font-montserrat uppercase font-semibold text-white text-lg py-2 border-t border-white/20'>Explore</span>
-                        {exploreSubItems.map((subItem) => (
-                        <SheetClose key={subItem.href} asChild>
-                            <Link
-                            href={subItem.href}
-                            className={cn('font-montserrat font-normal text-white hover:text-white/80 transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold' : '')}
-                            >
-                            {subItem.title}
-                            </Link>
-                        </SheetClose>
-                        ))}
-                    </div>
-                </nav>
-                </SheetContent>
-            </Sheet>
-            </div>
+                <div className='flex flex-col space-y-2 pt-2'>
+                    <span className='font-montserrat uppercase font-semibold text-white text-lg py-2 border-t border-white/20'>Explore</span>
+                    {exploreSubItems.map((subItem) => (
+                    <SheetClose key={subItem.href} asChild>
+                        <Link
+                        href={subItem.href}
+                        className={cn('font-montserrat font-normal text-white hover:text-white/80 transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold' : '')}
+                        >
+                        {subItem.title}
+                        </Link>
+                    </SheetClose>
+                    ))}
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

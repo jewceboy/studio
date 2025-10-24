@@ -84,42 +84,30 @@ const images: ImageData = imageData;
 export default function Home() {
   return (
     <>
-      {/* New Hero Section */}
-      <div className="relative -mt-8 -mx-4 sm:-mx-8">
-        <div className="relative h-[calc(80vh)] min-h-[550px] w-full">
+      <div className="relative -mt-8 -mx-4 sm:-mx-container-padding">
+        <div className="relative h-[60vh] min-h-[400px] w-full">
             <Image
-                src={images['travel-hero-background'].url}
-                alt="A beautiful travel destination"
+                src={images['Marbella-panoramic-beach-luxury'].url}
+                alt="Panoramic view of a luxurious beach in Marbella"
                 fill
                 priority
                 className="object-cover"
-                data-ai-hint={images['travel-hero-background'].hint}
+                data-ai-hint={images['Marbella-panoramic-beach-luxury'].hint}
             />
             <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
             <h1 className="font-anton text-5xl sm:text-6xl md:text-7xl font-bold leading-tight drop-shadow-lg">
-                The world is your oyster
+                Your Costa del Sol Journey Starts Here
             </h1>
             <p className="mt-4 max-w-2xl text-lg sm:text-xl text-white/90 drop-shadow-md">
-                The ultimate travel guide for independent and solo travelers
+                The ultimate travel guide for independent and luxury travelers.
             </p>
-            <ClientOnly>
-              <form className="mt-8 flex flex-col sm:flex-row items-center gap-2 w-full max-w-lg">
-                  <Input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="h-12 flex-grow bg-white/90 text-gray-800 placeholder-gray-500 border-0 focus:ring-2 focus:ring-primary"
-                  aria-label="Email for newsletter"
-                  />
-                  <Button type="submit" size="lg" className="h-12 w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">
-                  Subscribe
-                  </Button>
-              </form>
-            </ClientOnly>
-            <p className="mt-3 text-xs text-white/70">
-                Join 100,000+ other readers and get my free travel tips.
-            </p>
+            <Button asChild size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg">
+                <Link href="/plan-your-trip">
+                    Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+            </Button>
         </div>
       </div>
 

@@ -18,7 +18,7 @@ body {
 
     /* ShadCN Semantic Variables */
     --background: var(--color-white); /* Main background (White) */
-    --foreground: var(--color-text-dark-grey); /* Main text color (Dark Grey) */
+    --foreground: hsl(var(--color-text-dark-grey)); /* Main text color (Dark Grey) */
     
     --card: hsl(var(--color-white)); 
     --card-foreground: hsl(var(--color-text-dark-grey));
