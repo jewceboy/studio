@@ -10,6 +10,7 @@ import imageData from '@/lib/placeholder-images.json';
 import { allSiteUrls } from '@/lib/urls';
 import { destinationsData } from '@/lib/data';
 import ClientOnly from '@/components/shared/ClientOnly';
+import SectionDivider from '@/components/shared/SectionDivider';
 
 const topMoneyPages = [
     {
@@ -141,6 +142,7 @@ export default function Home() {
             ))}
           </div>
         </Section>
+        <SectionDivider />
       </div>
 
       {/* Content Pillars Section */}
