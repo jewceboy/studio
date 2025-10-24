@@ -81,16 +81,15 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative bg-secondary/30 -mx-4 -mt-8 sm:-mx-container-padding">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 py-12 md:py-20">
-          <div className="text-center md:text-left">
+      <div className="-mx-4 -mt-8 sm:-mx-container-padding">
+        <div className="container mx-auto text-center py-12 md:py-20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
               Your Costa del Sol Journey Starts Here
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto md:mx-0">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
               The ultimate travel guide for independent and luxury travelers. Personalized recommendations, destinations, hotels, and activities.
             </p>
-            <div className="mt-8 flex gap-4 justify-center md:justify-start">
+            <div className="mt-8 flex gap-4 justify-center">
               <Button asChild size="lg">
                 <Link href="/plan-your-trip">
                   Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
@@ -102,17 +101,16 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
-          </div>
-          <div className="relative h-64 md:h-full min-h-[300px] rounded-lg overflow-hidden shadow-xl">
-             <Image
-              src={images['Marbella-panoramic-beach-luxury'].url}
-              alt="Panoramic view of a luxury beach in Marbella"
-              fill
-              priority
-              className="object-cover"
-              data-ai-hint={images['Marbella-panoramic-beach-luxury'].hint}
+        </div>
+        <div className="relative w-full h-64 md:h-96">
+            <Image
+            src={images['Marbella-panoramic-beach-luxury'].url}
+            alt="Panoramic view of a luxury beach in Marbella"
+            fill
+            priority
+            className="object-cover"
+            data-ai-hint={images['Marbella-panoramic-beach-luxury'].hint}
             />
-          </div>
         </div>
       </div>
       
