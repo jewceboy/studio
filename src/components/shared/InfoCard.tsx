@@ -12,25 +12,49 @@ interface InfoCardProps {
   title: string;
   imageUrl: string;
   imageAlt: string;
-  description?: string;
   linkHref: string;
+  description?: string;
   linkText?: string;
   className?: string;
   imageHint?: string;
-  buttonClassName?: string; // New prop for custom button styling
+  buttonClassName?: string;
+  variant?: 'default' | 'overlay';
 }
 
 export default function InfoCard({
   title,
   imageUrl,
   imageAlt,
-  description,
   linkHref,
+  description,
   linkText = 'Explore',
   className,
   imageHint,
-  buttonClassName, // Destructure the new prop
+  buttonClassName,
+  variant = 'default',
 }: InfoCardProps) {
+
+  if (variant === 'overlay') {
+    return (
+      <Link href={linkHref} className={cn('group block relative overflow-hidden rounded-lg aspect-video', className)}>
+        <Image
+          src={imageUrl}
+          alt={imageAlt}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          data-ai-hint={imageHint}
+        />
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
+          <h3 className="font-anton text-2xl md:text-3xl text-white text-center leading-tight" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}>
+            {title}
+          </h3>
+        </div>
+      </Link>
+    );
+  }
+
+  // Default card style
   return (
     <Card className={cn('overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full bg-card group', className)}>
       <CardHeader className="p-0 relative aspect-video">
@@ -50,10 +74,10 @@ export default function InfoCard({
       <CardFooter className="p-6 pt-0">
         <Button
           asChild
-          variant="default" // Keep variant default, specific classes will override
+          variant="default"
           className={cn(
-            "w-full font-montserrat font-medium", // Base non-color styles
-            buttonClassName ? buttonClassName : "bg-primary text-primary-foreground hover:bg-primary/90" // Conditional color styles
+            "w-full font-montserrat font-medium",
+            buttonClassName ? buttonClassName : "bg-primary text-primary-foreground hover:bg-primary/90"
           )}
         >
           <Link href={linkHref}>

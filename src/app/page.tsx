@@ -122,12 +122,11 @@ export default function Home() {
             <InfoCard 
               key={page.title} 
               title={page.title}
-              description={page.description}
               linkHref={page.linkHref}
               imageUrl={images[page.imageKey].url}
               imageHint={images[page.imageKey].hint}
               imageAlt={page.title}
-              linkText="Explore" 
+              variant="overlay"
             />
           ))}
         </div>
@@ -140,12 +139,11 @@ export default function Home() {
             <InfoCard 
               key={page.title} 
               title={page.title}
-              description={page.description}
               linkHref={page.linkHref}
               imageUrl={images[page.imageKey].url}
               imageHint={images[page.imageKey].hint}
               imageAlt={page.title}
-              linkText="Discover" 
+              variant="overlay"
             />
           ))}
         </div>
