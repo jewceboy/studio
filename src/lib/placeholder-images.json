@@ -1,15 +1,22 @@
 {
+  "//": "---------------------------------------------------------------------------------------------------",
   "Marbella-panoramic-beach-luxury": {
-    "url": "https://picsum.photos/seed/Marbella-panoramic-beach-luxury/1920/1080",
-    "hint": "Marbella panoramic beach luxury",
+    "url": "https://picsum.photos/seed/marbella-pano/1920/1080",
+    "hint": "Marbella panoramic beach",
     "width": 1920,
     "height": 1080
   },
   "Marbella-panoramic-beach-luxury-mobile": {
-    "url": "https://picsum.photos/seed/Marbella-panoramic-beach-luxury-mobile/600/800",
+    "url": "https://picsum.photos/seed/marbella-mobile/600/800",
     "hint": "Marbella beach mobile",
     "width": 600,
     "height": 800
+  },
+  "default-placeholder": {
+    "url": "/images/placeholder.png",
+    "hint": "placeholder image",
+    "width": 600,
+    "height": 400
   },
   "luxury-wedding": {
     "url": "https://picsum.photos/seed/luxury wedding/600/400",
@@ -43,11 +50,15 @@
   },
   "Malaga-tapas-bar": {
     "url": "https://picsum.photos/seed/Malaga tapas bar/1200/500",
-    "hint": "Malaga tapas bar"
+    "hint": "Malaga tapas bar",
+    "width": 1200,
+    "height": 500
   },
   "restaurant-interior": {
     "url": "https://picsum.photos/seed/restaurant interior/800/400",
-    "hint": "restaurant interior cozy"
+    "hint": "restaurant interior cozy",
+    "width": 800,
+    "height": 400
   },
   "tapas-food-variety": {
     "url": "https://picsum.photos/seed/tapas food variety/600/400",
@@ -57,39 +68,57 @@
   },
   "secluded-cove-beach": {
     "url": "https://picsum.photos/seed/secluded cove beach/600/400",
-    "hint": "secluded cove beach"
+    "hint": "secluded cove beach",
+    "width": 600,
+    "height": 400
   },
   "Ronda-bridge-view": {
     "url": "https://picsum.photos/seed/Ronda bridge view/600/400",
-    "hint": "Ronda bridge view"
+    "hint": "Ronda bridge view",
+    "width": 600,
+    "height": 400
   },
   "Caminito-del-Rey-path": {
     "url": "https://picsum.photos/seed/Caminito del Rey path/600/400",
-    "hint": "Caminito Rey path"
+    "hint": "Caminito Rey path",
+    "width": 600,
+    "height": 400
   },
   "Christmas-lights-street": {
     "url": "https://picsum.photos/seed/Christmas lights street/600/400",
-    "hint": "Christmas lights street"
+    "hint": "Christmas lights street",
+    "width": 600,
+    "height": 400
   },
   "white-village-street": {
     "url": "https://picsum.photos/seed/white village street/600/400",
-    "hint": "white village street"
+    "hint": "white village street",
+    "width": 600,
+    "height": 400
   },
   "blog-article": {
     "url": "https://picsum.photos/seed/blog article/600/400",
-    "hint": "blog article"
+    "hint": "blog article",
+    "width": 600,
+    "height": 400
   },
   "person-avatar": {
     "url": "https://picsum.photos/seed/person avatar/48/48",
-    "hint": "person avatar"
+    "hint": "person avatar",
+    "width": 48,
+    "height": 48
   },
   "ai-avatar": {
     "url": "https://picsum.photos/seed/ai-avatar/48/48",
-    "hint": "ai bot avatar"
+    "hint": "ai bot avatar",
+    "width": 48,
+    "height": 48
   },
   "user-avatar": {
     "url": "https://picsum.photos/seed/user-avatar/48/48",
-    "hint": "user avatar"
+    "hint": "user avatar",
+    "width": 48,
+    "height": 48
   },
   "malaga-city-skyline": {
     "url": "https://picsum.photos/seed/malaga-city-skyline/600/400",
@@ -381,330 +410,494 @@
   },
   "valderrama-golf": {
     "url": "https://picsum.photos/seed/valderrama-golf/600/400",
-    "hint": "valderrama golf course"
+    "hint": "valderrama golf course",
+    "width": 600,
+    "height": 400
   },
   "finca-cortesin-golf": {
     "url": "https://picsum.photos/seed/finca-cortesin-golf/600/400",
-    "hint": "finca cortesin golf"
+    "hint": "finca cortesin golf",
+    "width": 600,
+    "height": 400
   },
   "la-reserva-golf": {
     "url": "https://picsum.photos/seed/la-reserva-golf/600/400",
-    "hint": "la reserva golf"
+    "hint": "la reserva golf",
+    "width": 600,
+    "height": 400
   },
   "luxury-wedding-venue": {
     "url": "https://picsum.photos/seed/luxury-wedding-venue/600/400",
-    "hint": "luxury wedding venue"
+    "hint": "luxury wedding venue",
+    "width": 600,
+    "height": 400
   },
   "beach-wedding-ceremony": {
     "url": "https://picsum.photos/seed/beach-wedding-ceremony/600/400",
-    "hint": "beach wedding ceremony"
+    "hint": "beach wedding ceremony",
+    "width": 600,
+    "height": 400
   },
   "luxury-wedding-villa": {
     "url": "https://picsum.photos/seed/luxury-wedding-villa/600/400",
-    "hint": "luxury wedding villa"
+    "hint": "luxury wedding villa",
+    "width": 600,
+    "height": 400
   },
   "rustic-finca-wedding": {
     "url": "https://picsum.photos/seed/rustic-finca-wedding/600/400",
-    "hint": "rustic finca wedding"
+    "hint": "rustic finca wedding",
+    "width": 600,
+    "height": 400
   },
   "luxury-wedding-planner": {
     "url": "https://picsum.photos/seed/luxury-wedding-planner/600/400",
-    "hint": "luxury wedding planner"
+    "hint": "luxury wedding planner",
+    "width": 600,
+    "height": 400
   },
   "destination-wedding": {
     "url": "https://picsum.photos/seed/destination-wedding/600/400",
-    "hint": "destination wedding"
+    "hint": "destination wedding",
+    "width": 600,
+    "height": 400
   },
   "honeymoon-suite": {
     "url": "https://picsum.photos/seed/honeymoon-suite/600/400",
-    "hint": "honeymoon suite"
+    "hint": "honeymoon suite",
+    "width": 600,
+    "height": 400
   },
   "romantic-hotel-couple": {
     "url": "https://picsum.photos/seed/romantic-hotel-couple/600/400",
-    "hint": "romantic hotel couple"
+    "hint": "romantic hotel couple",
+    "width": 600,
+    "height": 400
   },
   "leadership-meeting": {
     "url": "https://picsum.photos/seed/leadership-meeting/600/400",
-    "hint": "leadership meeting"
+    "hint": "leadership meeting",
+    "width": 600,
+    "height": 400
   },
   "incentive-travel": {
     "url": "https://picsum.photos/seed/incentive-travel/600/400",
-    "hint": "incentive travel"
+    "hint": "incentive travel",
+    "width": 600,
+    "height": 400
   },
   "business-meeting": {
     "url": "https://picsum.photos/seed/business-meeting/600/400",
-    "hint": "business meeting"
+    "hint": "business meeting",
+    "width": 600,
+    "height": 400
   },
   "luxury-spa-hotel": {
     "url": "https://picsum.photos/seed/luxury-spa-hotel/600/400",
-    "hint": "luxury spa hotel"
+    "hint": "luxury spa hotel",
+    "width": 600,
+    "height": 400
   },
   "wellness-package": {
     "url": "https://picsum.photos/seed/wellness-package/600/400",
-    "hint": "wellness package"
+    "hint": "wellness package",
+    "width": 600,
+    "height": 400
   },
   "cosmetic-clinic": {
     "url": "https://picsum.photos/seed/cosmetic-clinic/600/400",
-    "hint": "cosmetic clinic"
+    "hint": "cosmetic clinic",
+    "width": 600,
+    "height": 400
   },
   "luxury-dental-clinic": {
     "url": "https://picsum.photos/seed/luxury-dental-clinic/600/400",
-    "hint": "luxury dental clinic"
+    "hint": "luxury dental clinic",
+    "width": 600,
+    "height": 400
   },
   "detox-retreat-food": {
     "url": "https://picsum.photos/seed/detox-retreat-food/600/400",
-    "hint": "detox retreat food"
+    "hint": "detox retreat food",
+    "width": 600,
+    "height": 400
   },
   "yoga-meditation-retreat": {
     "url": "https://picsum.photos/seed/yoga-meditation-retreat/600/400",
-    "hint": "yoga meditation retreat"
+    "hint": "yoga meditation retreat",
+    "width": 600,
+    "height": 400
   },
   "luxury-hotel-lobby": {
     "url": "https://picsum.photos/seed/luxury-hotel-lobby/600/400",
-    "hint": "luxury hotel lobby"
+    "hint": "luxury hotel lobby",
+    "width": 600,
+    "height": 400
   },
   "boutique-hotel-room": {
     "url": "https://picsum.photos/seed/boutique-hotel-room/600/400",
-    "hint": "boutique hotel room"
+    "hint": "boutique hotel room",
+    "width": 600,
+    "height": 400
   },
   "hostel-dorm-room": {
     "url": "https://picsum.photos/seed/hostel-dorm-room/600/400",
-    "hint": "hostel dorm room"
+    "hint": "hostel dorm room",
+    "width": 600,
+    "height": 400
   },
   "luxury-resort-pool": {
     "url": "https://picsum.photos/seed/luxury-resort-pool/600/400",
-    "hint": "luxury resort pool"
+    "hint": "luxury resort pool",
+    "width": 600,
+    "height": 400
   },
   "family-hotel-pool": {
     "url": "https://picsum.photos/seed/family-hotel-pool/600/400",
-    "hint": "family hotel pool"
+    "hint": "family hotel pool",
+    "width": 600,
+    "height": 400
   },
   "water-park-slide": {
     "url": "https://picsum.photos/seed/water-park-slide/600/400",
-    "hint": "water park slide"
+    "hint": "water park slide",
+    "width": 600,
+    "height": 400
   },
   "theme-park-ride": {
     "url": "https://picsum.photos/seed/theme-park-ride/600/400",
-    "hint": "theme park ride"
+    "hint": "theme park ride",
+    "width": 600,
+    "height": 400
   },
   "historic-ruins": {
     "url": "https://picsum.photos/seed/historic-ruins/600/400",
-    "hint": "historic ruins"
+    "hint": "historic ruins",
+    "width": 600,
+    "height": 400
   },
   "walking-tour-group": {
     "url": "https://picsum.photos/seed/walking-tour-group/600/400",
-    "hint": "walking tour group"
+    "hint": "walking tour group",
+    "width": 600,
+    "height": 400
   },
   "tour-bus-city": {
     "url": "https://picsum.photos/seed/tour-bus-city/600/400",
-    "hint": "tour bus city"
+    "hint": "tour bus city",
+    "width": 600,
+    "height": 400
   },
   "beach-club-party": {
     "url": "https://picsum.photos/seed/beach-club-party/600/400",
-    "hint": "beach club party"
+    "hint": "beach club party",
+    "width": 600,
+    "height": 400
   },
   "resort-food-buffet": {
     "url": "https://picsum.photos/seed/resort-food-buffet/600/400",
-    "hint": "resort food buffet"
+    "hint": "resort food buffet",
+    "width": 600,
+    "height": 400
   },
   "family-beach-playing": {
     "url": "https://picsum.photos/seed/family-beach-playing/600/400",
-    "hint": "family beach playing"
+    "hint": "family beach playing",
+    "width": 600,
+    "height": 400
   },
   "cable-car-mountain": {
     "url": "https://picsum.photos/seed/cable-car-mountain/600/400",
-    "hint": "cable car mountain"
+    "hint": "cable car mountain",
+    "width": 600,
+    "height": 400
   },
   "luxury-shopping-street": {
     "url": "https://picsum.photos/seed/luxury-shopping-street/600/400",
-    "hint": "luxury shopping street"
+    "hint": "luxury shopping street",
+    "width": 600,
+    "height": 400
   },
   "restaurant-terrace-view": {
     "url": "https://picsum.photos/seed/restaurant-terrace-view/600/400",
-    "hint": "restaurant terrace view"
+    "hint": "restaurant terrace view",
+    "width": 600,
+    "height": 400
   },
   "luxury-office-space": {
     "url": "https://picsum.photos/seed/luxury-office-space/600/400",
-    "hint": "luxury office space"
+    "hint": "luxury office space",
+    "width": 600,
+    "height": 400
   },
   "coworking-marbella": {
     "url": "https://picsum.photos/seed/coworking-marbella/600/400",
-    "hint": "coworking marbella"
+    "hint": "coworking marbella",
+    "width": 600,
+    "height": 400
   },
   "document-checklist": {
     "url": "https://picsum.photos/seed/document-checklist/600/400",
-    "hint": "document checklist"
+    "hint": "document checklist",
+    "width": 600,
+    "height": 400
   },
   "application-form": {
     "url": "https://picsum.photos/seed/application-form/600/400",
-    "hint": "application form"
+    "hint": "application form",
+    "width": 600,
+    "height": 400
   },
   "modern-apartment-interior": {
     "url": "https://picsum.photos/seed/modern-apartment-interior/600/400",
-    "hint": "modern apartment interior"
+    "hint": "modern apartment interior",
+    "width": 600,
+    "height": 400
   },
   "semana-santa-procession": {
     "url": "https://picsum.photos/seed/semana-santa-procession/600/400",
-    "hint": "semana santa procession"
+    "hint": "semana santa procession",
+    "width": 600,
+    "height": 400
   },
   "concert-stage-lights": {
     "url": "https://picsum.photos/seed/concert-stage-lights/600/400",
-    "hint": "concert stage lights"
+    "hint": "concert stage lights",
+    "width": 600,
+    "height": 400
   },
   "budget-hotel-room": {
     "url": "https://picsum.photos/seed/budget-hotel-room/600/400",
-    "hint": "budget hotel room"
+    "hint": "budget hotel room",
+    "width": 600,
+    "height": 400
   },
   "couple-relaxing-resort": {
     "url": "https://picsum.photos/seed/couple-relaxing-resort/600/400",
-    "hint": "couple relaxing resort"
+    "hint": "couple relaxing resort",
+    "width": 600,
+    "height": 400
   },
   "kids-club-playground": {
     "url": "https://picsum.photos/seed/kids-club-playground/600/400",
-    "hint": "kids club playground"
+    "hint": "kids club playground",
+    "width": 600,
+    "height": 400
   },
   "luxury-hotel-suite": {
     "url": "https://picsum.photos/seed/luxury-hotel-suite/600/400",
-    "hint": "luxury hotel suite"
+    "hint": "luxury hotel suite",
+    "width": 600,
+    "height": 400
   },
   "flamenco-dancer-passion": {
     "url": "https://picsum.photos/seed/flamenco-dancer-passion/600/400",
-    "hint": "flamenco dancer passion"
+    "hint": "flamenco dancer passion",
+    "width": 600,
+    "height": 400
   },
   "dinner-show-stage": {
     "url": "https://picsum.photos/seed/dinner-show-stage/600/400",
-    "hint": "dinner show stage"
+    "hint": "dinner show stage",
+    "width": 600,
+    "height": 400
   },
   "rooftop-bar-malaga": {
     "url": "https://picsum.photos/seed/rooftop-bar-malaga/600/400",
-    "hint": "rooftop bar malaga"
+    "hint": "rooftop bar malaga",
+    "width": 600,
+    "height": 400
   },
   "nightclub-dance-floor": {
     "url": "https://picsum.photos/seed/nightclub-dance-floor/600/400",
-    "hint": "nightclub dance floor"
+    "hint": "nightclub dance floor",
+    "width": 600,
+    "height": 400
   },
   "live-music-band": {
     "url": "https://picsum.photos/seed/live-music-band/600/400",
-    "hint": "live music band"
+    "hint": "live music band",
+    "width": 600,
+    "height": 400
   },
   "vip-nightclub": {
     "url": "https://picsum.photos/seed/vip-nightclub/600/400",
-    "hint": "vip nightclub"
+    "hint": "vip nightclub",
+    "width": 600,
+    "height": 400
   },
   "vip-table-club": {
     "url": "https://picsum.photos/seed/vip-table-club/600/400",
-    "hint": "vip table club"
+    "hint": "vip table club",
+    "width": 600,
+    "height": 400
   },
   "traditional-spanish-cafe": {
     "url": "https://picsum.photos/seed/traditional-spanish-cafe/600/400",
-    "hint": "traditional spanish cafe"
+    "hint": "traditional spanish cafe",
+    "width": 600,
+    "height": 400
   },
   "cooking-class": {
     "url": "https://picsum.photos/seed/cooking-class/600/400",
-    "hint": "cooking class"
+    "hint": "cooking class",
+    "width": 600,
+    "height": 400
   },
   "market-food-tour": {
     "url": "https://picsum.photos/seed/market-food-tour/600/400",
-    "hint": "market food tour"
+    "hint": "market food tour",
+    "width": 600,
+    "height": 400
   },
   "michelin-star-plate": {
     "url": "https://picsum.photos/seed/michelin-star-plate/600/400",
-    "hint": "michelin star plate"
+    "hint": "michelin star plate",
+    "width": 600,
+    "height": 400
   },
   "luxury-dining-room": {
     "url": "https://picsum.photos/seed/luxury-dining-room/600/400",
-    "hint": "luxury dining room"
+    "hint": "luxury dining room",
+    "width": 600,
+    "height": 400
   },
   "tapas-bar-food": {
     "url": "https://picsum.photos/seed/tapas-bar-food/600/400",
-    "hint": "tapas bar food"
+    "hint": "tapas bar food",
+    "width": 600,
+    "height": 400
   },
   "fresh-seafood-platter": {
     "url": "https://picsum.photos/seed/fresh-seafood-platter/600/400",
-    "hint": "fresh seafood platter"
+    "hint": "fresh seafood platter",
+    "width": 600,
+    "height": 400
   },
   "high-fashion-boutique": {
     "url": "https://picsum.photos/seed/high-fashion-boutique/600/400",
-    "hint": "high fashion boutique"
+    "hint": "high fashion boutique",
+    "width": 600,
+    "height": 400
   },
   "personal-shopper-style": {
     "url": "https://picsum.photos/seed/personal-shopper-style/600/400",
-    "hint": "personal shopper style"
+    "hint": "personal shopper style",
+    "width": 600,
+    "height": 400
   },
   "outdoor-shopping-center": {
     "url": "https://picsum.photos/seed/outdoor-shopping-center/600/400",
-    "hint": "outdoor shopping center"
+    "hint": "outdoor shopping center",
+    "width": 600,
+    "height": 400
   },
   "food-market-produce": {
     "url": "https://picsum.photos/seed/food-market-produce/600/400",
-    "hint": "food market produce"
+    "hint": "food market produce",
+    "width": 600,
+    "height": 400
   },
   "golf-resort-building": {
     "url": "https://picsum.photos/seed/golf-resort-building/600/400",
-    "hint": "golf resort building"
+    "hint": "golf resort building",
+    "width": 600,
+    "height": 400
   },
   "golf-trophy": {
     "url": "https://picsum.photos/seed/golf-trophy/600/400",
-    "hint": "golf trophy"
+    "hint": "golf trophy",
+    "width": 600,
+    "height": 400
   },
   "tennis-lesson": {
     "url": "https://picsum.photos/seed/tennis-lesson/600/400",
-    "hint": "tennis lesson"
+    "hint": "tennis lesson",
+    "width": 600,
+    "height": 400
   },
   "scuba-diver": {
     "url": "https://picsum.photos/seed/scuba-diver/600/400",
-    "hint": "scuba diver"
+    "hint": "scuba diver",
+    "width": 600,
+    "height": 400
   },
   "airport-taxi-rank": {
     "url": "https://picsum.photos/seed/airport-taxi-rank/600/400",
-    "hint": "airport taxi rank"
+    "hint": "airport taxi rank",
+    "width": 600,
+    "height": 400
   },
   "airport-shuttle-bus": {
     "url": "https://picsum.photos/seed/airport-shuttle-bus/600/400",
-    "hint": "airport shuttle bus"
+    "hint": "airport shuttle bus",
+    "width": 600,
+    "height": 400
   },
   "public-bus-stop": {
     "url": "https://picsum.photos/seed/public-bus-stop/600/400",
-    "hint": "public bus stop"
+    "hint": "public bus stop",
+    "width": 600,
+    "height": 400
   },
   "luxury-car-chauffeur": {
     "url": "https://picsum.photos/seed/luxury-car-chauffeur/600/400",
-    "hint": "luxury car chauffeur"
+    "hint": "luxury car chauffeur",
+    "width": 600,
+    "height": 400
   },
   "stretch-limousine": {
     "url": "https://picsum.photos/seed/stretch-limousine/600/400",
-    "hint": "stretch limousine"
+    "hint": "stretch limousine",
+    "width": 600,
+    "height": 400
   },
   "private-jet-tarmac": {
     "url": "https://picsum.photos/seed/private-jet-tarmac/600/400",
-    "hint": "private jet tarmac"
+    "hint": "private jet tarmac",
+    "width": 600,
+    "height": 400
   },
   "train-station-platform": {
     "url": "https://picsum.photos/seed/train-station-platform/600/400",
-    "hint": "train station platform"
+    "hint": "train station platform",
+    "width": 600,
+    "height": 400
   },
   "city-bus-street": {
     "url": "https://picsum.photos/seed/city-bus-street/600/400",
-    "hint": "city bus street"
+    "hint": "city bus street",
+    "width": 600,
+    "height": 400
   },
   "airplane-window-view": {
     "url": "https://picsum.photos/seed/airplane-window-view/600/400",
-    "hint": "airplane window view"
+    "hint": "airplane window view",
+    "width": 600,
+    "height": 400
   },
   "park-bench-relaxing": {
     "url": "https://picsum.photos/seed/park-bench-relaxing/600/400",
-    "hint": "park bench relaxing"
+    "hint": "park bench relaxing",
+    "width": 600,
+    "height": 400
   },
   "coastal-road-trip": {
     "url": "https://picsum.photos/seed/coastal-road-trip/600/400",
-    "hint": "coastal road trip"
+    "hint": "coastal road trip",
+    "width": 600,
+    "height": 400
   },
   "smartphone-app": {
     "url": "https://picsum.photos/seed/smartphone-app/600/400",
-    "hint": "smartphone app"
+    "hint": "smartphone app",
+    "width": 600,
+    "height": 400
   },
   "four-seasons-collage": {
     "url": "https://picsum.photos/seed/four-seasons-collage/600/400",
-    "hint": "four seasons collage"
+    "hint": "four seasons collage",
+    "width": 600,
+    "height": 400
   }
 }
