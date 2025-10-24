@@ -121,8 +121,10 @@ export default function RootLayout({
         montserrat.variable
       )}>
         <Header />
-        <main className="flex-grow container mx-auto px-4 py-8">
-          <Breadcrumbs />
+        <main className="flex-grow">
+          <div className="container mx-auto px-4 pt-8">
+            <Breadcrumbs />
+          </div>
           {children}
         </main>
         <Footer />
