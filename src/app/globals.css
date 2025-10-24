@@ -23,6 +23,8 @@ body {
     /* ShadCN Semantic Variables */
     --background: var(--color-background-white); /* Main background (White) */
     --foreground: var(--color-text-dark-grey); /* Main text color (Dark Grey) */
+    --header-background: hsl(var(--prd-accent-pink)); /* Pink for header */
+
 
     --card: var(--color-white); 
     --card-foreground: var(--color-text-dark-grey);
@@ -91,6 +93,8 @@ body {
 
     --background: var(--color-background-white); 
     --foreground: var(--color-text-dark-grey);
+    --header-background: hsl(var(--prd-accent-pink)); /* Pink for header */
+
 
     --card: 210 10% 20%; 
     --card-foreground: var(--color-text-dark-grey);

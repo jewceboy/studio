@@ -47,7 +47,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-accent-1-red/80 backdrop-blur-lg text-white shadow-md sticky top-0 z-50">
+    <header className="bg-header-background/80 backdrop-blur-lg text-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2 text-white hover:text-white/90 transition-colors">
           <Sun className="h-8 w-8" />
@@ -145,7 +145,7 @@ export default function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-accent-1-red text-white p-6 overflow-y-auto">
+            <SheetContent side="right" className="w-[280px] bg-header-background text-white p-6 overflow-y-auto">
               <div className="flex justify-between items-center mb-8">
                 <Link href="/" className="flex items-center space-x-2 text-white" onClick={() => setIsMobileMenuOpen(false)}>
                   <Sun className="h-7 w-7" />
