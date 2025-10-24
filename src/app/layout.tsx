@@ -1,3 +1,5 @@
+
+'use client';
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
@@ -7,6 +9,8 @@ import Script from 'next/script';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/shared/Breadcrumbs';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 
 export const inter = Inter({
@@ -22,7 +26,8 @@ export const playfair = Playfair_Display({
   weight: ['400', '500', '600', '700'],
 });
 
-
+// Metadata is not supported in client components, but we can keep it for static analysis
+// and it will be picked up by Next.js during the build process.
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.malagatravelguide.net'),
   title: {
@@ -54,6 +59,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
        <head>
@@ -63,10 +71,12 @@ export default function RootLayout({
       </head>
       <body className="font-sans text-text-secondary bg-background">
         <Header />
-        <main className="pt-20">
-          <div className="container mx-auto px-4 mt-8">
-            <Breadcrumbs />
-          </div>
+        <main className={cn(!isHomePage && 'pt-20')}>
+          {!isHomePage && (
+            <div className="container mx-auto px-4 mt-8">
+              <Breadcrumbs />
+            </div>
+          )}
           {children}
         </main>
         <Footer />
