@@ -1,18 +1,16 @@
 
 
-'use client'; // Added due to onClick for print
-
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import type { Article } from '@/lib/constants';
-import { CalendarDays, UserCircle, MessageSquare, Share2, Printer, Tag } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { CalendarDays, UserCircle, Tag } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import Section from '@/components/shared/Section';
 import ArticleCard from '@/components/blog/ArticleCard';
 import imageData from '@/lib/placeholder-images.json';
 import { Metadata } from 'next';
+import ArticleActions from '@/components/blog/ArticleActions';
 
 
 type ImageData = {
@@ -236,8 +234,6 @@ const articlesData: { [key: string]: Article } = {
 
 const allArticles = Object.values(articlesData);
 
-// This is a server-side function, but it's okay to have it in a 'use client' file
-// as Next.js will correctly handle it during the build process.
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const article = articlesData[params.slug];
   if (!article) {
@@ -352,10 +348,7 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
                 {article.author && <span className="flex items-center"><UserCircle className="h-4 w-4 mr-1.5" /> By {article.author}</span>}
                 <span className="flex items-center"><CalendarDays className="h-4 w-4 mr-1.5" /> {new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Button variant="outline" size="icon" aria-label="Print article" onClick={() => typeof window !== 'undefined' && window.print()}><Printer className="h-4 w-4" /></Button>
-                <Button variant="outline" size="icon" aria-label="Share"><Share2 className="h-4 w-4" /></Button>
-            </div>
+              <ArticleActions />
           </div>
         </header>
 
