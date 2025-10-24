@@ -85,7 +85,7 @@ export default function Home() {
   return (
     <>
       {/* New Hero Section */}
-      <div className="relative -mt-8 -mx-4 sm:-mx-container-padding">
+      <div className="relative -mt-8 -mx-4 sm:-mx-8">
         <div className="relative h-[calc(80vh)] min-h-[550px] w-full">
             <Image
                 src={images['travel-hero-background'].url}
