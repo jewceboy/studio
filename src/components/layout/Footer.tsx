@@ -7,36 +7,34 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
 const aboutLinks = [
-  { href: '/blog/mystory-about-us', label: 'About' },
-  { href: '/contact', label: 'Contact Me' },
-  { href: '/terms-conditions', label: 'Terms of Use' },
+  { href: '/blog/mystory-about-us', label: 'About Us' },
+  { href: '/contact', label: 'Contact Us' },
+  { href: '/terms-conditions', label: 'Terms & Conditions' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
 ];
 
-const travelTipsLinks = [
-    { href: '/plan-your-trip', label: 'Start Here'},
+const planningLinks = [
+    { href: '/plan-your-trip', label: 'Personalized Trip Planner'},
     { href: '/blog', label: 'Travel Blog' },
     { href: '/destinations', label: 'Destination Guides' },
-    { href: '/hotels/budget-hotels-malaga/hostels', label: 'Favorite Hostels' },
-    { href: '/hotels', label: 'Favorite Hotels' },
-    // These are placeholders as direct pages might not exist
-    { href: '/destinations', label: 'Favorite Neighborhoods' },
-    { href: '/attractions/malaga-city/walking-tours', label: 'Favorite Walking Tours' },
+    { href: '/travel-planning', label: 'Travel Planning' },
 ];
 
-const bookTripLinks = [
-    { href: '/hotels', label: 'Get Accommodation' },
-    { href: '/travel-planning/budget-travel/cheap-flights', label: 'Get Flights' },
-    { href: '/wellness/medical-tourism', label: 'Get Travel Insurance' }, // Placeholder
-    { href: '#', label: 'Get Travel Credit Cards' }, // Placeholder
-    { href: '#', label: 'My Favorite Companies' }, // Placeholder
+const topExperiencesLinks = [
+    { href: '/hotels', label: 'Hotels in Malaga' },
+    { href: '/restaurants', label: 'Malaga Restaurants Guide' },
+    { href: '/attractions', label: 'Things to do in Malaga' },
+    { href: '/beaches', label: 'Best Beaches near Malaga' },
+    { href: '/nightlife', label: 'Malaga Nightlife Guide' },
+    { href: '/shopping', label: 'Shopping in Malaga' },
 ];
 
-const booksCoursesLinks = [
-    { href: '/blog', label: 'Ten Years a Nomad' }, // Placeholder
-    { href: '/blog', label: 'How To Travel The World' }, // Placeholder
-    { href: '/destinations', label: 'Destination Guidebooks' }, // Placeholder
-    { href: '/blog', label: 'Blogging Mentorship' }, // Placeholder
+const luxuryNicheLinks = [
+    { href: '/weddings', label: 'Weddings Costa del Sol' },
+    { href: '/business', label: 'Business Tourism Malaga' },
+    { href: '/wellness', label: 'Wellness Costa del Sol' },
+    { href: '/sports', label: 'Sports Tourism Costa del Sol' },
+    { href: '/digital-nomad', label: 'Digital Nomad Malaga' },
 ];
 
 
@@ -77,10 +75,10 @@ export default function Footer() {
     <footer className="bg-primary-dark text-white py-12 relative">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8">
-            <FooterLinkColumn title="About Us" links={aboutLinks} />
-            <FooterLinkColumn title="Travel Tips" links={travelTipsLinks} />
-            <FooterLinkColumn title="Book Your Trip" links={bookTripLinks} />
-            <FooterLinkColumn title="Books and Courses" links={booksCoursesLinks} />
+            <FooterLinkColumn title="About & Info" links={aboutLinks} />
+            <FooterLinkColumn title="Plan Your Trip" links={planningLinks} />
+            <FooterLinkColumn title="Top Experiences" links={topExperiencesLinks} />
+            <FooterLinkColumn title="Luxury & Niche" links={luxuryNicheLinks} />
             
             <div className="col-span-2 md:col-span-1">
                  <h3 className="text-sm font-bold uppercase tracking-wider text-white border-b-2 border-dotted border-white/50 pb-2 mb-4">Follow me on the web</h3>
