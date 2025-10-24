@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/shared/Section';
@@ -83,14 +84,14 @@ export default function Home() {
       {/* Hero Section */}
       <div className="-mx-4 -mt-8 sm:-mx-container-padding">
         <div className="container mx-auto text-center py-12 md:py-20">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
+            <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl text-primary mb-4">
               Your Costa del Sol Journey Starts Here
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
               The ultimate travel guide for independent and luxury travelers. Personalized recommendations, destinations, hotels, and activities.
             </p>
             <div className="mt-8 flex gap-4 justify-center">
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Link href="/plan-your-trip">
                   Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -177,3 +178,5 @@ export default function Home() {
     </>
   );
 }
+
+    
