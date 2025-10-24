@@ -1,72 +1,188 @@
-
+'use client';
+import { useState, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import Section from '@/components/shared/Section';
-import InfoCard from '@/components/shared/InfoCard';
-import NewsletterForm from '@/components/forms/NewsletterForm';
-import { ArrowRight, BookOpen, Sparkles, Map, Star, PenSquare, Mail, List } from 'lucide-react';
 import Image from 'next/image';
-import imageData from '@/lib/placeholder-images.json';
-import { allSiteUrls } from '@/lib/urls';
-import { destinationsData } from '@/lib/data';
-import ClientOnly from '@/components/shared/ClientOnly';
+import { ArrowRight, List } from 'lucide-react';
+import NewsletterForm from '@/components/forms/newsletter-form';
 
-const topMoneyPages = [
-    {
-      title: 'Weddings & Luxury Events',
-      description: 'Discover exclusive venues and bespoke planning for your dream wedding in Costa del Sol.',
-      linkHref: '/weddings',
-      imageKey: 'luxury-wedding',
-    },
-    {
-      title: 'Business & MICE Tourism',
-      description: 'Host exceptional corporate events, conferences, and retreats in world-class facilities.',
-      linkHref: '/business',
-      imageKey: 'corporate-event',
-    },
-    {
-      title: 'Wellness & Medical Tourism',
-      description: 'Access premium wellness retreats, spa services, and leading medical facilities.',
-      linkHref: '/wellness',
-      imageKey: 'wellness-spa',
-    },
-    {
-      title: 'Luxury Accommodation & Hotels',
-      description: 'Explore a curated selection of the finest luxury hotels and 5-star resorts.',
-      linkHref: '/hotels',
-      imageKey: 'luxury-hotel',
-    },
-    {
-      title: 'Airport Transfers & VIP Transport',
-      description: 'Arrange seamless and private transportation, from airport transfers to VIP travel.',
-      linkHref: '/transfers',
-      imageKey: 'vip-transport',
-    },
-];
+// --- Header Component ---
+function Header() {
+  const { scrollY } = useScroll();
+  const [isScrolled, setIsScrolled] = useState(false);
 
-const contentPillars = [
-  {
-    title: 'Destinations',
-    description: 'Explore the charming towns and vibrant cities of the Costa del Sol.',
-    linkHref: '/destinations',
-    imageKey: 'mijas-pueblo-village',
-    icon: Map,
-  },
-  {
-    title: 'Attractions',
-    description: 'Discover the best attractions, from historic sites to family fun.',
-    linkHref: '/attractions',
-    imageKey: 'malaga-city-skyline',
-    icon: Star,
-  },
-  {
-    title: 'Travel Blog',
-    description: 'Get insider tips, guides, and stories from our local experts.',
-    linkHref: '/blog',
-    imageKey: 'tapas-food-variety',
-    icon: PenSquare,
-  },
-];
+  useEffect(() => {
+    return scrollY.on('change', (latest) => {
+      setIsScrolled(latest > 50);
+    });
+  }, [scrollY]);
+
+  return (
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50 transition-colors duration-250 ease-out"
+      animate={{
+        backgroundColor: isScrolled ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0)',
+        borderColor: isScrolled ? 'rgba(230, 234, 240, 1)' : 'rgba(230, 234, 240, 0)',
+      }}
+    >
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
+        <Link href="/" className="font-display text-xl font-bold">
+          <motion.span animate={{ color: isScrolled ? '#1E1E1E' : '#FFFFFF' }}>
+            MalagaTravelGuide
+          </motion.span>
+        </Link>
+        <nav className="hidden md:flex items-center gap-6">
+          {['Destinations', 'Hotels', 'Experiences', 'Blog'].map((item) => (
+            <Link key={item} href={`/${item.toLowerCase()}`} className="text-sm font-semibold uppercase tracking-wider transition-colors" >
+               <motion.span animate={{ color: isScrolled ? '#4E5661' : '#FFFFFF' }} className="hover:text-primary">
+                {item}
+               </motion.span>
+            </Link>
+          ))}
+        </nav>
+        <Link href="/plan-your-trip" passHref>
+          <motion.button className="hidden md:block bg-primary text-white text-button-label px-m py-s rounded-2xl hover:bg-primary-dark transition-colors">
+            Plan Your Trip
+          </motion.button>
+        </Link>
+      </div>
+    </motion.header>
+  );
+}
+
+// --- Hero Section ---
+function HeroSection() {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 0.2], ["0%", "50%"]);
+
+  const fadeInAnimation = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        src="https://videos.pexels.com/video-files/4434250/4434250-hd_1920_1080_25fps.mp4"
+      />
+      <div className="absolute inset-0 bg-black/40 z-10" />
+      <motion.div style={{ y }} className="relative z-20 p-4">
+        <motion.h1
+          variants={fadeInAnimation}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="font-display text-h1 text-white"
+        >
+          Your Costa del Sol Journey Starts Here
+        </motion.h1>
+        <motion.p
+          variants={fadeInAnimation}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="font-sans text-body-l text-white/90 max-w-2xl mx-auto mt-s"
+        >
+          The ultimate travel guide for independent and luxury travelers. Personalized recommendations, destinations, hotels, and more.
+        </motion.p>
+        <motion.div
+          variants={fadeInAnimation}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: 0.7, delay: 0.6 }}
+          className="mt-m flex flex-wrap gap-s justify-center"
+        >
+          <Link href="/plan-your-trip" passHref>
+            <button className="bg-primary text-white text-button-label px-m py-s rounded-2xl hover:bg-primary-dark transition-colors">
+              Plan Your Trip
+            </button>
+          </Link>
+          <Link href="/destinations" passHref>
+            <button className="bg-transparent border border-primary text-primary text-button-label px-m py-s rounded-2xl hover:bg-primary/10 transition-colors">
+              Explore Destinations
+            </button>
+          </Link>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
+
+// --- Section Wrapper for Animations ---
+function AnimatedSection({ children, className }: { children: React.ReactNode, className?: string }) {
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6 }}
+      className={className}
+    >
+      {children}
+    </motion.section>
+  );
+}
+
+// --- Luxury Experience Card ---
+function LuxuryCard({ title }: { title: string }) {
+  return (
+    <motion.div
+      whileHover={{ y: -8, scale: 1.02 }}
+      transition={{ type: 'spring', stiffness: 300 }}
+      className="bg-white rounded-DEFAULT shadow-card p-m"
+    >
+      <div className="aspect-[4/3] w-full bg-gray-100 rounded-lg overflow-hidden">
+        <Image src="https://placehold.co/600x400/F8FBFD/E6EAF0?text=Premium+Service" alt={title} width={600} height={400} className="w-full h-full object-cover"/>
+      </div>
+      <h3 className="font-sans text-h3 text-text-primary mt-s">{title}</h3>
+    </motion.div>
+  );
+}
+
+// --- Footer Component ---
+function Footer() {
+    return (
+        <footer className="bg-[#00374D] text-white/90">
+            <div className="container mx-auto py-l">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-l">
+                    <div>
+                        <h3 className="font-display text-xl font-bold mb-s">MalagaTravelGuide</h3>
+                        <p className="text-body-s">Your ultimate guide to the Costa del Sol.</p>
+                    </div>
+                    <div>
+                        <h4 className="font-sans text-button-label mb-s">About</h4>
+                        <ul className="space-y-xs">
+                            <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+                            <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="font-sans text-button-label mb-s">Explore</h4>
+                        <ul className="space-y-xs">
+                            <li><Link href="/destinations" className="hover:text-primary transition-colors">Destinations</Link></li>
+                            <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="font-sans text-button-label mb-s">Follow Us</h4>
+                        <ul className="space-y-xs">
+                            <li><a href="#" className="hover:text-primary transition-colors">Facebook</a></li>
+                            <li><a href="#" className="hover:text-primary transition-colors">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="mt-l border-t border-white/20 pt-m text-center text-sm text-text-light">
+                    © {new Date().getFullYear()} Malaga Travel Guide. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    );
+}
 
 const topArticles = [
   { href: '/travel-planning/budget-travel/cheap-flights', text: 'How to Find Cheap Flights' },
@@ -77,150 +193,64 @@ const topArticles = [
   { href: '/travel-planning/when-to-visit/weather', text: 'Malaga Weather Guide' },
 ];
 
-
-type ImageData = {
-  [key: string]: {
-    url: string;
-    hint: string;
-  };
-};
-
-const images: ImageData = imageData;
-
+// --- Main Homepage Component ---
 export default function Home() {
-  return (
-    <>
-      {/* Hero Section */}
-      <div className="relative w-full h-[70vh] min-h-[500px] flex flex-col -mt-8">
-        <div className="relative w-full flex-grow">
-          <Image
-            src={images['travel-hero-background'].url}
-            alt="A beautiful travel landscape representing the Costa del Sol"
-            fill
-            priority
-            className="object-cover"
-            data-ai-hint={images['travel-hero-background'].hint}
-          />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="relative container mx-auto h-full flex flex-col items-center justify-center text-center text-white p-4">
-            <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl text-primary mb-4" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
-              Your Costa del Sol Journey Starts Here
-            </h1>
-            <p className="text-lg md:text-xl max-w-xl mx-auto" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
-              The ultimate travel guide for independent and luxury travelers. Personalized recommendations, destinations, hotels, and activities.
-            </p>
-            <div className="mt-8 flex gap-4 justify-center">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/80 text-primary-foreground">
-                <Link href="/plan-your-trip">
-                  Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="bg-white/90 text-white border-gray-300 hover:bg-white text-primary">
-                <Link href="/destinations">
-                  Explore Destinations
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-        {/* Newsletter Form Section */}
-        <div className="bg-newsletter-blue py-6">
-          <div className="container mx-auto px-4">
-            <ClientOnly>
-              <NewsletterForm />
-            </ClientOnly>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div className='container mx-auto px-4'>
-          {/* High-Value Money Pages Section */}
-          <Section title="Plan Your Luxury Experience" subtitle="Focusing on high-value services to create your perfect Costa del Sol journey.">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {topMoneyPages.map((page) => (
-                <InfoCard
-                  key={page.title}
-                  title={page.title}
-                  linkHref={page.linkHref}
-                  imageUrl={images[page.imageKey].url}
-                  imageHint={images[page.imageKey].hint}
-                  imageAlt={page.title}
-                  variant="overlay"
-                />
-              ))}
-            </div>
-          </Section>
-        </div>
-      </div>
+    return (
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+            <Header />
+            <main>
+                <HeroSection />
 
-
-       {/* About Section */}
-       <Section className="bg-blue-100">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
-                {/* Left Column */}
-                <div className="md:col-span-2">
-                    <h2 className="text-3xl font-bold font-montserrat text-primary-dark mb-4">About Malaga Travel Guide</h2>
-                    <div className="relative aspect-video rounded-lg overflow-hidden mb-6 shadow-lg">
-                        <Image
-                            src={images['about-me-image'].url}
-                            alt="Founder of Malaga Travel Guide"
-                            fill
-                            className="object-cover"
-                            data-ai-hint={images['about-me-image'].hint}
-                        />
+                <AnimatedSection className="py-l bg-background-alt">
+                    <div className="container mx-auto text-center">
+                         <h4 className="font-sans text-button-label text-text-light mb-s">GET MY BEST TIPS SENT STRAIGHT TO YOU!</h4>
+                         <NewsletterForm />
                     </div>
-                    <div className="space-y-4 text-muted-foreground">
-                        <p>
-                            Welcome! Every day we wake up with one goal in mind: “How can we help other people travel better for less?” Our mission is to help you realize your travel dreams by making you a smarter, more informed traveler.
+                </AnimatedSection>
+                
+                <AnimatedSection className="py-xl">
+                    <div className="container mx-auto">
+                        <h2 className="font-display text-h2 text-text-primary text-center">Plan Your Luxury Experience</h2>
+                        <p className="font-sans text-body-l text-text-secondary text-center max-w-xl mx-auto mb-l">
+                            Focusing on high-value services to create your perfect costa del sol journey
                         </p>
-                        <p>
-                            Since 2024, we've helped countless travelers save money, travel more, and have a more authentic experience in the Costa del Sol. Everything we teach you here, we do ourselves! You will get the tips, tricks, and tools you need to have the trip of your dreams — without breaking the bank!
-                        </p>
-                        <Button asChild variant="link" className="px-0 text-primary hover:text-primary/80">
-                            <Link href="/blog/mystory-about-us">
-                                Learn more about our story <ArrowRight className="ml-2 h-4 w-4" />
-                            </Link>
-                        </Button>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-m">
+                           <LuxuryCard title="Weddings & Luxury Events" />
+                           <LuxuryCard title="Business & MICE Tourism" />
+                           <LuxuryCard title="Luxury Accommodation & Hotels" />
+                           <LuxuryCard title="Airport Transfers & VIP Transport" />
+                        </div>
                     </div>
-                </div>
+                </AnimatedSection>
 
-                {/* Right Column */}
-                <div className="bg-card p-6 rounded-lg shadow-lg">
-                    <h3 className="text-xl font-bold font-montserrat text-primary-dark mb-4 flex items-center">
-                        <List className="mr-2 h-5 w-5" />
-                        Top Articles
-                    </h3>
-                    <ul className="space-y-3">
-                        {topArticles.map((article) => (
-                            <li key={article.href}>
-                                <Link href={article.href} className="text-muted-foreground hover:text-primary hover:underline transition-colors flex items-start">
-                                    <ArrowRight className="h-4 w-4 mr-2 mt-1 shrink-0 text-primary/70" />
-                                    <span>{article.text}</span>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        </Section>
-        
-      {/* Content Pillars Section */}
-      <Section title="Explore the Costa del Sol" subtitle="From stunning destinations to insider tips, start your journey here.">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {contentPillars.map((page) => (
-              <InfoCard
-                key={page.title}
-                title={page.title}
-                linkHref={page.linkHref}
-                imageUrl={images[page.imageKey].url}
-                imageHint={images[page.imageKey].hint}
-                imageAlt={page.title}
-                variant="overlay"
-              />
-            ))}
-          </div>
-        </Section>
-
-    </>
-  );
+                <AnimatedSection className="py-xl bg-background-alt">
+                    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-l items-center">
+                        <div>
+                            <Image src="https://placehold.co/800x600/E6EAF0/4E5661?text=About+Us" alt="About Us" width={800} height={600} className="rounded-lg shadow-lg w-full"/>
+                        </div>
+                        <div>
+                            <h2 className="font-display text-h2 text-text-primary">About Malaga Travel Guide</h2>
+                            <p className="font-sans text-body-l text-text-secondary mt-s">
+                               Welcome! Every day we wake up with one goal in mind: “How can we help other people travel better for less?” Our mission is to help you realize your travel dreams by making you a smarter, more informed traveler.
+                            </p>
+                             <div className="mt-m">
+                                <h4 className="font-sans text-h4 text-text-primary mb-s flex items-center"><List className="mr-2"/>Top Articles</h4>
+                                <ul className="space-y-xs">
+                                  {topArticles.map(article => (
+                                    <li key={article.href}>
+                                        <Link href={article.href} className="flex items-center text-text-secondary hover:text-primary transition-colors">
+                                          <ArrowRight className="h-4 w-4 mr-2 text-primary/70 shrink-0"/>
+                                          <span>{article.text}</span>
+                                        </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </AnimatedSection>
+            </main>
+            <Footer />
+        </motion.div>
+    );
 }

@@ -1,118 +1,58 @@
-import type {Config} from 'tailwindcss';
+import type { Config } from 'tailwindcss';
 
-export default {
-  darkMode: ['class'],
+const config: Config = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/forms/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    container: {
-        center: true,
-        padding: '1rem',
-    },
     extend: {
-      fontFamily: {
-        anton: ['var(--font-anton)', 'sans-serif'],
-        montserrat: ['var(--font-montserrat)', 'sans-serif'],
-        inter: ['var(--font-inter)', 'sans-serif'],
-        body: ['var(--font-inter)', 'sans-serif'], // Default body font
-        headline: ['var(--font-montserrat)', 'sans-serif'], // Default headline font (H2-H6)
-        impact: ['Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif'],
-      },
       colors: {
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        'header-background': 'hsl(var(--header-background))',
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
-        },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
-        },
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
+          DEFAULT: '#D84186', // Luxury Rose-Magenta
+          dark: '#B83370',
         },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
+        secondary: '#007B9E',
+        background: {
+          DEFAULT: '#FFFFFF',
+          alt: '#F8FBFD',
         },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
+        text: {
+          primary: '#1E1E1E',
+          secondary: '#4E5661',
+          light: '#7B8592',
         },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        // Custom colors from palette
-        'primary-dark': 'hsl(var(--primary-dark))', 
-        'primary-light': 'hsl(var(--primary-light))', 
-        'accent-1-red': 'hsl(var(--accent-1-red))', 
-        'accent-1-red-hover': 'hsl(var(--accent-1-red-hover))', // Added for darker red on hover
-        'accent-2-maroon': 'hsl(var(--accent-2-maroon))', 
-        'accent-3-light-blue': 'hsl(var(--accent-3-light-blue))',
-        'newsletter-blue': 'hsl(var(--newsletter-blue))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))',
-        },
-        sidebar: {
-          DEFAULT: 'hsl(var(--sidebar-background))',
-          foreground: 'hsl(var(--sidebar-foreground))',
-          primary: 'hsl(var(--sidebar-primary))',
-          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-          accent: 'hsl(var(--sidebar-accent))',
-          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-          border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))',
-        },
+        border: '#E6EAF0',
+      },
+      fontFamily: {
+        display: ['var(--font-playfair)', 'serif'],
+        sans: ['var(--font-inter)', 'sans-serif'],
+      },
+      fontSize: {
+        'h1': ['64px', { fontWeight: '700', letterSpacing: '-2%' }],
+        'h2': ['42px', { fontWeight: '600', letterSpacing: '-1%' }],
+        'h3': ['28px', { fontWeight: '600' }],
+        'h4': ['20px', { fontWeight: '500' }],
+        'body-l': ['18px', { fontWeight: '400', letterSpacing: '1%' }],
+        'body-s': ['16px', { fontWeight: '400', letterSpacing: '2%' }],
+        'button-label': ['15px', { fontWeight: '600', textTransform: 'uppercase' }],
+      },
+      spacing: {
+        'xs': '8px',
+        's': '16px',
+        'm': '24px',
+        'l': '48px',
+        'xl': '96px',
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        'DEFAULT': '16px', // Default for cards
+        '2xl': '1rem', // For buttons
       },
-      keyframes: {
-        'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-        },
-        'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
-        },
+      boxShadow: {
+        'card': '0 10px 20px rgba(0,0,0,0.08)',
       },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-      },
-      margin: {
-        'container-padding': '1rem',
-      }
     },
   },
   plugins: [require('tailwindcss-animate')],
-} satisfies Config;
+};
+export default config;
