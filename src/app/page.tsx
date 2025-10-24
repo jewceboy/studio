@@ -155,7 +155,7 @@ export default function Home() {
 
 
        {/* About Section */}
-       <Section className="bg-green-100">
+       <Section className="bg-blue-100">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
                 {/* Left Column */}
                 <div className="md:col-span-2">
