@@ -8,6 +8,10 @@ export default {
     './src/components/forms/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+        center: true,
+        padding: '1rem',
+    },
     extend: {
       fontFamily: {
         anton: ['var(--font-anton)', 'sans-serif'],
@@ -105,6 +109,9 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      margin: {
+        'container-padding': '1rem',
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],
