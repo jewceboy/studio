@@ -71,7 +71,7 @@ export default function Header() {
                         <Link href={link.href} legacyBehavior passHref>
                             <NavigationMenuLink className={cn(
                             navigationMenuTriggerStyle(),
-                            'bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg font-semibold leading-none py-[0.6em] px-[0.6em]',
+                            'bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]',
                             pathname.startsWith(link.href) ? 'bg-gray-700 text-white' : ''
                             )}>
                             {link.label}
@@ -81,7 +81,7 @@ export default function Header() {
                 ))}
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg font-semibold leading-none py-[0.6em] px-[0.6em]'>
+                    <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]'>
                         Luxury Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -100,7 +100,7 @@ export default function Header() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg font-semibold leading-none py-[0.6em] px-[0.6em]'>
+                    <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]'>
                         Explore
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -120,7 +120,7 @@ export default function Header() {
 
                 <NavigationMenuItem>
                     <Link href="/blog" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg font-semibold leading-none py-[0.6em] px-[0.6em]', pathname.startsWith('/blog') ? 'bg-gray-700 text-white' : '')}>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]', pathname.startsWith('/blog') ? 'bg-gray-700 text-white' : '')}>
                         Blog
                         </NavigationMenuLink>
                     </Link>
@@ -128,7 +128,7 @@ export default function Header() {
                 
                 <NavigationMenuItem>
                     <Link href="/contact" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg font-semibold leading-none py-[0.6em] px-[0.6em]', pathname.startsWith('/contact') ? 'bg-gray-700 text-white' : '')}>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]', pathname.startsWith('/contact') ? 'bg-gray-700 text-white' : '')}>
                         Contact
                         </NavigationMenuLink>
                     </Link>
