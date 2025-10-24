@@ -8,6 +8,7 @@ import Footer from '@/components/layout/Footer';
 import { cn } from '@/lib/utils';
 import Breadcrumbs from '@/components/shared/Breadcrumbs';
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from 'next/script';
 
 // This is the base metadata. Child pages will merge with this.
 export const metadata: Metadata = {
@@ -130,6 +131,7 @@ export default function RootLayout({
         <Footer />
         <Toaster />
         <SpeedInsights />
+        <Script src="/app.js" strategy="lazyOnload" />
       </body>
     </html>
   );
