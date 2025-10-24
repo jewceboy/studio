@@ -104,17 +104,19 @@ export default function Home() {
             <p className="mt-4 max-w-2xl text-lg sm:text-xl text-white/90 drop-shadow-md">
                 The ultimate travel guide for independent and solo travelers
             </p>
-            <form className="mt-8 flex flex-col sm:flex-row items-center gap-2 w-full max-w-lg">
-                <Input
-                type="email"
-                placeholder="Enter your email address"
-                className="h-12 flex-grow bg-white/90 text-gray-800 placeholder-gray-500 border-0 focus:ring-2 focus:ring-primary"
-                aria-label="Email for newsletter"
-                />
-                <Button type="submit" size="lg" className="h-12 w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">
-                Subscribe
-                </Button>
-            </form>
+            <ClientOnly>
+              <form className="mt-8 flex flex-col sm:flex-row items-center gap-2 w-full max-w-lg">
+                  <Input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="h-12 flex-grow bg-white/90 text-gray-800 placeholder-gray-500 border-0 focus:ring-2 focus:ring-primary"
+                  aria-label="Email for newsletter"
+                  />
+                  <Button type="submit" size="lg" className="h-12 w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">
+                  Subscribe
+                  </Button>
+              </form>
+            </ClientOnly>
             <p className="mt-3 text-xs text-white/70">
                 Join 100,000+ other readers and get my free travel tips.
             </p>
