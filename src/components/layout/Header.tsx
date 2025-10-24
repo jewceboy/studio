@@ -59,7 +59,7 @@ export default function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2 text-white hover:text-white/80 transition-colors">
           <Sun className="h-8 w-8" />
-          <span className="font-bold text-xl">MalagaTravelGuide</span>
+          <span className="font-semibold text-xl font-montserrat">MalagaTravelGuide</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -159,7 +159,7 @@ export default function Header() {
               <div className="flex justify-between items-center mb-8">
                 <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
                   <Sun className="h-7 w-7" />
-                  <span className="font-bold text-lg">MalagaTravelGuide</span>
+                  <span className="font-semibold text-lg font-montserrat">MalagaTravelGuide</span>
                 </Link>
                 <SheetClose asChild>
                   <Button variant="ghost" size="icon" className="hover:bg-white/10 focus:bg-white/10">
