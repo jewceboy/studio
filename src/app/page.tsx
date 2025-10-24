@@ -149,7 +149,7 @@ export default function Home() {
               </Section>
             </div>
             
-            <div className="bg-blue-100">
+            <div>
                 <Section className="py-xl">
                     <h2 className="font-display text-h2 text-text-primary text-center">Plan Your Luxury Experience</h2>
                     <p className="font-sans text-body-l text-text-secondary text-center max-w-xl mx-auto mb-l">
