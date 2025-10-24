@@ -132,27 +132,30 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className='container mx-auto px-4'>
-        {/* High-Value Money Pages Section */}
-        <Section title="Plan Your Luxury Experience" subtitle="Focusing on high-value services to create your perfect Costa del Sol journey.">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {topMoneyPages.map((page) => (
-              <InfoCard
-                key={page.title}
-                title={page.title}
-                linkHref={page.linkHref}
-                imageUrl={images[page.imageKey].url}
-                imageHint={images[page.imageKey].hint}
-                imageAlt={page.title}
-                variant="overlay"
-              />
-            ))}
-          </div>
-        </Section>
+      <div className='bg-blue-100'>
+        <div className='container mx-auto px-4'>
+          {/* High-Value Money Pages Section */}
+          <Section title="Plan Your Luxury Experience" subtitle="Focusing on high-value services to create your perfect Costa del Sol journey.">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {topMoneyPages.map((page) => (
+                <InfoCard
+                  key={page.title}
+                  title={page.title}
+                  linkHref={page.linkHref}
+                  imageUrl={images[page.imageKey].url}
+                  imageHint={images[page.imageKey].hint}
+                  imageAlt={page.title}
+                  variant="overlay"
+                />
+              ))}
+            </div>
+          </Section>
+        </div>
       </div>
 
+
        {/* About Section */}
-       <Section className="bg-secondary/20">
+       <Section className="bg-green-100">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
                 {/* Left Column */}
                 <div className="md:col-span-2">
@@ -202,8 +205,7 @@ export default function Home() {
         </Section>
         
       {/* Content Pillars Section */}
-      <div className="bg-secondary/20">
-        <Section title="Explore the Costa del Sol" subtitle="From stunning destinations to insider tips, start your journey here.">
+      <Section className="bg-yellow-100" title="Explore the Costa del Sol" subtitle="From stunning destinations to insider tips, start your journey here.">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {contentPillars.map((page) => (
               <InfoCard
@@ -218,7 +220,6 @@ export default function Home() {
             ))}
           </div>
         </Section>
-      </div>
 
     </>
   );
