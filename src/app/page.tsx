@@ -82,7 +82,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative w-full h-[70vh] min-h-[500px] flex flex-col -mt-8">
+      <div className="relative w-full h-[70vh] min-h-[500px] flex flex-col">
         <div className="relative w-full flex-grow">
           <Image
             src={images['travel-hero-background'].url}
