@@ -8,139 +8,121 @@ body {
 
 @layer base {
   :root {
-    /* New palette from image */
-    --prd-accent-pink: 330 80% 55%; /* Darker Pink for better contrast */
-    --prd-accent-pink-hover: 330 90% 65%;
-    --prd-accent-cyan: 195 85% 45%; /* Cyan from image body */
-    --prd-accent-cyan-hover: 195 80% 40%;
-    --color-text-dark-grey: 210 10% 23%; /* Dark Grey #353B41 */
-    --color-background-white: 0 0% 100%;
-
-
+    /* New palette from Nomadic Matt design */
+    --color-black: 220 10% 5%;
     --color-white: 0 0% 100%;
-    --color-black: 0 0% 0%;
+    --color-text-dark-grey: 210 10% 23%;
+    --color-accent-blue: 205 55% 50%; /* Blue for links */
+    --color-accent-blue-hover: 205 55% 45%;
+
 
     /* ShadCN Semantic Variables */
-    --background: var(--color-background-white); /* Main background (White) */
+    --background: var(--color-white); /* Main background (White) */
     --foreground: var(--color-text-dark-grey); /* Main text color (Dark Grey) */
-    --header-background: hsl(var(--prd-accent-pink)); /* Pink for header */
+    
+    --card: hsl(var(--color-white)); 
+    --card-foreground: hsl(var(--color-text-dark-grey));
 
+    --popover: hsl(var(--color-white));
+    --popover-foreground: hsl(var(--color-text-dark-grey));
 
-    --card: var(--color-white); 
-    --card-foreground: var(--color-text-dark-grey);
+    --primary: hsl(var(--color-accent-blue)); /* Primary accent is now BLUE for links & buttons */
+    --primary-foreground: hsl(var(--color-white));
 
-    --popover: var(--color-white);
-    --popover-foreground: var(--color-text-dark-grey);
-
-    --primary: var(--prd-accent-cyan); /* Primary accent is now CYAN for buttons */
-    --primary-foreground: var(--color-white);
-
-    --secondary: hsl(var(--prd-accent-cyan) / 0.1); /* Light cyan for secondary backgrounds */
-    --secondary-foreground: var(--color-text-dark-grey); 
+    --secondary: 210 10% 95%; /* Light grey for secondary backgrounds */
+    --secondary-foreground: hsl(var(--color-text-dark-grey)); 
 
     --muted: 210 10% 50%; 
     --muted-foreground: 210 10% 35%; 
 
-    --accent: var(--prd-accent-pink); /* General accent is now PINK for header etc. */
-    --accent-foreground: var(--color-white);
+    --accent: hsl(var(--color-accent-blue)); /* General accent is also BLUE */
+    --accent-foreground: hsl(var(--color-white));
 
     --destructive: 0 72% 51%; 
     --destructive-foreground: 0 0% 98%;
 
     --border: 210 10% 85%; 
     --input: 210 10% 90%; 
-    --ring: var(--prd-accent-cyan); /* Focus ring color is CYAN */
+    --ring: hsl(var(--color-accent-blue)); /* Focus ring color is BLUE */
     
     --radius: 0.5rem;
 
     /* Custom specific colors for direct use if needed */
-    --primary-dark: var(--color-text-dark-grey); 
-    --primary-light: var(--color-background-white);
-    --accent-1-red: var(--prd-accent-pink); /* Mapped red to PINK for header */
-    --accent-1-red-hover: var(--prd-accent-pink-hover);
-    --accent-2-maroon: 330 70% 50%; /* Darker pink */
-    --accent-3-light-blue: var(--prd-accent-cyan); /* Mapped light blue to CYAN */
+    --primary-dark: hsl(var(--color-text-dark-grey)); 
+    --primary-light: hsl(var(--color-white));
+    --header-background: hsl(var(--color-black)); /* Black for header */
 
 
-    --chart-1: var(--prd-accent-cyan);
-    --chart-2: 195 60% 50%;
-    --chart-3: 210 50% 55%;
+    --chart-1: hsl(var(--color-accent-blue));
+    --chart-2: 205 60% 60%;
+    --chart-3: 210 50% 65%;
     --chart-4: 43 74% 66%; 
     --chart-5: 27 87% 67%;
 
     /* Sidebar - using new palette */
     --sidebar-background: 210 10% 97%; 
-    --sidebar-foreground: var(--color-text-dark-grey);
-    --sidebar-primary: var(--prd-accent-cyan);
-    --sidebar-primary-foreground: var(--color-white);
-    --sidebar-accent: hsl(var(--prd-accent-pink) / 0.2);
-    --sidebar-accent-foreground: var(--color-text-dark-grey);
+    --sidebar-foreground: hsl(var(--color-text-dark-grey));
+    --sidebar-primary: hsl(var(--color-accent-blue));
+    --sidebar-primary-foreground: hsl(var(--color-white));
+    --sidebar-accent: hsl(var(--color-accent-blue) / 0.1);
+    --sidebar-accent-foreground: hsl(var(--color-text-dark-grey));
     --sidebar-border: 210 10% 88%;
-    --sidebar-ring: var(--prd-accent-cyan);
+    --sidebar-ring: hsl(var(--color-accent-blue));
   }
 
   .dark {
     /* Dark Theme - Inverted and adjusted from light theme */
-    --prd-accent-pink: 330 100% 75%;
-    --prd-accent-pink-hover: 330 90% 70%;
-    --prd-accent-cyan: 195 85% 55%;
-    --prd-accent-cyan-hover: 195 80% 50%;
-    --color-text-dark-grey: 47 50% 90%; 
-    --color-background-white: 210 10% 15%; 
+    --color-black: 0 0% 100%;
+    --color-white: 220 10% 5%;
+    --color-text-dark-grey: 210 10% 80%;
+    --color-accent-blue: 205 65% 60%;
+    --color-accent-blue-hover: 205 65% 55%;
 
-    --color-white: 0 0% 10%; 
-    --color-black: 0 0% 100%; 
+    --background: hsl(var(--color-white)); 
+    --foreground: hsl(var(--color-text-dark-grey));
+    
+    --card: 210 10% 9%; 
+    --card-foreground: hsl(var(--color-text-dark-grey));
 
-    --background: var(--color-background-white); 
-    --foreground: var(--color-text-dark-grey);
-    --header-background: hsl(var(--prd-accent-pink)); /* Pink for header */
+    --popover: 210 10% 9%;
+    --popover-foreground: hsl(var(--color-text-dark-grey));
 
-
-    --card: 210 10% 20%; 
-    --card-foreground: var(--color-text-dark-grey);
-
-    --popover: 210 10% 20%;
-    --popover-foreground: var(--color-text-dark-grey);
-
-    --primary: var(--prd-accent-cyan); 
+    --primary: hsl(var(--color-accent-blue)); 
     --primary-foreground: 210 10% 15%; 
 
-    --secondary: hsl(var(--prd-accent-cyan) / 0.15); 
-    --secondary-foreground: var(--color-text-dark-grey);
+    --secondary: 210 10% 12%; 
+    --secondary-foreground: hsl(var(--color-text-dark-grey));
 
     --muted: 210 10% 35%;
     --muted-foreground: 210 10% 60%; 
 
-    --accent: var(--prd-accent-pink);
+    --accent: hsl(var(--color-accent-blue));
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 60% 45%; 
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 10% 30%; 
-    --input: 210 10% 25%; 
-    --ring: var(--prd-accent-cyan);
+    --border: 210 10% 20%; 
+    --input: 210 10% 15%; 
+    --ring: hsl(var(--color-accent-blue));
     
-    --primary-dark: var(--color-text-dark-grey); 
-    --primary-light: var(--color-background-white); 
-    --accent-1-red: var(--prd-accent-pink); 
-    --accent-1-red-hover: var(--prd-accent-pink-hover);
-    --accent-2-maroon: 330 70% 55%;
-    --accent-3-light-blue: var(--prd-accent-cyan);
+    --primary-dark: hsl(var(--color-text-dark-grey)); 
+    --primary-light: hsl(var(--color-white)); 
+    --header-background: hsl(var(--color-black)); 
     
-    --chart-1: var(--prd-accent-cyan);
-    --chart-2: 195 60% 65%;
+    --chart-1: hsl(var(--color-accent-blue));
+    --chart-2: 205 60% 65%;
     --chart-3: 210 50% 70%;
     
     /* Sidebar - dark */
-    --sidebar-background: 210 10% 12%; 
-    --sidebar-foreground: var(--color-text-dark-grey);
-    --sidebar-primary: var(--prd-accent-cyan);
+    --sidebar-background: 210 10% 7%; 
+    --sidebar-foreground: hsl(var(--color-text-dark-grey));
+    --sidebar-primary: hsl(var(--color-accent-blue));
     --sidebar-primary-foreground: 210 10% 15%;
-    --sidebar-accent: hsl(var(--prd-accent-pink) / 0.2);
-    --sidebar-accent-foreground: var(--color-text-dark-grey);
-    --sidebar-border: 210 10% 25%;
-    --sidebar-ring: var(--prd-accent-cyan);
+    --sidebar-accent: hsl(var(--color-accent-blue) / 0.15);
+    --sidebar-accent-foreground: hsl(var(--color-text-dark-grey));
+    --sidebar-border: 210 10% 20%;
+    --sidebar-ring: hsl(var(--color-accent-blue));
   }
 }
 
@@ -168,14 +150,14 @@ body {
     @apply mb-4;
   }
   a {
-    @apply text-primary hover:text-primary/80 transition-colors duration-200; /* Uses Cyan by default */
+    @apply text-primary hover:text-primary/80 transition-colors duration-200; /* Uses Blue by default */
   }
 }
 
 @layer components {
   .site-header {
-    background-color: hsl(var(--accent) / 0.8);
-    @apply backdrop-blur-lg text-white shadow-md sticky top-0 z-50;
+    background-color: hsl(var(--header-background));
+    @apply text-white shadow-md sticky top-0 z-50;
   }
 }
 
@@ -183,7 +165,7 @@ body {
   --tw-prose-body: hsl(var(--foreground));
   --tw-prose-headings: hsl(var(--foreground));
   --tw-prose-lead: hsl(var(--muted-foreground));
-  --tw-prose-links: hsl(var(--primary)); /* Cyan for links */
+  --tw-prose-links: hsl(var(--primary)); /* Blue for links */
   --tw-prose-bold: hsl(var(--foreground));
   --tw-prose-counters: hsl(var(--muted-foreground));
   --tw-prose-bullets: hsl(var(--muted));
@@ -193,7 +175,7 @@ body {
   --tw-prose-captions: hsl(var(--muted-foreground));
   --tw-prose-code: hsl(var(--accent));
   --tw-prose-pre-code: hsl(var(--accent-foreground));
-  --tw-prose-pre-bg: hsl(var(--color-text-dark-grey)); 
+  --tw-prose-pre-bg: hsl(var(--primary-dark)); 
   --tw-prose-th-borders: hsl(var(--border));
   --tw-prose-td-borders: hsl(var(--border));
 }
@@ -212,7 +194,7 @@ body {
   --tw-prose-captions: hsl(var(--muted-foreground));
   --tw-prose-code: hsl(var(--accent));
   --tw-prose-pre-code: hsl(var(--accent-foreground));
-  --tw-prose-pre-bg: hsl(var(--color-background-white)); 
+  --tw-prose-pre-bg: hsl(var(--background)); 
   --tw-prose-th-borders: hsl(var(--border));
   --tw-prose-td-borders: hsl(var(--border));
 }

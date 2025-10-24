@@ -62,7 +62,7 @@ export default function Header() {
                     <Link href={link.href} legacyBehavior passHref>
                         <NavigationMenuLink className={cn(
                         navigationMenuTriggerStyle(),
-                        'font-montserrat font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
+                        'font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
                         pathname.startsWith(link.href) ? 'bg-white/10' : ''
                         )}>
                         {link.label}
@@ -72,7 +72,7 @@ export default function Header() {
             ))}
 
             <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-montserrat font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
+                <NavigationMenuTrigger className="font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
                     Luxury Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -91,7 +91,7 @@ export default function Header() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-montserrat font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
+                <NavigationMenuTrigger className="font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
                     Explore
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -113,7 +113,7 @@ export default function Header() {
                 <Link href="/blog" legacyBehavior passHref>
                     <NavigationMenuLink className={cn(
                     navigationMenuTriggerStyle(),
-                    'font-montserrat font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
+                    'font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
                     pathname.startsWith('/blog') ? 'bg-white/10' : ''
                     )}>
                     Blog
@@ -125,7 +125,7 @@ export default function Header() {
                 <Link href="/contact" legacyBehavior passHref>
                     <NavigationMenuLink className={cn(
                     navigationMenuTriggerStyle(),
-                    'font-montserrat font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
+                    'font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
                     pathname.startsWith('/contact') ? 'bg-white/10' : ''
                     )}>
                     Contact
@@ -145,7 +145,7 @@ export default function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-header-background text-white p-6 overflow-y-auto">
+            <SheetContent side="right" className="w-[280px] bg-primary-dark text-white p-6 overflow-y-auto">
               <div className="flex justify-between items-center mb-8">
                 <Link href="/" className="flex items-center space-x-2 text-white" onClick={() => setIsMobileMenuOpen(false)}>
                   <Sun className="h-7 w-7" />
@@ -164,7 +164,7 @@ export default function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        'font-montserrat font-medium text-white hover:text-white/80 transition-colors py-2 text-lg',
+                        'font-montserrat uppercase font-medium text-white hover:text-white/80 transition-colors py-2 text-lg',
                         pathname.startsWith(link.href) ? 'font-bold' : ''
                       )}
                     >
@@ -174,7 +174,7 @@ export default function Header() {
                 ))}
                 
                 <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-montserrat font-semibold text-white text-lg py-2 border-t border-white/20'>Luxury Services</span>
+                    <span className='font-montserrat uppercase font-semibold text-white text-lg py-2 border-t border-white/20'>Luxury Services</span>
                      {luxuryServicesSubItems.map((subItem) => (
                       <SheetClose key={subItem.href} asChild>
                         <Link
@@ -188,7 +188,7 @@ export default function Header() {
                 </div>
 
                 <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-montserrat font-semibold text-white text-lg py-2 border-t border-white/20'>Explore</span>
+                    <span className='font-montserrat uppercase font-semibold text-white text-lg py-2 border-t border-white/20'>Explore</span>
                      {exploreSubItems.map((subItem) => (
                       <SheetClose key={subItem.href} asChild>
                         <Link

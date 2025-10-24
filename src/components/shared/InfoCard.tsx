@@ -44,7 +44,7 @@ export default function InfoCard({
         />
       </CardHeader>
       <CardContent className="p-6 flex-grow">
-        <CardTitle className="font-montserrat text-xl font-semibold text-primary-dark mb-2 line-clamp-2 group-hover:text-accent transition-colors">{title}</CardTitle>
+        <CardTitle className="font-montserrat text-xl font-semibold text-primary-dark mb-2 line-clamp-2 group-hover:text-primary transition-colors">{title}</CardTitle>
         {description && <p className="text-sm text-muted-foreground line-clamp-3">{description}</p>}
       </CardContent>
       <CardFooter className="p-6 pt-0">
