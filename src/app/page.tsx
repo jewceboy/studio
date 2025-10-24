@@ -1,16 +1,13 @@
-
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import NewsletterForm from '@/components/forms/NewsletterForm';
-import { ArrowRight, BookOpen, Sparkles, Map, Star, PenSquare, Mail, Search } from 'lucide-react';
-import { Input } from '@/components/ui/input';
+import { ArrowRight, BookOpen, Sparkles, Map, Star, PenSquare, Mail } from 'lucide-react';
 import Image from 'next/image';
 import imageData from '@/lib/placeholder-images.json';
 import { allSiteUrls } from '@/lib/urls';
 import { destinationsData } from '@/lib/data';
-import ClientOnly from '@/components/shared/ClientOnly';
 
 const topMoneyPages = [
     {
@@ -83,35 +80,37 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative -mt-8 -mx-4 sm:-mx-container-padding">
-        <div className="relative h-[60vh] min-h-[400px] w-full">
-          <Image
-            src={images['travel-hero-background'].url}
-            alt="Beautiful travel landscape"
-            fill
-            priority
-            className="object-cover"
-            data-ai-hint={images['travel-hero-background'].hint}
-          />
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center p-4">
-            <h1 className="font-anton text-5xl md:text-7xl font-bold tracking-tight mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
-              The World Is Your Oyster
+      <div className="relative bg-secondary/30 -mx-4 -mt-8 sm:-mx-container-padding">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 py-12 md:py-20">
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
+              Your Costa del Sol Journey Starts Here
             </h1>
-            <p className="max-w-2xl text-lg md:text-xl text-white/90" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.7)' }}>
-              The ultimate travel guide for independent and solo travelers.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto md:mx-0">
+              The ultimate travel guide for independent and luxury travelers. Personalized recommendations, destinations, hotels, and activities.
             </p>
-            <form className="mt-8 flex w-full max-w-md items-center space-x-2">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="h-12 flex-1 bg-white/90 text-primary-dark placeholder:text-muted-foreground border-none focus:ring-2 focus:ring-primary"
-              />
-              <Button type="submit" size="lg" className="h-12 w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-semibold">
-                Subscribe
+            <div className="mt-8 flex gap-4 justify-center md:justify-start">
+              <Button asChild size="lg">
+                <Link href="/plan-your-trip">
+                  Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
-            </form>
-            <p className="mt-4 text-xs text-white/70">Join 100,000+ other readers and get my free travel tips.</p>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/destinations">
+                  Explore Destinations
+                </Link>
+              </Button>
+            </div>
+          </div>
+          <div className="relative h-64 md:h-full min-h-[300px] rounded-lg overflow-hidden shadow-xl">
+             <Image
+              src={images['Marbella-panoramic-beach-luxury'].url}
+              alt="Panoramic view of a luxury beach in Marbella"
+              fill
+              priority
+              className="object-cover"
+              data-ai-hint={images['Marbella-panoramic-beach-luxury'].hint}
+            />
           </div>
         </div>
       </div>
@@ -129,7 +128,6 @@ export default function Home() {
               imageHint={images[page.imageKey].hint}
               imageAlt={page.title}
               linkText="Explore" 
-              buttonClassName="bg-accent text-white hover:bg-accent/90"
             />
           ))}
         </div>
@@ -154,16 +152,16 @@ export default function Home() {
       </Section>
 
       {/* New Features Teaser (Plan Your Trip) */}
-      <Section title="Plan Your Perfect Trip" subtitle="Let our smart trip planner craft a personalized itinerary just for you." className="bg-secondary/10">
-        <div className="text-center bg-accent/20 p-8 md:p-12 rounded-lg shadow-lg max-w-3xl mx-auto">
+      <Section title="Plan Your Perfect Trip" subtitle="Let our smart trip planner craft a personalized itinerary just for you." className="bg-secondary/30">
+        <div className="text-center bg-background p-8 md:p-12 rounded-lg shadow-lg max-w-3xl mx-auto">
           <Sparkles className="h-16 w-16 text-primary mx-auto mb-6" />
-          <h3 className="font-montserrat text-3xl font-bold text-primary-dark mb-4">
+          <h3 className="text-3xl font-bold text-primary-dark mb-4">
             Personalized Itineraries in Minutes
           </h3>
           <p className="text-muted-foreground mb-8 text-lg">
             Answer a few simple questions about your travel style, interests, and budget, and our AI-powered tool will create a custom trip plan tailored to your preferences.
           </p>
-          <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-7 font-montserrat font-semibold">
+          <Button asChild size="lg">
             <Link href="/plan-your-trip">
               Start Planning <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
@@ -173,9 +171,7 @@ export default function Home() {
 
       {/* Newsletter Form Section */}
       <Section title="Stay in the Know" subtitle="Subscribe to our newsletter for the latest travel tips and exclusive deals.">
-        <ClientOnly>
-          <NewsletterForm />
-        </ClientOnly>
+        <NewsletterForm />
       </Section>
     </>
   );

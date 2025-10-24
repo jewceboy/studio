@@ -47,11 +47,11 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-header-background shadow-md">
+    <header className="sticky top-0 z-50 bg-background shadow-md">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" className="flex items-center space-x-2 text-white hover:text-white/90 transition-colors">
+        <Link href="/" className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors">
           <Sun className="h-8 w-8" />
-          <span className="font-montserrat font-bold text-xl">MalagaTravelGuide</span>
+          <span className="font-bold text-xl">MalagaTravelGuide</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -62,8 +62,7 @@ export default function Header() {
                     <Link href={link.href} legacyBehavior passHref>
                         <NavigationMenuLink className={cn(
                         navigationMenuTriggerStyle(),
-                        'font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
-                        pathname.startsWith(link.href) ? 'bg-white/10' : ''
+                        pathname.startsWith(link.href) ? 'bg-accent text-accent-foreground' : ''
                         )}>
                         {link.label}
                         </NavigationMenuLink>
@@ -72,7 +71,7 @@ export default function Header() {
             ))}
 
             <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
+                <NavigationMenuTrigger>
                     Luxury Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -91,7 +90,7 @@ export default function Header() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10 data-[state=open]:bg-white/10">
+                <NavigationMenuTrigger>
                     Explore
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -111,11 +110,7 @@ export default function Header() {
 
             <NavigationMenuItem>
                 <Link href="/blog" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(
-                    navigationMenuTriggerStyle(),
-                    'font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
-                     pathname.startsWith('/blog') ? 'bg-white/10' : ''
-                    )}>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname.startsWith('/blog') ? 'bg-accent text-accent-foreground' : '')}>
                     Blog
                     </NavigationMenuLink>
                 </Link>
@@ -123,11 +118,7 @@ export default function Header() {
             
             <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(
-                    navigationMenuTriggerStyle(),
-                    'font-montserrat uppercase font-semibold text-sm text-white bg-transparent hover:bg-white/10 focus:bg-white/10 data-[active]:bg-white/10',
-                     pathname.startsWith('/contact') ? 'bg-white/10' : ''
-                    )}>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname.startsWith('/contact') ? 'bg-accent text-accent-foreground' : '')}>
                     Contact
                     </NavigationMenuLink>
                 </Link>
@@ -140,19 +131,19 @@ export default function Header() {
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-primary-dark text-white p-6 overflow-y-auto">
+            <SheetContent side="right" className="w-[280px] bg-background p-6 overflow-y-auto">
               <div className="flex justify-between items-center mb-8">
-                <Link href="/" className="flex items-center space-x-2 text-white" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link href="/" className="flex items-center space-x-2 text-primary" onClick={() => setIsMobileMenuOpen(false)}>
                   <Sun className="h-7 w-7" />
-                  <span className="font-montserrat font-bold text-lg">MalagaTravelGuide</span>
+                  <span className="font-bold text-lg">MalagaTravelGuide</span>
                 </Link>
                 <SheetClose asChild>
-                  <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                  <Button variant="ghost" size="icon">
                     <X className="h-6 w-6" />
                     <span className="sr-only">Close menu</span>
                   </Button>
@@ -164,8 +155,8 @@ export default function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        'font-montserrat uppercase font-medium text-white hover:text-white/80 transition-colors py-2 text-lg',
-                        pathname.startsWith(link.href) ? 'font-bold' : ''
+                        'text-foreground hover:text-primary transition-colors py-2 text-lg',
+                        pathname.startsWith(link.href) ? 'font-bold text-primary' : ''
                       )}
                     >
                       {link.label}
@@ -174,12 +165,12 @@ export default function Header() {
                 ))}
                 
                  <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-montserrat uppercase font-semibold text-white text-lg py-2 border-t border-white/20'>Luxury Services</span>
+                    <span className='font-semibold text-foreground text-lg py-2 border-t'>Luxury Services</span>
                     {luxuryServicesSubItems.map((subItem) => (
                     <SheetClose key={subItem.href} asChild>
                         <Link
                         href={subItem.href}
-                        className={cn('font-montserrat font-normal text-white hover:text-white/80 transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold' : '')}
+                        className={cn('font-normal text-muted-foreground hover:text-primary transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-primary' : '')}
                         >
                         {subItem.title}
                         </Link>
@@ -188,12 +179,12 @@ export default function Header() {
                 </div>
 
                 <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-montserrat uppercase font-semibold text-white text-lg py-2 border-t border-white/20'>Explore</span>
+                    <span className='font-semibold text-foreground text-lg py-2 border-t'>Explore</span>
                     {exploreSubItems.map((subItem) => (
                     <SheetClose key={subItem.href} asChild>
                         <Link
                         href={subItem.href}
-                        className={cn('font-montserrat font-normal text-white hover:text-white/80 transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold' : '')}
+                        className={cn('font-normal text-muted-foreground hover:text-primary transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-primary' : '')}
                         >
                         {subItem.title}
                         </Link>
