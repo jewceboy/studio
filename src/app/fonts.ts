@@ -1,4 +1,4 @@
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Playfair_Display, Anton, Montserrat } from 'next/font/google';
 
 export const inter = Inter({
   subsets: ['latin'],
@@ -11,4 +11,18 @@ export const playfair = Playfair_Display({
   display: 'swap',
   variable: '--font-playfair',
   weight: ['400', '500', '600', '700'],
+});
+
+export const anton = Anton({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-anton',
+  weight: ['400'],
+});
+
+export const montserrat = Montserrat({
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-montserrat',
+    weight: ['400', '500', '600', '700', '800', '900'],
 });

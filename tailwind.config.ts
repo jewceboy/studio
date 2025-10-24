@@ -1,55 +1,107 @@
 import type { Config } from 'tailwindcss';
+import { fontFamily } from 'tailwindcss/defaultTheme';
+
 
 const config: Config = {
+  darkMode: ["class"],
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
-      colors: {
+       colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: '#D84186', // Luxury Rose-Magenta
-          dark: '#B83370',
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+          dark: "hsl(var(--primary-dark))",
         },
-        secondary: '#007B9E',
-        background: {
-          DEFAULT: '#FFFFFF',
-          alt: '#F8FBFD',
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
-        text: {
-          primary: '#1E1E1E',
-          secondary: '#4E5661',
-          light: '#7B8592',
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
-        border: '#E6EAF0',
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        'newsletter-blue': 'hsl(var(--newsletter-blue))',
+        'text-primary': 'hsl(var(--text-primary))',
+        'text-secondary': 'hsl(var(--text-secondary))',
+        'text-light': 'hsl(var(--text-light))',
+        'background-alt': 'hsl(var(--background-alt))',
       },
       fontFamily: {
-        display: ['var(--font-playfair)', 'serif'],
-        sans: ['var(--font-inter)', 'sans-serif'],
+        sans: ["var(--font-inter)", ...fontFamily.sans],
+        display: ['var(--font-playfair)', ...fontFamily.serif],
+        anton: ['var(--font-anton)'],
+        montserrat: ['var(--font-montserrat)'],
       },
-      fontSize: {
-        'h1': ['64px', { fontWeight: '700', letterSpacing: '-2%' }],
-        'h2': ['42px', { fontWeight: '600', letterSpacing: '-1%' }],
-        'h3': ['28px', { fontWeight: '600' }],
-        'h4': ['20px', { fontWeight: '500' }],
-        'body-l': ['18px', { fontWeight: '400', letterSpacing: '1%' }],
-        'body-s': ['16px', { fontWeight: '400', letterSpacing: '2%' }],
-        'button-label': ['15px', { fontWeight: '600', textTransform: 'uppercase' }],
+       fontSize: {
+        'h1': ['3.5rem', { fontWeight: '700', letterSpacing: '-0.02em', lineHeight: '1.1' }],
+        'h2': ['2.5rem', { fontWeight: '600', letterSpacing: '-0.01em', lineHeight: '1.2' }],
+        'h3': ['1.75rem', { fontWeight: '600', lineHeight: '1.3' }],
+        'h4': ['1.25rem', { fontWeight: '500', lineHeight: '1.4' }],
+        'body-l': ['1.125rem', { fontWeight: '400', letterSpacing: '0.01em', lineHeight: '1.6' }],
+        'body-s': ['1rem', { fontWeight: '400', letterSpacing: '0.02em', lineHeight: '1.5' }],
+        'button-label': ['0.9375rem', { fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em' }],
       },
-      spacing: {
-        'xs': '8px',
-        's': '16px',
-        'm': '24px',
-        'l': '48px',
-        'xl': '96px',
+       spacing: {
+        'xs': '0.5rem',
+        's': '1rem',
+        'm': '1.5rem',
+        'l': '3rem',
+        'xl': '6rem',
       },
       borderRadius: {
-        'DEFAULT': '16px', // Default for cards
-        '2xl': '1rem', // For buttons
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+        '2xl': '1rem',
       },
-      boxShadow: {
-        'card': '0 10px 20px rgba(0,0,0,0.08)',
+       boxShadow: {
+        'card': '0 10px 25px -5px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.05)',
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
