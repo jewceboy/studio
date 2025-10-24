@@ -151,25 +151,6 @@ export default function Home() {
         </Section>
       </div>
 
-      {/* Content Pillars Section */}
-      <div className="bg-secondary/20">
-        <Section title="Explore the Costa del Sol" subtitle="From stunning destinations to insider tips, start your journey here.">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {contentPillars.map((page) => (
-              <InfoCard
-                key={page.title}
-                title={page.title}
-                linkHref={page.linkHref}
-                imageUrl={images[page.imageKey].url}
-                imageHint={images[page.imageKey].hint}
-                imageAlt={page.title}
-                variant="overlay"
-              />
-            ))}
-          </div>
-        </Section>
-      </div>
-
        {/* About Section */}
        <Section className="bg-secondary/20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
@@ -219,6 +200,26 @@ export default function Home() {
                 </div>
             </div>
         </Section>
+        
+      {/* Content Pillars Section */}
+      <div className="bg-secondary/20">
+        <Section title="Explore the Costa del Sol" subtitle="From stunning destinations to insider tips, start your journey here.">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {contentPillars.map((page) => (
+              <InfoCard
+                key={page.title}
+                title={page.title}
+                linkHref={page.linkHref}
+                imageUrl={images[page.imageKey].url}
+                imageHint={images[page.imageKey].hint}
+                imageAlt={page.title}
+                variant="overlay"
+              />
+            ))}
+          </div>
+        </Section>
+      </div>
+
     </>
   );
 }
