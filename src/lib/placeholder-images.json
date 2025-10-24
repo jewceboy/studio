@@ -5,6 +5,12 @@
     "width": 1920,
     "height": 1080
   },
+  "about-me-image": {
+    "url": "https://picsum.photos/seed/about-me-portrait/800/500",
+    "hint": "founder portrait travel",
+    "width": 800,
+    "height": 500
+  },
   "Marbella-panoramic-beach-luxury": {
     "url": "https://picsum.photos/seed/marbella-pano/1920/1080",
     "hint": "Marbella panoramic beach",

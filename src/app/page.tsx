@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import NewsletterForm from '@/components/forms/NewsletterForm';
-import { ArrowRight, BookOpen, Sparkles, Map, Star, PenSquare, Mail } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles, Map, Star, PenSquare, Mail, List } from 'lucide-react';
 import Image from 'next/image';
 import imageData from '@/lib/placeholder-images.json';
 import { allSiteUrls } from '@/lib/urls';
@@ -67,6 +67,15 @@ const contentPillars = [
     imageKey: 'tapas-food-variety',
     icon: PenSquare,
   },
+];
+
+const topArticles = [
+  { href: '/travel-planning/budget-travel/cheap-flights', text: 'How to Find Cheap Flights' },
+  { href: '/hotels/budget-hotels-malaga', text: 'How to Find Cheap Accommodation' },
+  { href: '/blog/best-tapas-malaga', text: 'Best Tapas Bars in Malaga' },
+  { href: '/travel-planning/itineraries', text: '16 Steps for Planning a Trip' },
+  { href: '/blog/andalusian-white-villages', text: 'Exploring the White Villages' },
+  { href: '/travel-planning/when-to-visit/weather', text: 'Malaga Weather Guide' },
 ];
 
 
@@ -162,6 +171,58 @@ export default function Home() {
           </div>
         </Section>
       </div>
+
+       {/* About Section */}
+       <div className="bg-secondary/20 w-full">
+            <Section>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
+                    {/* Left Column */}
+                    <div className="md:col-span-2">
+                        <h2 className="text-3xl font-bold font-montserrat text-primary-dark mb-4">About Malaga Travel Guide</h2>
+                        <div className="relative aspect-video rounded-lg overflow-hidden mb-6 shadow-lg">
+                            <Image
+                                src={images['about-me-image'].url}
+                                alt="Founder of Malaga Travel Guide"
+                                fill
+                                className="object-cover"
+                                data-ai-hint={images['about-me-image'].hint}
+                            />
+                        </div>
+                        <div className="space-y-4 text-muted-foreground">
+                            <p>
+                                Welcome! Every day we wake up with one goal in mind: “How can we help other people travel better for less?” Our mission is to help you realize your travel dreams by making you a smarter, more informed traveler.
+                            </p>
+                            <p>
+                                Since 2024, we've helped countless travelers save money, travel more, and have a more authentic experience in the Costa del Sol. Everything we teach you here, we do ourselves! You will get the tips, tricks, and tools you need to have the trip of your dreams — without breaking the bank!
+                            </p>
+                            <Button asChild variant="link" className="px-0 text-primary hover:text-primary/80">
+                                <Link href="/blog/mystory-about-us">
+                                    Learn more about our story <ArrowRight className="ml-2 h-4 w-4" />
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
+
+                    {/* Right Column */}
+                    <div className="bg-card p-6 rounded-lg shadow-lg">
+                        <h3 className="text-xl font-bold font-montserrat text-primary-dark mb-4 flex items-center">
+                            <List className="mr-2 h-5 w-5" />
+                            Top Articles
+                        </h3>
+                        <ul className="space-y-3">
+                            {topArticles.map((article) => (
+                                <li key={article.href}>
+                                    <Link href={article.href} className="text-muted-foreground hover:text-primary hover:underline transition-colors flex items-start">
+                                        <ArrowRight className="h-4 w-4 mr-2 mt-1 shrink-0 text-primary/70" />
+                                        <span>{article.text}</span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </Section>
+        </div>
     </>
   );
 }
