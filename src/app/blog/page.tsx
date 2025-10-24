@@ -5,7 +5,7 @@ import ArticleCard from '@/components/blog/ArticleCard';
 import type { Article } from '@/lib/constants';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search, Rss } from 'lucide-react';
+import { Search, Rss, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Section from '@/components/shared/Section';
 import imageData from '@/lib/placeholder-images.json';
@@ -76,10 +76,10 @@ export default function BlogPage() {
           {/* Sidebar */}
           <aside className="lg:col-span-4 space-y-8">
             {/* Search Bar */}
-            <div className="bg-card p-6 rounded-lg shadow-md">
-              <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-3">Search Blog</h3>
+            <div className="bg-secondary/30 p-6 rounded-lg">
+              <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-4">Search Blog</h3>
               <form className="flex gap-2">
-                <Input type="search" placeholder="Keywords..." className="flex-grow bg-primary-light border-primary-dark/30 focus:ring-primary" />
+                <Input type="search" placeholder="Keywords..." className="flex-grow bg-background border-border focus:ring-primary" />
                 <Button type="submit" variant="default" size="icon" className="bg-primary text-primary-foreground">
                   <Search className="h-5 w-5" />
                 </Button>
@@ -87,13 +87,14 @@ export default function BlogPage() {
             </div>
 
             {/* Categories */}
-            <div className="bg-card p-6 rounded-lg shadow-md">
-              <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-3">Categories</h3>
-              <ul className="space-y-2">
+            <div className="bg-secondary/30 p-6 rounded-lg">
+              <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-4">Categories</h3>
+              <ul className="space-y-1">
                 {categories.map((category) => (
                   <li key={category}>
-                    <Link href={`/blog/category/${category.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-')}`} className="text-muted-foreground hover:text-primary transition-colors block py-1">
-                      {category}
+                     <Link href={`/blog/category/${category.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-')}`} className="flex items-center justify-between text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors rounded-md p-2">
+                      <span>{category}</span>
+                      <ArrowRight className="h-4 w-4" />
                     </Link>
                   </li>
                 ))}
@@ -101,26 +102,26 @@ export default function BlogPage() {
             </div>
 
             {/* Recent Posts */}
-            <div className="bg-card p-6 rounded-lg shadow-md">
-              <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-3">Recent Posts</h3>
-              <ul className="space-y-3">
+            <div className="bg-secondary/30 p-6 rounded-lg">
+              <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-4">Recent Posts</h3>
+              <ul className="space-y-4">
                 {recentPosts.map((post) => (
                   <li key={post.slug}>
-                    <Link href={`/blog/${post.slug}`} className="text-muted-foreground hover:text-primary transition-colors font-medium block leading-snug">
+                    <Link href={`/blog/${post.slug}`} className="text-foreground hover:text-primary transition-colors font-semibold block leading-snug">
                       {post.title}
                     </Link>
-                    <p className="text-xs text-muted-foreground/70">{new Date(post.date).toLocaleDateString()}</p>
+                    <p className="text-xs text-muted-foreground/80 mt-1">{new Date(post.date).toLocaleDateString()}</p>
                   </li>
                 ))}
               </ul>
             </div>
             
             {/* RSS Feed (Example) */}
-            <div className="bg-card p-6 rounded-lg shadow-md text-center">
-                 <Rss className="h-8 w-8 text-primary mx-auto mb-2"/>
-                <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-2">Stay Updated</h3>
-                <p className="text-sm text-muted-foreground mb-3">Subscribe to our RSS feed for the latest articles.</p>
-                <Button variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+            <div className="bg-accent/80 text-white p-6 rounded-lg text-center">
+                 <Rss className="h-8 w-8 text-white mx-auto mb-2"/>
+                <h3 className="font-montserrat text-lg font-semibold text-white mb-2">Stay Updated</h3>
+                <p className="text-sm text-white/80 mb-4">Subscribe to our RSS feed for the latest articles.</p>
+                <Button variant="outline" className="w-full border-white/50 text-white hover:bg-white hover:text-accent">
                    Subscribe to RSS
                 </Button>
             </div>

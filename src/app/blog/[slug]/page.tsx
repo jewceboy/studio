@@ -1,4 +1,5 @@
 
+
 'use client'; // Added due to onClick for print
 
 import Image from 'next/image';
@@ -321,14 +322,9 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
 
   return (
     <div className="container mx-auto px-4">
-      <article className="max-w-3xl mx-auto">
-        <header className="mb-8 text-center">
-          <div className="mb-4">
-            {article.categories?.map(cat => (
-              <Badge key={cat} variant="secondary" className="mr-2 bg-secondary/20 text-secondary-foreground font-montserrat">{cat}</Badge>
-            ))}
-          </div>
-          <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden shadow-xl">
+      <article className="max-w-4xl mx-auto">
+        <header className="mb-8">
+          <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden shadow-xl group">
             <Image
               src={article.imageUrl}
               alt={`Hero image for ${article.title}`}
@@ -337,18 +333,29 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
               className="object-cover"
               data-ai-hint={article.imageHint || article.title.toLowerCase()}
             />
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center p-4">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-10">
+              <div className="mb-4">
+                {article.categories?.map(cat => (
+                  <Badge key={cat} variant="default" className="mr-2 bg-primary text-primary-foreground font-montserrat text-xs uppercase tracking-wider">{cat}</Badge>
+                ))}
+              </div>
               <h1 
-                className="font-anton text-4xl md:text-6xl text-white text-center"
-                style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}
+                className="font-anton text-4xl md:text-5xl text-white leading-tight"
+                style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
               >
                 {article.title}
               </h1>
             </div>
           </div>
-          <div className="flex items-center justify-center space-x-4 text-sm text-muted-foreground">
-            <span className="flex items-center"><CalendarDays className="h-4 w-4 mr-1.5" /> {new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-            {article.author && <span className="flex items-center"><UserCircle className="h-4 w-4 mr-1.5" /> By {article.author}</span>}
+          <div className="flex items-center justify-between text-sm text-muted-foreground border-b pb-4">
+              <div className="flex items-center space-x-4">
+                {article.author && <span className="flex items-center"><UserCircle className="h-4 w-4 mr-1.5" /> By {article.author}</span>}
+                <span className="flex items-center"><CalendarDays className="h-4 w-4 mr-1.5" /> {new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Button variant="outline" size="icon" aria-label="Print article" onClick={() => typeof window !== 'undefined' && window.print()}><Printer className="h-4 w-4" /></Button>
+                <Button variant="outline" size="icon" aria-label="Share"><Share2 className="h-4 w-4" /></Button>
+            </div>
           </div>
         </header>
 
@@ -360,11 +367,11 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
 
         {/* Tags */}
         {article.tags && article.tags.length > 0 && (
-            <div className="mt-8 py-4 border-t border-b">
+            <div className="mt-8 py-4 border-t">
                 <span className="font-montserrat font-semibold mr-2 text-foreground">Tags:</span>
                 {article.tags.map(tag => (
                     <Link key={tag} href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`}>
-                        <Badge variant="outline" className="mr-2 mb-2 hover:bg-secondary/20 transition-colors">#{tag}</Badge>
+                        <Badge variant="secondary" className="mr-2 mb-2 hover:bg-secondary/80 transition-colors cursor-pointer">#{tag}</Badge>
                     </Link>
                 ))}
             </div>
@@ -372,36 +379,22 @@ export default function SinglePostPage({ params }: { params: { slug: string } })
 
         {/* Author Bio (Placeholder) */}
         {article.author && (
-          <div className="mt-12 p-6 bg-card rounded-lg shadow-md flex items-start space-x-4">
+          <div className="mt-12 p-6 bg-secondary/30 rounded-lg flex items-start space-x-6">
             <UserCircle className="h-16 w-16 text-muted-foreground shrink-0" />
             <div>
-              <p className="text-xs text-muted-foreground font-montserrat">WRITTEN BY</p>
+              <p className="text-xs text-muted-foreground font-montserrat uppercase tracking-wider">Written By</p>
               <h4 className="font-montserrat text-xl font-semibold text-foreground mb-1">{article.author}</h4>
               <p className="text-sm text-muted-foreground">
                 {article.author} is a passionate travel writer specializing in Andalusian culture and cuisine. Loves exploring hidden gems and sharing them with the world.
               </p>
-              {/* Add social links for author if available */}
             </div>
           </div>
         )}
-
-        {/* Social Sharing and Actions */}
-        <div className="mt-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div className="flex space-x-3">
-                <Button variant="outline" size="icon" aria-label="Share on Facebook"><Share2 className="h-5 w-5 text-foreground" /></Button>
-                <Button variant="outline" size="icon" aria-label="Share on Twitter"><Share2 className="h-5 w-5 text-foreground" /></Button>
-                <Button variant="outline" size="icon" aria-label="Share on Pinterest"><Share2 className="h-5 w-5 text-foreground" /></Button>
-                 <Button variant="outline" size="icon" aria-label="Print article" onClick={() => typeof window !== 'undefined' && window.print()}><Printer className="h-5 w-5 text-foreground" /></Button>
-            </div>
-            <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-                <MessageSquare className="mr-2 h-4 w-4" /> Leave a Comment (Coming Soon)
-            </Button>
-        </div>
       </article>
 
        {/* Related Articles Section */}
       {relatedArticles.length > 0 && (
-        <Section title="You Might Also Like" className="mt-12 pt-12 border-t">
+        <Section title="You Might Also Like" className="mt-16 pt-12 border-t">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {relatedArticles.map((relatedArticle) => (
               <ArticleCard key={relatedArticle.slug} article={relatedArticle} />
