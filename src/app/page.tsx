@@ -82,12 +82,21 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="-mx-4 -mt-8 sm:-mx-container-padding">
-        <div className="container mx-auto text-center py-12 md:py-20">
-            <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl text-accent-1-red mb-4">
+      <div className="relative -mx-4 -mt-8 sm:-mx-container-padding">
+        <Image
+          src={images['travel-hero-background'].url}
+          alt="A beautiful travel landscape representing the Costa del Sol"
+          fill
+          priority
+          className="object-cover"
+          data-ai-hint={images['travel-hero-background'].hint}
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative container mx-auto text-center py-12 md:py-20">
+            <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl text-accent-1-red mb-4" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
               Your Costa del Sol Journey Starts Here
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
+            <p className="text-lg md:text-xl text-white max-w-xl mx-auto" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
               The ultimate travel guide for independent and luxury travelers. Personalized recommendations, destinations, hotels, and activities.
             </p>
             <div className="mt-8 flex gap-4 justify-center">
@@ -96,7 +105,7 @@ export default function Home() {
                   Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="bg-white/90 text-primary-dark border-gray-300 hover:bg-white">
                 <Link href="/destinations">
                   Explore Destinations
                 </Link>
