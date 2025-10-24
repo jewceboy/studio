@@ -172,6 +172,13 @@ body {
   }
 }
 
+@layer components {
+  .site-header {
+    background-color: hsl(var(--accent) / 0.8);
+    @apply backdrop-blur-lg text-white shadow-md sticky top-0 z-50;
+  }
+}
+
 .prose {
   --tw-prose-body: hsl(var(--foreground));
   --tw-prose-headings: hsl(var(--foreground));

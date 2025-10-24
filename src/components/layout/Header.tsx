@@ -47,7 +47,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-header-background/80 backdrop-blur-lg text-white shadow-md sticky top-0 z-50">
+    <header className="site-header">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2 text-white hover:text-white/90 transition-colors">
           <Sun className="h-8 w-8" />
