@@ -82,7 +82,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative w-full h-[70vh] min-h-[500px] flex flex-col -mt-12">
+      <div className="relative w-full h-[70vh] min-h-[500px] flex flex-col -mt-8">
         <div className="relative w-full flex-grow">
           <Image
             src={images['travel-hero-background'].url}
@@ -123,14 +123,14 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
+
       <div className="container mx-auto px-4">
         {/* High-Value Money Pages Section */}
         <Section title="Plan Your Luxury Experience" subtitle="Focusing on high-value services to create your perfect Costa del Sol journey.">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {topMoneyPages.map((page) => (
-              <InfoCard 
-                key={page.title} 
+              <InfoCard
+                key={page.title}
                 title={page.title}
                 linkHref={page.linkHref}
                 imageUrl={images[page.imageKey].url}
@@ -141,13 +141,15 @@ export default function Home() {
             ))}
           </div>
         </Section>
-        
-        {/* Content Pillars Section */}
+      </div>
+
+      {/* Content Pillars Section */}
+      <div className="bg-secondary/20">
         <Section title="Explore the Costa del Sol" subtitle="From stunning destinations to insider tips, start your journey here.">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {contentPillars.map((page) => (
-              <InfoCard 
-                key={page.title} 
+              <InfoCard
+                key={page.title}
                 title={page.title}
                 linkHref={page.linkHref}
                 imageUrl={images[page.imageKey].url}
