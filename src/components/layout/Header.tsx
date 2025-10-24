@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -47,9 +48,9 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-background shadow-md">
+    <header className="sticky top-0 z-50 bg-black text-white shadow-md">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors">
+        <Link href="/" className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors">
           <Sun className="h-8 w-8" />
           <span className="font-bold text-xl">MalagaTravelGuide</span>
         </Link>
@@ -62,7 +63,8 @@ export default function Header() {
                     <Link href={link.href} legacyBehavior passHref>
                         <NavigationMenuLink className={cn(
                         navigationMenuTriggerStyle(),
-                        pathname.startsWith(link.href) ? 'bg-accent text-accent-foreground' : ''
+                        'bg-transparent hover:bg-gray-800 focus:bg-gray-800',
+                        pathname.startsWith(link.href) ? 'bg-gray-700 text-white' : ''
                         )}>
                         {link.label}
                         </NavigationMenuLink>
@@ -71,7 +73,7 @@ export default function Header() {
             ))}
 
             <NavigationMenuItem>
-                <NavigationMenuTrigger>
+                <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800'>
                     Luxury Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -90,7 +92,7 @@ export default function Header() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-                <NavigationMenuTrigger>
+                <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800'>
                     Explore
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -110,7 +112,7 @@ export default function Header() {
 
             <NavigationMenuItem>
                 <Link href="/blog" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname.startsWith('/blog') ? 'bg-accent text-accent-foreground' : '')}>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800', pathname.startsWith('/blog') ? 'bg-gray-700 text-white' : '')}>
                     Blog
                     </NavigationMenuLink>
                 </Link>
@@ -118,7 +120,7 @@ export default function Header() {
             
             <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname.startsWith('/contact') ? 'bg-accent text-accent-foreground' : '')}>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800', pathname.startsWith('/contact') ? 'bg-gray-700 text-white' : '')}>
                     Contact
                     </NavigationMenuLink>
                 </Link>
@@ -131,19 +133,19 @@ export default function Header() {
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800 focus:bg-gray-800">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-background p-6 overflow-y-auto">
+            <SheetContent side="right" className="w-[280px] bg-black text-white p-6 overflow-y-auto">
               <div className="flex justify-between items-center mb-8">
-                <Link href="/" className="flex items-center space-x-2 text-primary" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link href="/" className="flex items-center space-x-2 text-white" onClick={() => setIsMobileMenuOpen(false)}>
                   <Sun className="h-7 w-7" />
                   <span className="font-bold text-lg">MalagaTravelGuide</span>
                 </Link>
                 <SheetClose asChild>
-                  <Button variant="ghost" size="icon">
+                  <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800 focus:bg-gray-800">
                     <X className="h-6 w-6" />
                     <span className="sr-only">Close menu</span>
                   </Button>
@@ -155,8 +157,8 @@ export default function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        'text-foreground hover:text-primary transition-colors py-2 text-lg',
-                        pathname.startsWith(link.href) ? 'font-bold text-primary' : ''
+                        'text-white hover:text-gray-300 transition-colors py-2 text-lg',
+                        pathname.startsWith(link.href) ? 'font-bold' : ''
                       )}
                     >
                       {link.label}
@@ -165,12 +167,12 @@ export default function Header() {
                 ))}
                 
                  <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-semibold text-foreground text-lg py-2 border-t'>Luxury Services</span>
+                    <span className='font-semibold text-white text-lg py-2 border-t border-gray-700'>Luxury Services</span>
                     {luxuryServicesSubItems.map((subItem) => (
                     <SheetClose key={subItem.href} asChild>
                         <Link
                         href={subItem.href}
-                        className={cn('font-normal text-muted-foreground hover:text-primary transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-primary' : '')}
+                        className={cn('font-normal text-gray-300 hover:text-white transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-white' : '')}
                         >
                         {subItem.title}
                         </Link>
@@ -179,12 +181,12 @@ export default function Header() {
                 </div>
 
                 <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-semibold text-foreground text-lg py-2 border-t'>Explore</span>
+                    <span className='font-semibold text-white text-lg py-2 border-t border-gray-700'>Explore</span>
                     {exploreSubItems.map((subItem) => (
                     <SheetClose key={subItem.href} asChild>
                         <Link
                         href={subItem.href}
-                        className={cn('font-normal text-muted-foreground hover:text-primary transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-primary' : '')}
+                        className={cn('font-normal text-gray-300 hover:text-white transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-white' : '')}
                         >
                         {subItem.title}
                         </Link>
