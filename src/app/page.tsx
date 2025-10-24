@@ -10,6 +10,7 @@ import Image from 'next/image';
 import imageData from '@/lib/placeholder-images.json';
 import { allSiteUrls } from '@/lib/urls';
 import { destinationsData } from '@/lib/data';
+import ClientOnly from '@/components/shared/ClientOnly';
 
 const topMoneyPages = [
     {
@@ -104,18 +105,20 @@ export default function Home() {
             The ultimate travel guide for independent and solo travelers.
           </p>
           {/* Newsletter Form */}
-          <form className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full max-w-md">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              required
-              className="h-12 flex-grow bg-white/90 text-primary-dark placeholder:text-muted-foreground border-border focus:ring-primary"
-              aria-label="Email for newsletter"
-            />
-            <Button type="submit" size="lg" className="h-12 w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-medium">
-              Subscribe
-            </Button>
-          </form>
+          <ClientOnly>
+            <form className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full max-w-md">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                required
+                className="h-12 flex-grow bg-white/90 text-primary-dark placeholder:text-muted-foreground border-border focus:ring-primary"
+                aria-label="Email for newsletter"
+              />
+              <Button type="submit" size="lg" className="h-12 w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-medium">
+                Subscribe
+              </Button>
+            </form>
+          </ClientOnly>
            <p className="mt-4 text-xs text-white/70">
             Join 100,000+ other readers and get my free travel tips.
           </p>
