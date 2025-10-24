@@ -36,7 +36,7 @@
 
     /* Custom Palette */
     --header-background: 328 89% 72%;
-    --primary-dark: 210 30% 25%; /* Deep Blue */
+    --primary-dark: 197 37% 44%; /* Footer Teal */
     --primary-light: 0 0% 98%; /* Off-White/Light Gray */
     --accent-2-maroon: 345 60% 35%;
     --accent-3-light-blue: 205 80% 94%;
@@ -89,7 +89,7 @@
     @apply bg-background text-foreground;
   }
   h1 {
-    @apply font-anton text-4xl md:text-5xl lg:text-6xl text-primary;
+    @apply font-anton text-4xl md:text-5xl lg:text-6xl;
   }
 }
 
