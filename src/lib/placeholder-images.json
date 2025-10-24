@@ -1,12 +1,12 @@
 {
   "Marbella-panoramic-beach-luxury": {
-    "url": "https://images.unsplash.com/photo-1590582798363-a38218585994?q=80&w=1920&h=1080&fit=crop",
+    "url": "https://picsum.photos/seed/Marbella-panoramic-beach-luxury/1920/1080",
     "hint": "Marbella panoramic beach luxury",
     "width": 1920,
     "height": 1080
   },
   "Marbella-panoramic-beach-luxury-mobile": {
-    "url": "https://images.unsplash.com/photo-1590582798363-a38218585994?q=80&w=600&h=800&fit=crop",
+    "url": "https://picsum.photos/seed/Marbella-panoramic-beach-luxury-mobile/600/800",
     "hint": "Marbella beach mobile",
     "width": 600,
     "height": 800
