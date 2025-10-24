@@ -10,7 +10,6 @@ import Image from 'next/image';
 import imageData from '@/lib/placeholder-images.json';
 import { allSiteUrls } from '@/lib/urls';
 import { destinationsData } from '@/lib/data';
-import ClientOnly from '@/components/shared/ClientOnly';
 
 const topMoneyPages = [
     {
@@ -74,8 +73,6 @@ type ImageData = {
   [key: string]: {
     url: string;
     hint: string;
-    width: number;
-    height: number;
   };
 };
 
@@ -85,43 +82,19 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative -mt-8 -mx-4 mb-12 sm:-mx-container-padding">
-        <div className="relative h-[60vh] min-h-[400px] w-full">
-          <Image
-            src={images['travel-hero-background'].url}
-            alt="Beautiful travel landscape"
-            fill
-            priority
-            className="object-cover"
-            data-ai-hint={images['travel-hero-background'].hint}
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
-          <h1 className="font-anton text-5xl sm:text-6xl md:text-7xl font-bold leading-tight drop-shadow-lg">
-            The world is your oyster
+      <div className="relative -mt-8 -mx-4 sm:-mx-container-padding">
+        <div className="h-[50vh] min-h-[300px] bg-primary-dark flex flex-col justify-center items-center text-white text-center p-4">
+          <h1 className="font-anton text-5xl md:text-6xl font-bold tracking-tight mb-4">
+              Your Costa del Sol Journey Starts Here
           </h1>
-          <p className="mt-4 max-w-2xl text-lg sm:text-xl text-white/90 drop-shadow-md">
-            The ultimate travel guide for independent and solo travelers.
+          <p className="max-w-2xl text-lg md:text-xl text-white/90">
+            The ultimate travel guide for independent and luxury travelers.
           </p>
-          {/* Newsletter Form */}
-          <ClientOnly>
-            <form className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full max-w-md">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                required
-                className="h-12 flex-grow bg-white/90 text-primary-dark placeholder:text-muted-foreground border-border focus:ring-primary"
-                aria-label="Email for newsletter"
-              />
-              <Button type="submit" size="lg" className="h-12 w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-medium">
-                Subscribe
-              </Button>
-            </form>
-          </ClientOnly>
-           <p className="mt-4 text-xs text-white/70">
-            Join 100,000+ other readers and get my free travel tips.
-          </p>
+          <Button asChild size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 font-montserrat font-semibold">
+            <Link href="/plan-your-trip">
+              Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
         </div>
       </div>
       
@@ -178,6 +151,11 @@ export default function Home() {
             </Link>
           </Button>
         </div>
+      </Section>
+
+      {/* Newsletter Form Section */}
+      <Section title="Stay in the Know" subtitle="Subscribe to our newsletter for the latest travel tips and exclusive deals.">
+        <NewsletterForm />
       </Section>
     </>
   );
