@@ -83,34 +83,44 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <div className="relative -mx-4 -mt-8 sm:-mx-container-padding">
-        <div className="relative w-full h-[50vh] min-h-[300px] max-h-[500px]">
-            <Image
-            src={images['travel-hero-background'].url}
-            alt="A beautiful travel landscape representing the Costa del Sol"
-            fill
-            priority
-            className="object-cover"
-            data-ai-hint={images['travel-hero-background'].hint}
-            />
-            <div className="absolute inset-0 bg-black/40" />
-            <div className="relative container mx-auto h-full flex flex-col items-center justify-center text-center text-white">
-                <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl text-accent-1-red mb-4" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
-                Your Costa del Sol Journey Starts Here
-                </h1>
-                <p className="text-lg md:text-xl max-w-xl mx-auto" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
-                The ultimate travel guide for independent and luxury travelers. Personalized recommendations, destinations, hotels, and activities.
-                </p>
-                <div className="mt-8 flex gap-4 justify-center">
-                <Button asChild size="lg" className="bg-accent-1-red hover:bg-accent-1-red-hover text-primary-foreground">
-                    <Link href="/plan-your-trip">
-                    Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="bg-white/90 text-primary-dark border-gray-300 hover:bg-white">
-                    <Link href="/destinations">
-                    Explore Destinations
-                    </Link>
-                </Button>
+        <div className="relative w-full h-[70vh] min-h-[500px] flex flex-col">
+            <div className="relative w-full flex-grow">
+                <Image
+                src={images['travel-hero-background'].url}
+                alt="A beautiful travel landscape representing the Costa del Sol"
+                fill
+                priority
+                className="object-cover"
+                data-ai-hint={images['travel-hero-background'].hint}
+                />
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="relative container mx-auto h-full flex flex-col items-center justify-center text-center text-white">
+                    <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl text-accent-1-red mb-4" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
+                    Your Costa del Sol Journey Starts Here
+                    </h1>
+                    <p className="text-lg md:text-xl max-w-xl mx-auto" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
+                    The ultimate travel guide for independent and luxury travelers. Personalized recommendations, destinations, hotels, and activities.
+                    </p>
+                    <div className="mt-8 flex gap-4 justify-center">
+                    <Button asChild size="lg" className="bg-accent-1-red hover:bg-accent-1-red-hover text-primary-foreground">
+                        <Link href="/plan-your-trip">
+                        Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
+                        </Link>
+                    </Button>
+                    <Button asChild variant="outline" size="lg" className="bg-white/90 text-primary-dark border-gray-300 hover:bg-white">
+                        <Link href="/destinations">
+                        Explore Destinations
+                        </Link>
+                    </Button>
+                    </div>
+                </div>
+            </div>
+            {/* Newsletter Form Section */}
+            <div className="bg-newsletter-blue py-6">
+                <div className="container mx-auto px-4">
+                <ClientOnly>
+                    <NewsletterForm />
+                </ClientOnly>
                 </div>
             </div>
         </div>
@@ -150,14 +160,6 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Newsletter Form Section */}
-      <div className="bg-newsletter-blue py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <ClientOnly>
-            <NewsletterForm />
-          </ClientOnly>
-        </div>
-      </div>
     </>
   );
 }
