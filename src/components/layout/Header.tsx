@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Menu, X, Sun, Briefcase, Droplets, Heart, ShoppingCart, Calendar, Map, Plane, Sailboat, Users, Tv, Palette, Building, Utensils, Waves, MountainSnow, Star, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
@@ -18,6 +18,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const primaryNavLinks = [
   { href: '/destinations', label: 'Destinations', icon: Map },
@@ -54,12 +55,30 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-header-background text-white shadow-md">
+    <motion.header 
+        className={cn(
+            "fixed top-0 left-0 right-0 z-50 transition-colors duration-300",
+            isScrolled ? "bg-background shadow-md text-text-primary" : "bg-transparent text-white"
+        )}
+        animate={{
+            backgroundColor: isScrolled ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0)',
+        }}
+    >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" className="flex items-center space-x-2 text-white hover:text-white/80 transition-colors">
-          <Sun className="h-8 w-8" />
-          <span className="font-semibold text-xl font-montserrat">MalagaTravelGuide</span>
+        <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+          <Sun className={cn("h-8 w-8", isScrolled ? 'text-primary' : 'text-white')} />
+          <span className={cn("font-semibold text-xl font-montserrat", isScrolled ? 'text-text-primary' : 'text-white')}>MalagaTravelGuide</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -71,8 +90,9 @@ export default function Header() {
                         <Link href={link.href} legacyBehavior passHref>
                             <NavigationMenuLink className={cn(
                             navigationMenuTriggerStyle(),
-                            'bg-transparent hover:bg-white/10 focus:bg-white/10 font-montserrat font-semibold tracking-wider uppercase text-sm',
-                            pathname.startsWith(link.href) ? 'bg-white/10' : ''
+                            'bg-transparent font-montserrat font-semibold tracking-wider uppercase text-sm',
+                            isScrolled ? 'text-text-secondary hover:bg-black/5 focus:bg-black/5' : 'hover:bg-white/10 focus:bg-white/10',
+                            pathname.startsWith(link.href) ? (isScrolled ? 'text-primary-dark' : 'bg-white/10') : ''
                             )}>
                             {link.label}
                             </NavigationMenuLink>
@@ -81,7 +101,7 @@ export default function Header() {
                 ))}
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className='bg-transparent hover:bg-white/10 focus:bg-white/10 font-montserrat font-semibold tracking-wider uppercase text-sm'>
+                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-semibold tracking-wider uppercase text-sm', isScrolled ? 'text-text-secondary hover:bg-black/5 focus:bg-black/5' : 'hover:bg-white/10 focus:bg-white/10')}>
                         Luxury Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -100,7 +120,7 @@ export default function Header() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className='bg-transparent hover:bg-white/10 focus:bg-white/10 font-montserrat font-semibold tracking-wider uppercase text-sm'>
+                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-semibold tracking-wider uppercase text-sm', isScrolled ? 'text-text-secondary hover:bg-black/5 focus:bg-black/5' : 'hover:bg-white/10 focus:bg-white/10')}>
                         Explore
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -120,7 +140,7 @@ export default function Header() {
 
                 <NavigationMenuItem>
                     <Link href="/blog" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-white/10 focus:bg-white/10 font-montserrat font-semibold tracking-wider uppercase text-sm', pathname.startsWith('/blog') ? 'bg-white/10' : '')}>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent font-montserrat font-semibold tracking-wider uppercase text-sm', isScrolled ? 'text-text-secondary hover:bg-black/5 focus:bg-black/5' : 'hover:bg-white/10 focus:bg-white/10', pathname.startsWith('/blog') ? (isScrolled ? 'text-primary-dark' : 'bg-white/10') : '')}>
                         Blog
                         </NavigationMenuLink>
                     </Link>
@@ -128,7 +148,7 @@ export default function Header() {
                 
                 <NavigationMenuItem>
                     <Link href="/contact" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-white/10 focus:bg-white/10 font-montserrat font-semibold tracking-wider uppercase text-sm', pathname.startsWith('/contact') ? 'bg-white/10' : '')}>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent font-montserrat font-semibold tracking-wider uppercase text-sm', isScrolled ? 'text-text-secondary hover:bg-black/5 focus:bg-black/5' : 'hover:bg-white/10 focus:bg-white/10', pathname.startsWith('/contact') ? (isScrolled ? 'text-primary-dark' : 'bg-white/10') : '')}>
                         Contact
                         </NavigationMenuLink>
                     </Link>
@@ -137,9 +157,9 @@ export default function Header() {
             </NavigationMenuList>
             </NavigationMenu>
              {/* Social Icons */}
-            <div className="flex items-center space-x-3 pl-6 ml-4 border-l border-white/20">
+            <div className={cn("flex items-center space-x-3 pl-6 ml-4 border-l", isScrolled ? 'border-border' : 'border-white/20' )}>
                 {socialLinks.map((social) => (
-                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-white/80 hover:text-white transition-colors">
+                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="opacity-80 hover:opacity-100 transition-opacity">
                     <social.icon className="h-5 w-5" />
                     </Link>
                 ))}
@@ -150,19 +170,19 @@ export default function Header() {
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 focus:bg-white/10">
+              <Button variant="ghost" size="icon" className={cn('hover:bg-white/10 focus:bg-white/10', isScrolled ? 'text-text-primary hover:bg-black/5 focus:bg-black/5' : 'text-white')}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-header-background text-white p-6 overflow-y-auto">
+            <SheetContent side="right" className="w-[280px] bg-background text-text-primary p-6 overflow-y-auto">
               <div className="flex justify-between items-center mb-8">
                 <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Sun className="h-7 w-7" />
+                  <Sun className="h-7 w-7 text-primary" />
                   <span className="font-semibold text-lg font-montserrat">MalagaTravelGuide</span>
                 </Link>
                 <SheetClose asChild>
-                  <Button variant="ghost" size="icon" className="hover:bg-white/10 focus:bg-white/10">
+                  <Button variant="ghost" size="icon" className="hover:bg-secondary/10 focus:bg-secondary/10">
                     <X className="h-6 w-6" />
                     <span className="sr-only">Close menu</span>
                   </Button>
@@ -174,8 +194,8 @@ export default function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        'hover:text-white/80 transition-colors py-2 text-lg',
-                        pathname.startsWith(link.href) ? 'font-bold' : 'font-semibold'
+                        'hover:text-primary transition-colors py-2 text-lg',
+                        pathname.startsWith(link.href) ? 'font-bold text-primary' : 'font-semibold'
                       )}
                     >
                       {link.label}
@@ -184,12 +204,12 @@ export default function Header() {
                 ))}
                 
                  <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-semibold text-lg py-2 border-t border-white/20'>Luxury Services</span>
+                    <span className='font-semibold text-lg py-2 border-t border-border'>Luxury Services</span>
                     {luxuryServicesSubItems.map((subItem) => (
                     <SheetClose key={subItem.href} asChild>
                         <Link
                         href={subItem.href}
-                        className={cn('font-normal text-white/80 hover:text-white transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-white' : '')}
+                        className={cn('font-normal text-text-secondary hover:text-primary transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-primary' : '')}
                         >
                         {subItem.title}
                         </Link>
@@ -198,12 +218,12 @@ export default function Header() {
                 </div>
 
                 <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-semibold text-lg py-2 border-t border-white/20'>Explore</span>
+                    <span className='font-semibold text-lg py-2 border-t border-border'>Explore</span>
                     {exploreSubItems.map((subItem) => (
                     <SheetClose key={subItem.href} asChild>
                         <Link
                         href={subItem.href}
-                        className={cn('font-normal text-white/80 hover:text-white transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-white' : '')}
+                        className={cn('font-normal text-text-secondary hover:text-primary transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-primary' : '')}
                         >
                         {subItem.title}
                         </Link>
@@ -212,9 +232,9 @@ export default function Header() {
                 </div>
               </nav>
               {/* Mobile Social Icons */}
-              <div className="flex items-center justify-center space-x-5 pt-8 mt-8 border-t border-white/20">
+              <div className="flex items-center justify-center space-x-5 pt-8 mt-8 border-t border-border">
                 {socialLinks.map((social) => (
-                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-white/80 hover:text-white transition-colors">
+                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-text-secondary hover:text-primary transition-colors">
                     <social.icon className="h-6 w-6" />
                     </Link>
                 ))}
@@ -223,7 +243,7 @@ export default function Header() {
           </Sheet>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }
 
@@ -253,5 +273,3 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
-
-    

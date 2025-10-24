@@ -11,6 +11,8 @@ import { cn } from '@/lib/utils';
 interface InfoCardProps {
   title: string;
   imageUrl: string;
+  imageWidth?: number;
+  imageHeight?: number;
   imageAlt: string;
   linkHref: string;
   description?: string;
@@ -24,6 +26,8 @@ interface InfoCardProps {
 export default function InfoCard({
   title,
   imageUrl,
+  imageWidth = 600,
+  imageHeight = 400,
   imageAlt,
   linkHref,
   description,
@@ -34,15 +38,26 @@ export default function InfoCard({
   variant = 'default',
 }: InfoCardProps) {
 
+  if (!imageUrl) {
+    // Return a placeholder or null if no image is provided to avoid crashing
+    return (
+        <div className={cn('group block relative overflow-hidden rounded-lg aspect-video bg-gray-200 animate-pulse', className)}>
+            <div className="absolute inset-0 flex items-center justify-center p-4">
+                <h3 className="font-anton text-2xl md:text-3xl text-gray-500 text-center">{title}</h3>
+            </div>
+        </div>
+    );
+  }
+
   if (variant === 'overlay') {
     return (
-      <Link href={linkHref} className={cn('group block relative overflow-hidden rounded-lg aspect-video', className)}>
+      <Link href={linkHref} className={cn('group block relative overflow-hidden rounded-lg aspect-[4/3]', className)}>
         <Image
           src={imageUrl}
           alt={imageAlt}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          width={imageWidth}
+          height={imageHeight}
+          className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
           data-ai-hint={imageHint}
         />
         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center p-4">
@@ -61,9 +76,9 @@ export default function InfoCard({
         <Image
           src={imageUrl}
           alt={imageAlt}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          width={imageWidth}
+          height={imageHeight}
+          className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
           data-ai-hint={imageHint}
         />
       </CardHeader>

@@ -5,50 +5,21 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, List } from 'lucide-react';
 import NewsletterForm from '@/components/forms/newsletter-form';
+import { allSiteUrls } from '@/lib/urls';
+import Section from '@/components/shared/Section';
+import InfoCard from '@/components/shared/InfoCard';
+import imageData from '@/lib/placeholder-images.json';
 
-// --- Header Component ---
-function Header() {
-  const { scrollY } = useScroll();
-  const [isScrolled, setIsScrolled] = useState(false);
+type ImageData = {
+  [key: string]: {
+    url: string;
+    hint: string;
+    width: number;
+    height: number;
+  };
+};
+const images: ImageData = imageData;
 
-  useEffect(() => {
-    return scrollY.on('change', (latest) => {
-      setIsScrolled(latest > 50);
-    });
-  }, [scrollY]);
-
-  return (
-    <motion.header
-      className="fixed top-0 left-0 right-0 z-50 transition-colors duration-250 ease-out"
-      animate={{
-        backgroundColor: isScrolled ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0)',
-        borderColor: isScrolled ? 'rgba(230, 234, 240, 1)' : 'rgba(230, 234, 240, 0)',
-      }}
-    >
-      <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" className="font-display text-xl font-bold">
-          <motion.span animate={{ color: isScrolled ? '#1E1E1E' : '#FFFFFF' }}>
-            MalagaTravelGuide
-          </motion.span>
-        </Link>
-        <nav className="hidden md:flex items-center gap-6">
-          {['Destinations', 'Hotels', 'Experiences', 'Blog'].map((item) => (
-            <Link key={item} href={`/${item.toLowerCase()}`} className="text-sm font-semibold uppercase tracking-wider transition-colors" >
-               <motion.span animate={{ color: isScrolled ? '#4E5661' : '#FFFFFF' }} className="hover:text-primary">
-                {item}
-               </motion.span>
-            </Link>
-          ))}
-        </nav>
-        <Link href="/plan-your-trip" passHref>
-          <motion.button className="hidden md:block bg-primary text-white text-button-label px-m py-s rounded-2xl hover:bg-primary-dark transition-colors">
-            Plan Your Trip
-          </motion.button>
-        </Link>
-      </div>
-    </motion.header>
-  );
-}
 
 // --- Hero Section ---
 function HeroSection() {
@@ -78,6 +49,7 @@ function HeroSection() {
           animate="animate"
           transition={{ duration: 0.7, delay: 0.2 }}
           className="font-display text-h1 text-white"
+          style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
         >
           Your Costa del Sol Journey Starts Here
         </motion.h1>
@@ -98,14 +70,14 @@ function HeroSection() {
           className="mt-m flex flex-wrap gap-s justify-center"
         >
           <Link href="/plan-your-trip" passHref>
-            <button className="bg-primary text-white text-button-label px-m py-s rounded-2xl hover:bg-primary-dark transition-colors">
+            <motion.button className="bg-primary text-white text-button-label px-m py-s rounded-2xl hover:bg-primary-dark transition-colors">
               Plan Your Trip
-            </button>
+            </motion.button>
           </Link>
           <Link href="/destinations" passHref>
-            <button className="bg-transparent border border-primary text-primary text-button-label px-m py-s rounded-2xl hover:bg-primary/10 transition-colors">
+            <motion.button className="bg-transparent border border-primary text-primary text-button-label px-m py-s rounded-2xl hover:bg-primary/10 transition-colors">
               Explore Destinations
-            </button>
+            </motion.button>
           </Link>
         </motion.div>
       </motion.div>
@@ -113,76 +85,44 @@ function HeroSection() {
   );
 }
 
-// --- Section Wrapper for Animations ---
-function AnimatedSection({ children, className }: { children: React.ReactNode, className?: string }) {
-  return (
-    <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6 }}
-      className={className}
-    >
-      {children}
-    </motion.section>
-  );
-}
 
-// --- Luxury Experience Card ---
-function LuxuryCard({ title }: { title: string }) {
-  return (
-    <motion.div
-      whileHover={{ y: -8, scale: 1.02 }}
-      transition={{ type: 'spring', stiffness: 300 }}
-      className="bg-white rounded-DEFAULT shadow-card p-m"
-    >
-      <div className="aspect-[4/3] w-full bg-gray-100 rounded-lg overflow-hidden">
-        <Image src="https://placehold.co/600x400/F8FBFD/E6EAF0?text=Premium+Service" alt={title} width={600} height={400} className="w-full h-full object-cover"/>
-      </div>
-      <h3 className="font-sans text-h3 text-text-primary mt-s">{title}</h3>
-    </motion.div>
-  );
-}
+const luxuryExperiences = [
+    {
+        slug: 'weddings',
+        name: 'Weddings & Luxury Events',
+        imageKey: 'luxury-wedding',
+    },
+    {
+        slug: 'business',
+        name: 'Business & MICE Tourism',
+        imageKey: 'corporate-event',
+    },
+     {
+        slug: 'wellness',
+        name: 'Wellness & Medical Tourism',
+        imageKey: 'wellness-spa',
+    },
+    {
+        slug: 'hotels',
+        name: 'Luxury Accommodation & Hotels',
+        imageKey: 'luxury-hotel',
+    },
+    {
+        slug: 'transfers',
+        name: 'Airport Transfers & VIP Transport',
+        imageKey: 'vip-transport',
+    }
+]
 
-// --- Footer Component ---
-function Footer() {
-    return (
-        <footer className="bg-[#00374D] text-white/90">
-            <div className="container mx-auto py-l">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-l">
-                    <div>
-                        <h3 className="font-display text-xl font-bold mb-s">MalagaTravelGuide</h3>
-                        <p className="text-body-s">Your ultimate guide to the Costa del Sol.</p>
-                    </div>
-                    <div>
-                        <h4 className="font-sans text-button-label mb-s">About</h4>
-                        <ul className="space-y-xs">
-                            <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-                            <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="font-sans text-button-label mb-s">Explore</h4>
-                        <ul className="space-y-xs">
-                            <li><Link href="/destinations" className="hover:text-primary transition-colors">Destinations</Link></li>
-                            <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="font-sans text-button-label mb-s">Follow Us</h4>
-                        <ul className="space-y-xs">
-                            <li><a href="#" className="hover:text-primary transition-colors">Facebook</a></li>
-                            <li><a href="#" className="hover:text-primary transition-colors">Instagram</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="mt-l border-t border-white/20 pt-m text-center text-sm text-text-light">
-                    © {new Date().getFullYear()} Malaga Travel Guide. All rights reserved.
-                </div>
-            </div>
-        </footer>
-    );
-}
+const exploreCategories = [
+    { title: "Destinations", href: "/destinations", imageKey: "mijas-pueblo-village" },
+    { title: "Attractions", href: "/attractions", imageKey: "malaga-city-skyline" },
+    { title: "Restaurants", href: "/restaurants", imageKey: "tapas-food-variety" },
+    { title: "Beaches", href: "/beaches", imageKey: "secluded-cove-beach" },
+    { title: "Nightlife", href: "/nightlife", imageKey: "rooftop-bar-malaga" },
+    { title: "Sports & Golf", href: "/sports", imageKey: "golf-course-green" },
+];
+
 
 const topArticles = [
   { href: '/travel-planning/budget-travel/cheap-flights', text: 'How to Find Cheap Flights' },
@@ -197,60 +137,85 @@ const topArticles = [
 export default function Home() {
     return (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-            <Header />
-            <main>
-                <HeroSection />
-
-                <AnimatedSection className="py-l bg-background-alt">
-                    <div className="container mx-auto text-center">
-                         <h4 className="font-sans text-button-label text-text-light mb-s">GET MY BEST TIPS SENT STRAIGHT TO YOU!</h4>
-                         <NewsletterForm />
+            <HeroSection />
+            
+            <div className='bg-newsletter-blue'>
+              <Section className="py-12">
+                  <div className="container mx-auto text-center">
+                      <NewsletterForm />
+                  </div>
+              </Section>
+            </div>
+            
+            <div className="bg-blue-100">
+                <Section className="py-xl">
+                    <h2 className="font-display text-h2 text-text-primary text-center">Plan Your Luxury Experience</h2>
+                    <p className="font-sans text-body-l text-text-secondary text-center max-w-xl mx-auto mb-l">
+                        Focusing on high-value services to create your perfect costa del sol journey
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-m">
+                        {luxuryExperiences.map(exp => (
+                            <InfoCard
+                                key={exp.slug}
+                                title={exp.name}
+                                imageUrl={images[exp.imageKey]?.url}
+                                imageWidth={images[exp.imageKey]?.width}
+                                imageHeight={images[exp.imageKey]?.height}
+                                imageAlt={exp.name}
+                                imageHint={images[exp.imageKey]?.hint}
+                                linkHref={`/${exp.slug}`}
+                                variant='overlay'
+                            />
+                        ))}
                     </div>
-                </AnimatedSection>
-                
-                <AnimatedSection className="py-xl">
-                    <div className="container mx-auto">
-                        <h2 className="font-display text-h2 text-text-primary text-center">Plan Your Luxury Experience</h2>
-                        <p className="font-sans text-body-l text-text-secondary text-center max-w-xl mx-auto mb-l">
-                            Focusing on high-value services to create your perfect costa del sol journey
+                </Section>
+            </div>
+            <Section className="py-xl bg-blue-100">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-l items-center">
+                    <div className="md:col-span-2">
+                        <h2 className="font-display text-h2 text-text-primary">About Malaga Travel Guide</h2>
+                        <Image src="https://picsum.photos/seed/about-us-image/800/500" alt="About Us" width={800} height={500} className="rounded-lg shadow-lg w-full my-m"/>
+                        <p className="font-sans text-body-l text-text-secondary">
+                            Welcome! Every day we wake up with one goal in mind: “How can we help other people travel better for less?” Our mission is to help you realize your travel dreams by making you a smarter, more informed traveler.
                         </p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-m">
-                           <LuxuryCard title="Weddings & Luxury Events" />
-                           <LuxuryCard title="Business & MICE Tourism" />
-                           <LuxuryCard title="Luxury Accommodation & Hotels" />
-                           <LuxuryCard title="Airport Transfers & VIP Transport" />
+                        <p className='mt-s font-sans text-body-l text-text-secondary'>Read more about <Link href="/blog/mystory-about-us" className='text-primary hover:underline'>my story and why I started this website.</Link></p>
+                    </div>
+                    <div>
+                        <div className="bg-background p-m rounded-lg shadow-card">
+                            <h4 className="font-sans text-h4 text-text-primary mb-s flex items-center"><List className="mr-2"/>Top Articles</h4>
+                            <ul className="space-y-xs">
+                              {topArticles.map(article => (
+                                <li key={article.href}>
+                                    <Link href={article.href} className="flex items-center text-text-secondary hover:text-primary transition-colors">
+                                      <ArrowRight className="h-4 w-4 mr-2 text-primary/70 shrink-0"/>
+                                      <span>{article.text}</span>
+                                    </Link>
+                                </li>
+                              ))}
+                            </ul>
                         </div>
                     </div>
-                </AnimatedSection>
+                </div>
+            </Section>
 
-                <AnimatedSection className="py-xl bg-background-alt">
-                    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-l items-center">
-                        <div>
-                            <Image src="https://placehold.co/800x600/E6EAF0/4E5661?text=About+Us" alt="About Us" width={800} height={600} className="rounded-lg shadow-lg w-full"/>
-                        </div>
-                        <div>
-                            <h2 className="font-display text-h2 text-text-primary">About Malaga Travel Guide</h2>
-                            <p className="font-sans text-body-l text-text-secondary mt-s">
-                               Welcome! Every day we wake up with one goal in mind: “How can we help other people travel better for less?” Our mission is to help you realize your travel dreams by making you a smarter, more informed traveler.
-                            </p>
-                             <div className="mt-m">
-                                <h4 className="font-sans text-h4 text-text-primary mb-s flex items-center"><List className="mr-2"/>Top Articles</h4>
-                                <ul className="space-y-xs">
-                                  {topArticles.map(article => (
-                                    <li key={article.href}>
-                                        <Link href={article.href} className="flex items-center text-text-secondary hover:text-primary transition-colors">
-                                          <ArrowRight className="h-4 w-4 mr-2 text-primary/70 shrink-0"/>
-                                          <span>{article.text}</span>
-                                        </Link>
-                                    </li>
-                                  ))}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </AnimatedSection>
-            </main>
-            <Footer />
+            <Section className="py-xl">
+                 <h2 className="font-display text-h2 text-text-primary text-center">Explore the Costa del Sol</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-m mt-l">
+                     {exploreCategories.map(cat => (
+                            <InfoCard
+                                key={cat.href}
+                                title={cat.title}
+                                imageUrl={images[cat.imageKey]?.url}
+                                imageWidth={images[cat.imageKey]?.width}
+                                imageHeight={images[cat.imageKey]?.height}
+                                imageAlt={cat.title}
+                                imageHint={images[cat.imageKey]?.hint}
+                                linkHref={cat.href}
+                                variant='overlay'
+                            />
+                        ))}
+                </div>
+            </Section>
         </motion.div>
     );
 }
