@@ -92,4 +92,5 @@
 }
 
 .info-box-custom-bg {
-    background-color: hsl(var(--secondary)
+    background-color: hsl(var(--secondary));
+}
