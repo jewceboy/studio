@@ -10,7 +10,6 @@ import Image from 'next/image';
 import imageData from '@/lib/placeholder-images.json';
 import { allSiteUrls } from '@/lib/urls';
 import { destinationsData } from '@/lib/data';
-import ClientOnly from '@/components/shared/ClientOnly';
 
 const topMoneyPages = [
     {
@@ -84,34 +83,46 @@ const images: ImageData = imageData;
 export default function Home() {
   return (
     <>
-      <div className="relative -mt-8 -mx-4 sm:-mx-container-padding">
+      {/* Hero Section */}
+      <div className="relative -mt-8 -mx-4 mb-12 sm:-mx-container-padding">
         <div className="relative h-[60vh] min-h-[400px] w-full">
-            <Image
-                src={images['Marbella-panoramic-beach-luxury'].url}
-                alt="Panoramic view of a luxurious beach in Marbella"
-                fill
-                priority
-                className="object-cover"
-                data-ai-hint={images['Marbella-panoramic-beach-luxury'].hint}
-            />
-            <div className="absolute inset-0 bg-black/40"></div>
+          <Image
+            src={images['travel-hero-background'].url}
+            alt="Beautiful travel landscape"
+            fill
+            priority
+            className="object-cover"
+            data-ai-hint={images['travel-hero-background'].hint}
+          />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
-            <h1 className="font-anton text-5xl sm:text-6xl md:text-7xl font-bold leading-tight drop-shadow-lg">
-                Your Costa del Sol Journey Starts Here
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg sm:text-xl text-white/90 drop-shadow-md">
-                The ultimate travel guide for independent and luxury travelers.
-            </p>
-            <Button asChild size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg">
-                <Link href="/plan-your-trip">
-                    Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+          <h1 className="font-anton text-5xl sm:text-6xl md:text-7xl font-bold leading-tight drop-shadow-lg">
+            The world is your oyster
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg sm:text-xl text-white/90 drop-shadow-md">
+            The ultimate travel guide for independent and solo travelers.
+          </p>
+          {/* Newsletter Form */}
+          <form className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full max-w-md">
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              required
+              className="h-12 flex-grow bg-white/90 text-primary-dark placeholder:text-muted-foreground border-border focus:ring-primary"
+              aria-label="Email for newsletter"
+            />
+            <Button type="submit" size="lg" className="h-12 w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-medium">
+              Subscribe
             </Button>
+          </form>
+           <p className="mt-4 text-xs text-white/70">
+            Join 100,000+ other readers and get my free travel tips.
+          </p>
         </div>
       </div>
-
-       {/* High-Value Money Pages Section */}
+      
+      {/* High-Value Money Pages Section */}
       <Section title="Plan Your Luxury Experience" subtitle="Focusing on high-value services to create your perfect Costa del Sol journey.">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {topMoneyPages.map((page) => (
@@ -164,13 +175,6 @@ export default function Home() {
             </Link>
           </Button>
         </div>
-      </Section>
-
-      {/* Newsletter Sign-up Section */}
-      <Section>
-        <ClientOnly>
-          <NewsletterForm />
-        </ClientOnly>
       </Section>
     </>
   );

@@ -47,7 +47,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="site-header sticky top-0 z-50">
+    <header className="sticky top-0 z-50 bg-header-background shadow-md">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2 text-white hover:text-white/90 transition-colors">
           <Sun className="h-8 w-8" />
