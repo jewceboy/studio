@@ -83,7 +83,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative w-full h-[70vh] min-h-[500px] flex flex-col">
+      <div className="relative w-full h-[70vh] min-h-[500px] flex flex-col -mt-8">
         <div className="relative w-full flex-grow">
           <Image
             src={images['travel-hero-background'].url}
@@ -95,14 +95,14 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-black/40" />
           <div className="relative container mx-auto h-full flex flex-col items-center justify-center text-center text-white p-4">
-            <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl text-accent-1-red mb-4" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
+            <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl text-primary mb-4" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
               Your Costa del Sol Journey Starts Here
             </h1>
             <p className="text-lg md:text-xl max-w-xl mx-auto" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
               The ultimate travel guide for independent and luxury travelers. Personalized recommendations, destinations, hotels, and activities.
             </p>
             <div className="mt-8 flex gap-4 justify-center">
-              <Button asChild size="lg" className="bg-accent-1-red hover:bg-accent-1-red-hover text-primary-foreground">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/80 text-primary-foreground">
                 <Link href="/plan-your-trip">
                   Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -124,8 +124,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <div className="container mx-auto px-4">
+      <div className='container mx-auto px-4'>
         {/* High-Value Money Pages Section */}
         <Section title="Plan Your Luxury Experience" subtitle="Focusing on high-value services to create your perfect Costa del Sol journey.">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
