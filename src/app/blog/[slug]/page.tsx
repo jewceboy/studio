@@ -30,7 +30,7 @@ const articlesData: { [key: string]: Article } = {
     imageUrl: images['Malaga-tapas-bar'].url, imageHint: images['Malaga-tapas-bar'].hint,
     date: '2024-05-15', author: 'Elena Rodriguez', 
     excerpt: 'A culinary journey through Málaga\'s most authentic tapas spots, from traditional bites to modern creations.',
-    content: `<p>Málaga's old town is a labyrinth of charming streets, and hidden within are some of the best tapas bars you\'\'\'ll ever encounter. This guide will take you on a flavorful journey, highlighting must-try dishes and local favorites. From centuries-old taverns serving classic Andalusian recipes to innovative kitchens putting a modern spin on tapas, there's something for every palate.</p>
+    content: `<p>Málaga's old town is a labyrinth of charming streets, and hidden within are some of the best tapas bars you\'ll ever encounter. This guide will take you on a flavorful journey, highlighting must-try dishes and local favorites. From centuries-old taverns serving classic Andalusian recipes to innovative kitchens putting a modern spin on tapas, there's something for every palate.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">El Tapeo de Cervantes</h3>
     <p>A popular spot known for its creative tapas and extensive wine list. Booking is recommended. Their mini burgers and cod confit are divine.</p>
     <figure class="my-6">
@@ -59,7 +59,7 @@ const articlesData: { [key: string]: Article } = {
     imageUrl: images['secluded-cove-beach'].url, imageHint: images['secluded-cove-beach'].hint,
     date: '2024-05-10', author: 'Mark Stevenson',
     excerpt: 'Discover tranquil coves and pristine sands away from the crowds for a perfect day of relaxation.',
-    content: `<p>Escape the bustling tourist spots and discover the serene beauty of Costa del Sol\'\'\'s hidden beaches. This guide unveils five secluded gems where you can enjoy pristine sands and crystal-clear waters in peace. From hidden coves accessible only by foot to quiet stretches of coastline loved by locals, these beaches offer a perfect retreat.</p>
+    content: `<p>Escape the bustling tourist spots and discover the serene beauty of Costa del Sol\'s hidden beaches. This guide unveils five secluded gems where you can enjoy pristine sands and crystal-clear waters in peace. From hidden coves accessible only by foot to quiet stretches of coastline loved by locals, these beaches offer a perfect retreat.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">Playa de Maro</h3>
     <p>Often cited as one of Spain's best beaches, Playa de Maro is a stunning cove near Nerja, boasting turquoise waters perfect for snorkeling and kayaking. Its protected status means marine life is abundant.</p>
     <figure class="my-6">
@@ -77,7 +77,7 @@ const articlesData: { [key: string]: Article } = {
     excerpt: 'Explore the dramatic landscapes, iconic bridge, and historic charm of the stunning town of Ronda.',
     content: `<p>Perched dramatically atop the El Tajo gorge, Ronda is one of Andalusia's most breathtaking towns and makes for an unforgettable day trip from the Costa del Sol. This guide covers the must-see sights for a perfect visit.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">Puente Nuevo (New Bridge)</h3>
-    <p>The iconic Puente Nuevo is Ronda\'\'\'s most famous landmark, spanning the 120-meter-deep chasm. The views from the bridge are spectacular, but be sure to hike down into the gorge for the most impressive photo opportunities.</p>
+    <p>The iconic Puente Nuevo is Ronda\'s most famous landmark, spanning the 120-meter-deep chasm. The views from the bridge are spectacular, but be sure to hike down into the gorge for the most impressive photo opportunities.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">Plaza de Toros</h3>
     <p>Visit one of Spain's oldest and most revered bullrings, the Plaza de Toros. Its museum offers fascinating insights into the history of bullfighting. Whether you agree with the tradition or not, the architectural and historical significance is undeniable.</p>`,
     categories: ['Day Trips'],
@@ -114,7 +114,7 @@ const articlesData: { [key: string]: Article } = {
     imageUrl: images['white-village-street'].url, imageHint: images['white-village-street'].hint,
     date: '2024-03-18', author: 'David Miller',
     excerpt: 'A guide to the most picturesque "pueblos blancos" near Costa del Sol, rich in history and beauty.',
-    content: `<p>The 'pueblos blancos,' or white villages of Andalusia, are a photographer\'\'\'s dream. Characterized by their simple white-washed walls, narrow cobbled streets, and vibrant floral displays, these villages offer a glimpse into a more traditional way of life.</p>
+    content: `<p>The 'pueblos blancos,' or white villages of Andalusia, are a photographer\'s dream. Characterized by their simple white-washed walls, narrow cobbled streets, and vibrant floral displays, these villages offer a glimpse into a more traditional way of life.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">Mijas Pueblo</h3>
     <p>One of the most accessible from the Costa del Sol, Mijas Pueblo is famous for its charming streets and donkey-taxis. The views of the coastline from its elevated position are simply stunning.</p>
     <h3 class="text-2xl font-montserrat font-semibold my-4">Frigiliana</h3>

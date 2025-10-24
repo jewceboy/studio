@@ -1,13 +1,13 @@
-// src/components/layout/Footer.tsx
 'use client';
 
 import Link from 'next/link';
 import { Facebook, Instagram, Twitter, Youtube, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { usePathname } from 'next/navigation';
 
 const aboutLinks = [
-  { href: '/blog/mystory-about-us', label: 'About Us' },
+  { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact Us' },
   { href: '/terms-conditions', label: 'Terms & Conditions' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
@@ -70,6 +70,11 @@ export default function Footer() {
             behavior: 'smooth'
         });
     };
+
+    const pathname = usePathname();
+    if (pathname.includes('/chat-demo')) {
+        return null;
+    }
 
   return (
     <footer className="bg-primary-dark text-white py-12 relative">

@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -65,6 +64,10 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  if (pathname.includes('/chat-demo')) {
+    return null;
+  }
+  
   return (
     <motion.header 
         className={cn(

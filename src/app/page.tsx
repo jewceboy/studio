@@ -9,6 +9,8 @@ import { allSiteUrls } from '@/lib/urls';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import imageData from '@/lib/placeholder-images.json';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 type ImageData = {
   [key: string]: {

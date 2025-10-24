@@ -4,8 +4,6 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from 'next/script';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.malagatravelguide.net'),
@@ -46,9 +44,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://picsum.photos" />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans text-text-secondary bg-background`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        {children}
         <Toaster />
         <SpeedInsights />
         <Script src="/app.js" strategy="lazyOnload" />
