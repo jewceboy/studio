@@ -1,8 +1,7 @@
-
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Menu, X, Sun, Briefcase, Droplets, Heart, ShoppingCart, Calendar, Map, Plane, Sailboat, Users, Tv, Palette, Building, Utensils, Waves, MountainSnow, Star, Search, Facebook, Instagram, Twitter } from 'lucide-react';
@@ -52,10 +51,28 @@ const socialLinks = [
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50); // Becomes solid after scrolling 50px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="site-header">
+    <header className={cn(
+      'site-header sticky top-0 z-50 transition-colors duration-300',
+      isScrolled || pathname !== '/' ? 'bg-header-background' : 'bg-transparent'
+    )}>
       <div className="container mx-auto px-4">
         {/* Top Tier: Logo & Socials/Search */}
         <div className="flex justify-between items-center py-3 border-b border-white/10">

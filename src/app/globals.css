@@ -157,7 +157,7 @@ body {
 @layer components {
   .site-header {
     background-color: hsl(var(--header-background));
-    @apply text-white shadow-md sticky top-0 z-50;
+    @apply shadow-md;
   }
 }
 
@@ -206,7 +206,7 @@ body {
 }
 
 .dark .info-box-custom-bg {
-  background-color: hsl(var(--secondary)); 
+  background-color: hsl(var(--secondary));
   border-left-color: hsl(var(--primary)); 
   color: hsl(var(--foreground)); 
 }
