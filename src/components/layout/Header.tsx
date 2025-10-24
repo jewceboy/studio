@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { Menu, X, Sun, Briefcase, Droplets, Heart, ShoppingCart, Calendar, Map, Plane, Sailboat, Users, Tv, Palette, Building, Utensils, Waves, MountainSnow, Star } from 'lucide-react';
+import { Menu, X, Sun, Briefcase, Droplets, Heart, ShoppingCart, Calendar, Map, Plane, Sailboat, Users, Tv, Palette, Building, Utensils, Waves, MountainSnow, Star, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import {
@@ -42,6 +42,13 @@ const exploreSubItems = [
     { href: '/digital-nomad', title: 'Digital Nomad', description: 'Resources for remote work in the sun.', icon: Users },
 ];
 
+const socialLinks = [
+  { href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
+  { href: 'https://instagram.com', icon: Instagram, label: 'Instagram' },
+  { href: 'https://twitter.com', icon: Twitter, label: 'Twitter' },
+  { href: 'https://youtube.com', icon: Youtube, label: 'YouTube' },
+];
+
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -56,78 +63,88 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden md:flex">
-          <NavigationMenuList>
-             {primaryNavLinks.map((link) => (
-                <NavigationMenuItem key={link.href}>
-                    <Link href={link.href} legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(
-                        navigationMenuTriggerStyle(),
-                        'bg-transparent hover:bg-gray-800 focus:bg-gray-800',
-                        pathname.startsWith(link.href) ? 'bg-gray-700 text-white' : ''
-                        )}>
-                        {link.label}
+        <div className="hidden md:flex items-center space-x-4">
+            <NavigationMenu>
+            <NavigationMenuList>
+                {primaryNavLinks.map((link) => (
+                    <NavigationMenuItem key={link.href}>
+                        <Link href={link.href} legacyBehavior passHref>
+                            <NavigationMenuLink className={cn(
+                            navigationMenuTriggerStyle(),
+                            'bg-transparent hover:bg-gray-800 focus:bg-gray-800',
+                            pathname.startsWith(link.href) ? 'bg-gray-700 text-white' : ''
+                            )}>
+                            {link.label}
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                ))}
+
+                <NavigationMenuItem>
+                    <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800'>
+                        Luxury Services
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {luxuryServicesSubItems.map((item) => (
+                            <ListItem
+                            key={item.title}
+                            title={item.title}
+                            href={item.href}
+                            >
+                            {item.description}
+                            </ListItem>
+                        ))}
+                        </ul>
+                    </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                    <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800'>
+                        Explore
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {exploreSubItems.map((item) => (
+                            <ListItem
+                            key={item.title}
+                            title={item.title}
+                            href={item.href}
+                            >
+                            {item.description}
+                            </ListItem>
+                        ))}
+                        </ul>
+                    </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                    <Link href="/blog" legacyBehavior passHref>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800', pathname.startsWith('/blog') ? 'bg-gray-700 text-white' : '')}>
+                        Blog
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
-            ))}
+                
+                <NavigationMenuItem>
+                    <Link href="/contact" legacyBehavior passHref>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800', pathname.startsWith('/contact') ? 'bg-gray-700 text-white' : '')}>
+                        Contact
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
 
-            <NavigationMenuItem>
-                <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800'>
-                    Luxury Services
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                    {luxuryServicesSubItems.map((item) => (
-                        <ListItem
-                        key={item.title}
-                        title={item.title}
-                        href={item.href}
-                        >
-                        {item.description}
-                        </ListItem>
-                    ))}
-                    </ul>
-                </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-                <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800'>
-                    Explore
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                    {exploreSubItems.map((item) => (
-                        <ListItem
-                        key={item.title}
-                        title={item.title}
-                        href={item.href}
-                        >
-                        {item.description}
-                        </ListItem>
-                    ))}
-                    </ul>
-                </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-                <Link href="/blog" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800', pathname.startsWith('/blog') ? 'bg-gray-700 text-white' : '')}>
-                    Blog
-                    </NavigationMenuLink>
-                </Link>
-            </NavigationMenuItem>
-            
-            <NavigationMenuItem>
-                <Link href="/contact" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800', pathname.startsWith('/contact') ? 'bg-gray-700 text-white' : '')}>
-                    Contact
-                    </NavigationMenuLink>
-                </Link>
-            </NavigationMenuItem>
-
-          </NavigationMenuList>
-        </NavigationMenu>
+            </NavigationMenuList>
+            </NavigationMenu>
+             {/* Social Icons */}
+            <div className="flex items-center space-x-3 pl-4 border-l border-gray-700">
+                {socialLinks.map((social) => (
+                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-gray-400 hover:text-white transition-colors">
+                    <social.icon className="h-5 w-5" />
+                    </Link>
+                ))}
+            </div>
+        </div>
 
         {/* Mobile Navigation Trigger */}
         <div className="md:hidden">
@@ -194,6 +211,14 @@ export default function Header() {
                     ))}
                 </div>
               </nav>
+              {/* Mobile Social Icons */}
+              <div className="flex items-center justify-center space-x-5 pt-8 mt-8 border-t border-gray-700">
+                {socialLinks.map((social) => (
+                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-gray-400 hover:text-white transition-colors">
+                    <social.icon className="h-6 w-6" />
+                    </Link>
+                ))}
+            </div>
             </SheetContent>
           </Sheet>
         </div>
