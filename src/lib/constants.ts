@@ -1,7 +1,12 @@
 
+
 // Placeholder Affiliate Links
 export const BOOKING_COM_AFFILIATE_LINK_MALAGA_GENERAL = "https://booking.com/malaga-hotels?aid=12345";
 export const GETYOURGUIDE_AFFILIATE_LINK_MALAGA_ACTIVITY = "https://getyourguide.com/malaga-activities?partner_id=ABCDE";
+
+// Helper function for placeholder images
+export const PLACEHOLDER_IMAGE_URL = (width: number, height: number, seed: string) => `https://picsum.photos/seed/${seed}/${width}/${height}`;
+
 
 // Placeholder data types (can be expanded)
 export interface Destination {

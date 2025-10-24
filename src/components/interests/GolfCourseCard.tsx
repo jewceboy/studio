@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Golf, Link2, MapPin } from 'lucide-react'; // Corrected import, GolfIcon might not exist
+import { GolfClub, Link2, MapPin } from 'lucide-react';
 import type { GolfCourse } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 
@@ -28,7 +28,7 @@ export default function GolfCourseCard({ course, className }: GolfCourseCardProp
       </CardHeader>
       <CardContent className="p-6 flex-grow">
         <CardTitle className="font-montserrat text-xl font-semibold text-primary-dark mb-2 line-clamp-2 flex items-center">
-          <Golf className="w-5 h-5 mr-2 text-accent shrink-0" /> {/* Using Golf icon */}
+          <GolfClub className="w-5 h-5 mr-2 text-accent shrink-0" />
           {course.name}
         </CardTitle>
         <p className="text-sm text-muted-foreground mb-3 line-clamp-3">{course.description}</p>
