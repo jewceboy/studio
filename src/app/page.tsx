@@ -171,8 +171,7 @@ export default function Home() {
       </div>
 
        {/* About Section */}
-       <div className="bg-secondary/20">
-        <Section>
+       <Section className="bg-secondary/20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
                 {/* Left Column */}
                 <div className="md:col-span-2">
@@ -220,7 +219,6 @@ export default function Home() {
                 </div>
             </div>
         </Section>
-       </div>
     </>
   );
 }
