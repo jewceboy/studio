@@ -1,5 +1,10 @@
 {
-  "//": "---------------------------------------------------------------------------------------------------",
+  "travel-hero-background": {
+    "url": "https://picsum.photos/seed/travel-hero-oyster/1920/1080",
+    "hint": "beautiful travel landscape",
+    "width": 1920,
+    "height": 1080
+  },
   "Marbella-panoramic-beach-luxury": {
     "url": "https://picsum.photos/seed/marbella-pano/1920/1080",
     "hint": "Marbella panoramic beach",

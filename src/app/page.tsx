@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import NewsletterForm from '@/components/forms/NewsletterForm';
-import { ArrowRight, BookOpen, Sparkles, Map, Star, PenSquare } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles, Map, Star, PenSquare, Mail, Search } from 'lucide-react';
+import { Input } from '@/components/ui/input';
 import Image from 'next/image';
 import imageData from '@/lib/placeholder-images.json';
 import { allSiteUrls } from '@/lib/urls';
@@ -83,45 +84,40 @@ const images: ImageData = imageData;
 export default function Home() {
   return (
     <>
-      {/* Marbella Hero Section */}
-      <div className="relative h-[calc(100vh-80px)] min-h-[500px] md:min-h-[600px] flex items-center justify-center text-center -mt-8 -mx-4 sm:-mx-container-padding overflow-hidden">
-        {/* Mobile Image */}
-        <Image
-          src={images['Marbella-panoramic-beach-luxury-mobile'].url}
-          alt="Envision the stunning beauty of Marbella: sun-drenched coasts and luxurious lifestyle"
-          width={images['Marbella-panoramic-beach-luxury-mobile'].width}
-          height={images['Marbella-panoramic-beach-luxury-mobile'].height}
-          className="absolute inset-0 z-0 object-cover w-full h-full sm:hidden"
-          data-ai-hint={images['Marbella-panoramic-beach-luxury-mobile'].hint}
-        />
-        {/* Desktop Image */}
-        <Image
-          src={images['Marbella-panoramic-beach-luxury'].url}
-          alt="Envision the stunning beauty of Marbella: sun-drenched coasts and luxurious lifestyle"
-          width={images['Marbella-panoramic-beach-luxury'].width}
-          height={images['Marbella-panoramic-beach-luxury'].height}
-          priority
-          className="absolute inset-0 z-0 object-cover w-full h-full hidden sm:block"
-          data-ai-hint={images['Marbella-panoramic-beach-luxury'].hint}
-        />
-
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
-        <div className="relative z-20 container mx-auto px-4">
-          <h1 className="font-anton text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight drop-shadow-lg">
-            Experience Marbella's Splendor
-          </h1>
-          <p className="font-inter text-lg sm:text-xl md:text-2xl text-white mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-            Discover a world of golden beaches, azure waters, and vibrant luxury. Your unforgettable Marbella story begins now.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-10 py-7 font-montserrat font-semibold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          >
-            <Link href="/destinations/marbella">
-              Explore Marbella <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+      {/* New Hero Section */}
+      <div className="relative -mt-8 -mx-4 sm:-mx-container-padding">
+        <div className="relative h-[calc(80vh)] min-h-[550px] w-full">
+            <Image
+                src={images['travel-hero-background'].url}
+                alt="A beautiful travel destination"
+                fill
+                priority
+                className="object-cover"
+                data-ai-hint={images['travel-hero-background'].hint}
+            />
+            <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+            <h1 className="font-anton text-5xl sm:text-6xl md:text-7xl font-bold leading-tight drop-shadow-lg">
+                The world is your oyster
+            </h1>
+            <p className="mt-4 max-w-2xl text-lg sm:text-xl text-white/90 drop-shadow-md">
+                The ultimate travel guide for independent and solo travelers
+            </p>
+            <form className="mt-8 flex flex-col sm:flex-row items-center gap-2 w-full max-w-lg">
+                <Input
+                type="email"
+                placeholder="Enter your email address"
+                className="h-12 flex-grow bg-white/90 text-gray-800 placeholder-gray-500 border-0 focus:ring-2 focus:ring-primary"
+                aria-label="Email for newsletter"
+                />
+                <Button type="submit" size="lg" className="h-12 w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">
+                Subscribe
+                </Button>
+            </form>
+            <p className="mt-3 text-xs text-white/70">
+                Join 100,000+ other readers and get my free travel tips.
+            </p>
         </div>
       </div>
 
