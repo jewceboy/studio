@@ -35,6 +35,7 @@
     --radius: 0.5rem;
 
     /* Custom Palette */
+    --header-background: 328 89% 72%;
     --primary-dark: 210 30% 25%; /* Deep Blue */
     --primary-light: 0 0% 98%; /* Off-White/Light Gray */
     --accent-1-red: 346.8 77.2% 49.8%; /* Your existing primary red */

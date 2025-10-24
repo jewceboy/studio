@@ -55,9 +55,9 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-black text-white shadow-md">
+    <header className="sticky top-0 z-50 bg-header-background text-primary-dark shadow-md">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors">
+        <Link href="/" className="flex items-center space-x-2 text-primary-dark hover:text-primary-dark/80 transition-colors">
           <Sun className="h-8 w-8" />
           <span className="font-bold text-xl">MalagaTravelGuide</span>
         </Link>
@@ -71,8 +71,8 @@ export default function Header() {
                         <Link href={link.href} legacyBehavior passHref>
                             <NavigationMenuLink className={cn(
                             navigationMenuTriggerStyle(),
-                            'bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]',
-                            pathname.startsWith(link.href) ? 'bg-gray-700 text-white' : ''
+                            'bg-transparent hover:bg-black/10 focus:bg-black/10 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]',
+                            pathname.startsWith(link.href) ? 'bg-black/10' : ''
                             )}>
                             {link.label}
                             </NavigationMenuLink>
@@ -81,7 +81,7 @@ export default function Header() {
                 ))}
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]'>
+                    <NavigationMenuTrigger className='bg-transparent hover:bg-black/10 focus:bg-black/10 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]'>
                         Luxury Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -100,7 +100,7 @@ export default function Header() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className='bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]'>
+                    <NavigationMenuTrigger className='bg-transparent hover:bg-black/10 focus:bg-black/10 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]'>
                         Explore
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -120,7 +120,7 @@ export default function Header() {
 
                 <NavigationMenuItem>
                     <Link href="/blog" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]', pathname.startsWith('/blog') ? 'bg-gray-700 text-white' : '')}>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-black/10 focus:bg-black/10 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]', pathname.startsWith('/blog') ? 'bg-black/10' : '')}>
                         Blog
                         </NavigationMenuLink>
                     </Link>
@@ -128,7 +128,7 @@ export default function Header() {
                 
                 <NavigationMenuItem>
                     <Link href="/contact" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-gray-800 focus:bg-gray-800 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]', pathname.startsWith('/contact') ? 'bg-gray-700 text-white' : '')}>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-black/10 focus:bg-black/10 font-impact tracking-wider uppercase text-lg leading-none py-[0.6em] px-[0.6em]', pathname.startsWith('/contact') ? 'bg-black/10' : '')}>
                         Contact
                         </NavigationMenuLink>
                     </Link>
@@ -137,9 +137,9 @@ export default function Header() {
             </NavigationMenuList>
             </NavigationMenu>
              {/* Social Icons */}
-            <div className="flex items-center space-x-3 pl-6 ml-4 border-l border-gray-700">
+            <div className="flex items-center space-x-3 pl-6 ml-4 border-l border-black/20">
                 {socialLinks.map((social) => (
-                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-gray-400 hover:text-white transition-colors">
+                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-primary-dark/80 hover:text-primary-dark transition-colors">
                     <social.icon className="h-5 w-5" />
                     </Link>
                 ))}
@@ -150,19 +150,19 @@ export default function Header() {
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800 focus:bg-gray-800">
+              <Button variant="ghost" size="icon" className="text-primary-dark hover:bg-black/10 focus:bg-black/10">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-black text-white p-6 overflow-y-auto">
+            <SheetContent side="right" className="w-[280px] bg-header-background text-primary-dark p-6 overflow-y-auto">
               <div className="flex justify-between items-center mb-8">
-                <Link href="/" className="flex items-center space-x-2 text-white" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
                   <Sun className="h-7 w-7" />
                   <span className="font-bold text-lg">MalagaTravelGuide</span>
                 </Link>
                 <SheetClose asChild>
-                  <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800 focus:bg-gray-800">
+                  <Button variant="ghost" size="icon" className="hover:bg-black/10 focus:bg-black/10">
                     <X className="h-6 w-6" />
                     <span className="sr-only">Close menu</span>
                   </Button>
@@ -174,7 +174,7 @@ export default function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        'text-white hover:text-gray-300 transition-colors py-2 text-lg',
+                        'hover:text-primary-dark/80 transition-colors py-2 text-lg',
                         pathname.startsWith(link.href) ? 'font-bold' : ''
                       )}
                     >
@@ -184,12 +184,12 @@ export default function Header() {
                 ))}
                 
                  <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-semibold text-white text-lg py-2 border-t border-gray-700'>Luxury Services</span>
+                    <span className='font-semibold text-lg py-2 border-t border-black/20'>Luxury Services</span>
                     {luxuryServicesSubItems.map((subItem) => (
                     <SheetClose key={subItem.href} asChild>
                         <Link
                         href={subItem.href}
-                        className={cn('font-normal text-gray-300 hover:text-white transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-white' : '')}
+                        className={cn('font-normal text-primary-dark/80 hover:text-primary-dark transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-primary-dark' : '')}
                         >
                         {subItem.title}
                         </Link>
@@ -198,12 +198,12 @@ export default function Header() {
                 </div>
 
                 <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-semibold text-white text-lg py-2 border-t border-gray-700'>Explore</span>
+                    <span className='font-semibold text-lg py-2 border-t border-black/20'>Explore</span>
                     {exploreSubItems.map((subItem) => (
                     <SheetClose key={subItem.href} asChild>
                         <Link
                         href={subItem.href}
-                        className={cn('font-normal text-gray-300 hover:text-white transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-white' : '')}
+                        className={cn('font-normal text-primary-dark/80 hover:text-primary-dark transition-colors py-1 text-md pl-4', pathname.startsWith(subItem.href) ? 'font-semibold text-primary-dark' : '')}
                         >
                         {subItem.title}
                         </Link>
@@ -212,9 +212,9 @@ export default function Header() {
                 </div>
               </nav>
               {/* Mobile Social Icons */}
-              <div className="flex items-center justify-center space-x-5 pt-8 mt-8 border-t border-gray-700">
+              <div className="flex items-center justify-center space-x-5 pt-8 mt-8 border-t border-black/20">
                 {socialLinks.map((social) => (
-                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-gray-400 hover:text-white transition-colors">
+                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-primary-dark/80 hover:text-primary-dark transition-colors">
                     <social.icon className="h-6 w-6" />
                     </Link>
                 ))}
