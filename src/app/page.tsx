@@ -84,14 +84,14 @@ export default function Home() {
       {/* Hero Section */}
       <div className="-mx-4 -mt-8 sm:-mx-container-padding">
         <div className="container mx-auto text-center py-12 md:py-20">
-            <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl text-primary mb-4">
+            <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl text-accent-1-red mb-4">
               Your Costa del Sol Journey Starts Here
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
               The ultimate travel guide for independent and luxury travelers. Personalized recommendations, destinations, hotels, and activities.
             </p>
             <div className="mt-8 flex gap-4 justify-center">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Button asChild size="lg" className="bg-accent-1-red hover:bg-accent-1-red-hover text-primary-foreground">
                 <Link href="/plan-your-trip">
                   Plan Your Trip <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -139,30 +139,14 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* New Features Teaser (Plan Your Trip) */}
-      <Section title="Plan Your Perfect Trip" subtitle="Let our smart trip planner craft a personalized itinerary just for you." className="bg-secondary/30">
-        <div className="text-center bg-background p-8 md:p-12 rounded-lg shadow-lg max-w-3xl mx-auto">
-          <Sparkles className="h-16 w-16 text-primary mx-auto mb-6" />
-          <h3 className="text-3xl font-bold text-primary-dark mb-4">
-            Personalized Itineraries in Minutes
-          </h3>
-          <p className="text-muted-foreground mb-8 text-lg">
-            Answer a few simple questions about your travel style, interests, and budget, and our AI-powered tool will create a custom trip plan tailored to your preferences.
-          </p>
-          <Button asChild size="lg">
-            <Link href="/plan-your-trip">
-              Start Planning <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-      </Section>
-
       {/* Newsletter Form Section */}
-      <Section title="Stay in the Know" subtitle="Subscribe to our newsletter for the latest travel tips and exclusive deals.">
-        <ClientOnly>
-          <NewsletterForm />
-        </ClientOnly>
-      </Section>
+      <div className="bg-newsletter-blue py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <ClientOnly>
+            <NewsletterForm />
+          </ClientOnly>
+        </div>
+      </div>
     </>
   );
 }
