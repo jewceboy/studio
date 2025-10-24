@@ -132,7 +132,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className='bg-blue-100'>
+      <div>
         <div className='container mx-auto px-4'>
           {/* High-Value Money Pages Section */}
           <Section title="Plan Your Luxury Experience" subtitle="Focusing on high-value services to create your perfect Costa del Sol journey.">
@@ -205,7 +205,7 @@ export default function Home() {
         </Section>
         
       {/* Content Pillars Section */}
-      <Section className="bg-yellow-100" title="Explore the Costa del Sol" subtitle="From stunning destinations to insider tips, start your journey here.">
+      <Section title="Explore the Costa del Sol" subtitle="From stunning destinations to insider tips, start your journey here.">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {contentPillars.map((page) => (
               <InfoCard
