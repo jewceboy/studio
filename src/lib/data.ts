@@ -1,3 +1,4 @@
+
 import type { Destination } from '@/lib/constants';
 import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
 import type { HotelCategory, NicheSubCategory } from '@/types';
@@ -133,23 +134,35 @@ const defaultHotelCategories: HotelCategory[] = [
 
 
 const initialHotelSiloData: { [key: string]: { name: string; categories: HotelCategory[] } } = {
-  malaga: {
-    name: 'Málaga',
+  'luxury-hotels-malaga': {
+    name: 'Luxury Hotels Malaga',
     categories: [
-      { name: 'Luxury Hotels', slug: 'luxury-hotels-malaga', description: 'Indulge in opulent stays with top-tier amenities and services in Málaga.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "malaga luxury hotel"), imageHint: "Málaga luxury hotel" },
-      { name: 'Family-Friendly Hotels', slug: 'family-hotels-malaga', description: 'Find Málaga hotels with facilities and activities perfect for all ages.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "malaga family hotel"), imageHint: "Málaga family hotel" },
-      { name: 'Beachfront Hotels', slug: 'malaga-beaches', description: 'Wake up to stunning sea views and direct beach access in Málaga.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "malaga beach hotel"), imageHint: "Málaga beach hotel" },
-      { name: 'Boutique Hotels', slug: 'boutique-hotels-malaga', description: 'Discover unique charm and personalized service in Málaga\'s stylish hotels.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "malaga boutique hotel"), imageHint: "Málaga boutique hotel" },
+      { name: 'Five Star Hotels', slug: 'five-star-hotels', description: 'Experience ultimate luxury and service at these five-star hotels.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, 'luxury-hotel-lobby'), imageHint: 'luxury hotel lobby' },
+      { name: 'Boutique Hotels', slug: 'boutique-hotels', description: 'Charming and unique hotels in the heart of the city.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, 'boutique-hotel-room'), imageHint: 'boutique hotel room' },
+      { name: 'Presidential Suites', slug: 'presidential-suites', description: 'The most exclusive and luxurious suites for an extraordinary stay.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, 'luxury-hotel-suite'), imageHint: 'luxury hotel suite' },
     ],
   },
-  marbella: {
-    name: 'Marbella',
+  'budget-hotels-malaga': {
+    name: 'Budget Hotels in Malaga',
     categories: [
-      { name: '5-Star Resorts', slug: 'luxury-hotels-marbella', description: 'Experience ultimate luxury and exclusivity in Marbella\'s finest resorts.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "Marbella resort pool"), imageHint: "Marbella resort pool" },
-      { name: 'Golf Hotels', slug: 'golf-resorts', description: 'Stay and play at hotels with access to world-class golf courses.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "golf course hotel"), imageHint: "golf course hotel" },
-      { name: 'Spa Hotels', slug: 'spa-retreats', description: 'Relax and rejuvenate with exceptional spa facilities and treatments.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "spa massage therapy"), imageHint: "spa massage therapy" },
+       { name: 'Backpacker Hostels', slug: 'hostels', description: 'A guide to the best hostels for backpackers in the Costa del Sol.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, 'hostel-dorm-room'), imageHint: 'hostel dorm room' },
+       { name: 'Cheap Accommodation', slug: 'cheap-accommodation', description: 'Affordable places to stay in the Costa del Sol.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, 'budget-hotel-room'), imageHint: 'budget hotel room' },
     ],
   },
+  'family-hotels-malaga': {
+      name: 'Family Friendly Hotels in Malaga',
+      categories: [
+          { name: 'All-Inclusive Family Resorts', slug: 'all-inclusive', description: 'Enjoy a carefree family vacation with these all-inclusive resorts.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, 'family-hotel-pool'), imageHint: 'family hotel pool' },
+          { name: 'Hotels with Kids Clubs', slug: 'kids-clubs', description: 'Keep the little ones entertained with these family-friendly hotels.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, 'kids-club-playground'), imageHint: 'kids club playground' },
+      ],
+  },
+  'costa-del-sol-resorts': {
+      name: 'Costa del Sol Resorts',
+      categories: [
+          { name: 'Luxury Resorts', slug: 'luxury-resorts', description: 'Indulge in the finest resorts the Costa del Sol has to offer.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, 'luxury-resort-pool'), imageHint: 'luxury resort pool' },
+          { name: 'Adults-Only Resorts', slug: 'adults-only', description: 'Experience tranquility and luxury at these adults-only resorts.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, 'couple-relaxing-resort'), imageHint: 'couple relaxing resort' },
+      ],
+  }
 };
 
 

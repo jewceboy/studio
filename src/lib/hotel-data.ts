@@ -96,4 +96,6 @@ export const allHotels: Hotel[] = [
     features: ['Luxury All-Inclusive', 'Multiple Pools & Beachfront', 'Kids & Teens Clubs', 'Dine-Out Program'],
     userScore: 9.4,
     priceGuide: '€€€€€',
-    affiliateLink
+    affiliateLink: BOOKING_COM_AFFILIATE_LINK_MALAGA_GENERAL,
+  }
+];

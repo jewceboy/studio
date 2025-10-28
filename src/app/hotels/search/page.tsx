@@ -81,7 +81,7 @@ export default function HotelSearchPage({ searchParams }: HotelSearchPageProps) 
     return matches;
   });
 
-  const title = query ? `Search results for "${query}"` : getCategoryName(category || region) || 'All Hotels';
+  const title = query ? `Search results for "${query}"` : getCategoryName(category) || 'All Hotels';
   const subtitle = `Showing ${filteredHotels.length} results for your selection.`;
 
   return (
@@ -99,4 +99,11 @@ export default function HotelSearchPage({ searchParams }: HotelSearchPageProps) 
             <Info className="h-4 w-4" />
             <AlertTitle>No Hotels Found</AlertTitle>
             <AlertDescription>
-              We couldn't find any hotels matching your current selection. Please try different filters or
+              We couldn't find any hotels matching your current selection. Please try different filters or a broader search.
+            </AlertDescription>
+          </Alert>
+        )}
+      </Section>
+    </div>
+  );
+}
