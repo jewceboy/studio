@@ -908,4 +908,7 @@
   "four-seasons-collage": {
     "url": "https://picsum.photos/seed/four-seasons-collage/600/400",
     "hint": "four seasons collage",
-    "width": 
+    "width": 600,
+    "height": 400
+  }
+}

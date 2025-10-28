@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, List } from 'lucide-react';
-import NewsletterForm from '@/components/forms/newsletter-form';
+import { NewsletterForm } from '@/components/forms/newsletter-form';
 import { allSiteUrls } from '@/lib/urls';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
