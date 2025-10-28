@@ -8,4 +8,11 @@ export default function ClientOnly({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     setHasMounted(true);
-  },
+  }, []);
+
+  if (!hasMounted) {
+    return null;
+  }
+
+  return <>{children}</>;
+}
