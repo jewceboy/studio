@@ -22,35 +22,35 @@ export const metadata = {
 const hotelCategories = [
   {
     slug: 'luxury-hotels-malaga',
-    name: 'Luxury Hotels',
-    description: 'Indulge in opulent stays with top-tier amenities and services in Malaga.',
+    name: 'Luxury Hotels in Malaga',
+    description: 'Indulge in opulent stays with top-tier amenities and services in Malaga city.',
     imageKey: 'luxury-hotel-malaga',
     linkHref: '/hotels/luxury-hotels-malaga',
     linkText: 'Explore Luxury',
   },
   {
-    slug: 'budget-hotels-malaga',
-    name: 'Budget Hotels',
-    description: 'Comfortable and affordable options for savvy travelers in Malaga.',
-    imageKey: 'budget-hotel-malaga',
-    linkHref: '/hotels/budget-hotels-malaga',
-    linkText: 'Find Budget Stays',
+    slug: 'marbella',
+    name: 'Hotels in Marbella',
+    description: 'Discover glamorous resorts, boutique hotels, and beachfront stays in Marbella.',
+    imageKey: 'marbella-old-town',
+    linkHref: '/hotels/marbella',
+    linkText: 'Find Marbella Hotels',
   },
   {
-    slug: 'family-hotels-malaga',
-    name: 'Family Hotels',
-    description: 'Find hotels with facilities and activities perfect for all ages in Malaga.',
-    imageKey: 'family-hotel-malaga',
-    linkHref: '/hotels/family-hotels-malaga',
-    linkText: 'See Family Options',
+    slug: 'mijas',
+    name: 'Hotels in Mijas',
+    description: 'Find charming hotels in the white-washed village or coastal resorts in Mijas Costa.',
+    imageKey: 'mijas-pueblo-village',
+    linkHref: '/hotels/mijas',
+    linkText: 'See Mijas Stays',
   },
   {
-    slug: 'costa-del-sol-resorts',
-    name: 'Costa del Sol Resorts',
-    description: 'Discover sprawling resorts with extensive amenities along the coast.',
-    imageKey: 'costa-del-sol-resort',
-    linkHref: '/hotels/costa-del-sol-resorts',
-    linkText: 'Discover Resorts',
+    slug: 'nerja',
+    name: 'Hotels in Nerja',
+    description: 'Stay near stunning beaches and the famous Nerja caves.',
+    imageKey: 'secluded-cove-beach',
+    linkHref: '/hotels/nerja',
+    linkText: 'Discover Nerja Hotels',
   },
 ];
 
@@ -58,11 +58,11 @@ export default function HotelsPage() {
   return (
     <div>
       <PageHeader
-        title="Hotels in Malaga"
-        subtitle="Find your perfect stay in the Costa del Sol, from 5-star luxury to budget-friendly charm."
+        title="Hotels in Malaga & Costa del Sol"
+        subtitle="Find your perfect stay, from 5-star luxury in Marbella to charming boutique hotels in Malaga's old town."
       />
-      <Section className="pt-0" title="Hotel Categories">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <Section className="pt-0" title="Find Accommodation by Area">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
           {hotelCategories.map((category) => (
             <InfoCard
               key={category.slug}
