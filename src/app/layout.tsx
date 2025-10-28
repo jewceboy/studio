@@ -1,10 +1,21 @@
+
+'use client';
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from 'next/script';
 import { inter, playfair, anton, montserrat } from './fonts';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import Breadcrumbs from '@/components/shared/Breadcrumbs';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
+
+// Note: Metadata export is commented out because it can't be used in a 'use client' file.
+// You can move this to a separate file or a higher-level server component if needed.
+/*
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.malagatravelguide.net'),
   title: {
@@ -30,12 +41,16 @@ export const metadata: Metadata = {
     canonical: '/',
   },
 };
+*/
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${anton.variable} ${montserrat.variable}`}>
        <head>
@@ -44,7 +59,16 @@ export default function RootLayout({
         <link rel="preconnect" href="https://picsum.photos" />
       </head>
       <body className="font-sans text-text-secondary bg-background">
-        {children}
+        <Header />
+        <main className={cn(!isHomePage && 'pt-16')}>
+          {!isHomePage && (
+            <div className="container mx-auto px-4 mt-8">
+              <Breadcrumbs />
+            </div>
+          )}
+          {children}
+        </main>
+        <Footer />
         <Toaster />
         <SpeedInsights />
         <Script src="/app.js" strategy="lazyOnload" />
