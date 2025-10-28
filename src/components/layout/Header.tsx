@@ -79,8 +79,8 @@ export default function Header() {
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-          <Sun className="h-7 w-7 text-white" />
-          <span className="font-semibold text-lg font-montserrat text-white">MalagaTravelGuide</span>
+          <Sun className="h-6 w-6 text-white" />
+          <span className="font-semibold text-base font-montserrat text-white">MalagaTravelGuide</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -92,7 +92,7 @@ export default function Header() {
                         <Link href={link.href} legacyBehavior passHref>
                             <NavigationMenuLink className={cn(
                             navigationMenuTriggerStyle(),
-                            'bg-transparent font-montserrat font-medium text-sm text-primary-foreground',
+                            'bg-transparent font-montserrat font-normal text-sm text-primary-foreground',
                             'hover:bg-white/10 focus:bg-white/10',
                             pathname.startsWith(link.href) ? 'bg-white/20' : ''
                             )}>
@@ -103,7 +103,7 @@ export default function Header() {
                 ))}
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-medium text-sm text-primary-foreground', 'hover:bg-white/10 focus:bg-white/10')}>
+                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm text-primary-foreground', 'hover:bg-white/10 focus:bg-white/10')}>
                         Luxury Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -122,7 +122,7 @@ export default function Header() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-medium text-sm text-primary-foreground', 'hover:bg-white/10 focus:bg-white/10')}>
+                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm text-primary-foreground', 'hover:bg-white/10 focus:bg-white/10')}>
                         Explore
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -142,16 +142,8 @@ export default function Header() {
 
                 <NavigationMenuItem>
                     <Link href="/blog" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent font-montserrat font-medium text-sm text-primary-foreground', 'hover:bg-white/10 focus:bg-white/10', pathname.startsWith('/blog') ? 'bg-white/20' : '')}>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent font-montserrat font-normal text-sm text-primary-foreground', 'hover:bg-white/10 focus:bg-white/10', pathname.startsWith('/blog') ? 'bg-white/20' : '')}>
                         Blog
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                    <Link href="/contact" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent font-montserrat font-medium text-sm text-primary-foreground', 'hover:bg-white/10 focus:bg-white/10', pathname.startsWith('/contact') ? 'bg-white/20' : '')}>
-                        Contact
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
