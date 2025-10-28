@@ -1,5 +1,4 @@
 
-
 export default function TennisCampsLayout({
   children,
 }: {
@@ -7,4 +6,7 @@ export default function TennisCampsLayout({
 }) {
   return (
     <div>
-      
+      {children}
+    </div>
+  );
+}

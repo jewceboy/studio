@@ -1,5 +1,4 @@
 
-
 export default function CorporateRetreatsLayout({
   children,
 }: {
@@ -9,3 +8,5 @@ export default function CorporateRetreatsLayout({
     <div>
       {children}
     </div>
+  );
+}

@@ -1,5 +1,4 @@
 
-
 export default function FamilyHotelsLayout({
   children,
 }: {
@@ -7,4 +6,7 @@ export default function FamilyHotelsLayout({
 }) {
   return (
     <div>
-      {
+      {children}
+    </div>
+  );
+}

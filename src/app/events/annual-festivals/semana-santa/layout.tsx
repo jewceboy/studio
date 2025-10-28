@@ -1,5 +1,4 @@
 
-
 export default function SemanaSantaLayout({
   children,
 }: {
@@ -8,4 +7,6 @@ export default function SemanaSantaLayout({
   return (
     <div>
       {children}
-    
+    </div>
+  );
+}

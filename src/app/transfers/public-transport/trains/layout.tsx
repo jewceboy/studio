@@ -1,5 +1,4 @@
 
-
 export default function TrainsLayout({
   children,
 }: {
@@ -7,4 +6,7 @@ export default function TrainsLayout({
 }) {
   return (
     <div>
-      
+      {children}
+    </div>
+  );
+}

@@ -1,5 +1,4 @@
 
-
 export default function RequirementsLayout({
   children,
 }: {
@@ -7,3 +6,7 @@ export default function RequirementsLayout({
 }) {
   return (
     <div>
+      {children}
+    </div>
+  );
+}

@@ -1,5 +1,4 @@
 
-
 export default function ArtExhibitionsLayout({
   children,
 }: {
@@ -9,3 +8,5 @@ export default function ArtExhibitionsLayout({
     <div>
       {children}
     </div>
+  );
+}

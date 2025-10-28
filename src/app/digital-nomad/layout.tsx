@@ -1,5 +1,4 @@
 
-
 export default function DigitalNomadLayout({
   children,
 }: {
@@ -7,4 +6,7 @@ export default function DigitalNomadLayout({
 }) {
   return (
     <div>
-      
+      {children}
+    </div>
+  );
+}

@@ -1,5 +1,4 @@
 
-
 export default function NightlifeLayout({
   children,
 }: {
@@ -7,4 +6,7 @@ export default function NightlifeLayout({
 }) {
   return (
     <div>
-      
+      {children}
+    </div>
+  );
+}

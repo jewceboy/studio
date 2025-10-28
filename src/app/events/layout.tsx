@@ -1,5 +1,4 @@
 
-
 export default function EventsLayout({
   children,
 }: {
@@ -7,3 +6,7 @@ export default function EventsLayout({
 }) {
   return (
     <div>
+      {children}
+    </div>
+  );
+}

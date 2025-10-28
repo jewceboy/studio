@@ -1,5 +1,4 @@
 
-
 export default function AccommodationLayout({
   children,
 }: {
@@ -10,3 +9,4 @@ export default function AccommodationLayout({
       {children}
     </div>
   );
+}

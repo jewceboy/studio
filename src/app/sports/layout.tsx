@@ -1,5 +1,4 @@
 
-
 export default function SportsLayout({
   children,
 }: {
@@ -9,3 +8,5 @@ export default function SportsLayout({
     <div>
       {children}
     </div>
+  );
+}

@@ -1,5 +1,4 @@
 
-
 export default function LuxuryRestaurantsLayout({
   children,
 }: {
@@ -7,4 +6,7 @@ export default function LuxuryRestaurantsLayout({
 }) {
   return (
     <div>
-      {
+      {children}
+    </div>
+  );
+}

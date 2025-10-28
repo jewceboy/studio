@@ -1,5 +1,4 @@
 
-
 export default function ConferenceVenuesLayout({
   children,
 }: {
@@ -7,4 +6,7 @@ export default function ConferenceVenuesLayout({
 }) {
   return (
     <div>
-      
+      {children}
+    </div>
+  );
+}

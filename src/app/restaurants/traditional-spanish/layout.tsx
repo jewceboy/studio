@@ -1,5 +1,4 @@
 
-
 export default function TraditionalSpanishLayout({
   children,
 }: {
@@ -9,3 +8,5 @@ export default function TraditionalSpanishLayout({
     <div>
       {children}
     </div>
+  );
+}
