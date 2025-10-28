@@ -66,3 +66,8 @@ export default function LuxuryHotelsPage() {
                 imageHint={images[category.imageKey].hint}
                 />
             ))}
+        </div>
+      </Section>
+    </div>
+  );
+}

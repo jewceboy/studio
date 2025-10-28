@@ -18,3 +18,5 @@ export default function MapsPage() {
         <p className="text-center text-lg">Placeholder content for maps. This page will offer downloadable PDF maps for tourists.</p>
       </Section>
     </div>
+  );
+}

@@ -16,3 +16,7 @@ export default function TipsPage() {
       />
       <Section>
         <p className="text-center text-lg">Placeholder content for budget travel tips. This page will provide general advice for saving money while traveling in Spain.</p>
+      </Section>
+    </div>
+  );
+}

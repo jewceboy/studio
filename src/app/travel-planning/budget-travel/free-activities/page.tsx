@@ -15,4 +15,8 @@ export default function FreeActivitiesPage() {
         subtitle="Explore the city without spending a euro."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for free
+        <p className="text-center text-lg">Placeholder content for free activities. This page will feature a list of free things to do in Malaga.</p>
+      </Section>
+    </div>
+  );
+}

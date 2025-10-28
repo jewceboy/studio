@@ -68,4 +68,6 @@ export default function MICEEventsPage() {
             ))}
         </div>
       </Section>
-    
+    </div>
+  );
+}

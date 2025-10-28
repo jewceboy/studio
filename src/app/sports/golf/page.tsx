@@ -68,4 +68,7 @@ export default function GolfPage() {
                 />
             ))}
         </div>
-      
+      </Section>
+    </div>
+  );
+}

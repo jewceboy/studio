@@ -74,3 +74,8 @@ export default function DestinationsPage() {
                 linkText={category.linkText}
                 />
             ))}
+        </div>
+      </Section>
+    </div>
+  );
+}

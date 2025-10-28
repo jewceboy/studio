@@ -65,3 +65,9 @@ export default function WellnessPage() {
               linkHref={category.linkHref}
               linkText={category.linkText}
             />
+          ))}
+        </div>
+      </Section>
+    </div>
+  );
+}

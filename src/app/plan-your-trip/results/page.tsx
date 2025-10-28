@@ -95,7 +95,7 @@ function RecommendationContent() {
             ))}
           </ul>
           <Button asChild variant="default" className="mt-6 bg-primary text-primary-foreground">
-            <Link href="/activities">Explore All Activities</Link> {/* Assuming /activities exists */}
+            <Link href="/attractions">Explore All Activities</Link> {/* Assuming /attractions exists */}
           </Button>
         </CardContent>
       </Card>
@@ -109,7 +109,7 @@ function RecommendationContent() {
         <CardContent>
           <p className="text-foreground">{recommendation.idealAccommodations}</p>
            <Button asChild variant="default" className="mt-6 bg-primary text-primary-foreground">
-            <Link href={`/hotels/${recommendation.townRecommendation.toLowerCase().replace(/\s+/g, '-')}`}>
+            <Link href={`/hotels/search?q=${recommendation.townRecommendation}`}>
               Find Hotels in {recommendation.townRecommendation}
             </Link>
           </Button>

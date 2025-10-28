@@ -56,3 +56,10 @@ export default function HoneymoonsPage() {
                 linkHref={category.linkHref}
                 linkText={category.linkText}
                 imageHint={images[category.imageKey].hint}
+                />
+            ))}
+        </div>
+      </Section>
+    </div>
+  );
+}

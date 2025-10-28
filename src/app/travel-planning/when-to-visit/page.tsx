@@ -58,3 +58,8 @@ export default function WhenToVisitPage() {
                 imageHint={images[category.imageKey].hint}
                 />
             ))}
+        </div>
+      </Section>
+    </div>
+  );
+}

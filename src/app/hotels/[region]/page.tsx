@@ -51,4 +51,10 @@ export default function HotelRegionPage({ params }: { params: { region: string }
       <Section title="Accommodation by Category" className="pt-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {regionData.categories.map((category) => (
-            <HotelCategoryCard key
+            <HotelCategoryCard key={category.slug} category={category} />
+          ))}
+        </div>
+      </Section>
+    </div>
+  );
+}

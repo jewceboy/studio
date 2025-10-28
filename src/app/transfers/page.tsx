@@ -63,4 +63,11 @@ export default function TransfersPage() {
               imageAlt={`Explore ${category.name}`}
               description={category.description}
               linkHref={category.linkHref}
-              linkText={category.linkText
+              linkText={category.linkText}
+            />
+          ))}
+        </div>
+      </Section>
+    </div>
+  );
+}

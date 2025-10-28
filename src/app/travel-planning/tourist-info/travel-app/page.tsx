@@ -18,3 +18,5 @@ export default function TravelAppPage() {
         <p className="text-center text-lg">Placeholder content for the Malaga travel app. This page will promote a partner or in-house travel application.</p>
       </Section>
     </div>
+  );
+}

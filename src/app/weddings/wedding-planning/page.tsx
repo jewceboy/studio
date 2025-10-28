@@ -55,4 +55,11 @@ export default function WeddingPlanningPage() {
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                imageHint={images[category.imageKey].hint
+                imageHint={images[category.imageKey].hint}
+                />
+            ))}
+        </div>
+      </Section>
+    </div>
+  );
+}
