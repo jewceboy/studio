@@ -18,4 +18,5 @@ export default function PresidentialSuitesPage() {
         <p className="text-center text-lg">Placeholder content for presidential suites. This page will showcase the most opulent hotel suites.</p>
       </Section>
     </div>
-  
+  );
+}

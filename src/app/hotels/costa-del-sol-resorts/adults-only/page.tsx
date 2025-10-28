@@ -16,4 +16,7 @@ export default function AdultsOnlyPage() {
       />
       <Section>
         <p className="text-center text-lg">Placeholder content for adults-only luxury resorts. This page will feature exclusive resorts for adults.</p>
-      </
+      </Section>
+    </div>
+  );
+}

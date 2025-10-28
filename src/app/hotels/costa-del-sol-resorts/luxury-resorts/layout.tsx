@@ -1,5 +1,4 @@
 
-
 export default function LuxuryResortsLayout({
   children,
 }: {
@@ -7,3 +6,7 @@ export default function LuxuryResortsLayout({
 }) {
   return (
     <div>
+      {children}
+    </div>
+  );
+}

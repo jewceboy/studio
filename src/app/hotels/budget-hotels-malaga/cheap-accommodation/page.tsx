@@ -17,3 +17,6 @@ export default function CheapAccommodationPage() {
       <Section>
         <p className="text-center text-lg">Placeholder content for cheap accommodation. This page will list budget-friendly options.</p>
       </Section>
+    </div>
+  );
+}
