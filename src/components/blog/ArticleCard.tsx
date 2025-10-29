@@ -18,7 +18,7 @@ interface ArticleCardProps {
 
 export default function ArticleCard({ article, className }: ArticleCardProps) {
   return (
-    <Link href={`/blog/${article.slug}`} className="group block">
+    <Link href={`/blog/${article.slug}`} className="group block h-full">
       <Card className={cn('overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full bg-card', className)}>
         <CardHeader className="p-0 relative aspect-video">
             <Image
@@ -38,7 +38,7 @@ export default function ArticleCard({ article, className }: ArticleCardProps) {
           <CardTitle className="font-montserrat text-xl font-bold text-foreground mb-3 leading-tight line-clamp-2 transition-colors group-hover:text-primary">{article.title}</CardTitle>
           <p className="text-sm text-muted-foreground line-clamp-3 mb-4">{article.excerpt}</p>
         </CardContent>
-        <CardFooter className="p-6 pt-0 flex items-center justify-between text-xs text-muted-foreground">
+        <CardFooter className="p-6 pt-0 flex items-center justify-between text-xs text-muted-foreground mt-auto">
            <div className="flex items-center space-x-3">
               {article.author && (
                 <span className="flex items-center">
@@ -51,8 +51,11 @@ export default function ArticleCard({ article, className }: ArticleCardProps) {
                 </span>
               )}
            </div>
-           <ArrowRight className="h-5 w-5 text-primary opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
+           <span className="text-primary font-semibold flex items-center">
+             Read More <ArrowRight className="h-4 w-4 ml-1 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
+           </span>
         </CardFooter>
       </Card>
     </Link>
-  
+  );
+}
