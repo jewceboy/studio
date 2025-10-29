@@ -67,13 +67,8 @@ export default function InfoCard({
                 {description && <p className="text-sm text-muted-foreground line-clamp-3">{description}</p>}
             </CardContent>
             <CardFooter className="p-6 pt-0 mt-auto">
-                 <div
-                    className={cn(
-                        "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full font-montserrat",
-                        buttonClassName ? buttonClassName : "bg-primary text-primary-foreground hover:bg-primary/90"
-                    )}
-                    >
-                    {linkText} <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                 <div className="text-primary font-semibold flex items-center">
+                   Read more <ArrowRight className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
             </CardFooter>
         </Card>
