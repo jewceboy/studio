@@ -74,6 +74,17 @@ const marbellaCategories = [
 export default function MarbellaHubPage() {
   return (
     <div>
+        <div className="relative h-80 md:h-96 -mt-16 -mx-4 sm:-mx-container-padding overflow-hidden">
+            <Image
+                src={images['Marbella-panoramic-beach-luxury'].url}
+                alt="Stunning panoramic view of Marbella's luxurious beach and coastline"
+                fill
+                priority
+                className="object-cover"
+                data-ai-hint="Marbella panoramic beach"
+            />
+            <div className="absolute inset-0 bg-black/40" />
+        </div>
       <PageHeader
         title="Marbella Travel Guide"
         subtitle="Welcome to the jewel of the Costa del Sol. Discover a world of sun-drenched luxury, timeless Andalusian charm, and vibrant energy."
@@ -108,7 +119,7 @@ export default function MarbellaHubPage() {
             <div>
                 <h3 className="font-display text-h3 text-text-primary mb-2">The Enchanting Old Town (Casco Antiguo)</h3>
                 <p className="text-body-l text-text-secondary mb-4">
-                    Step back in time as you wander the labyrinthine cobblestone streets of Marbella's Casco Antiguo. This beautifully preserved historic quarter is a feast for the senses, with vibrant bougainvillea spilling from wrought-iron balconies and the scent of orange blossom filling the air. The heart of the Old Town is the Plaza de los Naranjos (Orange Square), a bustling hub of cafes and restaurants set around a Renaissance fountain. Explore unique boutiques, discover ancient city walls, and find countless photo opportunities in one of the most charming old towns in Andalusia.
+                    Get ready to fall in love! Step back in time as you wander the labyrinthine cobblestone streets of Marbella's Casco Antiguo. This beautifully preserved historic quarter is a total feast for the senses, with vibrant bougainvillea spilling from wrought-iron balconies and the sweet scent of orange blossom filling the air. The heart of it all is the Plaza de los Naranjos (Orange Square), the perfect spot to grab a coffee and watch the world go by. You'll spend hours exploring unique boutiques, discovering ancient city walls, and finding countless photo ops in one of the most charming old towns in Andalusia.
                 </p>
                  <Link href="/destinations/marbella/things-to-do/old-town" className="text-primary hover:underline font-semibold">
                     Explore the Old Town Guide &rarr;
@@ -122,7 +133,7 @@ export default function MarbellaHubPage() {
             <div className="md:order-2">
                 <h3 className="font-display text-h3 text-text-primary mb-2">The Glamour of Puerto Banús</h3>
                 <p className="text-body-l text-text-secondary mb-4">
-                   A stark contrast to the Old Town's tranquility, Puerto Banús is the world-famous epicenter of glamour and luxury. This glittering marina is where you'll find superyachts, high-performance sports cars, and an endless parade of designer boutiques like Dior, Gucci, and Louis Vuitton. By day, it's a sun-drenched haven for shopping and people-watching from a waterfront cafe. By night, it transforms into one of Europe's most famous nightlife destinations, with exclusive clubs and sophisticated bars coming alive.
+                   Ready to see how the other half lives? Puerto Banús is the world-famous epicenter of glamour and luxury. This glittering marina is where you'll find superyachts the size of houses, high-performance sports cars you've only seen in movies, and an endless parade of designer boutiques like Dior, Gucci, and Louis Vuitton. By day, it's a sun-drenched haven for shopping and people-watching from a waterfront cafe. By night, it transforms into one of Europe's most famous nightlife destinations, with exclusive clubs and sophisticated bars coming alive.
                 </p>
                  <Link href="/destinations/marbella/things-to-do/puerto-banus" className="text-primary hover:underline font-semibold">
                     An Insider's Guide to Puerto Banús &rarr;
@@ -133,6 +144,19 @@ export default function MarbellaHubPage() {
             </div>
         </div>
       </Section>
+       <Section title="The Costa del Golf: A Golfer's Paradise" className="bg-secondary/20">
+        <div className="prose max-w-4xl mx-auto text-lg text-text-secondary text-center">
+             <h3 className="font-display text-h3 text-text-primary mb-2">Tee Off in Style</h3>
+            <p>
+                They don't call it the "Costa del Golf" for nothing! Marbella is the undisputed capital of golf in Europe, boasting an incredible concentration of world-class courses. Picture this: lush, manicured fairways with breathtaking views of the Mediterranean sea and dramatic mountains. Whether you're a seasoned pro looking for a challenge at a championship course like Valderrama or just want a relaxed round in the sun, there's a perfect course for you. Planning your entire <Link href="/sports/golf/golf-holidays" className="text-primary hover:underline">Marbella golf holiday</Link> is a breeze with our guides to the best <Link href="/sports/golf/golf-resorts" className="text-primary hover:underline">golf resorts and packages</Link>.
+            </p>
+            <Link href="/sports/golf" className="text-primary hover:underline font-semibold">
+                Discover Marbella's Best Golf Courses &rarr;
+            </Link>
+        </div>
+      </Section>
     </div>
   );
 }
+
+    
