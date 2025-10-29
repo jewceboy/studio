@@ -87,10 +87,18 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-text-secondary;
   }
-}
-
-.info-box-custom-bg {
-    background-color: hsl(var(--secondary));
+  .info-box-custom-bg {
+    @apply bg-secondary;
+  }
+  
+  .prose-headings\:font-display h1,
+  .prose-headings\:font-display h2,
+  .prose-headings\:font-display h3,
+  .prose-headings\:font-display h4,
+  .prose-headings\:font-display h5,
+  .prose-headings\:font-display h6 {
+    font-family: var(--font-playfair), serif;
+  }
 }

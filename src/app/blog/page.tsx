@@ -52,7 +52,7 @@ export default function BlogPage() {
           {/* Articles Grid */}
           <div className="lg:col-span-8">
             {articles.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
                 {articles.map((article) => (
                   <ArticleCard key={article.slug} article={article} />
                 ))}

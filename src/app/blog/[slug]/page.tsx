@@ -40,7 +40,7 @@ const articlesData: { [key: string]: Article } = {
     <h3 class="text-2xl font-montserrat font-semibold my-4">Casa Lola</h3>
     <p>Vibrant and always bustling, Casa Lola offers a wide array of traditional tapas. Try their 'montaditos' and vermouth on tap.</p>
     <p>Exploring these culinary gems provides not just a meal, but an authentic taste of Malagueño culture. ¡Buen provecho!</p>
-    <div class="my-6 p-4 info-box-custom-bg border-l-4"> {/* Updated class for info box */}
+    <div class="my-6 p-4 info-box-custom-bg border-l-4">
         <h4 class="font-montserrat font-semibold text-foreground">Insider Tip:</h4>
         <p class="text-muted-foreground">Many bars offer a free tapa with your first drink. Don't be afraid to ask or observe what locals are doing!</p>
     </div>
@@ -233,3 +233,137 @@ const articlesData: { [key: string]: Article } = {
 };
 
 const allArticles = Object.values(articlesData);
+
+export async function generateStaticParams() {
+  return allArticles.map((article) => ({
+    slug: article.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const article = articlesData[params.slug];
+
+  if (!article) {
+    return {
+      title: 'Article Not Found',
+    }
+  }
+
+  return {
+    title: article.title,
+    description: article.excerpt,
+     alternates: {
+      canonical: `/blog/${article.slug}`,
+    },
+  };
+}
+
+
+// Function to find related articles (example logic)
+const getRelatedArticles = (currentArticle: Article): Pick<Article, 'title' | 'slug' | 'imageUrl' | 'imageHint' | 'excerpt' | 'date' | 'author' | 'categories'>[] => {
+  if (!currentArticle.categories || currentArticle.categories.length === 0) {
+    return allArticles.filter(a => a.id !== currentArticle.id).slice(0, 3);
+  }
+  const related = allArticles.filter(a => 
+    a.id !== currentArticle.id && 
+    a.categories?.some(cat => currentArticle.categories?.includes(cat))
+  );
+  return related.slice(0, 3);
+};
+
+
+export default function ArticlePage({ params }: { params: { slug: string } }) {
+  const article = articlesData[params.slug];
+
+  if (!article) {
+    notFound();
+  }
+  
+  const relatedArticles = getRelatedArticles(article);
+
+  return (
+    <div className="bg-background">
+      <article>
+        {/* Article Header */}
+        <header className="container mx-auto px-4 pt-12 text-center max-w-4xl">
+           {article.categories && article.categories.length > 0 && (
+                <div className="mb-4">
+                  {article.categories.map(category => (
+                      <Link key={category} href={`/blog/category/${category.toLowerCase().replace(/\s+/g, '-')}`} passHref>
+                          <Badge variant="secondary" className="text-sm font-normal">
+                              {category}
+                          </Badge>
+                      </Link>
+                  ))}
+                </div>
+            )}
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-text-primary mb-4">{article.title}</h1>
+            <div className="flex justify-center items-center space-x-4 text-sm text-muted-foreground mb-8">
+              {article.author && (
+                <div className="flex items-center space-x-2">
+                  <UserCircle className="h-5 w-5" />
+                  <span>By {article.author}</span>
+                </div>
+              )}
+               {article.date && (
+                <div className="flex items-center space-x-2">
+                  <CalendarDays className="h-5 w-5" />
+                  <time dateTime={article.date}>{new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                </div>
+              )}
+            </div>
+        </header>
+
+        {/* Featured Image */}
+        <div className="container mx-auto px-4 my-8">
+            <div className="relative aspect-video max-w-5xl mx-auto rounded-lg overflow-hidden shadow-lg">
+                <Image
+                src={article.imageUrl}
+                alt={`Featured image for ${article.title}`}
+                fill
+                priority
+                className="object-cover"
+                data-ai-hint={article.imageHint || "blog article hero"}
+                />
+            </div>
+        </div>
+
+        {/* Article Body */}
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="flex justify-end mb-4">
+                <ArticleActions />
+            </div>
+            <div
+              className="prose lg:prose-xl max-w-none font-sans text-text-secondary prose-headings:font-display prose-headings:text-text-primary prose-a:text-primary prose-strong:text-text-primary"
+              dangerouslySetInnerHTML={{ __html: article.content }}
+            />
+
+            {/* Tags */}
+            {article.tags && article.tags.length > 0 && (
+              <div className="mt-12 flex items-center flex-wrap gap-2">
+                <Tag className="h-5 w-5 text-muted-foreground" />
+                {article.tags.map(tag => (
+                   <Link key={tag} href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`} passHref>
+                      <Badge variant="outline">{tag}</Badge>
+                   </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </article>
+
+      {/* Related Articles */}
+      {relatedArticles.length > 0 && (
+        <Section title="You Might Also Like" className="mt-16 bg-secondary/30">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {relatedArticles.map((relatedArticle) => (
+              <ArticleCard key={relatedArticle.slug} article={relatedArticle} />
+            ))}
+          </div>
+        </Section>
+      )}
+    </div>
+  );
+}
