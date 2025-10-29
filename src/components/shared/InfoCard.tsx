@@ -50,35 +50,33 @@ export default function InfoCard({
 
   // Default card style
   return (
-    <Card className={cn('overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full bg-card group', className)}>
-      <CardHeader className="p-0 relative aspect-video">
-        <Image
-          src={imageUrl}
-          alt={imageAlt}
-          width={imageWidth}
-          height={imageHeight}
-          className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-          data-ai-hint={imageHint}
-        />
-      </CardHeader>
-      <CardContent className="p-6 flex-grow">
-        <CardTitle className="font-montserrat text-xl font-semibold text-primary-dark mb-2 line-clamp-2 group-hover:text-primary transition-colors">{title}</CardTitle>
-        {description && <p className="text-sm text-muted-foreground line-clamp-3">{description}</p>}
-      </CardContent>
-      <CardFooter className="p-6 pt-0">
-        <Button
-          asChild
-          variant="default"
-          className={cn(
-            "w-full font-montserrat font-medium",
-            buttonClassName ? buttonClassName : "bg-primary text-primary-foreground hover:bg-primary/90"
-          )}
-        >
-          <Link href={linkHref}>
-            {linkText} <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-        </Button>
-      </CardFooter>
-    </Card>
+    <Link href={linkHref} className="group block h-full">
+        <Card className={cn('overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full bg-card', className)}>
+            <CardHeader className="p-0 relative aspect-video">
+                <Image
+                src={imageUrl}
+                alt={imageAlt}
+                width={imageWidth}
+                height={imageHeight}
+                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                data-ai-hint={imageHint}
+                />
+            </CardHeader>
+            <CardContent className="p-6 flex-grow">
+                <CardTitle className="font-montserrat text-xl font-semibold text-primary-dark mb-2 line-clamp-2 transition-colors group-hover:text-primary">{title}</CardTitle>
+                {description && <p className="text-sm text-muted-foreground line-clamp-3">{description}</p>}
+            </CardContent>
+            <CardFooter className="p-6 pt-0 mt-auto">
+                 <div
+                    className={cn(
+                        "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full font-montserrat",
+                        buttonClassName ? buttonClassName : "bg-primary text-primary-foreground hover:bg-primary/90"
+                    )}
+                    >
+                    {linkText} <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+            </CardFooter>
+        </Card>
+    </Link>
   );
 }
