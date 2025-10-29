@@ -1,4 +1,5 @@
 
+
 import type { Destination } from '@/lib/constants';
 import { PLACEHOLDER_IMAGE_URL } from '@/lib/constants';
 import type { HotelCategory, NicheSubCategory } from '@/types';
@@ -124,16 +125,17 @@ export const destinationsData: { [key: string]: Destination } = {
   }
 };
 
-const defaultHotelCategories: HotelCategory[] = [
-  { name: 'Luxury Hotels', slug: 'luxury-hotels', description: 'Indulge in opulent stays with top-tier amenities and services.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "luxury hotel interior"), imageHint: "luxury hotel interior" },
-  { name: 'Family-Friendly Hotels', slug: 'family-hotels', description: 'Find hotels with facilities and activities perfect for all ages.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "family pool fun"), imageHint: "family pool fun" },
-  { name: 'Beachfront Hotels', slug: 'beachfront-hotels', description: 'Wake up to stunning sea views and direct beach access.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "beach hotel view"), imageHint: "beach hotel view" },
-  { name: 'Boutique Hotels', slug: 'boutique-hotels', description: 'Discover unique charm and personalized service in smaller, stylish hotels.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "boutique hotel lobby"), imageHint: "boutique hotel lobby" },
-  { name: 'Budget-Friendly Stays', slug: 'budget-hotels', description: 'Comfortable and affordable options for savvy travelers.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "hostel budget room"), imageHint: "hostel budget room" },
+const marbellaHotelCategories: HotelCategory[] = [
+  { name: 'Luxury Hotels', slug: 'luxury', description: 'Indulge in opulent stays at Marbella\'s world-renowned 5-star hotels and grand resorts.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "marbella-luxury-hotel"), imageHint: "Marbella luxury hotel" },
+  { name: 'Beachfront Hotels', slug: 'beachfront', description: 'Wake up to Mediterranean views with direct access to Marbella\'s golden sands.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "marbella-beach-hotel"), imageHint: "Marbella beach hotel" },
+  { name: 'Boutique Hotels', slug: 'boutique', description: 'Discover charming and stylish hotels hidden in the romantic streets of the Old Town.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "marbella-boutique-hotel"), imageHint: "Marbella boutique hotel" },
 ];
 
-
 const initialHotelSiloData: { [key: string]: { name: string; categories: HotelCategory[] } } = {
+  'marbella': {
+    name: 'Marbella',
+    categories: marbellaHotelCategories
+  },
   'luxury-hotels-malaga': {
     name: 'Luxury Hotels Malaga',
     categories: [
@@ -165,19 +167,29 @@ const initialHotelSiloData: { [key: string]: { name: string; categories: HotelCa
   }
 };
 
+const defaultHotelCategories: HotelCategory[] = [
+  { name: 'Luxury Hotels', slug: 'luxury-hotels', description: 'Indulge in opulent stays with top-tier amenities and services.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "luxury hotel interior"), imageHint: "luxury hotel interior" },
+  { name: 'Family-Friendly Hotels', slug: 'family-hotels', description: 'Find hotels with facilities and activities perfect for all ages.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "family pool fun"), imageHint: "family pool fun" },
+  { name: 'Beachfront Hotels', slug: 'beachfront-hotels', description: 'Wake up to stunning sea views and direct beach access.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "beach hotel view"), imageHint: "beach hotel view" },
+  { name: 'Boutique Hotels', slug: 'boutique-hotels', description: 'Discover unique charm and personalized service in smaller, stylish hotels.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "boutique hotel lobby"), imageHint: "boutique hotel lobby" },
+  { name: 'Budget-Friendly Stays', slug: 'budget-hotels', description: 'Comfortable and affordable options for savvy travelers.', imageUrl: PLACEHOLDER_IMAGE_URL(600,400, "hostel budget room"), imageHint: "hostel budget room" },
+];
+
 
 export const hotelSiloData = Object.keys(destinationsData).reduce((acc, slug) => {
     if (!acc[slug]) {
-        acc[slug] = {
-            name: destinationsData[slug].name,
-            categories: defaultHotelCategories.map(category => ({
-                ...category,
-                slug: `${category.slug}-${slug}`,
-                description: `Find and book ${category.name.toLowerCase()} in ${destinationsData[slug].name}. ${category.description}`,
-                imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, `${slug}-${category.slug}`),
-                imageHint: `${destinationsData[slug].name} ${category.name}`
-            }))
-        };
+        if (slug !== 'marbella') { // Don't override the custom Marbella categories
+          acc[slug] = {
+              name: destinationsData[slug].name,
+              categories: defaultHotelCategories.map(category => ({
+                  ...category,
+                  slug: `${category.slug}-${slug}`,
+                  description: `Find and book ${category.name.toLowerCase()} in ${destinationsData[slug].name}. ${category.description}`,
+                  imageUrl: PLACEHOLDER_IMAGE_URL(600, 400, `${slug}-${category.slug}`),
+                  imageHint: `${destinationsData[slug].name} ${category.name}`
+              }))
+          };
+        }
     }
     return acc;
 }, initialHotelSiloData);
