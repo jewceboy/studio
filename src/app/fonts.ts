@@ -1,4 +1,4 @@
-import { Inter, Open_Sans, Marcellus, Montserrat } from 'next/font/google';
+import { Inter, Open_Sans, Playfair_Display, Montserrat } from 'next/font/google';
 
 export const inter = Inter({
   subsets: ['latin'],
@@ -12,12 +12,12 @@ export const openSans = Open_Sans({
   variable: '--font-open-sans',
 });
 
-export const marcellus = Marcellus({
+export const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-marcellus',
-  weight: ['400'],
+  variable: '--font-playfair-display',
 });
+
 
 export const montserrat = Montserrat({
     subsets: ['latin'],

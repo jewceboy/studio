@@ -42,7 +42,7 @@ export default function InfoCard({
     return (
         <div className={cn('group block relative overflow-hidden rounded-lg aspect-video bg-gray-200 animate-pulse', className)}>
             <div className="absolute inset-0 flex items-center justify-center p-4">
-                <h3 className="font-anton text-2xl md:text-3xl text-gray-500 text-center">{title}</h3>
+                <h3 className="font-display text-2xl md:text-3xl text-gray-500 text-center">{title}</h3>
             </div>
         </div>
     );
@@ -51,24 +51,24 @@ export default function InfoCard({
   // Default card style
   return (
     <Link href={linkHref} className="group block h-full">
-        <Card className={cn('overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full bg-card', className)}>
+        <Card className={cn('overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col h-full bg-card rounded-lg border-border', className)}>
             <CardHeader className="p-0 relative aspect-video">
                 <Image
                 src={imageUrl}
                 alt={imageAlt}
                 width={imageWidth}
                 height={imageHeight}
-                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105 rounded-t-lg"
                 data-ai-hint={imageHint}
                 />
             </CardHeader>
             <CardContent className="p-6 flex-grow">
-                <CardTitle className="font-montserrat text-xl font-semibold text-primary-dark mb-2 line-clamp-2 transition-colors group-hover:text-primary">{title}</CardTitle>
-                {description && <p className="text-sm text-muted-foreground line-clamp-3">{description}</p>}
+                <CardTitle className="font-display text-xl font-bold text-text-primary mb-2 line-clamp-2 transition-colors group-hover:text-primary">{title}</CardTitle>
+                {description && <p className="text-sm text-text-secondary line-clamp-3">{description}</p>}
             </CardContent>
             <CardFooter className="p-6 pt-0 mt-auto">
-                 <div className="text-primary font-semibold flex items-center">
-                   Read more <ArrowRight className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                 <div className="text-primary font-semibold flex items-center text-sm">
+                   {linkText} <ArrowRight className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
             </CardFooter>
         </Card>

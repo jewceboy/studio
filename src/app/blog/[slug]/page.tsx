@@ -31,20 +31,20 @@ const articlesData: { [key: string]: Article } = {
     date: '2024-05-15', author: 'Elena Rodriguez', 
     excerpt: 'A culinary journey through Málaga\'s most authentic tapas spots, from traditional bites to modern creations.',
     content: `<p>Málaga's old town is a labyrinth of charming streets, and hidden within are some of the best tapas bars you'll ever encounter. This guide will take you on a flavorful journey, highlighting must-try dishes and local favorites. From centuries-old taverns serving classic Andalusian recipes to innovative kitchens putting a modern spin on tapas, there's something for every palate.</p>
-    <h3 class="text-2xl font-display font-normal my-4">El Tapeo de Cervantes</h3>
+    <h3 class="prose-h3">El Tapeo de Cervantes</h3>
     <p>A popular spot known for its creative tapas and extensive wine list. Booking is recommended. Their mini burgers and cod confit are divine.</p>
     <figure class="my-6">
       <img src="${images['restaurant-interior'].url}" alt="Interior of El Tapeo de Cervantes" class="rounded-lg shadow-md" data-ai-hint="${images['restaurant-interior'].hint}"/>
       <figcaption class="text-xs text-center text-muted-foreground mt-2">El Tapeo de Cervantes offers a cozy atmosphere.</figcaption>
     </figure>
-    <h3 class="text-2xl font-display font-normal my-4">Casa Lola</h3>
+    <h3 class="prose-h3">Casa Lola</h3>
     <p>Vibrant and always bustling, Casa Lola offers a wide array of traditional tapas. Try their 'montaditos' and vermouth on tap.</p>
     <p>Exploring these culinary gems provides not just a meal, but an authentic taste of Malagueño culture. ¡Buen provecho!</p>
     <div class="my-6 p-4 info-box-custom-bg border-l-4">
         <h4 class="font-display font-semibold text-foreground">Insider Tip:</h4>
         <p class="text-muted-foreground">Many bars offer a free tapa with your first drink. Don't be afraid to ask or observe what locals are doing!</p>
     </div>
-    <h3 class="text-2xl font-display font-normal my-4">Relevant Tours & Hotels</h3>
+    <h3 class="prose-h3">Relevant Tours & Hotels</h3>
     <p>Enhance your culinary journey by booking a guided tapas tour or staying in a hotel conveniently located in the Old Town. Check out these options:</p>
     <ul class="list-disc list-inside my-4 space-y-2">
         <li><a href="/restaurants/culinary-experiences/food-tours" class="text-primary hover:underline">Malaga Old Town Tapas Tour</a></li>
@@ -60,7 +60,7 @@ const articlesData: { [key: string]: Article } = {
     date: '2024-05-10', author: 'Mark Stevenson',
     excerpt: 'Discover tranquil coves and pristine sands away from the crowds for a perfect day of relaxation.',
     content: `<p>Escape the bustling tourist spots and discover the serene beauty of Costa del Sol\'s hidden beaches. This guide unveils five secluded gems where you can enjoy pristine sands and crystal-clear waters in peace. From hidden coves accessible only by foot to quiet stretches of coastline loved by locals, these beaches offer a perfect retreat.</p>
-    <h3 class="text-2xl font-display font-normal my-4">Playa de Maro</h3>
+    <h3 class="prose-h3">Playa de Maro</h3>
     <p>Often cited as one of Spain's best beaches, Playa de Maro is a stunning cove near Nerja, boasting turquoise waters perfect for snorkeling and kayaking. Its protected status means marine life is abundant.</p>
     <figure class="my-6">
       <img src="https://picsum.photos/seed/maro-beach-kayak/800/400" alt="Kayaking at Playa de Maro" class="rounded-lg shadow-md" data-ai-hint="kayak beach cove"/>
@@ -76,9 +76,9 @@ const articlesData: { [key: string]: Article } = {
     date: '2024-05-01', author: 'Sofia Chen',
     excerpt: 'Explore the dramatic landscapes, iconic bridge, and historic charm of the stunning town of Ronda.',
     content: `<p>Perched dramatically atop the El Tajo gorge, Ronda is one of Andalusia's most breathtaking towns and makes for an unforgettable day trip from the Costa del Sol. This guide covers the must-see sights for a perfect visit.</p>
-    <h3 class="text-2xl font-display font-normal my-4">Puente Nuevo (New Bridge)</h3>
+    <h3 class="prose-h3">Puente Nuevo (New Bridge)</h3>
     <p>The iconic Puente Nuevo is Ronda\'s most famous landmark, spanning the 120-meter-deep chasm. The views from the bridge are spectacular, but be sure to hike down into the gorge for the most impressive photo opportunities.</p>
-    <h3 class="text-2xl font-display font-normal my-4">Plaza de Toros</h3>
+    <h3 class="prose-h3">Plaza de Toros</h3>
     <p>Visit one of Spain's oldest and most revered bullrings, the Plaza de Toros. Its museum offers fascinating insights into the history of bullfighting. Whether you agree with the tradition or not, the architectural and historical significance is undeniable.</p>`,
     categories: ['Day Trips'],
     tags: ['ronda', 'day trip', 'andalucia', 'sightseeing']
@@ -89,9 +89,9 @@ const articlesData: { [key: string]: Article } = {
     date: '2024-04-25', author: 'Carlos Gomez',
     excerpt: 'Everything you need to know before tackling one of Spain\'s most breathtaking hiking trails.',
     content: `<p>Once known as the world's most dangerous footpath, the Caminito del Rey has been transformed into a safe and stunningly beautiful hiking trail. Suspended along the walls of the Gaitanes Gorge, this trail offers breathtaking views and a thrilling experience.</p>
-    <h3 class="text-2xl font-display font-normal my-4">Booking Tickets</h3>
+    <h3 class="prose-h3">Booking Tickets</h3>
     <p>Tickets for the Caminito del Rey sell out weeks or even months in advance, especially during peak season. It is crucial to book online through the official website or a registered tour operator. Do not show up expecting to buy tickets on the day.</p>
-    <h3 class="text-2xl font-display font-normal my-4">The Trail</h3>
+    <h3 class="prose-h3">The Trail</h3>
     <p>The hike is a one-way route of about 7.7 kilometers in total, which takes around 3-4 hours. Most of the path is flat, but it includes sections on boardwalks suspended over 100 meters above the river below. It is not suitable for those with a severe fear of heights.</p>`,
     categories: ['Adventure', 'Hiking'],
     tags: ['caminito del rey', 'hiking', 'adventure', 'malaga']
@@ -102,9 +102,9 @@ const articlesData: { [key: string]: Article } = {
     date: '2023-12-01', author: 'Laura Schmidt',
     excerpt: 'Experience the magic of Calle Larios adorned with spectacular Christmas lights and music.',
     content: `<p>Each year, Málaga transforms into a winter wonderland, with its spectacular Christmas light display on Calle Larios being the main event. Millions of LED lights create a stunning architectural structure, synchronized with popular Christmas music.</p>
-    <h3 class="text-2xl font-display font-normal my-4">The Main Show</h3>
+    <h3 class="prose-h3">The Main Show</h3>
     <p>The music and light shows on Calle Larios typically run several times each evening from late November until early January. It's a hugely popular free event, so expect large crowds. Arrive early to get a good viewing spot.</p>
-    <h3 class="text-2xl font-display font-normal my-4">Beyond Calle Larios</h3>
+    <h3 class="prose-h3">Beyond Calle Larios</h3>
     <p>While Calle Larios is the star, the entire historic center is beautifully decorated. Explore the surrounding streets, visit the Christmas markets at Paseo del Parque, and enjoy the festive atmosphere throughout the city.</p>`,
     categories: ['Festivals', 'Malaga'],
     tags: ['christmas', 'malaga', 'festivals', 'lights']
@@ -115,9 +115,9 @@ const articlesData: { [key: string]: Article } = {
     date: '2024-03-18', author: 'David Miller',
     excerpt: 'A guide to the most picturesque "pueblos blancos" near Costa del Sol, rich in history and beauty.',
     content: `<p>The 'pueblos blancos,' or white villages of Andalusia, are a photographer\'s dream. Characterized by their simple white-washed walls, narrow cobbled streets, and vibrant floral displays, these villages offer a glimpse into a more traditional way of life.</p>
-    <h3 class="text-2xl font-display font-normal my-4">Mijas Pueblo</h3>
+    <h3 class="prose-h3">Mijas Pueblo</h3>
     <p>One of the most accessible from the Costa del Sol, Mijas Pueblo is famous for its charming streets and donkey-taxis. The views of the coastline from its elevated position are simply stunning.</p>
-    <h3 class="text-2xl font-display font-normal my-4">Frigiliana</h3>
+    <h3 class="prose-h3">Frigiliana</h3>
     <p>Often voted the prettiest village in Spain, Frigiliana, near Nerja, is a maze of immaculate, winding streets. Its well-preserved Moorish old quarter is a delight to explore.</p>`,
     categories: ['Culture', 'Day Trips'],
     tags: ['pueblos blancos', 'andalucia', 'day trips', 'mijas', 'frigiliana']
@@ -127,7 +127,7 @@ const articlesData: { [key: string]: Article } = {
     imageUrl: images['beach-resort-holiday'].url, imageHint: images['beach-resort-holiday'].hint,
     date: '2024-02-20', author: 'Travel Critic', 
     excerpt: 'Is the all-inclusive Clubhotel Riu worth it? We break down the rooms, food, pools, and overall experience.',
-    content: `<p>This is placeholder content for the Clubhotel Riu review. Replace this with your full article, including details about the location, amenities, room quality, food and drink options, and overall value for money. Use headings to structure your review.</p><h3 class="text-2xl font-display font-normal my-4">Location & First Impressions</h3><p>Start by describing the hotel's location in Torremolinos and your initial thoughts upon arrival.</p><h3 class="text-2xl font-display font-normal my-4">Rooms & Accommodation</h3><p>Detail the room types, cleanliness, views, and any standout features.</p><h3 class="text-2xl font-display font-normal my-4">Food, Drink & Restaurants</h3><p>Provide an overview of the all-inclusive options, the quality of the buffet, and any specialty restaurants available.</p>`,
+    content: `<p>This is placeholder content for the Clubhotel Riu review. Replace this with your full article, including details about the location, amenities, room quality, food and drink options, and overall value for money. Use headings to structure your review.</p><h3 class="prose-h3">Location & First Impressions</h3><p>Start by describing the hotel's location in Torremolinos and your initial thoughts upon arrival.</p><h3 class="prose-h3">Rooms & Accommodation</h3><p>Detail the room types, cleanliness, views, and any standout features.</p><h3 class="prose-h3">Food, Drink & Restaurants</h3><p>Provide an overview of the all-inclusive options, the quality of the buffet, and any specialty restaurants available.</p>`,
     categories: ['Hotels', 'Reviews'],
     tags: ['riu', 'costa del sol', 'all inclusive', 'hotel review']
   },
@@ -297,7 +297,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                   ))}
                 </div>
             )}
-            <h1 className="font-display text-4xl md:text-5xl font-normal text-text-primary mb-4">{article.title}</h1>
+            <h1 className="text-h1 font-bold mb-4">{article.title}</h1>
             <div className="flex justify-center items-center space-x-4 text-sm text-muted-foreground mb-8">
               {article.author && (
                 <div className="flex items-center space-x-2">
@@ -315,7 +315,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         </header>
 
         {/* Featured Image */}
-        <div className="container mx-auto px-4 my-8">
+        <div className="container mx-auto px-4 my-l">
             <div className="relative aspect-video max-w-5xl mx-auto rounded-lg overflow-hidden shadow-lg">
                 <Image
                 src={article.imageUrl}
@@ -335,7 +335,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                 <ArticleActions />
             </div>
             <div
-              className="prose lg:prose-xl max-w-none font-sans text-lg text-text-secondary prose-headings:font-display prose-headings:text-text-primary prose-headings:font-normal prose-a:text-primary prose-strong:text-text-primary"
+              className="prose lg:prose-xl max-w-none font-sans text-lg text-text-secondary prose-headings:font-display prose-headings:text-text-primary prose-headings:font-bold prose-a:text-primary prose-strong:text-text-primary"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
 
@@ -356,7 +356,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
       {/* Related Articles */}
       {relatedArticles.length > 0 && (
-        <Section title="You Might Also Like" className="mt-16 bg-secondary/30">
+        <Section title="You Might Also Like" className="mt-xl bg-background-alt">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {relatedArticles.map((relatedArticle) => (
               <ArticleCard key={relatedArticle.slug} article={relatedArticle} />

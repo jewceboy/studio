@@ -5,7 +5,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from 'next/script';
-import { openSans, marcellus, montserrat } from './fonts';
+import { openSans, playfairDisplay, montserrat } from './fonts';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/shared/Breadcrumbs';
@@ -52,7 +52,7 @@ export default function RootLayout({
   const isHomePage = pathname === '/';
 
   return (
-    <html lang="en" className={`${openSans.variable} ${marcellus.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${openSans.variable} ${playfairDisplay.variable} ${montserrat.variable}`}>
        <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
