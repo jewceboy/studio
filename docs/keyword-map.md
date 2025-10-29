@@ -42,10 +42,6 @@ This document outlines the target keyword for every page on the site, organized 
 | /transfers/airport-transfers/taxi/                | Malaga airport taxi prices          | Long-tail   |
 | /transfers/airport-transfers/shuttle/             | Malaga airport shuttle options      | Long-tail   |
 | /transfers/airport-transfers/bus/                 | Malaga airport to city center       | Long-tail   |
-| **/transfers/luxury-transportation/**             | Luxury car hire Marbella            | Child Page  |
-| /transfers/luxury-transportation/chauffeur/       | Chauffeur services Costa del Sol    | Long-tail   |
-| /transfers/luxury-transportation/limousine/       | Limousine services Marbella         | Long-tail   |
-| /transfers/luxury-transportation/private-jet/     | Private jet charter Malaga          | Long-tail   |
 | **/transfers/public-transport/**                  | Malaga public transport tips        | Child Page  |
 | /transfers/public-transport/trains/               | Fuengirola train times              | Long-tail   |
 | /transfers/public-transport/buses/                | Malaga bus routes                   | Long-tail   |
@@ -84,9 +80,6 @@ This document outlines the target keyword for every page on the site, organized 
 | **/beaches/beach-holidays/**                 | Beach holidays Malaga                 | Child Page  |
 | /beaches/beach-holidays/packages/            | Costa del Sol holidays                | Long-tail   |
 | /beaches/beach-holidays/all-inclusive/       | All inclusive beach holidays          | Long-tail   |
-| **/beaches/beach-clubs/**                    | Beach clubs Marbella                  | Child Page  |
-| /beaches/beach-clubs/puerto-banus/           | Puerto Banus beach clubs              | Long-tail   |
-| /beaches/beach-clubs/luxury/                 | Luxury beach clubs Costa del Sol      | Long-tail   |
 
 ---
 
@@ -100,7 +93,6 @@ This document outlines the target keyword for every page on the site, organized 
 | /restaurants/traditional-spanish/seafood/          | Seafood restaurants Malaga                | Long-tail   |
 | **/restaurants/fine-dining/**                      | Fine dining Malaga                        | Child Page  |
 | /restaurants/fine-dining/michelin-star/            | Michelin star restaurants Costa del Sol   | Long-tail   |
-| /restaurants/fine-dining/luxury/                   | Luxury restaurants Marbella               | Long-tail   |
 | **/restaurants/culinary-experiences/**             | Culinary experiences Malaga               | Child Page  |
 | /restaurants/culinary-experiences/cooking-classes/ | Cooking classes Malaga                    | Long-tail   |
 | /restaurants/culinary-experiences/food-tours/      | Food tours Malaga                         | Long-tail   |
@@ -120,9 +112,6 @@ This document outlines the target keyword for every page on the site, organized 
 | /nightlife/malaga-city/bars/                   | Best bars Malaga                        | Long-tail   |
 | /nightlife/malaga-city/clubs/                  | Nightclubs Malaga                       | Long-tail   |
 | /nightlife/malaga-city/live-music/             | Live music venues Malaga                | Long-tail   |
-| **/nightlife/marbella-puerto-banus/**          | Marbella nightlife guide                | Child Page  |
-| /nightlife/marbella-puerto-banus/luxury-clubs/ | Luxury nightclubs Puerto Banus          | Long-tail   |
-| /nightlife/marbella-puerto-banus/vip-services/ | VIP nightlife services Marbella         | Long-tail   |
 | **/nightlife/flamenco-shows/**                 | Flamenco shows Malaga                   | Child Page  |
 | /nightlife/flamenco-shows/authentic/           | Authentic flamenco shows Andalucia      | Long-tail   |
 | /nightlife/flamenco-shows/dinner-shows/        | Flamenco dinner shows Malaga            | Long-tail   |
@@ -137,12 +126,6 @@ This document outlines the target keyword for every page on the site, organized 
 | **/destinations/mijas-pueblo/**          | Mijas Pueblo day trip           | Child Page  |
 | /destinations/mijas-pueblo/things-to-do/ | Things to do Mijas Pueblo       | Long-tail   |
 | /destinations/mijas-pueblo/restaurants/  | Restaurants Mijas Pueblo        | Long-tail   |
-| **/destinations/puerto-banus/**          | Puerto Banus guide              | Child Page  |
-| /destinations/puerto-banus/shopping/     | Shopping Puerto Banus           | Long-tail   |
-| /destinations/puerto-banus/luxury-marina/| Puerto Banus luxury travel      | Long-tail   |
-| **/destinations/marbella/**              | Marbella travel tips            | Child Page  |
-| /destinations/marbella/old-town/         | Marbella old town guide         | Long-tail   |
-| /destinations/marbella/shopping/         | Marbella shopping district      | Long-tail   |
 | **/destinations/benalmadena/**           | Benalmadena travel guide        | Child Page  |
 | /destinations/benalmadena/marina/        | Benalmadena marina              | Long-tail   |
 | /destinations/benalmadena/cable-car/     | Benalmadena cable car           | Long-tail   |
@@ -170,8 +153,6 @@ This document outlines the target keyword for every page on the site, organized 
 |-------------------------------------------------|---------------------------------------|-------------|
 | **/wellness/**                                  | Wellness Costa del Sol                | Parent Page |
 | **/wellness/spa-retreats/**                     | Costa del Sol spa retreats            | Child Page  |
-| /wellness/spa-retreats/luxury-spas/             | Luxury spa hotels Marbella            | Long-tail   |
-| /wellness/spa-retreats/wellness-packages/       | Wellness packages Malaga              | Long-tail   |
 | **/wellness/medical-tourism/**                  | Medical tourism Malaga                | Child Page  |
 | /wellness/medical-tourism/cosmetic-surgery/     | Cosmetic surgery Costa del Sol        | Long-tail   |
 | /wellness/medical-tourism/dental-tourism/       | Luxury dental tourism Costa del Sol   | Long-tail   |
@@ -258,10 +239,6 @@ This document outlines the target keyword for every page on the site, organized 
 | URL                                            | Primary Keyword                 | Page Type   |
 |------------------------------------------------|---------------------------------|-------------|
 | **/shopping/**                                 | Shopping in Malaga              | Parent Page |
-| **/shopping/luxury-shopping/**                 | Luxury shopping Marbella        | Child Page  |
-| /shopping/luxury-shopping/puerto-banus/        | Shopping Puerto Banus           | Long-tail   |
-| /shopping/luxury-shopping/designer-boutiques/  | Designer boutiques Marbella     | Long-tail   |
-| /shopping/luxury-shopping/personal-shoppers/   | Personal shoppers Puerto Banus  | Long-tail   |
 | **/shopping/malls-centers/**                   | Shopping malls Malaga           | Child Page  |
 | /shopping/malls-centers/plaza-mayor/           | Plaza Mayor Malaga              | Long-tail   |
 | /shopping/malls-centers/larios-centro/         | Larios Centro shopping          | Long-tail   |
@@ -289,3 +266,60 @@ This document outlines the target keyword for every page on the site, organized 
 | **/travel-planning/tourist-info/**           | Malaga tourist information          | Child Page  |
 | /travel-planning/tourist-info/travel-app/    | Malaga travel app                   | Long-tail   |
 | /travel-planning/tourist-info/maps/          | Malaga sightseeing map              | Long-tail   |
+
+---
+---
+
+# REVISED SILO STRUCTURE
+
+---
+
+## SILO X: MARBELLA
+
+| URL                                                    | Primary Keyword                     | Page Type   | Notes                                    |
+|--------------------------------------------------------|-------------------------------------|-------------|------------------------------------------|
+| **/destinations/marbella/**                            | Marbella Travel Guide               | Parent Page | **Pillar Page** for all Marbella content |
+| **/destinations/marbella/hotels/**                     | Marbella Hotels                     | Child Page  |                                          |
+| /destinations/marbella/hotels/luxury/                  | Luxury hotels Marbella              | Long-tail   |                                          |
+| /destinations/marbella/hotels/beachfront/              | Marbella beachfront hotels          | Long-tail   |                                          |
+| /destinations/marbella/hotels/boutique/                | Boutique hotels Marbella            | Long-tail   |                                          |
+| **/destinations/marbella/things-to-do/**               | Things to do in Marbella            | Child Page  |                                          |
+| /destinations/marbella/things-to-do/old-town/          | Marbella old town guide             | Long-tail   | Was /destinations/marbella/old-town/     |
+| /destinations/marbella/things-to-do/puerto-banus/      | An insider\'\'\'s guide to Puerto Banus | Long-tail   | Was /destinations/puerto-banus/          |
+| **/destinations/marbella/beaches/**                    | Marbella beaches                    | Child Page  |                                          |
+| /destinations/marbella/beaches/beach-clubs/            | Beach clubs Marbella                | Long-tail   | Was /beaches/beach-clubs/                |
+| /destinations/marbella/beaches/nikki-beach/            | Nikki Beach Marbella guide          | Long-tail   | New Page Idea                            |
+| **/destinations/marbella/nightlife/**                  | Marbella nightlife guide            | Child Page  | Was /nightlife/marbella-puerto-banus/    |
+| /destinations/marbella/nightlife/luxury-clubs/         | Luxury nightclubs Marbella          | Long-tail   |                                          |
+| /destinations/marbella/nightlife/vip-services/         | VIP nightlife services Marbella     | Long-tail   |                                          |
+| **/destinations/marbella/shopping/**                   | Shopping in Marbella                | Child Page  | Was /destinations/marbella/shopping/     |
+| /destinations/marbella/shopping/luxury-shopping/       | Luxury shopping Marbella            | Long-tail   | Was /shopping/luxury-shopping/           |
+| /destinations/marbella/shopping/puerto-banus-shopping/ | Shopping Puerto Banus               | Long-tail   |                                          |
+| **/destinations/marbella/restaurants/**                | Marbella restaurants                | Child Page  |                                          |
+| /destinations/marbella/restaurants/fine-dining/        | Fine dining Marbella                | Long-tail   | Was /restaurants/fine-dining/luxury/     |
+| /destinations/marbella/restaurants/michelin-star/      | Michelin star restaurants Marbella  | Long-tail   |                                          |
+| **/destinations/marbella/golf/**                       | Marbella golf courses               | Child Page  |                                          |
+| /destinations/marbella/golf/resorts/                  | Marbella golf resorts               | Long-tail   |                                          |
+
+---
+
+## SILO Y: TRANSPORTATION (Luxury Focus)
+
+| URL                                                | Primary Keyword                     | Page Type   | Notes                               |
+|----------------------------------------------------|-------------------------------------|-------------|-------------------------------------|
+| **/transfers/luxury-transportation/**              | Luxury Transportation Costa del Sol | Parent Page | Focus on high-end transport options |
+| /transfers/luxury-transportation/marbella-car-hire/| Luxury car hire Marbella            | Child Page  | Was part of the old structure       |
+| /transfers/luxury-transportation/chauffeur/        | Chauffeur services Costa del Sol    | Long-tail   |                                     |
+| /transfers/luxury-transportation/limousine/        | Limousine services Marbella         | Long-tail   |                                     |
+| /transfers/luxury-transportation/private-jet/      | Private jet charter Malaga          | Long-tail   |                                     |
+
+---
+
+## SILO Z: WELLNESS (Luxury Focus)
+
+| URL                                                 | Primary Keyword                       | Page Type   | Notes                                  |
+|-----------------------------------------------------|---------------------------------------|-------------|----------------------------------------|
+| **/wellness/spa-retreats/**                         | Luxury Spa Retreats Costa del Sol     | Parent Page | Focus on high-end spa experiences      |
+| /wellness/spa-retreats/marbella-spa-hotels/         | Luxury spa hotels Marbella            | Child Page  | Was /wellness/spa-retreats/luxury-spas |
+| /wellness/spa-retreats/wellness-packages/           | Wellness packages Malaga              | Long-tail   |                                        |
+
