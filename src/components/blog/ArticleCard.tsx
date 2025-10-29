@@ -30,7 +30,7 @@ export default function ArticleCard({ article, className }: ArticleCardProps) {
             />
         </CardHeader>
         <CardContent className="p-0 pt-6 flex-grow">
-          <CardTitle className="font-display text-2xl font-semibold text-text-primary mb-3 leading-tight group-hover:text-primary transition-colors">{article.title}</CardTitle>
+          <CardTitle className="font-display text-2xl font-normal text-text-primary mb-3 leading-tight group-hover:text-primary transition-colors">{article.title}</CardTitle>
            <div className="flex items-center space-x-4 text-xs text-muted-foreground mb-3">
               {article.date && (
                 <span className="flex items-center">
@@ -41,8 +41,8 @@ export default function ArticleCard({ article, className }: ArticleCardProps) {
           <p className="text-base text-text-secondary line-clamp-3">{article.excerpt}</p>
         </CardContent>
         <CardFooter className="p-0 pt-4 mt-auto">
-           <div className="text-text-primary font-bold text-sm flex items-center tracking-widest">
-             READ MORE <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+           <div className="text-primary font-semibold text-sm flex items-center tracking-widest uppercase">
+             Read More
            </div>
         </CardFooter>
       </Card>

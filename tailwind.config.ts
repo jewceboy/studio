@@ -59,9 +59,8 @@ const config: Config = {
         'background-alt': 'hsl(var(--background-alt))',
       },
       fontFamily: {
-        sans: ["var(--font-inter)", ...fontFamily.sans],
-        display: ['var(--font-playfair)', ...fontFamily.serif],
-        anton: ['var(--font-anton)'],
+        sans: ["var(--font-open-sans)", ...fontFamily.sans],
+        display: ['var(--font-marcellus)', ...fontFamily.serif],
         montserrat: ['var(--font-montserrat)'],
       },
        fontSize: {
