@@ -20,7 +20,7 @@ interface InfoCardProps {
   className?: string;
   imageHint?: string;
   buttonClassName?: string;
-  variant?: 'default' | 'overlay';
+  variant?: 'default';
 }
 
 export default function InfoCard({
@@ -35,7 +35,6 @@ export default function InfoCard({
   className,
   imageHint,
   buttonClassName,
-  variant = 'default',
 }: InfoCardProps) {
 
   if (!imageUrl) {
@@ -46,26 +45,6 @@ export default function InfoCard({
                 <h3 className="font-anton text-2xl md:text-3xl text-gray-500 text-center">{title}</h3>
             </div>
         </div>
-    );
-  }
-
-  if (variant === 'overlay') {
-    return (
-      <Link href={linkHref} className={cn('group block relative overflow-hidden rounded-lg aspect-[4/3]', className)}>
-        <Image
-          src={imageUrl}
-          alt={imageAlt}
-          width={imageWidth}
-          height={imageHeight}
-          className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-          data-ai-hint={imageHint}
-        />
-        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center p-4">
-          <h3 className="font-anton text-2xl md:text-3xl text-white text-center leading-tight" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}>
-            {title}
-          </h3>
-        </div>
-      </Link>
     );
   }
 

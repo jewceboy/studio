@@ -166,7 +166,6 @@ export default function Home() {
                                 imageAlt={exp.name}
                                 imageHint={images[exp.imageKey]?.hint}
                                 linkHref={`/${exp.slug}`}
-                                variant='overlay'
                             />
                         ))}
                     </div>
@@ -213,7 +212,6 @@ export default function Home() {
                                 imageAlt={cat.title}
                                 imageHint={images[cat.imageKey]?.hint}
                                 linkHref={cat.href}
-                                variant='overlay'
                             />
                         ))}
                 </div>
@@ -221,4 +219,3 @@ export default function Home() {
         </motion.div>
     );
 }
-
