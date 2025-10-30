@@ -166,38 +166,38 @@ export default function DestinationsPage() {
                 </p>
                  <ul>
                     <li><strong>Best for:</strong> Luxury travel, high-end shopping, fine dining, world-class nightlife, and golf enthusiasts.</li>
-                    <li><strong>Don't miss:</strong> Strolling through the Old Town's Plaza de los Naranjos, window shopping in Puerto Banús, and spending a day at an exclusive beach club.</li>
+                    <li><strong>Don't miss:</strong> Strolling through the Old Town's Plaza de los Naranjos, window shopping in Puerto Banús, and a day at an exclusive beach club.</li>
                  </ul>
                  <Button asChild variant="outline">
                     <Link href="/destinations/marbella">Explore our Marbella Travel Guide</Link>
                 </Button>
             </div>
 
-            <div id="mijas" className="scroll-mt-24 mt-12">
-                 <h3><Compass className="inline-block h-6 w-6 -mt-1 mr-2 text-primary" />Mijas: A Tale of Two Worlds</h3>
-                <p>
-                    Mijas offers two distinct experiences: Mijas Pueblo and Mijas Costa. Mijas Pueblo is the quintessential Andalusian "white village," perched in the mountains with breathtaking views down to the Mediterranean. It's famous for its narrow, cobbled streets, artisan shops, and charming donkey-taxis. Down on the coast, Mijas Costa is a 12km stretch of beach towns, the most popular being La Cala de Mijas, a lively former fishing village with a beautiful beach and a scenic coastal boardwalk.
-                </p>
-                 <ul>
-                    <li><strong>Best for:</strong> Those seeking traditional charm, spectacular views, and a mix of mountain and sea.</li>
-                    <li><strong>Don't miss:</strong> A walk through Mijas Pueblo, taking in the panoramic views from the viewpoint, and strolling the coastal path in La Cala.</li>
-                </ul>
-                 <Button asChild variant="outline">
-                    <Link href="/destinations/mijas-pueblo">Explore our Mijas Pueblo Guide</Link>
-                </Button>
-            </div>
-
              <div id="nerja" className="scroll-mt-24 mt-12">
-                <h3><Anchor className="inline-block h-6 w-6 -mt-1 mr-2 text-primary" />Nerja: Natural Beauty & Coastal Coves</h3>
+                <h3><Compass className="inline-block h-6 w-6 -mt-1 mr-2 text-primary" />Nerja: Natural Beauty and Traditional Charm</h3>
                 <p>
-                    Located on the eastern edge of the Costa del Sol, Nerja offers a more rugged and dramatic coastline. It's famous for two unmissable attractions: the Balcón de Europa, a stunning viewpoint built on the site of an old fortress, and the magnificent Nerja Caves, a vast system of caverns with prehistoric paintings. The coastline is dotted with beautiful, sheltered coves and beaches, like the famous Burriana Beach, making it a haven for beach lovers and water sports enthusiasts.
+                    Located on the eastern edge of the Costa del Sol, Nerja offers a more traditional and relaxed atmosphere. It's famous for its stunning Balcón de Europa viewpoint, the magnificent Nerja Caves, and a coastline dotted with beautiful, sheltered coves. It's an excellent base for exploring the region's natural parks and pretty white villages like Frigiliana.
                 </p>
                 <ul>
-                    <li><strong>Best for:</strong> Nature lovers, families, and travelers looking for a slightly more relaxed and traditional beach town vibe.</li>
-                    <li><strong>Don't miss:</strong> The Nerja Caves, the views from the Balcón de Europa, and kayaking or paddleboarding to the Maro waterfalls.</li>
+                    <li><strong>Best for:</strong> Couples, nature lovers, and travelers looking for a more relaxed and traditional beach town vibe.</li>
+                    <li><strong>Don't miss:</strong> The Nerja Caves, kayaking to the Maro waterfalls, and enjoying the views from the Balcón de Europa.</li>
                 </ul>
                  <Button asChild variant="outline">
                     <Link href="/destinations/nerja">Explore our Nerja Travel Guide</Link>
+                </Button>
+            </div>
+
+             <div id="mijas" className="scroll-mt-24 mt-12">
+                <h3><Building className="inline-block h-6 w-6 -mt-1 mr-2 text-primary" />Mijas: The Best of Both Worlds</h3>
+                <p>
+                    Mijas is unique in that it offers two distinct experiences. There's Mijas Pueblo, a stunning white-washed village perched in the mountains with breathtaking coastal views, and Mijas Costa, the 12km stretch of coastline below with popular beach towns like La Cala de Mijas. You can stay by the sea and take a day trip to the village, or stay in the village for a more traditional feel.
+                </p>
+                 <ul>
+                    <li><strong>Best for:</strong> Those wanting a mix of beach and tradition, families, and golfers (Mijas Golf Valley is renowned).</li>
+                    <li><strong>Don't miss:</strong> A walk through Mijas Pueblo, the coastal boardwalk in La Cala de Mijas, and the local markets.</li>
+                </ul>
+                 <Button asChild variant="outline">
+                    <Link href="/destinations/mijas-pueblo">Explore our Mijas Pueblo Guide</Link>
                 </Button>
             </div>
             
@@ -221,5 +221,4 @@ export default function DestinationsPage() {
       </Section>
     </div>
   );
-
-    
+}

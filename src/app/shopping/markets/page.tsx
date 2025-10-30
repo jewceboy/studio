@@ -55,4 +55,11 @@ export default function MarketsPage() {
                 description={category.description}
                 linkHref={category.linkHref}
                 linkText={category.linkText}
-                
+                imageHint={images[category.imageKey].hint}
+                />
+            ))}
+        </div>
+      </Section>
+    </div>
+  );
+}
