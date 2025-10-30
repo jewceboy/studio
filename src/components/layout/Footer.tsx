@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -72,9 +73,6 @@ export default function Footer() {
     };
 
     const pathname = usePathname();
-    if (pathname.includes('/chat-demo')) {
-        return null;
-    }
 
   return (
     <footer className="bg-primary-dark text-white py-12 relative">

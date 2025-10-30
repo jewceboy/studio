@@ -28,7 +28,7 @@ export default function Breadcrumbs({ className, homeLabel = 'Home' }: Breadcrum
 
   const pathSegments = pathname.split('/').filter(segment => segment);
   
-  const topLevelPagesToHideOn = ['chat-demo'];
+  const topLevelPagesToHideOn = [''];
   if (pathSegments.length <= 1 && topLevelPagesToHideOn.includes(pathSegments[0])) {
       return null;
   }

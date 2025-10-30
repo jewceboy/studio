@@ -67,10 +67,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if (pathname.includes('/chat-demo')) {
-    return null;
-  }
-  
   const isHeaderSolid = !isHomePage || isScrolled;
 
   return (

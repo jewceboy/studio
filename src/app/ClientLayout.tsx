@@ -9,7 +9,7 @@ import React from 'react';
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
-  const hideBreadcrumbs = ['blog', 'plan-your-trip', 'contact', 'chat-demo'].some(path => pathname.startsWith(`/${path}`));
+  const hideBreadcrumbs = ['blog', 'plan-your-trip', 'contact'].some(path => pathname.startsWith(`/${path}`));
 
   return (
     <main className={cn(!isHomePage && 'pt-16')}>
