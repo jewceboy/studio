@@ -71,6 +71,18 @@ export default function QuizForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
+
+    // Temporarily disable the feature
+    toast({
+      title: 'Feature Temporarily Unavailable',
+      description: 'The personalized trip planner is currently undergoing maintenance. Please check back later.',
+      variant: 'destructive',
+    });
+    setIsLoading(false);
+    return;
+
+    // Original functionality (commented out)
+    /*
     try {
       // Validate all answers are present
       if (!answers.travelStyle || answers.interests?.length === 0 || !answers.duration || !answers.budget) {
@@ -94,6 +106,7 @@ export default function QuizForm() {
       });
       setIsLoading(false);
     }
+    */
   };
   
   const progressValue = ((currentStep + 1) / quizSteps.length) * 100;
