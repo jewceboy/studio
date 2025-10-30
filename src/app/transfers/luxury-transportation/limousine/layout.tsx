@@ -1,5 +1,4 @@
 
-
 export default function LimousineLayout({
   children,
 }: {
@@ -7,4 +6,7 @@ export default function LimousineLayout({
 }) {
   return (
     <div>
-      {
+      {children}
+    </div>
+  );
+}

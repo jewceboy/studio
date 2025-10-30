@@ -316,3 +316,11 @@ function ContactForm() {
           >
             <Send className="h-4 w-4" />
             Send Message
+          </GradientButton>
+        </form>
+      </div>
+    </Card>
+  )
+}
+
+export default ContactForm;
