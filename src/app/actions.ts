@@ -2,25 +2,9 @@
 'use server';
 
 import { z } from 'zod';
-import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '@/lib/firebase'; // Updated import
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { revalidatePath } from 'next/cache';
-
-// --- Firebase Config ---
-// IMPORTANT: Use environment variables
-const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-};
-
-// Initialize Firebase
-// This check prevents re-initializing the app on every server action.
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore(app);
 
 // --- Zod Schema for Validation ---
 const NewsletterSchema = z.object({
@@ -65,9 +49,21 @@ export async function subscribeToNewsletter(prevState: any, formData: FormData) 
 
   } catch (error) {
     console.error('Firebase Error:', error);
+    // In a real app, you might want more specific error handling based on error.code
+    let userMessage = 'An unexpected error occurred. Please try again.';
+    if (error instanceof Error && 'code' in error) {
+        switch ((error as any).code) {
+            case 'permission-denied':
+                userMessage = "You don't have permission to perform this action.";
+                break;
+            case 'unavailable':
+                userMessage = "The service is temporarily unavailable. Please try again later.";
+                break;
+        }
+    }
     return {
       success: false,
-      message: 'An error occurred. Please try again.',
+      message: userMessage,
     };
   }
 }
