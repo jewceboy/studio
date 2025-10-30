@@ -64,7 +64,7 @@ export default function QuizForm() {
 
   const prevStep = () => {
     if (currentStep > 0) {
-      setCurrentStep(currentStep + 1);
+      setCurrentStep(currentStep - 1);
     }
   };
 
@@ -177,4 +177,6 @@ export default function QuizForm() {
           </Button>
         )}
       </div>
-    </
+    </form>
+  );
+}
