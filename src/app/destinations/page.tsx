@@ -3,7 +3,7 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import imageData from '@/lib/placeholder-images.json';
-import { MapPin, Star, Building, Compass, Anchor, Train } from 'lucide-react';
+import { MapPin, Star, Building, Compass, Anchor, Train, Users } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -164,8 +164,8 @@ export default function DestinationsPage() {
                     Marbella is the undisputed queen of glamour on the Costa del Sol. It is a world of five-star resorts, designer boutiques, and Michelin-starred dining. The legendary "Golden Mile" connects Marbella town to the world-famous Puerto Banús marina, a playground for superyachts and celebrities. But Marbella is not just about modern luxury; its charming Old Town (Casco Antiguo) is a beautiful labyrinth of whitewashed streets, flower-filled squares, and traditional tapas bars.
                 </p>
                  <ul>
-                    <li><strong>Best For:</strong> Luxury travel, high-end shopping, fine dining, world-class nightlife, and golf enthusiasts.</li>
-                    <li><strong>Don't Miss:</strong> Strolling through the Old Town's Plaza de los Naranjos, window shopping in Puerto Banús, and spending a day at an exclusive beach club.</li>
+                    <li><strong>Best for:</strong> Luxury travel, high-end shopping, fine dining, world-class nightlife, and golf enthusiasts.</li>
+                    <li><strong>Don't miss:</strong> Strolling through the Old Town's Plaza de los Naranjos, window shopping in Puerto Banús, and spending a day at an exclusive beach club.</li>
                  </ul>
                  <Button asChild variant="outline">
                     <Link href="/destinations/marbella">Explore our Marbella Travel Guide</Link>
@@ -178,9 +178,9 @@ export default function DestinationsPage() {
                     Mijas offers two distinct experiences: Mijas Pueblo and Mijas Costa. Mijas Pueblo is the quintessential Andalusian "white village," perched in the mountains with breathtaking views down to the Mediterranean. It's famous for its narrow, cobbled streets, artisan shops, and charming donkey-taxis. Down on the coast, Mijas Costa is a 12km stretch of beach towns, the most popular being La Cala de Mijas, a lively former fishing village with a beautiful beach and a scenic coastal boardwalk.
                 </p>
                  <ul>
-                    <li><strong>Best For:</strong> Those seeking traditional charm, spectacular views, and a mix of mountain and sea.</li>
-                    <li><strong>Don't Miss:</strong> A walk through Mijas Pueblo, taking in the panoramic views from the viewpoint, and strolling the coastal path in La Cala.</li>
-                 </ul>
+                    <li><strong>Best for:</strong> Those seeking traditional charm, spectacular views, and a mix of mountain and sea.</li>
+                    <li><strong>Don't miss:</strong> A walk through Mijas Pueblo, taking in the panoramic views from the viewpoint, and strolling the coastal path in La Cala.</li>
+                </ul>
                  <Button asChild variant="outline">
                     <Link href="/destinations/mijas-pueblo">Explore our Mijas Pueblo Guide</Link>
                 </Button>
