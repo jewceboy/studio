@@ -220,6 +220,5 @@ export default function DestinationsPage() {
       </Section>
     </div>
   );
-}
 
     
