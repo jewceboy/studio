@@ -4,7 +4,7 @@ import Section from '@/components/shared/Section';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Ticket, Mountain, Info, MapPin, CheckCircle, Water, Backpack, Footprints, XCircle, Ban, Toilet } from 'lucide-react';
+import { Ticket, Mountain, Info, MapPin, CheckCircle, Droplets, Backpack, Footprints, XCircle, Ban, Toilet } from 'lucide-react';
 import imageData from '@/lib/placeholder-images.json';
 import { Button } from '@/components/ui/button';
 
@@ -233,7 +233,7 @@ export default function CaminitoDelReyPage() {
                     </CardHeader>
                     <CardContent>
                         <ul className="space-y-4">
-                            <li className="flex items-start"><Water className="h-5 w-5 mr-3 mt-1 text-primary shrink-0" /><span>Bring plenty of water, snacks, and sunscreen.</span></li>
+                            <li className="flex items-start"><Droplets className="h-5 w-5 mr-3 mt-1 text-primary shrink-0" /><span>Bring plenty of water, snacks, and sunscreen.</span></li>
                             <li className="flex items-start"><Backpack className="h-5 w-5 mr-3 mt-1 text-primary shrink-0" /><span>Only small backpacks are allowed; large bags are not permitted.</span></li>
                             <li className="flex items-start"><Footprints className="h-5 w-5 mr-3 mt-1 text-primary shrink-0" /><span>Wear comfortable clothing and footwear (hiking shoes are best but trainers are adequate).</span></li>
                             <li className="flex items-start"><Ban className="h-5 w-5 mr-3 mt-1 text-primary shrink-0" /><span>Pets are not allowed.</span></li>
