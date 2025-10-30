@@ -1,5 +1,4 @@
 
-'use client';
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -8,14 +7,9 @@ import Script from 'next/script';
 import { openSans, playfairDisplay, montserrat } from './fonts';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import Breadcrumbs from '@/components/shared/Breadcrumbs';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+import ClientLayout from './ClientLayout';
 
 
-// Note: Metadata export is commented out because it can't be used in a 'use client' file.
-// You can move this to a separate file or a higher-level server component if needed.
-/*
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.malagatravelguide.net'),
   title: {
@@ -41,15 +35,13 @@ export const metadata: Metadata = {
     canonical: '/',
   },
 };
-*/
+
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-  const isHomePage = pathname === '/';
 
   return (
     <html lang="en" className={`${openSans.variable} ${playfairDisplay.variable} ${montserrat.variable}`}>
@@ -60,14 +52,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans text-text-secondary bg-background">
         <Header />
-        <main className={cn(!isHomePage && 'pt-16')}>
-          {!isHomePage && (
-            <div className="container mx-auto px-4 mt-8">
-              <Breadcrumbs />
-            </div>
-          )}
-          {children}
-        </main>
+        <ClientLayout>{children}</ClientLayout>
         <Footer />
         <Toaster />
         <SpeedInsights />

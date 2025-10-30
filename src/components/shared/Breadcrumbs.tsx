@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -27,7 +28,7 @@ export default function Breadcrumbs({ className, homeLabel = 'Home' }: Breadcrum
 
   const pathSegments = pathname.split('/').filter(segment => segment);
   
-  const topLevelPagesToHideOn = ['blog', 'plan-your-trip', 'contact', 'chat-demo'];
+  const topLevelPagesToHideOn = ['chat-demo'];
   if (pathSegments.length <= 1 && topLevelPagesToHideOn.includes(pathSegments[0])) {
       return null;
   }
