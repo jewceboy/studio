@@ -92,7 +92,7 @@ export default function Header() {
                         <Link href={link.href} legacyBehavior passHref>
                             <NavigationMenuLink className={cn(
                             navigationMenuTriggerStyle(),
-                            'bg-transparent font-montserrat font-normal text-sm',
+                            'bg-transparent font-montserrat font-normal text-sm uppercase',
                              isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10',
                             pathname.startsWith(link.href) ? isScrolled ? 'bg-accent/50' : 'bg-white/20' : ''
                             )}>
@@ -103,7 +103,7 @@ export default function Header() {
                 ))}
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm', isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10')}>
+                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm uppercase', isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10')}>
                         Luxury Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -122,7 +122,7 @@ export default function Header() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm', isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10')}>
+                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm uppercase', isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10')}>
                         Explore
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -142,7 +142,7 @@ export default function Header() {
 
                 <NavigationMenuItem>
                     <Link href="/blog" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent font-montserrat font-normal text-sm', isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10', pathname.startsWith('/blog') ? isScrolled ? 'bg-accent/50' : 'bg-white/20' : '')}>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent font-montserrat font-normal text-sm uppercase', isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10', pathname.startsWith('/blog') ? isScrolled ? 'bg-accent/50' : 'bg-white/20' : '')}>
                         Blog
                         </NavigationMenuLink>
                     </Link>
@@ -188,7 +188,7 @@ export default function Header() {
                     <Link
                       href={link.href}
                       className={cn(
-                        'hover:text-primary transition-colors py-2 text-lg',
+                        'hover:text-primary transition-colors py-2 text-lg uppercase',
                         pathname.startsWith(link.href) ? 'font-bold text-primary' : 'font-semibold'
                       )}
                     >
@@ -198,7 +198,7 @@ export default function Header() {
                 ))}
                 
                  <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-semibold text-lg py-2 border-t border-border'>Luxury Services</span>
+                    <span className='font-semibold text-lg py-2 border-t border-border uppercase'>Luxury Services</span>
                     {luxuryServicesSubItems.map((subItem) => (
                     <SheetClose key={subItem.href} asChild>
                         <Link
@@ -212,7 +212,7 @@ export default function Header() {
                 </div>
 
                 <div className='flex flex-col space-y-2 pt-2'>
-                    <span className='font-semibold text-lg py-2 border-t border-border'>Explore</span>
+                    <span className='font-semibold text-lg py-2 border-t border-border uppercase'>Explore</span>
                     {exploreSubItems.map((subItem) => (
                     <SheetClose key={subItem.href} asChild>
                         <Link
