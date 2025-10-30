@@ -1,10 +1,7 @@
-
 // src/lib/firebase.ts
-import { initializeApp, getApps, getApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { initializeApp, getApps, getApp, FirebaseApp } from "firebase/app";
+import { getFirestore, Firestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -14,8 +11,26 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore(app);
+let app: FirebaseApp;
+let db: Firestore;
 
-export { app, db };
+// Check if all necessary environment variables are defined
+const firebaseCredentialsExist = firebaseConfig.apiKey && firebaseConfig.projectId;
+
+try {
+    if (firebaseCredentialsExist) {
+        if (!getApps().length) {
+            app = initializeApp(firebaseConfig);
+        } else {
+            app = getApp();
+        }
+        db = getFirestore(app);
+    }
+} catch (error) {
+    console.error("Firebase initialization failed:", error);
+    // We can choose to not throw an error here to allow builds to succeed
+    // without full Firebase credentials, but features will be disabled.
+}
+
+// Export the initialized app and db, which might be undefined if credentials are not set
+export { app, db, firebaseCredentialsExist };

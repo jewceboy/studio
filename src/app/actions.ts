@@ -2,7 +2,7 @@
 'use server';
 
 import { z } from 'zod';
-import { db } from '@/lib/firebase'; // Updated import
+import { db, firebaseCredentialsExist } from '@/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { revalidatePath } from 'next/cache';
 
@@ -14,6 +14,15 @@ const NewsletterSchema = z.object({
 
 // --- Server Action ---
 export async function subscribeToNewsletter(prevState: any, formData: FormData) {
+  // Gracefully handle if Firebase is not configured
+  if (!firebaseCredentialsExist) {
+    console.error('Firebase is not configured. Cannot subscribe to newsletter.');
+    return {
+      success: false,
+      message: 'Service is not available at the moment. Please try again later.',
+    };
+  }
+
   const validatedFields = NewsletterSchema.safeParse({
     firstName: formData.get('firstName'),
     email: formData.get('email'),
