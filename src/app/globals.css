@@ -91,14 +91,15 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display text-text-primary;
   }
-  h1 {
-    @apply text-h1;
+ h1 {
+    font-size: 2.8em;
   }
   h2 {
-    @apply text-h2;
+    font-size: 2.0em;
   }
   h3 {
-    @apply text-h3;
+    font-size: 1.3em;
+    font-weight: 600;
   }
   a {
     @apply text-primary transition-colors duration-200;
@@ -126,4 +127,9 @@
     margin-top: 42px;
     margin-bottom: 15px;
   }
+
+   .prose p {
+    @apply mb-6;
+  }
 }
+
