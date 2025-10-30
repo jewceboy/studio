@@ -910,5 +910,11 @@
     "hint": "four seasons collage",
     "width": 600,
     "height": 400
+  },
+  "costa-del-sol-guide-cover": {
+    "url": "https://picsum.photos/seed/guide-cover-cds/300/400",
+    "hint": "travel guide cover",
+    "width": 300,
+    "height": 400
   }
 }

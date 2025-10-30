@@ -11,6 +11,7 @@ import ArticleCard from '@/components/blog/ArticleCard';
 import imageData from '@/lib/placeholder-images.json';
 import { Metadata } from 'next';
 import ArticleActions from '@/components/blog/ArticleActions';
+import GuideSignup from '@/components/blog/GuideSignup';
 
 
 type ImageData = {
@@ -281,6 +282,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   
   const relatedArticles = getRelatedArticles(article);
 
+  const showSignupBox = article.slug === 'best-tapas-malaga';
+
   return (
     <div className="bg-background">
       <article>
@@ -338,6 +341,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               className="prose lg:prose-xl max-w-none font-sans text-lg text-text-secondary prose-headings:font-display prose-headings:text-text-primary prose-headings:font-bold prose-a:text-primary prose-strong:text-text-primary"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
+            
+            {showSignupBox && <GuideSignup />}
+
 
             {/* Tags */}
             {article.tags && article.tags.length > 0 && (
