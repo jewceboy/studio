@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" className={`${openSans.variable} ${playfairDisplay.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${openSans.variable} ${playfairDisplay.variable} ${montserrat.variable}`} suppressHydrationWarning>
        <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
