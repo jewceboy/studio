@@ -4,7 +4,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from 'next/script';
-import { openSans, playfairDisplay, montserrat } from './fonts';
+import { openSans, marcellus, montserrat } from './fonts';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ClientLayout from './ClientLayout';
@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" className={`${openSans.variable} ${playfairDisplay.variable} ${montserrat.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${openSans.variable} ${marcellus.variable} ${montserrat.variable}`} suppressHydrationWarning>
        <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

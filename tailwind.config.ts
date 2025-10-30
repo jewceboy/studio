@@ -1,3 +1,4 @@
+
 import type { Config } from 'tailwindcss';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
@@ -60,24 +61,24 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-open-sans)", ...fontFamily.sans],
-        display: ['var(--font-playfair-display)', ...fontFamily.serif],
+        display: ['var(--font-marcellus)', 'serif'],
         montserrat: ['var(--font-montserrat)'],
       },
        fontSize: {
-        'h1': ['2.8rem', { fontWeight: '700', letterSpacing: '-0.02em', lineHeight: '1.1' }],
-        'h2': ['2.0rem', { fontWeight: '700', letterSpacing: '-0.01em', lineHeight: '1.2' }],
-        'h3': ['1.3rem', { fontWeight: '600', lineHeight: '1.3' }],
-        'h4': ['1.25rem', { fontWeight: '500', lineHeight: '1.4' }],
-        'body-l': ['1.125rem', { fontWeight: '400', letterSpacing: '0.01em', lineHeight: '1.7' }],
-        'body-s': ['1rem', { fontWeight: '400', letterSpacing: '0.02em', lineHeight: '1.6' }],
+        'h1': ['2.8rem', { fontWeight: '400', letterSpacing: '-0.02em', lineHeight: '1.2' }],
+        'h2': ['2.0rem', { fontWeight: '400', letterSpacing: '-0.01em', lineHeight: '1.3' }],
+        'h3': ['1.3rem', { fontWeight: '400', lineHeight: '1.4' }],
+        'h4': ['1.25rem', { fontWeight: '400', lineHeight: '1.4' }],
+        'body-l': ['1.125rem', { fontWeight: '400', letterSpacing: '0.01em', lineHeight: '1.8' }],
+        'body-s': ['1rem', { fontWeight: '400', letterSpacing: '0.02em', lineHeight: '1.7' }],
         'button-label': ['0.9375rem', { fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em' }],
       },
        spacing: {
         'xs': '0.5rem',
         's': '1rem',
-        'm': '2rem',
-        'l': '3.5rem',
-        'xl': '5.5rem',
+        'm': '2.5rem',
+        'l': '4rem',
+        'xl': '6rem',
       },
       borderRadius: {
         lg: "8px",
@@ -86,8 +87,8 @@ const config: Config = {
         '2xl': '1rem',
       },
        boxShadow: {
-        'card': '0 2px 10px rgba(110,120,130,0.10)',
-        'lg': '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)',
+        'card': '0 2px 10px rgba(0,0,0,0.05)',
+        'lg': '0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px -2px rgba(0,0,0,0.04)',
       },
       keyframes: {
         "accordion-down": {

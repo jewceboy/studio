@@ -6,77 +6,77 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 14% 24%; /* #333 */
+    --foreground: 0 0% 13%; /* #212121 - Near black for body text */
 
     --card: 0 0% 100%;
-    --card-foreground: 215 14% 24%;
+    --card-foreground: 0 0% 13%;
  
     --popover: 0 0% 100%;
-    --popover-foreground: 215 14% 24%;
+    --popover-foreground: 0 0% 13%;
  
-    --primary: 194 46% 40%; /* #52797f - Accent for links/buttons */
+    --primary: 351 44% 45%; /* #a64253 - Maroon accent */
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 194 38% 25%; /* #254e58 - For headings */
+    --primary-dark: 0 0% 8%; /* #141414 - Near black for headings */
  
-    --secondary: 210 40% 96.1%; /* A very light gray */
-    --secondary-foreground: 215 14% 24%;
+    --secondary: 30 27% 96%; /* #f7f5f4 - Very light beige/gray */
+    --secondary-foreground: 0 0% 13%;
  
-    --muted: 210 40% 96.1%;
+    --muted: 30 27% 96%;
     --muted-foreground: 0 0% 40%;
  
-    --accent: 194 46% 85%; /* Lighter version of primary for hover */
-    --accent-foreground: 194 38% 25%;
+    --accent: 351 44% 95%; /* Lighter version of primary for hover backgrounds */
+    --accent-foreground: 351 44% 45%;
  
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 194 46% 40%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 351 44% 45%;
  
     /* Custom Design Tokens */
-    --newsletter-blue: 204 70% 45%;
-    --text-primary: 194 38% 25%; /* For Headings */
-    --text-secondary: 215 14% 24%; /* For body text */
+    --newsletter-blue: 204 70% 45%; /* Retaining for now, can be updated */
+    --text-primary: 0 0% 8%;
+    --text-secondary: 0 0% 13%;
     --text-light: 0 0% 40%;
-    --background-alt: 220 13% 96%; /* #f8f9fa */
+    --background-alt: 30 20% 97%; /* #f8f7f6 */
   }
  
   .dark {
-    --background: 215 28% 17%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
  
-    --card: 215 28% 19%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
  
-    --popover: 215 28% 17%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
  
-    --primary: 194 46% 60%;
-    --primary-foreground: 215 14% 24%;
-    --primary-dark: 210 40% 98%;
+    --primary: 351 44% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 0 0% 98%;
  
-    --secondary: 217.2 32.6% 22.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
  
-    --muted: 217.2 32.6% 22.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 63%;
  
-    --accent: 194 46% 30%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 351 44% 20%;
+    --accent-foreground: 0 0% 98%;
  
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
  
-    --border: 217.2 32.6% 27.5%;
-    --input: 217.2 32.6% 27.5%;
-    --ring: 194 46% 60%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 351 44% 65%;
 
     --newsletter-blue: 204 70% 35%;
-    --text-primary: 210 40% 98%;
-    --text-secondary: 215 20.2% 75.1%;
-    --text-light: 217.2 32.6% 37.5%;
-    --background-alt: 215 28% 15%;
+    --text-primary: 0 0% 98%;
+    --text-secondary: 0 0% 85%;
+    --text-light: 0 0% 40%;
+    --background-alt: 0 0% 12%;
   }
 }
  
@@ -86,7 +86,7 @@
   }
   body {
     @apply bg-background text-text-secondary;
-    line-height: 1.7;
+    line-height: 1.8;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display text-text-primary;
@@ -116,8 +116,8 @@
   .prose-headings\:font-display h4,
   .prose-headings\:font-display h5,
   .prose-headings\:font-display h6 {
-    font-family: var(--font-playfair-display);
-    color: hsl(var(--primary-dark));
+    font-family: var(--font-marcellus);
+    color: hsl(var(--text-primary));
   }
 
   .prose-h3 {
