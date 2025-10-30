@@ -282,8 +282,6 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   
   const relatedArticles = getRelatedArticles(article);
 
-  const showSignupBox = article.slug === 'best-tapas-malaga';
-
   return (
     <div className="bg-background">
       <article>
@@ -342,7 +340,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
             
-            {showSignupBox && <GuideSignup />}
+            <GuideSignup />
 
 
             {/* Tags */}
