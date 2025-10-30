@@ -31,6 +31,11 @@ export default function ArticleCard({ article, className }: ArticleCardProps) {
         <CardContent className="p-6 flex-grow">
           <CardTitle className="font-display text-2xl md:text-3xl font-bold text-text-primary mb-3 leading-tight group-hover:text-primary transition-colors">{article.title}</CardTitle>
            <div className="flex items-center space-x-4 text-xs text-muted-foreground mb-3">
+              {article.author && (
+                <span className="flex items-center">
+                  <UserCircle className="h-3.5 w-3.5 mr-1.5" /> {article.author}
+                </span>
+              )}
               {article.date && (
                 <span className="flex items-center">
                   <CalendarDays className="h-3.5 w-3.5 mr-1.5" /> {new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}

@@ -18,7 +18,7 @@ function SubmitButton() {
     <button 
       type="submit" 
       disabled={pending}
-      className="bg-primary text-white text-button-label px-m py-s rounded-2xl transition-colors hover:bg-primary-dark disabled:bg-gray-400"
+      className="bg-primary text-white text-button-label px-m py-s rounded-2xl transition-colors hover:bg-primary/80 disabled:bg-gray-400"
     >
       {pending ? 'Sending...' : 'SEND ME'}
     </button>

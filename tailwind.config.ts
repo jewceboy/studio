@@ -67,7 +67,7 @@ const config: Config = {
        fontSize: {
         'h1': ['2.8rem', { fontWeight: '400', letterSpacing: '-0.02em', lineHeight: '1.2' }],
         'h2': ['2.0rem', { fontWeight: '400', letterSpacing: '-0.01em', lineHeight: '1.3' }],
-        'h3': ['1.3rem', { fontWeight: '400', lineHeight: '1.4' }],
+        'h3': ['1.3rem', { fontWeight: '600', lineHeight: '1.4' }],
         'h4': ['1.25rem', { fontWeight: '400', lineHeight: '1.4' }],
         'body-l': ['1.125rem', { fontWeight: '400', letterSpacing: '0.01em', lineHeight: '1.8' }],
         'body-s': ['1rem', { fontWeight: '400', letterSpacing: '0.02em', lineHeight: '1.7' }],
@@ -76,9 +76,9 @@ const config: Config = {
        spacing: {
         'xs': '0.5rem',
         's': '1rem',
-        'm': '2.5rem',
-        'l': '4rem',
-        'xl': '6rem',
+        'm': '1.5rem',
+        'l': '2.5rem',
+        'xl': '3.5rem',
       },
       borderRadius: {
         lg: "8px",

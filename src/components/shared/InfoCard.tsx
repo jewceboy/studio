@@ -67,7 +67,7 @@ export default function InfoCard({
                 {description && <p className="text-sm text-text-secondary line-clamp-3">{description}</p>}
             </CardContent>
             <CardFooter className="p-6 pt-0 mt-auto">
-                 <div className="text-primary font-semibold flex items-center text-sm">
+                 <div className="text-primary font-semibold flex items-center text-sm uppercase tracking-wider">
                    {linkText} <ArrowRight className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
             </CardFooter>
