@@ -54,6 +54,7 @@ const socialLinks = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -70,17 +71,19 @@ export default function Header() {
     return null;
   }
   
+  const isHeaderSolid = !isHomePage || isScrolled;
+
   return (
     <motion.header 
         className={cn(
             "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-            isScrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent",
+            isHeaderSolid ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent",
         )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-          <Sun className={cn("h-6 w-6 transition-colors", isScrolled ? "text-primary-dark" : "text-white")} />
-          <span className={cn("font-semibold text-base font-montserrat transition-colors", isScrolled ? "text-primary-dark" : "text-white")}>MalagaTravelGuide</span>
+          <Sun className={cn("h-6 w-6 transition-colors", isHeaderSolid ? "text-primary-dark" : "text-white")} />
+          <span className={cn("font-semibold text-base font-montserrat uppercase transition-colors", isHeaderSolid ? "text-primary-dark" : "text-white")}>MalagaTravelGuide</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -93,8 +96,8 @@ export default function Header() {
                             <NavigationMenuLink className={cn(
                             navigationMenuTriggerStyle(),
                             'bg-transparent font-montserrat font-normal text-sm uppercase',
-                             isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10',
-                            pathname.startsWith(link.href) ? isScrolled ? 'bg-accent/50' : 'bg-white/20' : ''
+                             isHeaderSolid ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10',
+                            pathname.startsWith(link.href) ? isHeaderSolid ? 'bg-accent/50' : 'bg-white/20' : ''
                             )}>
                             {link.label}
                             </NavigationMenuLink>
@@ -103,7 +106,7 @@ export default function Header() {
                 ))}
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm uppercase', isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10')}>
+                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm uppercase', isHeaderSolid ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10')}>
                         Luxury Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -122,7 +125,7 @@ export default function Header() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm uppercase', isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10')}>
+                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm uppercase', isHeaderSolid ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10')}>
                         Explore
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -142,7 +145,7 @@ export default function Header() {
 
                 <NavigationMenuItem>
                     <Link href="/blog" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent font-montserrat font-normal text-sm uppercase', isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10', pathname.startsWith('/blog') ? isScrolled ? 'bg-accent/50' : 'bg-white/20' : '')}>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent font-montserrat font-normal text-sm uppercase', isHeaderSolid ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10', pathname.startsWith('/blog') ? isHeaderSolid ? 'bg-accent/50' : 'bg-white/20' : '')}>
                         Blog
                         </NavigationMenuLink>
                     </Link>
@@ -153,7 +156,7 @@ export default function Header() {
              {/* Social Icons */}
             <div className="flex items-center space-x-3 pl-6 ml-4 border-l border-white/20">
                 {socialLinks.map((social) => (
-                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className={cn("transition-opacity", isScrolled ? 'text-text-secondary opacity-70 hover:opacity-100' : 'text-white opacity-80 hover:opacity-100')}>
+                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className={cn("transition-opacity", isHeaderSolid ? 'text-text-secondary opacity-70 hover:opacity-100' : 'text-white opacity-80 hover:opacity-100')}>
                     <social.icon className="h-5 w-5" />
                     </Link>
                 ))}
@@ -164,7 +167,7 @@ export default function Header() {
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn("transition-colors", isScrolled ? 'text-text-primary hover:bg-accent/50' : 'text-white hover:bg-white/10 focus:bg-white/10')}>
+              <Button variant="ghost" size="icon" className={cn("transition-colors", isHeaderSolid ? 'text-text-primary hover:bg-accent/50' : 'text-white hover:bg-white/10 focus:bg-white/10')}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
@@ -173,7 +176,7 @@ export default function Header() {
               <div className="flex justify-between items-center mb-8">
                 <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
                   <Sun className="h-7 w-7 text-primary" />
-                  <span className="font-semibold text-lg font-montserrat">MalagaTravelGuide</span>
+                  <span className="font-semibold text-lg font-montserrat uppercase">MalagaTravelGuide</span>
                 </Link>
                 <SheetClose asChild>
                   <Button variant="ghost" size="icon" className="hover:bg-secondary/10 focus:bg-secondary/10">
