@@ -15,4 +15,8 @@ export default function FoodMarketsPage() {
         subtitle="A feast for the senses. Discover fresh, local produce and culinary delights."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for food markets. This page
+        <p className="text-center text-lg">Placeholder content for food markets. This page will feature Atarazanas Market and others.</p>
+      </Section>
+    </div>
+  );
+}

@@ -1,0 +1,22 @@
+
+import PageHeader from '@/components/shared/PageHeader';
+import Section from '@/components/shared/Section';
+
+export const metadata = {
+  title: 'Malaga Weather Guide | Month-by-Month Temperatures',
+  description: 'A detailed guide to the weather in Malaga throughout the year, with month-by-month averages for temperature, rainfall, and sunshine hours.',
+};
+
+export default function WeatherPage() {
+  return (
+    <div>
+      <PageHeader
+        title="Malaga Weather Guide"
+        subtitle="Month-by-month weather averages and what to expect."
+      />
+      <Section>
+        <p className="text-center text-lg">Placeholder content for the Malaga weather guide. This page will include temperature charts and packing tips for each month.</p>
+      </Section>
+    </div>
+  );
+}
