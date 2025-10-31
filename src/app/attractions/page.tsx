@@ -50,10 +50,12 @@ const attractionCategories = [
 export default function AttractionsPage() {
   return (
     <div>
-      <PageHeader
-        title="Attractions & Things To Do in Costa del Sol"
-        subtitle="From ancient fortresses and world-class art museums to sun-drenched water parks and breathtaking mountain trails, your unforgettable Andalusian adventure starts here."
-      />
+      <div className="max-w-4xl mx-auto">
+        <PageHeader
+          title="Attractions & Things To Do in Costa del Sol"
+          subtitle="From ancient fortresses and world-class art museums to sun-drenched water parks and breathtaking mountain trails, your unforgettable Andalusian adventure starts here."
+        />
+      </div>
       <Section className="pt-0">
         <div className="prose lg:prose-xl max-w-4xl mx-auto prose-headings:font-display prose-a:text-primary prose-strong:text-text-primary">
             <p>
