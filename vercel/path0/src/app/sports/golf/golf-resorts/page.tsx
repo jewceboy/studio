@@ -1,7 +1,6 @@
 
 import PageHeader from '@/components/shared/PageHeader';
-import Section from '@/components-gshared/Section';
-
+import Section from '@/components/shared/Section';
 export const metadata = {
   title: 'Golf Resorts in Costa del Sol | Best Stay & Play Hotels',
   description: 'Discover the best golf resorts in the Costa del Sol. Find luxury hotels with on-site courses for the perfect stay and play vacation.',

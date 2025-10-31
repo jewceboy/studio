@@ -7,7 +7,7 @@ export const metadata = {
   description: 'Explore the culinary scene of Malaga with guided food tours. Discover the best tapas, local markets, and wines with an expert guide.',
 };
 
-export aafault function FoodToursPage() {
+export default function FoodToursPage() {
   return (
     <div>
       <PageHeader
