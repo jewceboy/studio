@@ -4,9 +4,10 @@ import Section from '@/components/shared/Section';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Ticket, Mountain, Info, MapPin, CheckCircle, Droplets, Backpack, Footprints, XCircle, Ban, Toilet } from 'lucide-react';
+import { Ticket, Mountain, Info, MapPin, CheckCircle, Droplets, Backpack, Footprints, XCircle, Ban, Toilet, MessageSquare } from 'lucide-react';
 import imageData from '@/lib/placeholder-images.json';
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 type ImageData = {
   [key: string]: {
@@ -23,6 +24,33 @@ export const metadata = {
   title: 'Caminito del Rey Walk – 2025 Update on What you need to Know',
   description: 'Your complete 2025 guide to the Caminito del Rey walk. Get up-to-date tips on booking tickets, trail difficulty, how to get there, and what to expect on this spectacular hike near Malaga.',
 };
+
+const comments = [
+    {
+        author: "Sarah T.",
+        date: "December 15, 2023",
+        avatar: "https://picsum.photos/seed/avatar-sarah/48/48",
+        text: "Just did this walk based on your guide and it was incredible! The tip about parking at the North access and taking the bus back was a lifesaver. We had lunch at La Garganta afterwards and the views were just as you described. Thanks for the fantastic advice!"
+    },
+    {
+        author: "Mark C.",
+        date: "November 28, 2023",
+        avatar: "https://picsum.photos/seed/avatar-mark/48/48",
+        text: "My wife is terrified of heights but she managed it! The new walkway is so safe. Your detailed post gave us the confidence to book. The suspension bridge part was a real test but the feeling of accomplishment at the end is amazing. A must-do!"
+    },
+    {
+        author: "Emma and Jake",
+        date: "October 19, 2023",
+        avatar: "https://picsum.photos/seed/avatar-emma-jake/48/48",
+        text: "Great article! We booked the guided bus tour as you suggested and it made everything so easy. No stress about driving or parking. The guide provided so much interesting history about the old path. Highly recommend that option for anyone who wants a hassle-free day."
+    },
+    {
+        author: "David L.",
+        date: "September 05, 2023",
+        avatar: "https://picsum.photos/seed/avatar-david/48/48",
+        text: "The 'no refunds' tip is crucial! We almost had to cancel but thankfully were able to make it. Also, can confirm the food portions at El Kiosko are huge, maybe share a plate if you're eating before the hike. The views are out of this world."
+    }
+];
 
 export default function CaminitoDelReyPage() {
   return (
@@ -243,6 +271,28 @@ export default function CaminitoDelReyPage() {
                     </CardContent>
                 </Card>
             </div>
+            
+            <div className="mt-16">
+                <h2 className="text-h2 font-bold mb-8 flex items-center"><MessageSquare className="h-8 w-8 mr-3 text-primary"/> Comments from the Original Post</h2>
+                <div className="space-y-8">
+                    {comments.map((comment, index) => (
+                        <div key={index} className="flex items-start space-x-4">
+                            <Avatar>
+                                <AvatarImage src={comment.avatar} alt={comment.author} />
+                                <AvatarFallback>{comment.author.charAt(0)}</AvatarFallback>
+                            </Avatar>
+                            <div className="flex-1">
+                                <div className="flex items-baseline space-x-2">
+                                    <p className="font-semibold text-text-primary">{comment.author}</p>
+                                    <p className="text-xs text-muted-foreground">{comment.date}</p>
+                                </div>
+                                <p className="text-text-secondary mt-1">{comment.text}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
           </div>
         </div>
       </Section>
