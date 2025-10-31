@@ -209,6 +209,30 @@
     "width": 600,
     "height": 400
   },
+  "fuengirola-castle": {
+    "url": "https://picsum.photos/seed/fuengirola-castle/600/400",
+    "hint": "fuengirola castle",
+    "width": 600,
+    "height": 400
+  },
+  "nerja-coast": {
+    "url": "https://picsum.photos/seed/nerja-coast/600/400",
+    "hint": "nerja coast",
+    "width": 600,
+    "height": 400
+  },
+  "estepona-flowers": {
+    "url": "https://picsum.photos/seed/estepona-flowers/600/400",
+    "hint": "estepona flowers",
+    "width": 600,
+    "height": 400
+  },
+  "la-cala-boardwalk": {
+    "url": "https://picsum.photos/seed/la-cala-boardwalk/600/400",
+    "hint": "la cala boardwalk",
+    "width": 600,
+    "height": 400
+  },
   "modern-coworking-space": {
     "url": "https://picsum.photos/seed/modern-coworking-space/600/400",
     "hint": "modern coworking space",

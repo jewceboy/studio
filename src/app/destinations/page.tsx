@@ -51,7 +51,7 @@ const mainDestinationCategories = [
     {
         slug: 'fuengirola',
         name: 'Fuengirola',
-        description: 'Known for its long sandy beaches, bustling promenade, and the historic Sohail Castle.',
+        description: 'A family-favourite destination known for its 7km of sandy beaches, the acclaimed Bioparc zoo, and the magnificent Sohail Castle.',
         imageKey: 'fuengirola-castle',
         linkHref: '/destinations/fuengirola',
         linkText: 'Discover Fuengirola',
@@ -59,10 +59,26 @@ const mainDestinationCategories = [
     {
         slug: 'nerja',
         name: 'Nerja',
-        description: 'Famous for the breathtaking Balcón de Europa viewpoint, its magnificent caves, and a coastline of stunning, hidden coves.',
+        description: 'Famed for its dramatic Balcón de Europa viewpoint and magnificent caves, Nerja boasts a stunning coastline of cliffs and sandy coves.',
         imageKey: 'nerja-coast',
         linkHref: '/destinations/nerja',
         linkText: 'Visit Nerja',
+    },
+    {
+        slug: 'estepona',
+        name: 'Estepona',
+        description: 'The "Garden of the Costa del Sol," a charming town with a flower-filled old quarter and beautiful public art.',
+        imageKey: 'estepona-flowers',
+        linkHref: '/destinations/estepona',
+        linkText: 'Explore Estepona',
+    },
+    {
+        slug: 'la-cala-de-mijas',
+        name: 'La Cala de Mijas',
+        description: 'A vibrant former fishing village with a great food scene and a beautiful coastal boardwalk.',
+        imageKey: 'la-cala-boardwalk',
+        linkHref: '/destinations/la-cala-de-mijas',
+        linkText: 'Visit La Cala',
     },
      {
         slug: 'puerto-banus',
@@ -122,7 +138,7 @@ export default function DestinationsPage() {
       </Section>
       
       <Section className="py-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {mainDestinationCategories.map((category) => (
             <InfoCard
               key={category.slug}
@@ -131,7 +147,7 @@ export default function DestinationsPage() {
               imageHint={images[category.imageKey]?.hint}
               imageAlt={`Explore ${category.name}`}
               description={category.description}
-              linkHref={category.linkHref}
+              linkHref={`/destinations/${category.slug}`}
               linkText={category.linkText}
             />
           ))}
