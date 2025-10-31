@@ -1,5 +1,7 @@
+
 import PageHeader from '@/components/shared/PageHeader';
 import ContactForm from '@/components/ui/ContactForm'; // Ensure this path is correct
+import Section from '@/components/shared/Section';
 
 export const metadata = {
   title: 'Contact Us | Malaga Travel Guide',
@@ -13,9 +15,9 @@ export default function ContactPage() {
         title="Contact Us"
         subtitle="We'd love to hear from you! Whether you have a question, feedback, or a collaboration idea, please reach out."
       />
-      <section className="py-8">
+      <Section className="py-8">
         <ContactForm />
-      </section>
+      </Section>
     </div>
   );
 }

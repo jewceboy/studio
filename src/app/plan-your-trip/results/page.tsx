@@ -1,3 +1,4 @@
+
 'use client'; // Added 'use client' as it uses Button and Link from client components, and searchParams
 
 import { Suspense } from 'react';
