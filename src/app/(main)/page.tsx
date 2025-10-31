@@ -1,6 +1,5 @@
 
 'use client';
-import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,6 +9,7 @@ import { allSiteUrls } from '@/lib/urls';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import imageData from '@/lib/placeholder-images.json';
+import HeroVideo from '@/components/shared/HeroVideo';
 
 
 type ImageData = {
@@ -35,14 +35,7 @@ function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        src="https://videos.pexels.com/video-files/4434250/4434250-hd_1920_1080_25fps.mp4"
-      />
+      <HeroVideo src="https://videos.pexels.com/video-files/4434250/4434250-hd_1920_1080_25fps.mp4" />
       <div className="absolute inset-0 bg-black/40 z-10" />
       <motion.div style={{ y }} className="relative z-20 p-4">
         <motion.h1
