@@ -52,7 +52,7 @@ export default function CaminitoDelReyPage() {
             </p>
 
             <figure className="my-6">
-                <Image src="/images/gordon-gino-fred-caminito.jpg" alt="Celebrities Gordon Ramsey, Gino D'Acampo, and Fred Sirieix on the Caminito del Rey bridge" width={800} height={450} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="celebrity hike bridge"/>
+                <Image src="/images/camino-gordon.jpg" alt="Celebrities Gordon Ramsey, Gino D'Acampo, and Fred Sirieix on the Caminito del Rey bridge" width={800} height={450} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="celebrity hike bridge"/>
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">The famous bridge is a highlight for many visitors, including celebrities.</figcaption>
             </figure>
 
@@ -254,7 +254,5 @@ export default function CaminitoDelReyPage() {
     </div>
   );
 }
-
-    
 
     
