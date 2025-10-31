@@ -101,10 +101,12 @@ const allComments = [
 export default function CaminitoDelReyPage() {
   return (
     <div>
-      <PageHeader
-        title="Caminito del Rey Walk – 2025 Update on What you need to Know"
-        subtitle="Once the world's most dangerous footpath, now a spectacular and epic adventure."
-      />
+      <div className="max-w-4xl mx-auto">
+        <PageHeader
+          title="Caminito del Rey Walk – 2025 Update on What you need to Know"
+          subtitle="Once the world's most dangerous footpath, now a spectacular and epic adventure."
+        />
+      </div>
 
       <Section className="pt-0">
         <div className="max-w-4xl mx-auto">
