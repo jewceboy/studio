@@ -59,7 +59,7 @@ const mainDestinationCategories = [
     {
         slug: 'nerja',
         name: 'Nerja',
-        description: 'Famous for the breathtaking Balcón de Europa and the magnificent Nerja Caves.',
+        description: 'Famous for the breathtaking Balcón de Europa viewpoint, its magnificent caves, and a coastline of stunning, hidden coves.',
         imageKey: 'nerja-coast',
         linkHref: '/destinations/nerja',
         linkText: 'Visit Nerja',
@@ -167,7 +167,7 @@ export default function DestinationsPage() {
                  <ul>
                     <li><strong>Best for:</strong> Luxury travel, high-end shopping, fine dining, world-class nightlife, and golf enthusiasts.</li>
                     <li><strong>Don't miss:</strong> Strolling through the Old Town's Plaza de los Naranjos, window shopping in Puerto Banús, and a day at an exclusive beach club.</li>
-                 </ul>
+                </ul>
                  <Button asChild variant="outline">
                     <Link href="/destinations/marbella">Explore our Marbella Travel Guide</Link>
                 </Button>
