@@ -1,3 +1,4 @@
+
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
@@ -47,24 +48,28 @@ const shoppingCategories = [
 export default function ShoppingPage() {
   return (
     <div>
-      <PageHeader
-        title="Shopping & Retail"
-        subtitle="From high-end designer brands to unique local crafts, discover the best shopping in the Costa del Sol."
-      />
+        <div className="max-w-4xl mx-auto">
+            <PageHeader
+                title="Shopping & Retail"
+                subtitle="From high-end designer brands to unique local crafts, discover the best shopping in the Costa del Sol."
+            />
+        </div>
       <Section className="pt-0" title="Retail Categories">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {shoppingCategories.map((category) => (
-                <InfoCard
-                key={category.slug}
-                title={category.name}
-                imageUrl={images[category.imageKey].url}
-                imageHint={images[category.imageKey].hint}
-                imageAlt={`Explore ${category.name}`}
-                description={category.description}
-                linkHref={category.linkHref}
-                linkText={category.linkText}
-                />
-            ))}
+        <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {shoppingCategories.map((category) => (
+                    <InfoCard
+                    key={category.slug}
+                    title={category.name}
+                    imageUrl={images[category.imageKey].url}
+                    imageHint={images[category.imageKey].hint}
+                    imageAlt={`Explore ${category.name}`}
+                    description={category.description}
+                    linkHref={category.linkHref}
+                    linkText={category.linkText}
+                    />
+                ))}
+            </div>
         </div>
       </Section>
     </div>

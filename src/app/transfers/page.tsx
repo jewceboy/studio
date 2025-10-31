@@ -48,24 +48,28 @@ const transferCategories = [
 export default function TransfersPage() {
   return (
     <div>
-      <PageHeader
-        title="Transportation & Transfers"
-        subtitle="Getting around the Costa del Sol has never been easier. Find the best options for your needs."
-      />
-      <Section className="pt-0" title="Transfer Options">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {transferCategories.map((category) => (
-            <InfoCard
-              key={category.slug}
-              title={category.name}
-              imageUrl={images[category.imageKey].url}
-              imageHint={images[category.imageKey].hint}
-              imageAlt={`Explore ${category.name}`}
-              description={category.description}
-              linkHref={category.linkHref}
-              linkText={category.linkText}
+        <div className="max-w-4xl mx-auto">
+            <PageHeader
+                title="Transportation & Transfers"
+                subtitle="Getting around the Costa del Sol has never been easier. Find the best options for your needs."
             />
-          ))}
+        </div>
+      <Section className="pt-0" title="Transfer Options">
+        <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {transferCategories.map((category) => (
+                <InfoCard
+                key={category.slug}
+                title={category.name}
+                imageUrl={images[category.imageKey].url}
+                imageHint={images[category.imageKey].hint}
+                imageAlt={`Explore ${category.name}`}
+                description={category.description}
+                linkHref={category.linkHref}
+                linkText={category.linkText}
+                />
+            ))}
+            </div>
         </div>
       </Section>
     </div>

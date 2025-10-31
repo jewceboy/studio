@@ -52,10 +52,12 @@ const businessCategories = [
 export default function BusinessPage() {
   return (
     <div>
-      <PageHeader
-        title="Business & MICE Tourism in Costa del Sol"
-        subtitle="Elevate your corporate events with world-class infrastructure, exceptional hospitality, and the stunning backdrop of the Mediterranean."
-      />
+      <div className="max-w-4xl mx-auto">
+        <PageHeader
+          title="Business & MICE Tourism in Costa del Sol"
+          subtitle="Elevate your corporate events with world-class infrastructure, exceptional hospitality, and the stunning backdrop of the Mediterranean."
+        />
+      </div>
        <Section className="pt-0">
         <div className="prose lg:prose-xl max-w-4xl mx-auto prose-headings:font-display prose-a:text-primary prose-strong:text-text-primary">
             <p>
@@ -73,19 +75,21 @@ export default function BusinessPage() {
       </Section>
 
       <Section className="py-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {businessCategories.map((category) => (
-            <InfoCard
-              key={category.slug}
-              title={category.name}
-              imageUrl={images[category.imageKey].url}
-              imageHint={images[category.imageKey].hint}
-              imageAlt={`Explore ${category.name}`}
-              description={category.description}
-              linkHref={category.linkHref}
-              linkText={category.linkText}
-            />
-          ))}
+        <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {businessCategories.map((category) => (
+                <InfoCard
+                key={category.slug}
+                title={category.name}
+                imageUrl={images[category.imageKey].url}
+                imageHint={images[category.imageKey].hint}
+                imageAlt={`Explore ${category.name}`}
+                description={category.description}
+                linkHref={category.linkHref}
+                linkText={category.linkText}
+                />
+            ))}
+            </div>
         </div>
       </Section>
 

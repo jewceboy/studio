@@ -286,34 +286,36 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     <div className="bg-background">
       <article>
         {/* Article Header */}
-        <header className="container mx-auto px-4 pt-12 text-center max-w-4xl">
-           {article.categories && article.categories.length > 0 && (
-                <div className="mb-4">
-                  {article.categories.map(category => (
-                      <Link key={category} href={`/blog/category/${category.toLowerCase().replace(/\s+/g, '-')}`} passHref>
-                          <Badge variant="secondary" className="text-sm font-normal">
-                              {category}
-                          </Badge>
-                      </Link>
-                  ))}
+        <div className="max-w-4xl mx-auto">
+            <header className="container mx-auto px-4 pt-12 text-center">
+            {article.categories && article.categories.length > 0 && (
+                    <div className="mb-4">
+                    {article.categories.map(category => (
+                        <Link key={category} href={`/blog/category/${category.toLowerCase().replace(/\s+/g, '-')}`} passHref>
+                            <Badge variant="secondary" className="text-sm font-normal">
+                                {category}
+                            </Badge>
+                        </Link>
+                    ))}
+                    </div>
+                )}
+                <h1 className="text-h1 font-bold mb-4">{article.title}</h1>
+                <div className="flex justify-center items-center space-x-4 text-sm text-muted-foreground mb-8">
+                {article.author && (
+                    <div className="flex items-center space-x-2">
+                    <UserCircle className="h-5 w-5" />
+                    <span>By {article.author}</span>
+                    </div>
+                )}
+                {article.date && (
+                    <div className="flex items-center space-x-2">
+                    <CalendarDays className="h-5 w-5" />
+                    <time dateTime={article.date}>{new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                    </div>
+                )}
                 </div>
-            )}
-            <h1 className="text-h1 font-bold mb-4">{article.title}</h1>
-            <div className="flex justify-center items-center space-x-4 text-sm text-muted-foreground mb-8">
-              {article.author && (
-                <div className="flex items-center space-x-2">
-                  <UserCircle className="h-5 w-5" />
-                  <span>By {article.author}</span>
-                </div>
-              )}
-               {article.date && (
-                <div className="flex items-center space-x-2">
-                  <CalendarDays className="h-5 w-5" />
-                  <time dateTime={article.date}>{new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-                </div>
-              )}
-            </div>
-        </header>
+            </header>
+        </div>
 
         {/* Featured Image */}
         <div className="container mx-auto px-4 my-l">

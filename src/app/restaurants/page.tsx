@@ -1,3 +1,4 @@
+
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
@@ -55,24 +56,28 @@ const restaurantCategories = [
 export default function RestaurantsPage() {
   return (
     <div>
-      <PageHeader
-        title="Restaurants & Dining"
-        subtitle="A culinary journey through Malaga's best restaurants, from traditional tapas bars to fine dining."
-      />
+        <div className="max-w-4xl mx-auto">
+            <PageHeader
+                title="Restaurants & Dining"
+                subtitle="A culinary journey through Malaga's best restaurants, from traditional tapas bars to fine dining."
+            />
+        </div>
       <Section className="pt-0" title="Dining Categories">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {restaurantCategories.map((category) => (
-                <InfoCard
-                key={category.slug}
-                title={category.name}
-                imageUrl={images[category.imageKey].url}
-                imageHint={images[category.imageKey].hint}
-                imageAlt={`Explore ${category.name}`}
-                description={category.description}
-                linkHref={category.linkHref}
-                linkText={category.linkText}
-                />
-            ))}
+        <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                {restaurantCategories.map((category) => (
+                    <InfoCard
+                    key={category.slug}
+                    title={category.name}
+                    imageUrl={images[category.imageKey].url}
+                    imageHint={images[category.imageKey].hint}
+                    imageAlt={`Explore ${category.name}`}
+                    description={category.description}
+                    linkHref={category.linkHref}
+                    linkText={category.linkText}
+                    />
+                ))}
+            </div>
         </div>
       </Section>
     </div>

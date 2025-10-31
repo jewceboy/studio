@@ -48,26 +48,30 @@ const nomadCategories = [
 export default function DigitalNomadPage() {
   return (
     <div>
-      <PageHeader
-        title="Malaga for Digital Nomads"
-        subtitle="Everything you need to know to live and work remotely in the beautiful Costa del Sol."
-      />
-      <Section className="pt-0" title="Nomad Resources">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {nomadCategories.map((category) => (
-                <InfoCard
-                key={category.slug}
-                title={category.name}
-                imageUrl={images[category.imageKey].url}
-                imageHint={images[category.imageKey].hint}
-                imageAlt={`Explore ${category.name}`}
-                description={category.description}
-                linkHref={category.linkHref}
-                linkText={category.linkText}
-                />
-            ))}
+        <div className="max-w-4xl mx-auto">
+            <PageHeader
+                title="Malaga for Digital Nomads"
+                subtitle="Everything you need to know to live and work remotely in the beautiful Costa del Sol."
+            />
         </div>
-      </Section>
+        <Section className="pt-0" title="Nomad Resources">
+            <div className="max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    {nomadCategories.map((category) => (
+                        <InfoCard
+                        key={category.slug}
+                        title={category.name}
+                        imageUrl={images[category.imageKey].url}
+                        imageHint={images[category.imageKey].hint}
+                        imageAlt={`Explore ${category.name}`}
+                        description={category.description}
+                        linkHref={category.linkHref}
+                        linkText={category.linkText}
+                        />
+                    ))}
+                </div>
+            </div>
+        </Section>
     </div>
   );
 }
