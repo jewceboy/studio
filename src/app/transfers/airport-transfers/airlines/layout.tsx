@@ -1,10 +1,8 @@
 
-
 export default function AirlinesLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div>
-      {children}
+  return <div>{children}</div>;
+}

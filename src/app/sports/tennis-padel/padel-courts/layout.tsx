@@ -1,9 +1,8 @@
 
-
 export default function PadelCourtsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    
+  return <div>{children}</div>;
+}
