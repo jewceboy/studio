@@ -84,7 +84,7 @@ const mainDestinationCategories = [
         slug: 'puerto-banus',
         name: 'Puerto Banús',
         description: 'Experience the epitome of luxury, superyachts, and high-end nightlife near Marbella.',
-        imageKey: 'puerto-banus-marina',
+        imageKey: 'luxury-shopping-street',
         linkHref: '/destinations/puerto-banus',
         linkText: 'Visit Puerto Banús',
     },
