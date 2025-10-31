@@ -55,7 +55,7 @@ export default function AttractionsPage() {
         subtitle="From ancient fortresses and world-class art museums to sun-drenched water parks and breathtaking mountain trails, your unforgettable Andalusian adventure starts here."
       />
       <Section className="pt-0">
-        <div className="prose lg:prose-xl prose-headings:font-display prose-a:text-primary prose-strong:text-text-primary">
+        <div className="prose lg:prose-xl max-w-4xl mx-auto prose-headings:font-display prose-a:text-primary prose-strong:text-text-primary">
             <p>
                 The Costa del Sol is so much more than its famous coastline. It's a region brimming with an astonishing variety of attractions that cater to every type of traveler. Whether you're a history buff eager to walk through ancient Moorish castles, an art aficionado ready to explore the birthplace of Picasso, a family seeking laughter-filled days at theme parks, or an adventurer looking to conquer dramatic landscapes, you'll find it all here under the warm Spanish sun.
             </p>
@@ -71,24 +71,26 @@ export default function AttractionsPage() {
       </Section>
 
       <Section className="py-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {attractionCategories.map((category) => (
-                <InfoCard
-                key={category.slug}
-                title={category.name}
-                imageUrl={images[category.imageKey].url}
-                imageHint={images[category.imageKey].hint}
-                imageAlt={`Explore ${category.name}`}
-                description={category.description}
-                linkHref={category.linkHref}
-                linkText={category.linkText}
-                />
-            ))}
+        <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {attractionCategories.map((category) => (
+                    <InfoCard
+                    key={category.slug}
+                    title={category.name}
+                    imageUrl={images[category.imageKey].url}
+                    imageHint={images[category.imageKey].hint}
+                    imageAlt={`Explore ${category.name}`}
+                    description={category.description}
+                    linkHref={category.linkHref}
+                    linkText={category.linkText}
+                    />
+                ))}
+            </div>
         </div>
       </Section>
 
       <Section>
-        <div className="prose lg:prose-xl prose-headings:font-display prose-a:text-primary prose-strong:text-text-primary">
+        <div className="prose lg:prose-xl max-w-4xl mx-auto prose-headings:font-display prose-a:text-primary prose-strong:text-text-primary">
             
             <div id="malaga-city" className="scroll-mt-24">
                 <h3><Building className="inline-block h-6 w-6 -mt-1 mr-2 text-primary" />Málaga City: A Hub of History and Art</h3>
