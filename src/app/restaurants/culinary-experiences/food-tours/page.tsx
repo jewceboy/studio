@@ -1,3 +1,4 @@
+export default function FoodToursPage() {
 
 import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
