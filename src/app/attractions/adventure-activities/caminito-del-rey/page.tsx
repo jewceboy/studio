@@ -136,7 +136,7 @@ export default function CaminitoDelReyPage() {
 
              <figure className="my-6">
                 <Image src="https://picsum.photos/seed/caminito-el-kiosko/800/400" alt="Restaurant El Kiosko" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="restaurant snacks entrance"/>
-                <figcaption className="text-xs text-center text-muted-foreground mt-2">Restaurant El Kiosko & place to pick up snacks at the North entrance.</figcaption>
+                <figcaption className="text-xs text-center text-muted-foreground mt-2">Restaurant El Kiosko &amp; place to pick up snacks at the North entrance.</figcaption>
             </figure>
 
             <p>
@@ -254,3 +254,5 @@ export default function CaminitoDelReyPage() {
     </div>
   );
 }
+
+    
