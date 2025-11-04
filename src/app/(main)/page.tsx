@@ -1,15 +1,18 @@
 
+
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, List } from 'lucide-react';
+import { ArrowRight, List, Bot } from 'lucide-react';
 import { NewsletterForm } from '@/components/forms/newsletter-form';
 import { allSiteUrls } from '@/lib/urls';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import imageData from '@/lib/placeholder-images.json';
 import HeroVideo from '@/components/shared/HeroVideo';
+import { Button } from '@/components/ui/button';
+import { summarizeWebsite } from '@/ai/flows/summarize-web-content';
 
 
 type ImageData = {
@@ -128,6 +131,17 @@ const topArticles = [
   { href: '/travel-planning/when-to-visit/weather', text: 'Malaga Weather Guide' },
 ];
 
+async function handleTestScrape() {
+    alert('Testing Firecrawl integration... This may take a moment.');
+    try {
+        const result = await summarizeWebsite({ url: 'https://firebase.google.com/docs/studio' });
+        alert(`Summary:\n\n${result.summary}`);
+    } catch (e) {
+        console.error(e);
+        alert(`An error occurred: ${e instanceof Error ? e.message : String(e)}`);
+    }
+}
+
 // --- Main Homepage Component ---
 export default function Home() {
     return (
@@ -208,7 +222,13 @@ export default function Home() {
                             />
                         ))}
                 </div>
+                 <div className="text-center mt-l">
+                    <Button onClick={handleTestScrape}>
+                        <Bot className="mr-2 h-4 w-4" /> Test Firecrawl Tool
+                    </Button>
+                </div>
             </Section>
         </motion.div>
     );
 }
+
