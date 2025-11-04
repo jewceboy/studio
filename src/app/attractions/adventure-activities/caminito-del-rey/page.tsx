@@ -60,7 +60,7 @@ export default function CaminitoDelReyPage() {
                 Recently UK celebrity chefs Gordon Ramsey, Gino D’acampo and Fred Sirieix filmed part of the popular ITV show ‘Gordon, Gino and Fred: Viva Espana! taking on the walk. The trio were filmed crossing the notorious suspension footbridge, the ‘Puente del Rey’ with a terrified Gino hilariously crawling along while Gordon and Fred look on in hysterics.
             </p>
             <p>
-                The walk is around 60km inland from the beautiful city of Malaga. It’s over 7km long and is made up of forest paths and footbridges, most of which cling precariously to the gorge walls 100 metres above the River Guadalhorce.
+                The walk is around 60km inland from the beautiful city of <Link href="/destinations/malaga">Malaga</Link>. It’s over 7km long and is made up of forest paths and footbridges, most of which cling precariously to the gorge walls 100 metres above the River Guadalhorce.
             </p>
             <p>
                 Still not convinced it’s safe enough?? If my ‘terrified of heights’ husband can do this trek, believe me, anyone can. 🙂
@@ -72,7 +72,7 @@ export default function CaminitoDelReyPage() {
             </p>
             <ul>
                 <li><strong>Car:</strong> A pleasant drive through the Malaga countryside to El Chorro, depending on your start point, it should take less than 1.5 hours.</li>
-                <li><strong>Train:</strong> From Malaga’s Maria Zambrano train station, direct to El Chorro. The journey takes around 50 minutes direct and trains run several times a day for between €3 and €5.</li>
+                <li><strong>Train:</strong> From Malaga’s Maria Zambrano train station, direct to El Chorro. The journey takes around 50 minutes direct and trains run several times a day for between €3 and €5. See our guide to <Link href="/transfers/public-transport/trains">Malaga public transport</Link> for more info.</li>
                 <li><strong>Bus + ticket:</strong> By far the most stress free way to get to the Camino is to book a guided bus transfer with your entrance ticket to the walk included, this way someone else can take the hassle out of the planning. All you have to do is turn up at the meeting point at the agreed pick-up time.</li>
             </ul>
              <div className="my-6">
@@ -89,7 +89,7 @@ export default function CaminitoDelReyPage() {
             </figure>
             
             <p>
-                Tourists and locals have been coming to the area around the Caminito for years, especially in summer time when the turquoise reservoirs offer much needed respite from the hot sun. There are some great water sports including a giant inflatable water park on the lake from June to September.
+                Tourists and locals have been coming to the area around the Caminito for years, especially in summer time when the turquoise reservoirs offer much needed respite from the hot sun. There are some great <Link href="/attractions/adventure-activities/water-sports">water sports</Link> including a giant inflatable water park on the lake from June to September.
             </p>
              <p>
                 There are plenty quaint little campsites, b&b’s and guest houses in the area known as the Guadalhorce valley. The landscape is unique, breathtaking in fact and its all just so peaceful and calm.
@@ -111,7 +111,7 @@ export default function CaminitoDelReyPage() {
                 <p className="text-muted-foreground">If you can’t make it for any reason, they don’t offer refunds or alternative dates. It’s tough luck basically as we found out after we were a ‘no show’ the first time.</p>
             </div>
              <p>
-                We finally did the walk on chilly but beautifully sunny Saturday afternoon in December, after our previous booking a year earlier was aborted when my daughter woke up covered in chicken pox spots that morning. Weather in Ardales, as it’s in land can be a few degrees cooler in winter than down on the coast and in summer expect it to be hotter, so be sure to check the forecast. On the day of our walk temperatures in Malaga were 16 degrees but only 12 degrees in Ardales that day. I was glad I threw an extra layer into the boot of the car just before we set off because with the blustery wind it felt much colder.
+                We finally did the walk on chilly but beautifully sunny Saturday afternoon in December, after our previous booking a year earlier was aborted when my daughter woke up covered in chicken pox spots that morning. Weather in Ardales, as it’s in land can be a few degrees cooler in winter than down on the coast and in summer expect it to be hotter, so be sure to check the <Link href="/travel-planning/when-to-visit/weather">forecast</Link>. On the day of our walk temperatures in Malaga were 16 degrees but only 12 degrees in Ardales that day. I was glad I threw an extra layer into the boot of the car just before we set off because with the blustery wind it felt much colder.
             </p>
 
             <h2>Arriving at the Caminito del Rey</h2>
@@ -131,7 +131,7 @@ export default function CaminitoDelReyPage() {
             </figure>
 
             <p>
-                We wanted to grab a light bite before starting the walk which was scheduled for 2pm, and knew there were some restaurants at the North entrance. Restaurant El Kiosko overlooking the lake was the perfect choice as next to it is the tunnel which you need to go through to start the Caminito del Rey. Here you can pick up take away drinks and snacks too but bear in mind after this point, there is nowhere else to buy refreshments.
+                We wanted to grab a light bite before starting the walk which was scheduled for 2pm, and knew there were some <Link href="/restaurants">restaurants</Link> at the North entrance. Restaurant El Kiosko overlooking the lake was the perfect choice as next to it is the tunnel which you need to go through to start the Caminito del Rey. Here you can pick up take away drinks and snacks too but bear in mind after this point, there is nowhere else to buy refreshments.
             </p>
 
              <figure className="my-6">
@@ -225,7 +225,7 @@ export default function CaminitoDelReyPage() {
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">El Chorro Train station at the end of the walk.</figcaption>
             </figure>
              <p>
-                If you have a little bit of time a fantastic place to grab a bite to eat and a drink is La Garganta Hotel and restaurant right opposite the bus stop. Walk round to the outside terrace for direct views of the Caminito and a well earned drink. I really wish I had known about this hotel before our visit as it’s the perfect location to the Caminito del Rey to stay over for a night or two and explore the area more. It has so much rustic charm and gorgeous views over the lake and the final stretch of the Caminito del Rey.
+                If you have a little bit of time a fantastic place to grab a bite to eat and a drink is La Garganta Hotel and restaurant right opposite the bus stop. Walk round to the outside terrace for direct views of the Caminito and a well earned drink. I really wish I had known about this <Link href="/hotels">hotel</Link> before our visit as it’s the perfect location to the Caminito del Rey to stay over for a night or two and explore the area more. It has so much rustic charm and gorgeous views over the lake and the final stretch of the Caminito del Rey.
             </p>
              <p>
                 The bus was punctual and the ride back to the car and North entrance took only about 15 minutes. The bus takes you just past the car park and drops you right at El Kiosko and the entrance tunnel to the start of the route. All in all the walk took a total us of 2 hours 30 minutes, including the short walk leading to the start of the Caminito del Rey.
@@ -244,7 +244,7 @@ export default function CaminitoDelReyPage() {
                             <li className="flex items-start"><Droplets className="h-5 w-5 mr-3 mt-1 text-primary shrink-0" /><span>Bring plenty of water, snacks, and sunscreen.</span></li>
                             <li className="flex items-start"><Backpack className="h-5 w-5 mr-3 mt-1 text-primary shrink-0" /><span>Only small backpacks are allowed; large bags are not permitted.</span></li>
                             <li className="flex items-start"><Footprints className="h-5 w-5 mr-3 mt-1 text-primary shrink-0" /><span>Wear comfortable clothing and footwear (hiking shoes are best but trainers are adequate).</span></li>
-                            <li className="flex items-start"><Ban className="h-5 w-5 mr-3 mt-1 text-primary shrink-0" /><span>Pets are not allowed.</span></li>
+                            <li className="flex items-start"><Ban className="h-5 w-5 mr-3 mt-1.5 text-primary shrink-0" /><span>Pets are not allowed.</span></li>
                             <li className="flex items-start"><Toilet className="h-5 w-5 mr-3 mt-1 text-primary shrink-0" /><span>There are no toilets along the path itself.</span></li>
                             <li className="flex items-start"><XCircle className="h-5 w-5 mr-3 mt-1 text-primary shrink-0" /><span>The walk may occasionally close due to bad weather; refunds are not offered.</span></li>
                         </ul>
@@ -258,7 +258,3 @@ export default function CaminitoDelReyPage() {
     </div>
   );
 }
-
-    
-
-    
