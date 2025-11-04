@@ -15,4 +15,8 @@ export default function RomanticHotelsPage() {
         subtitle="Discover charming and romantic hotels for an unforgettable stay."
       />
       <Section>
-        <p className="text-center text-lg">Placeholder content for romantic hotels in Malaga. This page
+        <p className="text-center text-lg">Placeholder content for romantic hotels in Malaga. This page will list hotels perfect for couples.</p>
+      </Section>
+    </div>
+  );
+}
