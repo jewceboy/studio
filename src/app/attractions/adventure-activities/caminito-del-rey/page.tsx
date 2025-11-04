@@ -47,6 +47,10 @@ export default function CaminitoDelReyPage() {
             <p>
               The walkway fell into dis-repair and despite being closed to the public, people still found a way to cross it, resulting in many tragic deaths. Until it’s restoration in 2015, the Caminito was often referred to as ‘The World’s most Dangerous Footpath’ and ‘One of The World’s Scariest Hikes’.
             </p>
+             <figure className="my-6">
+                <Image src="/images/hero-image.jpg" alt="A breathtaking view of the Caminito del Rey path clinging to the gorge wall" width={800} height={500} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="gorge path landscape"/>
+                <figcaption className="text-xs text-center text-muted-foreground mt-2">The restored path is a spectacular walk high above the river.</figcaption>
+            </figure>
             <p>
               The Caminito re-opened in 2015 following a 4 year restoration project and is now much more of a scenic walk than the terrifying trek of years gone by. Since it re-opened around 300.000 tickets are sold annually for this famous walk, it even attracts celebrities.
             </p>
@@ -84,7 +88,7 @@ export default function CaminitoDelReyPage() {
              </div>
 
             <figure className="my-6">
-                <Image src="https://picsum.photos/seed/caminito-railway/800/400" alt="Railway line running through the gorge at El Chorro" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="railway gorge train"/>
+                <Image src="/images/railway.jpg" alt="Railway line running through the gorge at El Chorro" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="railway gorge train"/>
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">The historic railway line carved through the gorge.</figcaption>
             </figure>
             
@@ -97,7 +101,7 @@ export default function CaminitoDelReyPage() {
 
             <h2>How to book your tickets</h2>
              <figure className="my-6">
-                <Image src="https://picsum.photos/seed/caminito-journey-start/800/400" alt="The start of the wooden walkway on the Caminito del Rey" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="walkway start gorge"/>
+                <Image src="/images/caminitodelrey.jpg" alt="The start of the wooden walkway on the Caminito del Rey" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="walkway start gorge"/>
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">The journey begins on the famous boardwalks.</figcaption>
             </figure>
             <p>
@@ -126,8 +130,8 @@ export default function CaminitoDelReyPage() {
             </p>
 
              <figure className="my-6">
-                <Image src="https://picsum.photos/seed/caminito-north-entrance/800/400" alt="North entrance and start of the walk" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="restaurant entrance hike"/>
-                <figcaption className="text-xs text-center text-muted-foreground mt-2">North entrance (El Kiosko restaurant) and start of the walk.</figcaption>
+                <Image src="/images/sign-to-camino.jpg" alt="Sign pointing to the North entrance of the Caminito del Rey" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="sign entrance hike"/>
+                <figcaption className="text-xs text-center text-muted-foreground mt-2">Follow the signs to the North entrance (El Kiosko restaurant).</figcaption>
             </figure>
 
             <p>
@@ -135,7 +139,7 @@ export default function CaminitoDelReyPage() {
             </p>
 
              <figure className="my-6">
-                <Image src="https://picsum.photos/seed/caminito-el-kiosko/800/400" alt="Restaurant El Kiosko" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="restaurant snacks entrance"/>
+                <Image src="/images/el-kiosko.jpg" alt="Restaurant El Kiosko" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="restaurant snacks entrance"/>
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">Restaurant El Kiosko &amp; place to pick up snacks at the North entrance.</figcaption>
             </figure>
 
@@ -144,12 +148,16 @@ export default function CaminitoDelReyPage() {
             </p>
 
             <figure className="my-6">
-                <Image src="https://picsum.photos/seed/el-kiosko-fire/800/400" alt="Roaring fire in restaurant El Kiosko" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="restaurant fireplace cozy"/>
+                <Image src="/images/fire.jpg" alt="Roaring fire in restaurant El Kiosko" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="restaurant fireplace cozy"/>
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">A roaring fire in restaurant El Kiosko on a chilly day.</figcaption>
             </figure>
 
 
             <h2>Allow yourself plenty of time</h2>
+             <figure className="my-6">
+                <Image src="/images/tunnel.jpg" alt="The pedestrian tunnel that leads to the start of the trail." width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="pedestrian tunnel start"/>
+                <figcaption className="text-xs text-center text-muted-foreground mt-2">The starting tunnel is a scenic walk in itself.</figcaption>
+            </figure>
             <p>
                 From this point (the tunnel), you still need to allow yourself 30 minutes before your time slot as this is NOT the start of the Caminito del Rey. This a 2.5 km scenic walk through forest to reach the starting point which will take 30 minutes at least.
             </p>
@@ -158,7 +166,7 @@ export default function CaminitoDelReyPage() {
             </p>
 
              <figure className="my-6">
-                <Image src="https://picsum.photos/seed/lake-el-chorro/800/400" alt="View of one of the lakes near the Caminito" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="lake view mountains"/>
+                <Image src="/images/lake-at-car-park.jpg" alt="View of one of the lakes near the Caminito" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="lake view mountains"/>
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">One of the beautiful lakes near El Chorro.</figcaption>
             </figure>
 
@@ -170,7 +178,7 @@ export default function CaminitoDelReyPage() {
             </p>
 
             <figure className="my-6">
-                <Image src="https://picsum.photos/seed/caminito-old-path/800/400" alt="View of the old dangerous path below the new one" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="old dangerous path"/>
+                <Image src="/images/CAMINITO-DEL-REY-old-and-new-path.jpg" alt="View of the old dangerous path below the new one" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="old dangerous path"/>
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">The remains of the old path serve as a chilling reminder of the walk's history.</figcaption>
             </figure>
 
@@ -199,7 +207,7 @@ export default function CaminitoDelReyPage() {
             </p>
 
             <figure className="my-6">
-                <Image src="https://picsum.photos/seed/walkway-of-nerves/800/500" alt="The suspension bridge on the Caminito del Rey" width={800} height={500} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="suspension bridge gorge"/>
+                <Image src="/images/bridge-1.jpg" alt="The suspension bridge on the Caminito del Rey" width={800} height={500} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="suspension bridge gorge"/>
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">The suspension bridge is a test for those with a fear of heights.</figcaption>
             </figure>
 
@@ -208,7 +216,7 @@ export default function CaminitoDelReyPage() {
             </p>
 
             <figure className="my-6">
-                <Image src="https://picsum.photos/seed/caminito-map/800/500" alt="Map of the El Chorro region and the Caminito del Rey route" width={800} height={500} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="map trail route"/>
+                <Image src="/images/map.jpg" alt="Map of the El Chorro region and the Caminito del Rey route" width={800} height={500} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="map trail route"/>
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">A map showing the linear route of the walk.</figcaption>
             </figure>
             
@@ -217,7 +225,7 @@ export default function CaminitoDelReyPage() {
                 All that is left to do now is keep walking another few hundred metres until you arrive at El Chorro train station. Pass the car park and a camp site, then you’ll see the train station on the left with a handy little bar to grab a quick drink. Next to the station is where you pick up the bus to take you right back to the start/North. There were already people waiting when we arrived and a bus had just pulled in however there was no room for us so we had to wait 30 minutes for the next one.
             </p>
             <figure className="my-6">
-                <Image src="https://picsum.photos/seed/el-chorro-station/800/400" alt="El Chorro Train station" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="train station rural"/>
+                <Image src="/images/El-Chorro-train-station.jpg" alt="El Chorro Train station" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="train station rural"/>
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">El Chorro Train station at the end of the walk.</figcaption>
             </figure>
              <p>
@@ -254,5 +262,7 @@ export default function CaminitoDelReyPage() {
     </div>
   );
 }
+
+    
 
     
