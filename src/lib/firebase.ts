@@ -1,6 +1,7 @@
 // src/lib/firebase.ts
 import { initializeApp, getApps, getApp, FirebaseApp } from "firebase/app";
 import { getFirestore, Firestore } from "firebase/firestore";
+import { getStorage, FirebaseStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -13,6 +14,7 @@ const firebaseConfig = {
 
 let app: FirebaseApp;
 let db: Firestore;
+let storage: FirebaseStorage;
 
 // Check if all necessary environment variables are defined
 const firebaseCredentialsExist = firebaseConfig.apiKey && firebaseConfig.projectId;
@@ -25,6 +27,7 @@ try {
             app = getApp();
         }
         db = getFirestore(app);
+        storage = getStorage(app);
     }
 } catch (error) {
     console.error("Firebase initialization failed:", error);
@@ -32,5 +35,5 @@ try {
     // without full Firebase credentials, but features will be disabled.
 }
 
-// Export the initialized app and db, which might be undefined if credentials are not set
-export { app, db, firebaseCredentialsExist };
+// Export the initialized app and services, which might be undefined if credentials are not set
+export { app, db, storage, firebaseCredentialsExist };
