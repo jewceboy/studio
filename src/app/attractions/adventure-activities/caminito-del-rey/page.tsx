@@ -47,10 +47,6 @@ export default function CaminitoDelReyPage() {
             <p>
               The walkway fell into dis-repair and despite being closed to the public, people still found a way to cross it, resulting in many tragic deaths. Until it’s restoration in 2015, the Caminito was often referred to as ‘The World’s most Dangerous Footpath’ and ‘One of The World’s Scariest Hikes’.
             </p>
-             <figure className="my-6">
-                <Image src="/images/hero-image.jpg" alt="A breathtaking view of the Caminito del Rey path clinging to the gorge wall" width={800} height={500} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="gorge path landscape"/>
-                <figcaption className="text-xs text-center text-muted-foreground mt-2">The restored path is a spectacular walk high above the river.</figcaption>
-            </figure>
             <p>
               The Caminito re-opened in 2015 following a 4 year restoration project and is now much more of a scenic walk than the terrifying trek of years gone by. Since it re-opened around 300.000 tickets are sold annually for this famous walk, it even attracts celebrities.
             </p>
