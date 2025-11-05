@@ -30,7 +30,8 @@ export default function GuideSignup() {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-40% 0px -40% 0px" });
+  // Re-triggers every time it enters/leaves the viewport margin
+  const isInView = useInView(ref, { margin: "-40% 0px -40% 0px", amount: 'some' });
   const { setIsFocus } = useContext(FocusContext);
 
   useEffect(() => {
@@ -51,8 +52,8 @@ export default function GuideSignup() {
   };
 
   return (
-    <div ref={ref} className={cn("relative transition-all duration-300", isInView ? 'z-40' : 'z-auto')}>
-        <Card className="my-12 overflow-hidden shadow-2xl">
+    <div ref={ref} className={cn("relative my-12 transition-all duration-300", isInView ? 'z-40' : 'z-auto')}>
+        <Card className="overflow-hidden shadow-2xl">
         <div className="grid grid-cols-1 md:grid-cols-3 items-center">
             <div className="hidden md:flex justify-center p-8 bg-secondary/30 h-full items-center">
             <Image
