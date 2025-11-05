@@ -12,11 +12,6 @@ const ScrapeUrlInputSchema = z.object({
   url: z.string().url().describe('The URL of the website to scrape.'),
 });
 
-// Initialize Firecrawl with the API key from environment variables
-const firecrawl = new FireCrawl({
-  apiKey: process.env.FIRECRAWL_API_KEY,
-});
-
 /**
  * A Genkit tool that scrapes a website for its main content using Firecrawl.
  * It takes a URL as input and returns the content in Markdown format.
@@ -29,6 +24,15 @@ export const scrapeUrl = ai.defineTool(
     outputSchema: z.string().describe('The scraped content of the website in Markdown format.'),
   },
   async (input) => {
+    const apiKey = process.env.FIRECRAWL_API_KEY;
+
+    if (!apiKey) {
+      console.error('Firecrawl API key is not set.');
+      return 'Failed to scrape: Firecrawl API key is missing.';
+    }
+
+    const firecrawl = new FireCrawl({ apiKey });
+    
     try {
       const response = await firecrawl.scrape(input.url, {
         pageOptions: {
