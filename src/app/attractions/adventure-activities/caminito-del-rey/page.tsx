@@ -9,6 +9,7 @@ import imageData from '@/lib/placeholder-images.json';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+import GuideSignup from '@/components/blog/GuideSignup';
 
 type ImageData = {
   [key: string]: {
@@ -98,6 +99,8 @@ export default function CaminitoDelReyPage() {
                 Still not convinced it’s safe enough?? If my ‘terrified of heights’ husband can do this trek, believe me, anyone can. 🙂
             </p>
             
+            <GuideSignup />
+
             <TableOfContents />
 
             <h2 id="getting-there">Getting to the Caminito del Rey</h2>
