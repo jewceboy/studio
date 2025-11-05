@@ -6,6 +6,10 @@
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
 import FireCrawl from '@mendable/firecrawl-js';
+import { config } from 'dotenv';
+
+// Load environment variables from .env file
+config();
 
 // Define the input schema for the scrapeUrl tool
 const ScrapeUrlInputSchema = z.object({
@@ -27,7 +31,7 @@ export const scrapeUrl = ai.defineTool(
     const apiKey = process.env.FIRECRAWL_API_KEY;
 
     if (!apiKey) {
-      console.error('Firecrawl API key is not set.');
+      console.error('Firecrawl API key is not set. Make sure it is in your .env file.');
       return 'Failed to scrape: Firecrawl API key is missing.';
     }
 
