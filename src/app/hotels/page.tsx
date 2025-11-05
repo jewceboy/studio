@@ -6,6 +6,7 @@ import imageData from '@/lib/placeholder-images.json';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { MapPin, Star, Users, Wallet, Building, Compass, LifeBuoy } from 'lucide-react';
+import GuideSignup from '@/components/blog/GuideSignup';
 
 type ImageData = {
   [key: string]: {
@@ -197,6 +198,7 @@ export default function HotelsPage() {
                 </ul>
             </div>
         </div>
+        <GuideSignup />
       </Section>
     </div>
   );

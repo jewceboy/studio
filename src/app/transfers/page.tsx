@@ -3,6 +3,7 @@ import PageHeader from '@/components/shared/PageHeader';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
 import imageData from '@/lib/placeholder-images.json';
+import GuideSignup from '@/components/blog/GuideSignup';
 
 type ImageData = {
   [key: string]: {
@@ -71,6 +72,9 @@ export default function TransfersPage() {
             ))}
             </div>
         </div>
+      </Section>
+      <Section>
+        <GuideSignup />
       </Section>
     </div>
   );

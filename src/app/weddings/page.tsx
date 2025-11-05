@@ -6,6 +6,7 @@ import imageData from '@/lib/placeholder-images.json';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Heart, Diamond, Sun, Users, Briefcase } from 'lucide-react';
+import GuideSignup from '@/components/blog/GuideSignup';
 
 type ImageData = {
   [key: string]: {
@@ -151,6 +152,7 @@ export default function WeddingsPage() {
             </div>
             
         </div>
+        <GuideSignup />
       </Section>
     </div>
   );

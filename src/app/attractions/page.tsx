@@ -5,6 +5,7 @@ import InfoCard from '@/components/shared/InfoCard';
 import imageData from '@/lib/placeholder-images.json';
 import { Building, Users, Mountain, Palette, Castle, Ship, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
+import GuideSignup from '@/components/blog/GuideSignup';
 
 type ImageData = {
   [key: string]: {
@@ -134,6 +135,7 @@ export default function AttractionsPage() {
             </div>
             
         </div>
+        <GuideSignup />
       </Section>
     </div>
   );

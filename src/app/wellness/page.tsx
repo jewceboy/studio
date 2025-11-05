@@ -6,6 +6,7 @@ import imageData from '@/lib/placeholder-images.json';
 import { Heart, Droplets, User, Sun, Stethoscope, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import GuideSignup from '@/components/blog/GuideSignup';
 
 type ImageData = {
   [key: string]: {
@@ -141,6 +142,7 @@ export default function WellnessPage() {
             </div>
             
         </div>
+        <GuideSignup />
       </Section>
     </div>
   );
