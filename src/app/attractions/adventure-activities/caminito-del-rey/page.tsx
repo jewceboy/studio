@@ -4,7 +4,7 @@ import Section from '@/components/shared/Section';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Ticket, Mountain, Info, MapPin, CheckCircle, Droplets, Backpack, Footprints, XCircle, Ban, Toilet, MessageSquare } from 'lucide-react';
+import { Ticket, Mountain, Info, MapPin, CheckCircle, Droplets, Backpack, Footprints, XCircle, Ban, Toilet, MessageSquare, List as ListIcon } from 'lucide-react';
 import imageData from '@/lib/placeholder-images.json';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -26,6 +26,39 @@ export const metadata = {
   description: 'Your complete 2025 guide to the Caminito del Rey walk. Get up-to-date tips on booking tickets, trail difficulty, how to get there, and what to expect on this spectacular hike near Malaga.',
 };
 
+const TableOfContents = () => {
+    const tocItems = [
+        { href: '#getting-there', label: 'Getting to the Caminito del Rey' },
+        { href: '#booking-tickets', label: 'How to book your tickets' },
+        { href: '#arriving', label: 'Arriving at the Caminito del Rey' },
+        { href: '#allow-time', label: 'Allow yourself plenty of time' },
+        { href: '#walkway-of-death', label: 'The Walkway of Death' },
+        { href: '#getting-back', label: 'Getting back to your car' },
+    ];
+
+    return (
+        <Card className="mb-8 border-gray-300 shadow-sm">
+            <CardHeader className="pb-4">
+                <CardTitle className="text-xl font-semibold flex items-center">
+                    Table of Contents
+                </CardTitle>
+            </CardHeader>
+            <CardContent>
+                <ul className="space-y-2 list-disc list-inside">
+                    {tocItems.map((item) => (
+                        <li key={item.href}>
+                            <a href={item.href} className="text-text-secondary hover:text-primary hover:underline">
+                                {item.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </CardContent>
+        </Card>
+    );
+};
+
+
 export default function CaminitoDelReyPage() {
   return (
     <div>
@@ -37,10 +70,9 @@ export default function CaminitoDelReyPage() {
       </div>
 
       <Section className="pt-0">
-        <div className="max-w-4xl mx-auto">
-          <div
-            className="prose lg:prose-xl max-w-none prose-headings:font-display prose-a:text-primary prose-strong:text-text-primary"
-          >
+        <div
+          className="prose lg:prose-xl max-w-4xl mx-auto prose-headings:font-display prose-a:text-primary prose-strong:text-text-primary"
+        >
             <p>
               The Caminito del Rey, which translates to ‘The King’s little Path’ was constructed in 1905 and was aptly named after King Alfonso XIII crossed the walk in 1921.
             </p>
@@ -65,8 +97,10 @@ export default function CaminitoDelReyPage() {
             <p>
                 Still not convinced it’s safe enough?? If my ‘terrified of heights’ husband can do this trek, believe me, anyone can. 🙂
             </p>
+            
+            <TableOfContents />
 
-            <h2>Getting to the Caminito del Rey</h2>
+            <h2 id="getting-there">Getting to the Caminito del Rey</h2>
             <p>
                 Getting to the Caminito del Rey is easy, there are a number of different options to consider.
             </p>
@@ -95,7 +129,7 @@ export default function CaminitoDelReyPage() {
                 There are plenty quaint little campsites, b&b’s and guest houses in the area known as the Guadalhorce valley. The landscape is unique, breathtaking in fact and its all just so peaceful and calm.
             </p>
 
-            <h2>How to book your tickets</h2>
+            <h2 id="booking-tickets">How to book your tickets</h2>
              <figure className="my-6">
                 <Image src="/images/caminitodelrey.jpg" alt="The start of the wooden walkway on the Caminito del Rey" width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="walkway start gorge"/>
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">The journey begins on the famous boardwalks.</figcaption>
@@ -114,7 +148,7 @@ export default function CaminitoDelReyPage() {
                 We finally did the walk on chilly but beautifully sunny Saturday afternoon in December, after our previous booking a year earlier was aborted when my daughter woke up covered in chicken pox spots that morning. Weather in Ardales, as it’s in land can be a few degrees cooler in winter than down on the coast and in summer expect it to be hotter, so be sure to check the <Link href="/travel-planning/when-to-visit/weather">forecast</Link>. On the day of our walk temperatures in Malaga were 16 degrees but only 12 degrees in Ardales that day. I was glad I threw an extra layer into the boot of the car just before we set off because with the blustery wind it felt much colder.
             </p>
 
-            <h2>Arriving at the Caminito del Rey</h2>
+            <h2 id="arriving">Arriving at the Caminito del Rey</h2>
              <p>
                 The Camino del Rey walk is linear, you can only start the walk at one end, this is the North access point, you have to finish the walk at the South exit point. For me the most logical thing to do if you arrive by car is this…follow road signs to the North entrance, park your car and start the walk through the entrance tunnel.
             </p>
@@ -149,7 +183,7 @@ export default function CaminitoDelReyPage() {
             </figure>
 
 
-            <h2>Allow yourself plenty of time</h2>
+            <h2 id="allow-time">Allow yourself plenty of time</h2>
              <figure className="my-6">
                 <Image src="/images/tunnel.jpg" alt="The pedestrian tunnel that leads to the start of the trail." width={800} height={400} className="rounded-lg shadow-md w-full h-auto" data-ai-hint="pedestrian tunnel start"/>
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">The starting tunnel is a scenic walk in itself.</figcaption>
@@ -182,7 +216,7 @@ export default function CaminitoDelReyPage() {
                 No fear now though, It is completely safe once again and very well organised from start to finish.
             </p>
 
-            <h2>The Walkway of Death</h2>
+            <h2 id="walkway-of-death">The Walkway of Death</h2>
             <p>
                 About 2km from the end as the path snakes around a bend it reaches a crucial point where walkers cross from one side of the gorge to the other. The only way to do this is by walking over a suspended bridge about 10 metres in length and hundreds of metres high, it is known as ‘The Walkway of Death’.
             </p>
@@ -216,7 +250,7 @@ export default function CaminitoDelReyPage() {
                 <figcaption className="text-xs text-center text-muted-foreground mt-2">A map showing the linear route of the walk.</figcaption>
             </figure>
             
-            <h2>Getting back to your car</h2>
+            <h2 id="getting-back">Getting back to your car</h2>
              <p>
                 All that is left to do now is keep walking another few hundred metres until you arrive at El Chorro train station. Pass the car park and a camp site, then you’ll see the train station on the left with a handy little bar to grab a quick drink. Next to the station is where you pick up the bus to take you right back to the start/North. There were already people waiting when we arrived and a bus had just pulled in however there was no room for us so we had to wait 30 minutes for the next one.
             </p>
@@ -253,7 +287,6 @@ export default function CaminitoDelReyPage() {
             </div>
             
           </div>
-        </div>
       </Section>
     </div>
   );
