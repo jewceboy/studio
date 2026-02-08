@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, List } from 'lucide-react';
-import { NewsletterForm } from '@/components/forms/newsletter-form';
+import NewsletterForm from '@/components/forms/NewsletterForm';
 import { allSiteUrls } from '@/lib/urls';
 import Section from '@/components/shared/Section';
 import InfoCard from '@/components/shared/InfoCard';
@@ -35,14 +35,14 @@ function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        src="https://videos.pexels.com/video-files/4434250/4434250-hd_1920_1080_25fps.mp4"
-      />
+        <Image
+            src="https://picsum.photos/seed/waterfall-hero/1920/1080"
+            alt="Waterfall in a lush landscape"
+            fill
+            priority
+            className="object-cover z-0"
+            data-ai-hint="waterfall landscape"
+        />
       <div className="absolute inset-0 bg-black/40 z-10" />
       <motion.div style={{ y }} className="relative z-20 p-4">
         <motion.h1
@@ -50,7 +50,7 @@ function HeroSection() {
           initial="initial"
           animate="animate"
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="font-display text-h1 text-white"
+          className="font-display text-h1 text-primary"
           style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
         >
           Your Costa del Sol Journey Starts Here
@@ -77,7 +77,7 @@ function HeroSection() {
             </motion.button>
           </Link>
           <Link href="/destinations" passHref>
-            <motion.button className="bg-transparent border border-primary text-primary text-button-label px-m py-s rounded-2xl hover:bg-primary/10 transition-colors">
+            <motion.button className="bg-white/90 border border-white/50 text-gray-800 text-button-label px-m py-s rounded-2xl hover:bg-white transition-colors">
               Explore Destinations
             </motion.button>
           </Link>

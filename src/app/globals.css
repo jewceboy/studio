@@ -6,86 +6,84 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 222.2 84% 4.9%;
  
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 222.2 84% 4.9%;
  
-    --primary: 351 44% 45%; /* #a64253 - Maroon accent */
+    --primary: 340 82% 52%; /* Vibrant Pink */
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 0 0% 0%;
+    --primary-dark: 340 82% 42%; /* Darker Pink */
  
-    --secondary: 30 27% 96%; /* #f7f5f4 - Very light beige/gray */
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 210 40% 9.8%;
  
-    --muted: 30 27% 96%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 210 40% 46.1%;
  
-    --accent: 351 44% 95%; /* Lighter version of primary for hover backgrounds */
-    --accent-foreground: 351 44% 45%;
+    --accent: 210 40% 94.1%;
+    --accent-foreground: 210 40% 9.8%;
  
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 351 44% 45%;
+    --border: 210 40% 89.8%;
+    --input: 210 40% 89.8%;
+    --ring: 340 82% 52%;
  
     /* Custom Design Tokens */
-    --newsletter-blue: 204 70% 45%; /* Retaining for now, can be updated */
-    --text-primary: 0 0% 0%;
-    --text-secondary: 0 0% 0%;
-    --text-light: 0 0% 40%;
-    --background-alt: 30 20% 97%; /* #f8f7f6 */
+    --newsletter-blue: 204 70% 53%;
+    --text-primary: 222.2 84% 4.9%;
+    --text-secondary: 222.2 47.4% 11.2%;
+    --text-light: 215.3 25% 65.1%;
+    --background-alt: 210 40% 98%;
   }
  
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
  
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
  
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
  
-    --primary: 351 44% 65%;
+    --primary: 340 82% 62%;
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 0 0% 98%;
+    --primary-dark: 340 82% 72%;
  
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 40% 12.1%;
+    --secondary-foreground: 210 40% 98%;
  
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 63%;
+    --muted: 210 40% 12.1%;
+    --muted-foreground: 210 40% 50.1%;
  
-    --accent: 351 44% 20%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 210 40% 14.1%;
+    --accent-foreground: 210 40% 98%;
  
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 40% 98%;
  
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 351 44% 65%;
+    --border: 210 40% 14.8%;
+    --input: 210 40% 14.8%;
+    --ring: 340 82% 62%;
 
-    --newsletter-blue: 204 70% 35%;
-    --text-primary: 0 0% 98%;
-    --text-secondary: 0 0% 85%;
-    --text-light: 0 0% 40%;
-    --background-alt: 0 0% 12%;
+    --newsletter-blue: 204 70% 43%;
+    --text-primary: 210 40% 98%;
+    --text-secondary: 210 40% 85%;
+    --text-light: 210 40% 46.1%;
+    --background-alt: 210 40% 12.1%;
   }
 }
  
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-text-secondary;
+    background-color: hsl(var(--background));
+    color: hsl(var(--text-secondary));
     line-height: 1.8;
   }
   h1, h2, h3, h4, h5, h6 {

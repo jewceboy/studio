@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Menu, X, Sun, Briefcase, Droplets, Heart, ShoppingCart, Calendar, Map, Plane, Sailboat, Users, Tv, Palette, Building, Utensils, Waves, MountainSnow, Star, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
@@ -18,7 +18,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const primaryNavLinks = [
   { href: '/destinations', label: 'Destinations', icon: Map },
@@ -55,32 +54,16 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Set initial state
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   if (pathname.includes('/chat-demo')) {
     return null;
   }
   
   return (
-    <motion.header 
-        className={cn(
-            "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-            isScrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent",
-        )}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-primary">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-          <Sun className={cn("h-6 w-6 transition-colors", isScrolled ? "text-primary-dark" : "text-white")} />
-          <span className={cn("font-semibold text-base font-montserrat transition-colors", isScrolled ? "text-primary-dark" : "text-white")}>MalagaTravelGuide</span>
+          <Sun className="h-6 w-6 text-white" />
+          <span className="font-semibold text-base font-montserrat text-white">MalagaTravelGuide</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -92,9 +75,8 @@ export default function Header() {
                         <Link href={link.href} legacyBehavior passHref>
                             <NavigationMenuLink className={cn(
                             navigationMenuTriggerStyle(),
-                            'bg-transparent font-montserrat font-normal text-sm uppercase',
-                             isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10',
-                            pathname.startsWith(link.href) ? isScrolled ? 'bg-accent/50' : 'bg-white/20' : ''
+                            'bg-transparent font-montserrat font-normal text-sm uppercase text-primary-foreground hover:bg-white/10 focus:bg-white/10',
+                            pathname.startsWith(link.href) ? 'bg-white/20' : ''
                             )}>
                             {link.label}
                             </NavigationMenuLink>
@@ -103,7 +85,7 @@ export default function Header() {
                 ))}
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm uppercase', isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10')}>
+                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm uppercase text-primary-foreground hover:bg-white/10 focus:bg-white/10')}>
                         Luxury Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -122,7 +104,7 @@ export default function Header() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm uppercase', isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10')}>
+                    <NavigationMenuTrigger className={cn('bg-transparent font-montserrat font-normal text-sm uppercase text-primary-foreground hover:bg-white/10 focus:bg-white/10')}>
                         Explore
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -142,8 +124,15 @@ export default function Header() {
 
                 <NavigationMenuItem>
                     <Link href="/blog" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent font-montserrat font-normal text-sm uppercase', isScrolled ? 'text-text-secondary hover:bg-accent/50 focus:bg-accent/50' : 'text-primary-foreground hover:bg-white/10 focus:bg-white/10', pathname.startsWith('/blog') ? isScrolled ? 'bg-accent/50' : 'bg-white/20' : '')}>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent font-montserrat font-normal text-sm uppercase text-primary-foreground hover:bg-white/10 focus:bg-white/10', pathname.startsWith('/blog') ? 'bg-white/20' : '')}>
                         Blog
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
+                 <NavigationMenuItem>
+                    <Link href="/contact" legacyBehavior passHref>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-transparent font-montserrat font-normal text-sm uppercase text-primary-foreground hover:bg-white/10 focus:bg-white/10', pathname.startsWith('/contact') ? 'bg-white/20' : '')}>
+                        Contact
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
@@ -153,7 +142,7 @@ export default function Header() {
              {/* Social Icons */}
             <div className="flex items-center space-x-3 pl-6 ml-4 border-l border-white/20">
                 {socialLinks.map((social) => (
-                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className={cn("transition-opacity", isScrolled ? 'text-text-secondary opacity-70 hover:opacity-100' : 'text-white opacity-80 hover:opacity-100')}>
+                    <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-white opacity-80 hover:opacity-100 transition-opacity">
                     <social.icon className="h-5 w-5" />
                     </Link>
                 ))}
@@ -164,7 +153,7 @@ export default function Header() {
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn("transition-colors", isScrolled ? 'text-text-primary hover:bg-accent/50' : 'text-white hover:bg-white/10 focus:bg-white/10')}>
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 focus:bg-white/10">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
@@ -237,7 +226,7 @@ export default function Header() {
           </Sheet>
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 }
 
