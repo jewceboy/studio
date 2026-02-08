@@ -10,7 +10,7 @@ const slugify = require('slugify');
 const SERVICE_ACCOUNT_FILE = './service-account.json';
 const CSV_EXPORT_FILE = './MTG_wordpress_export.csv';
 // Get this from your Firebase project settings: Project settings > General > Your apps > Web app > Add Firebase SDK
-const FIREBASE_STORAGE_BUCKET = "your-project-id.appspot.com"; // <-- IMPORTANT: REPLACE THIS
+const FIREBASE_STORAGE_BUCKET = "605092781718.appspot.com"; // <-- IMPORTANT: REPLACE THIS
 
 if (FIREBASE_STORAGE_BUCKET.includes("your-project-id")) {
     console.error("\n\n*** ACTION REQUIRED ***");
