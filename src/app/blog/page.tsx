@@ -1,3 +1,4 @@
+
 import PageHeader from '@/components/shared/PageHeader';
 import ArticleCard from '@/components/blog/ArticleCard';
 import type { Article } from '@/lib/constants';
@@ -9,6 +10,8 @@ import Section from '@/components/shared/Section';
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 async function getArticles(): Promise<Pick<Article, 'title' | 'slug' | 'imageUrl' | 'imageHint' | 'excerpt' | 'date' | 'author' | 'categories'>[]> {
   try {
     const articlesCol = collection(db, 'posts');
@@ -16,6 +19,7 @@ async function getArticles(): Promise<Pick<Article, 'title' | 'slug' | 'imageUrl
     const articleSnapshot = await getDocs(q);
 
     if (articleSnapshot.empty) {
+      console.log("No articles found in Firestore.");
       return [];
     }
 
