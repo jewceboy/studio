@@ -6,33 +6,42 @@ import { Button } from '@/components/ui/button';
 import { Search, Rss, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Section from '@/components/shared/Section';
-import imageData from '@/lib/placeholder-images.json';
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
-type ImageData = {
-  [key: string]: {
-    url: string;
-    hint: string;
-  };
-};
+async function getArticles(): Promise<Pick<Article, 'title' | 'slug' | 'imageUrl' | 'imageHint' | 'excerpt' | 'date' | 'author' | 'categories'>[]> {
+  try {
+    const articlesCol = collection(db, 'posts');
+    const q = query(articlesCol, orderBy('publishedAt', 'desc'));
+    const articleSnapshot = await getDocs(q);
 
-const images: ImageData = imageData;
+    if (articleSnapshot.empty) {
+      return [];
+    }
 
-
-// Placeholder data - replace with actual data fetching
-const articles: Pick<Article, 'title' | 'slug' | 'imageUrl' | 'imageHint' | 'excerpt' | 'date' | 'author' | 'categories'>[] = [
-  { slug: 'best-tapas-malaga', title: 'Best Tapas Bars in Málaga Old Town', imageUrl: images['tapas-food-variety'].url, imageHint: images['tapas-food-variety'].hint, excerpt: 'A culinary journey through Málaga\'s most authentic tapas spots, from traditional bites to modern creations.', date: '2024-05-15', author: 'Elena Rodriguez', categories: ['Food & Drink'] },
-  { slug: 'hidden-beaches-costa-del-sol', title: 'Top 5 Hidden Beaches on the Costa del Sol', imageUrl: images['secluded-cove-beach'].url, imageHint: images['secluded-cove-beach'].hint, excerpt: 'Discover tranquil coves and pristine sands away from the crowds for a perfect day of relaxation.', date: '2024-05-10', author: 'Mark Stevenson', categories: ['Beaches', 'Travel Tips'] },
-  { slug: 'day-trip-ronda', title: 'A Day Trip to Ronda: What to See and Do', imageUrl: images['Ronda-bridge-view'].url, imageHint: images['Ronda-bridge-view'].hint, excerpt: 'Explore the dramatic landscapes, iconic bridge, and historic charm of the stunning town of Ronda.', date: '2024-05-01', author: 'Sofia Chen', categories: ['Day Trips'] },
-  { slug: 'caminito-del-rey-guide', title: 'Ultimate Guide to Hiking Caminito del Rey', imageUrl: images['Caminito-del-Rey-path'].url, imageHint: images['Caminito-del-Rey-path'].hint, excerpt: 'Everything you need to know before tackling one of Spain\'s most breathtaking hiking trails.', date: '2024-04-25', author: 'Carlos Gomez', categories: ['Adventure', 'Hiking'] },
-  { slug: 'malaga-christmas-lights', title: 'Málaga Christmas Lights: A Festive Spectacle', imageUrl: images['Christmas-lights-street'].url, imageHint: images['Christmas-lights-street'].hint, excerpt: 'Experience the magic of Calle Larios adorned with spectacular Christmas lights and music.', date: '2023-12-01', author: 'Laura Schmidt', categories: ['Festivals', 'Malaga'] },
-  { slug: 'andalusian-white-villages', title: 'Exploring the Charm of Andalusian White Villages', imageUrl: images['white-village-street'].url, imageHint: images['white-village-street'].hint, excerpt: 'A guide to the most picturesque "pueblos blancos" near Costa del Sol, rich in history and beauty.', date: '2024-03-18', author: 'David Miller', categories: ['Culture', 'Day Trips'] },
-  { slug: 'clubhotel-riu-review', title: 'Clubhotel Riu Costa del Sol: An Honest Review', imageUrl: images['beach-resort-holiday'].url, imageHint: images['beach-resort-holiday'].hint, excerpt: 'Is the all-inclusive Clubhotel Riu worth it? We break down the rooms, food, pools, and overall experience.', date: '2024-02-20', author: 'Travel Critic', categories: ['Hotels', 'Reviews'] },
-  { slug: 'san-pedro-boulevard-review', title: 'San Pedro Boulevard: Is It Worth the Hype?', imageUrl: 'https://picsum.photos/seed/san-pedro-boulevard/600/400', imageHint: 'modern city park', excerpt: 'A deep dive into the San Pedro Boulevard, its unique design, and family-friendly attractions.', date: '2024-03-05', author: 'Local Explorer', categories: ['Destinations', 'Reviews'] },
-  { slug: 'mayan-monkey-mijas-review', title: 'Mayan Monkey Mijas: A Chocolate Lover\'s Dream', imageUrl: 'https://picsum.photos/seed/mayan-monkey-mijas/600/400', imageHint: 'chocolate factory', excerpt: 'A review of the famous chocolate factory in Mijas Pueblo.', date: '2024-04-01', author: 'Foodie Guide', categories: ['Food & Drink', 'Mijas', 'Reviews'] },
-];
-
-const categories = ['Food & Drink', 'Beaches', 'Travel Tips', 'Day Trips', 'Adventure', 'Culture', 'Festivals', 'Hotels', 'Reviews'];
-const recentPosts = articles.slice(0, 3);
+    const articleList = articleSnapshot.docs.map(doc => {
+      const data = doc.data();
+      // Ensure publishedAt exists and is a timestamp before converting
+      const date = data.publishedAt?.toDate ? data.publishedAt.toDate().toISOString() : new Date().toISOString();
+      
+      return {
+        slug: data.slug || '',
+        title: data.title || 'Untitled',
+        imageUrl: data.featuredImage || 'https://picsum.photos/seed/placeholder/600/400',
+        imageHint: 'blog article',
+        excerpt: data.excerpt || '',
+        date: date,
+        author: data.author || 'Travel Guide',
+        categories: data.category ? [data.category] : ['Uncategorized'],
+      };
+    });
+    return articleList;
+  } catch (error) {
+    console.error("Error fetching articles from Firestore:", error);
+    // In case of error (e.g., Firestore rules), return an empty array to prevent crashing the page.
+    return [];
+  }
+}
 
 
 export const metadata = {
@@ -40,7 +49,11 @@ export const metadata = {
   description: 'Discover articles, guides, and stories about Costa del Sol. Get tips on travel, food, culture, and more.',
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const articles = await getArticles();
+  const recentPosts = articles.slice(0, 3);
+  const categories = [...new Set(articles.flatMap(article => article.categories || []))].filter(Boolean);
+
   return (
     <div>
       <PageHeader
@@ -58,7 +71,7 @@ export default function BlogPage() {
                 ))}
               </div>
             ) : (
-              <p className="text-center text-muted-foreground text-lg">No articles found. Check back soon!</p>
+              <p className="text-center text-muted-foreground text-lg">No articles found. Once you run your migration script, your posts will appear here.</p>
             )}
             {/* Pagination (Placeholder) */}
             {articles.length > 6 && (
@@ -85,34 +98,38 @@ export default function BlogPage() {
             </div>
 
             {/* Categories */}
-            <div className="bg-secondary/30 p-6 rounded-lg">
-              <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-4">Categories</h3>
-              <ul className="space-y-1">
-                {categories.map((category) => (
-                  <li key={category}>
-                     <Link href={`/blog/category/${category.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-')}`} className="flex items-center justify-between text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors rounded-md p-2">
-                      <span>{category}</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {categories.length > 0 && (
+                <div className="bg-secondary/30 p-6 rounded-lg">
+                <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-4">Categories</h3>
+                <ul className="space-y-1">
+                    {categories.map((category) => (
+                    <li key={category}>
+                        <Link href={`/blog/category/${category.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-')}`} className="flex items-center justify-between text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors rounded-md p-2">
+                        <span>{category}</span>
+                        <ArrowRight className="h-4 w-4" />
+                        </Link>
+                    </li>
+                    ))}
+                </ul>
+                </div>
+            )}
 
             {/* Recent Posts */}
-            <div className="bg-secondary/30 p-6 rounded-lg">
-              <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-4">Recent Posts</h3>
-              <ul className="space-y-4">
-                {recentPosts.map((post) => (
-                  <li key={post.slug}>
-                    <Link href={`/blog/${post.slug}`} className="text-foreground hover:text-primary transition-colors font-semibold block leading-snug">
-                      {post.title}
-                    </Link>
-                    <p className="text-xs text-muted-foreground/80 mt-1">{new Date(post.date).toLocaleDateString()}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {recentPosts.length > 0 && (
+                <div className="bg-secondary/30 p-6 rounded-lg">
+                <h3 className="font-montserrat text-lg font-semibold text-primary-dark mb-4">Recent Posts</h3>
+                <ul className="space-y-4">
+                    {recentPosts.map((post) => (
+                    <li key={post.slug}>
+                        <Link href={`/blog/${post.slug}`} className="text-foreground hover:text-primary transition-colors font-semibold block leading-snug">
+                        {post.title}
+                        </Link>
+                        <p className="text-xs text-muted-foreground/80 mt-1">{new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+                    </li>
+                    ))}
+                </ul>
+                </div>
+            )}
             
             {/* RSS Feed (Example) */}
             <div className="bg-accent/80 text-white p-6 rounded-lg text-center">
