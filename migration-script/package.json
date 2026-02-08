@@ -4,6 +4,7 @@
   "description": "Script to migrate WordPress posts from a CSV export to Firebase Firestore and Storage.",
   "main": "migrate.js",
   "scripts": {
+    "prestart": "npm install",
     "start": "node migrate.js"
   },
   "dependencies": {
