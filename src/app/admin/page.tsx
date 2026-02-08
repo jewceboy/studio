@@ -1,23 +1,37 @@
-import PageHeader from '@/components/shared/PageHeader';
-import Section from '@/components/shared/Section';
 
-export const metadata = {
-  title: 'Admin | Malaga Travel Guide',
-  description: 'Manage website content.',
-};
+'use client';
+
+import { FirebaseCMSApp, useAuthenticator } from "firecms";
+import "firecms/styles.css";
+
+import { firebaseConfig } from "@/lib/firebase";
+import { myCollections } from "@/lib/firecms-collections";
 
 export default function AdminPage() {
-  return (
-    <div>
-      <PageHeader
-        title="Admin Panel"
-        subtitle="Content Management System"
-      />
-      <Section>
-        <p className="text-center text-lg">
-            The FireCMS configuration has been created. The next step is to build the UI for the admin panel here.
-        </p>
-      </Section>
-    </div>
-  );
+
+    const authenticator = useAuthenticator({
+        firebaseConfig
+    });
+
+    if (process.env.NODE_ENV !== 'production' && (!firebaseConfig?.apiKey || !firebaseConfig?.projectId)) {
+        return (
+            <div className="flex h-screen items-center justify-center bg-gray-100">
+                <div className="text-center p-8 bg-white rounded-lg shadow-lg">
+                    <h2 className="text-2xl font-bold text-red-600 mb-4">Firebase Configuration Missing</h2>
+                    <p className="text-gray-700">
+                        Your Firebase configuration is not set up correctly. Please make sure all the required Firebase environment variables are set.
+                    </p>
+                </div>
+            </div>
+        );
+    }
+  
+    return (
+        <FirebaseCMSApp
+            name={"Malaga Travel Guide CMS"}
+            authentication={authenticator}
+            collections={myCollections}
+            firebaseConfig={firebaseConfig}
+        />
+    );
 }
