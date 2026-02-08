@@ -6,3 +6,8 @@ export default function LocalMarketsLayout({
   children: React.ReactNode;
 }) {
   return (
+    <div>
+      {children}
+    </div>
+  );
+}

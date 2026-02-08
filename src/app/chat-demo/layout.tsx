@@ -12,4 +12,5 @@ export default function ChatDemoLayout({
       <PageHeader title="Expandable Chat Component Demo" />
       {children}
     </div>
-  
+  );
+}

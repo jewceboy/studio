@@ -5,3 +5,9 @@ export default function MarbellaShoppingLayout({
 }: {
   children: React.ReactNode;
 }) {
+  return (
+    <div>
+      {children}
+    </div>
+  );
+}

@@ -9,4 +9,5 @@ export default function BlogLayout({
     <div>
       {children}
     </div>
-  
+  );
+}

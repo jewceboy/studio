@@ -5,3 +5,9 @@ export default function DetoxRetreatsLayout({
 }: {
   children: React.ReactNode;
 }) {
+  return (
+    <div>
+      {children}
+    </div>
+  );
+}

@@ -5,4 +5,9 @@ export default function MijasPuebloLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return
+  return (
+    <div>
+      {children}
+    </div>
+  );
+}

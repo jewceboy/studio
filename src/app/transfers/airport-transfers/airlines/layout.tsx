@@ -8,3 +8,6 @@ export default function AirlinesLayout({
   return (
     <div>
       {children}
+    </div>
+  );
+}

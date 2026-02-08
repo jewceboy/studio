@@ -5,3 +5,9 @@ export default function YogaRetreatsLayout({
 }: {
   children: React.ReactNode;
 }) {
+  return (
+    <div>
+      {children}
+    </div>
+  );
+}

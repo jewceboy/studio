@@ -5,3 +5,9 @@ export default function PuertoBanusLuxuryMarinaLayout({
 }: {
   children: React.ReactNode;
 }) {
+  return (
+    <div>
+      {children}
+    </div>
+  );
+}

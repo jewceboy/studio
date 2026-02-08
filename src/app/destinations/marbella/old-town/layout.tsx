@@ -5,4 +5,9 @@ export default function MarbellaOldTownLayout({
 }: {
   children: React.ReactNode;
 }) {
-  
+  return (
+    <div>
+      {children}
+    </div>
+  );
+}

@@ -9,4 +9,5 @@ export default function ShuttleLayout({
     <div>
       {children}
     </div>
-  
+  );
+}

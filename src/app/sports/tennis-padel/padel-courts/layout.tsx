@@ -6,4 +6,8 @@ export default function PadelCourtsLayout({
   children: React.ReactNode;
 }) {
   return (
-    
+    <div>
+      {children}
+    </div>
+  );
+}
