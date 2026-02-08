@@ -1,0 +1,16 @@
+{
+  "name": "wp-to-firestore-migration",
+  "version": "1.0.0",
+  "description": "Script to migrate WordPress posts from a CSV export to Firebase Firestore and Storage.",
+  "main": "migrate.js",
+  "scripts": {
+    "start": "node migrate.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0-rc.12",
+    "csv-parser": "^3.0.0",
+    "firebase-admin": "^12.1.0",
+    "slugify": "^1.6.6"
+  }
+}
