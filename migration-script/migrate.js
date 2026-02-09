@@ -1,3 +1,4 @@
+
 const admin = require('firebase-admin');
 const fs = require('fs');
 const axios = require('axios');
@@ -10,7 +11,7 @@ const slugify = require('slugify');
 const SERVICE_ACCOUNT_FILE = './service-account.json';
 const CSV_EXPORT_FILE = './MTG_wordpress_export.csv';
 // Get this from your Firebase project settings: Project settings > General > Your apps > Web app > Add Firebase SDK
-const FIREBASE_STORAGE_BUCKET = "605092781718.appspot.com"; // <-- IMPORTANT: REPLACE THIS
+const FIREBASE_STORAGE_BUCKET = "costa-del-sol-navigator.appspot.com"; // <-- CORRECTED
 
 if (FIREBASE_STORAGE_BUCKET.includes("your-project-id")) {
     console.error("\n\n*** ACTION REQUIRED ***");
@@ -132,12 +133,16 @@ async function migrate() {
                 const newFeaturedImage = await uploadImageToFirebase(featuredImageUrl, exportedSlug);
 
                 // D. Prepare data for Firestore
+                const publicationDate = date ? new Date(date) : new Date();
                 const docData = {
                     title: title,
                     slug: exportedSlug,
                     content: $.html(), // The new HTML with Firebase image links
                     excerpt: post.Excerpt || post.excerpt || content.substring(0, 150),
-                    publishedAt: admin.firestore.Timestamp.fromDate(new Date(date || Date.now())),
+                    publishedAt: admin.firestore.Timestamp.fromDate(
+                        // Check if the parsed date is valid, otherwise use today's date
+                        !isNaN(publicationDate.getTime()) ? publicationDate : new Date()
+                    ),
                     featuredImage: newFeaturedImage || null,
                     category: category,
                 };
