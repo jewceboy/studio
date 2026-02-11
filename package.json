@@ -79,5 +79,6 @@
     "rimraf": "^4.4.1",
     "glob": "^10.3.10",
     "inflight": "npm:lru-cache@^10.0.0"
-  }
+  },
+  "description": "Studio app"
 }
